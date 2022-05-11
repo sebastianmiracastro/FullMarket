@@ -1,0 +1,18 @@
+En esta Carpeta iran TODOS los archivos CSS, esto no quiere decir que se trabajara en un mismo archivo css, NO 
+Se trabajan por separado, NOMBRAMIENTO DE VARIABLES EN INGLES Y ESPECIFICAS, No queremos ver algo que diga "layout", "pos", "form" NADA
+Los nombres SERAN ESPECIFICOS, Algo asi:
+
+Nombre de archivos: StylesRegister.css
+Dentro Del Archivos: Primero se llamaran clases, si tiene algun identificador por ID, esos van a final, KEYFRAMES Hovers, van tambien al final
+Si necesita usar diferentes Secciones se separan por comentarios por todo el medio de la pantalla algo asi
+
+Nombramiento de clases: .RegisterFormData{
+  estilos.
+}
+
+.RegisterImgLeft:hover{
+  estilos.
+}
+
+/*******************************************************(Seccione Name)*********************************************************************************/
+

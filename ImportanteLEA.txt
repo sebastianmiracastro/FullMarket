@@ -1,0 +1,2 @@
+En cada una de las carpetas esta su explicacion sobre como funcionara, LEA Todos los txt por favor, pueden ocurrir errores, claro que si, pero con esa explicacion
+buscamos que los errores sean menores o nulos, sigan las reglas, si tienen dudas pregunten, creen su rama y empiezen.

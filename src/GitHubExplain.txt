@@ -1,0 +1,24 @@
+Al momentos de subir un nuevo Commit, cabe recalcar que SIEMPRE VA A TRABAJAR EN SU RAMA:
+
+1- El que se vea haciendo ediciones en otras ramas, se pasara actas, para su debido proceso.
+
+2- SIEMPRE REVISE LAS CREDENCIALES DE SU PC, en nuestro caso en el SENA, para evitar que hayan otros colaboradores en nuestro repositorio
+(antes de empezar a trabajar, borrar credenciales, abrir una consola en modo administrador y poner:
+
+git config --global user.name "(su nombre de github)")
+git config --global user.email "(su correo que tien vinculado en github)")
+
+y Reinicie el PC
+
+3- Al momento de subir un commit, tienen que estar nombradas en ingles, BIEN EXPLICADAS DE LOS CAMBIOS QUE HICIERON O QUE HICIERON, Numero del commit, y fecha Del mismo, algo asi:
+
+git commit -am "Register Services Done #1 [11052022]" 
+
+(el -am se usa como otro "git add .", hagalo para evitar errores de que no se subieron cambios)
+
+5- Si van a trabajar EN EL SENA, por favor no DEJEN ARCHIVOS DEL PROYECTO ABIERTOS.
+
+6- Se puede revisar que personas ven el repositorio, se ve a alguien fuera de nosotros revisandolo, se pasara acta.
+
+7- No se compartira NADA de informacion sobre proyecto o funcionalidades que este tenga, solo ha instructores.
+(Ni para dar una explicacion, use su logica.)
