@@ -1,0 +1,2 @@
+Van todas las funciones, para evitar en codigo espaguetti en los componentes, solo archivos JS, obligatorio solo pedir datos por parametros (OBLIGATORIO PARA BUENAS PRACTICAS
+Ejemplo de nombramientos: ServicesRegister, ServicesLogin, etc, etc....)
