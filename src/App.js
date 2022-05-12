@@ -1,9 +1,9 @@
-import { UIHeaderRegister } from "./Components/UI/UIRegister/UIHeaderRegister";
+import { UIMainRegister } from "./Components/UI/UIRegister/UIMainRegister/UIMainRegister";
 
 function App() {
   return (
     <div className="App">
-      <UIHeaderRegister/>
+      <UIMainRegister/>
     </div>
   );
 }

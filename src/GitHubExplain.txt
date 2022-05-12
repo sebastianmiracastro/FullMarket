@@ -12,7 +12,7 @@ y Reinicie el PC
 
 3- Al momento de subir un commit, tienen que estar nombradas en ingles, BIEN EXPLICADAS DE LOS CAMBIOS QUE HICIERON O QUE HICIERON, Numero del commit, y fecha Del mismo, algo asi:
 
-git commit -am "Register Services Done #1 [11052022]" 
+git commit -m "Register Services Done #1 [11052022]" 
 
 (el -am se usa como otro "git add .", hagalo para evitar errores de que no se subieron cambios)
 

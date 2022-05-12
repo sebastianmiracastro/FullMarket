@@ -1,7 +1,8 @@
 import React from 'react';
-import RegisterImage from '../../../Image/RegisterFolderImage/RegisterImage.png'
-import StyleUIHeaderRegister from '../../../Styles/StyleRegister/StyleUIHeaderRegister.css'
-export const UIHeaderRegister=()=> {
+import RegisterImage from '../../../../Image/RegisterFolderImage/RegisterImage.png'
+import StyleUIHeaderRegister from '../../../../Styles/StyleRegister/StyleUIHeaderRegister/StyleUIHeaderRegister/StyleUIHeaderRegister.css'
+
+export const UIHeaderRegister =()=> {
   return (
     <div className='UiheaderRegister'> 
       <div className='registerText'>

@@ -1,0 +1,5 @@
+.uiMainRegister {
+  display: grid;
+  grid-template-columns: 34% 50%;
+  column-gap: 14%;
+}
