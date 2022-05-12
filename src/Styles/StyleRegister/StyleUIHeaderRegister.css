@@ -1,0 +1,59 @@
+.UiheaderRegister{
+  display: grid;
+  grid-template-rows: 7% 85% 8%;
+}
+
+.UiheaderRegister{
+  width: 100%;
+}
+
+.registerText{
+  color: white;
+  text-align: center;
+  background-color: black;
+  font-size: 8px;
+}
+.registerTexts{
+  color: white;
+  text-align: center;
+  background-color: black;
+  font-size: 14px;
+}
+
+.registerImg{
+  width: 100%;
+}
+
+.textRegisters{
+  margin-top: 6px;
+}
+
+.textRegister{
+  margin-top: 18px;
+}
+/* MEDIA */
+@media screen and (min-width: 2560px) {
+  .registerImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .UiheaderRegister {
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+
+  }
+
+  .registerTexts,.registerText {
+    color: white;
+    text-align: center;
+    background-color: black;
+    font-size: 39px;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .registerImg {
+    height: 105%;
+  }
+}
