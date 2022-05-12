@@ -3,6 +3,7 @@ import { UIButtons } from "../../../UI/Main-UI-Components/UIButtons/UIButtons.js
 import { UILogos } from "../../../UI/Main-UI-Components/UILogos/UILogos.jsx";
 import { BiSearchAlt } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
+import '../../../../Styles/Main-Styles/MainStyle.css';
 
 export const LayoutHeader = () => {
   return (

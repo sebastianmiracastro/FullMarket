@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { UICards } from "../../../UI/Main-UI-Components/UICards/UICards.jsx";
+import '../../../../Styles/Main-Styles/MainStyle.css'
 
 export const LayoutCards = () => {
   const URL = "https://backend-fullmarket-py.herokuapp.com/getallproducts";
