@@ -1,6 +1,7 @@
 import React from 'react'
-import UIMainRegister from '../../../Components/UI/UIRegister/UIMainRegister/UIMainRegister'
-import UINavbarRegister from '../../../Components/UI/UIRegister/UINavbarRegister/UINavbarRegister'
+import {UIMainRegister} from '../../../Components/UI/UIRegister/UIMainRegister/UIMainRegister';
+import { UINavbarRegister } from '../../UI/UIRegister/UINavbarRegister/UINavbarRegister';
+import StylePageHomeRegister from '../../../Styles/StyleRegister/StylePageHomeRegister/StylePageHomeRegister.css'
 
 export const PageHomeRegister =()=> {
   return (
