@@ -1,0 +1,23 @@
+div.uiNavbarLogin {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 92px;
+  background-color: #ffff;
+  border-bottom: 2px solid #040404;
+}
+
+img.logo {
+  position: absolute;
+  width: 10%;
+  top: -3%;
+  left: 38%;
+}
+
+img.logoFullMakert { 
+  position: absolute;
+  width: 12%;
+  top: -6.5%;
+  right: 39%;
+}
+

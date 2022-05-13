@@ -2,61 +2,43 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+  }
   
-body {
+  body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
-}
+  }
   
-.Login {
+  .Login {
     position: absolute;
     bottom: 0;
     left: 0px;
     width: 35%;
+    top: 25px;
     height: 100%;
     z-index: -1;
 }
-
-.img {
+  
+  .img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+  div.content-title {
+    text-align: center;
+    width: 35%;
+    position: absolute;
+    top: 90px;
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    background-color: #040404;
 }
-
-h2.title {
+  h2.title {
     position: absolute;
     color: #f0f0f0;
     font-family: 'Roboto', sans-serif;
     font-size: 1.4cm;
-    top: 0%;
-}
-
-.login-content {
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    position: absolute;
-    right: 20rem;
-    top: 20rem;
-}
-  
-.login-content h2 {
-    margin: 55px 0;
-    color: #333;
-    font-size: 2.0rem;
-}
-
-
-div.content-title {
-    text-align: center;
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    height: 70px;
-    background-color: #040404;
-}
-  
-  
+    top: 13%;
+  }
   

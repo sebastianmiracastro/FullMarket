@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import UIHeaderLogin from './Components/UI/UILogin/UIHeaderLogin';
+import LayoutLoginFormulary from './Components/Layout/LayoutLoginFormulary/LayoutLoginFormulary.jsx'
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UIHeaderLogin />
+    <LayoutLoginFormulary/>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
