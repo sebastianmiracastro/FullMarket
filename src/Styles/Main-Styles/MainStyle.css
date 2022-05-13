@@ -21,17 +21,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding-left: 45rem;
+    padding-left: 70rem;
     padding-top: 2rem;
   }
   
   .btn-primaryHeader {
-    width: 8rem;
+    width: 10rem;
     height: 2rem;
     background-image: linear-gradient(90deg, #F6560A 0%, #fd651e 49%, #F6560A 100%, #fd651e  100%);
     border-radius: 6px;
     border: #F6560A;
-    display:flex;
     align-items:center;
     justify-content:center;
     font-weight:bold;
@@ -76,7 +75,7 @@
     border: #000000;
     color: #000000;
     border-radius: 0.5rem;
-    margin-left: 50rem;
+    margin-left: 85rem;
   }
   
   .iconSearch {
