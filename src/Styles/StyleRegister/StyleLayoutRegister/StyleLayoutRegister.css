@@ -111,3 +111,8 @@ a:hover {
 .terms{
   font-size: 14px;
 }
+.alertIcorrect,.alertIcorrects {
+  color: #ff7300;
+  margin-top: -3px;
+  font-size: 14px;
+}

@@ -17,7 +17,13 @@ export const LayoutRegister=()=> {
   const [photo, setPhoto] = useState();
   const [dpto, setDpto] = useState([]);
   const [ciudades, setCiudades] = useState([]);
- 
+  const[msgEmail, setMsgEmail]=useState("")
+  const[msgName, setMsgName]=useState("")
+  const[msgAlias, setMsgAlias]=useState("")
+  const[msgPassword, setMsgPassword]=useState("")
+  const[msgPhone, setMsgPhone]=useState("")
+ const [terms, setTerms] = useState(false);
+  const [msgCheck, setMsgCheck] = useState();
   var formData = new FormData();
 
   const navigate = useNavigate()
@@ -72,6 +78,79 @@ export const LayoutRegister=()=> {
     })
   }
 
+   const handleCharacterEmail =()=>{
+      let validationEmail =/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+      let text
+      if(email.match(validationEmail)){
+        text="Información valida"
+        setMsgEmail(text)
+      }else{
+        text="Información incorrecta, por favor verifiquela"
+        setMsgEmail(text)
+      }
+  }
+
+  const handleCharacterName=()=>{
+    let validationName= /^[a-zA-Z\t]+|(^$)/
+    let text
+    if(name.match(validationName)){
+      text="Información correcta"
+      setMsgName(text)
+    }else{
+      text="Información incorrecta, Solo puedes añadir letras, minimo 3 letras maximo 16 letras"
+      setMsgName(text)
+    }
+  }
+  const handleCharacterAlias=()=>{
+    let validationAlias= /^[A-Za-z0-9\t]{3,10}|(^$)/
+    let text
+    if(alias.match(validationAlias)){
+      text="Información correcta"
+      setMsgAlias(text)
+    }else{
+      text="Información incorrecta, Solo puedes añadir letras, minimo 3 letras maximo 10 letras"
+      setMsgAlias(text)
+    }
+  }
+  const handleCharacterPassword=()=>{
+    let validationPassword= /^[a-z0-9_-]{6,18}$/
+    let text
+    if(password.match(validationPassword)){
+      text="Información correcta"
+      setMsgPassword(text)
+      
+    }else{
+     text ="Información incorrecta, desbes añadir letras y numeros, su contraseña debe ser minimo de 7 letras y/o numeros,maximo 10 letras  y/o numeros"
+      setMsgPassword(text)
+    }
+  }
+  const handleCharacterPhone=()=>{
+    let validationPhone= /^[0-9]{7,12}$/
+    let text
+    if(phone.match(validationPhone)){
+      text="Información correcta"
+      setMsgPhone(text)
+    }else{
+      text="Información incorrecta, desbes añadir solo numeros, su numero de telefono debe ser minimo de 7 numeros, maximo 10 numeros."
+      setMsgPhone(text)
+    }
+  }
+
+  const handleTerms=(e)=>{
+     setTerms(e.target.checked)
+     let text
+     if(terms === false){
+      text="Registro completo"
+       setMsgCheck(text)
+     }
+     else{
+       text="Debes aceptar los termino y condiciones para  lpoder registrate"
+       setMsgCheck(text)
+       
+     }
+   }
+
+
   useEffect(() => {
     getDptos();
   }, [])
@@ -83,10 +162,14 @@ export const LayoutRegister=()=> {
       <div className='files'>
         <div className='filesRegister'>  
 
-          <input type="name" name='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='enter your name' required></input>
-          <input type="alias" name='alias' value={alias} onChange={(e) => setAlias(e.target.value)} placeholder='enter your alias' required></input>
-          <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='enter your email' required></input>
-          <input type="password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='enter your password'  required></input>
+          <input type="name" name='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='enter your name' onKeyUp={handleCharacterName} required></input>
+          <p className='alertIcorrect'>{msgName}</p>
+          <input type="alias" name='alias' value={alias} onChange={(e) => setAlias(e.target.value)} placeholder='enter your alias' onKeyUp={handleCharacterAlias} required></input>
+          <p className='alertIcorrect'>{msgAlias}</p>
+          <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='enter your email'  onKeyUp={handleCharacterEmail} required></input>
+          <p className='alertIcorrect'>{msgEmail}</p>
+          <input type="password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='enter your password' onKeyUp={handleCharacterPassword} required></input>
+          <p className='alertIcorrect'>{msgPassword}</p>
         </div>
         <div className='fileRegister'>
           <select className='selectDepart' onInput={getMuni} type="department" name='department' id="" value={department} onChange={(e) => setDepartment(e.target.value)} >
@@ -106,15 +189,16 @@ export const LayoutRegister=()=> {
             }
           </select>
           <input type="address" name='address' value={address} onChange={(e) => setAddress(e.target.value)} placeholder='enter your address' required></input>
-          <input type="phone" name='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='entert your phone' required></input>
-      
+          <input type="phone" name='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='entert your phone' onKeyUp={ handleCharacterPhone} required></input>
+          <p className='alertIcorrect'>{msgPhone}</p>
           <div className='photos'>
             <input className='photo' type="file" name='photo' onChange={(e) => setPhoto(e.target.files[0])} placeholder='enter your profile picture' required></input>
           </div>
         </div>
       </div>          
       <div className='termsAccep'>
-        <label className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' required='Debes aceptar nuestros terminos y condiciones para poder registrarte'></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</label> 
+        <label className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required='Debes aceptar nuestros terminos y condiciones para poder registrarte'></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</label> 
+        <p className='alertIcorrects'>{msgCheck}</p>
       </div>
         <UIButtons
          type="submit" 
