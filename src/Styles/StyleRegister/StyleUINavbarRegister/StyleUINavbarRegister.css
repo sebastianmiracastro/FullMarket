@@ -7,6 +7,6 @@
   background-color: #ffffff;
   border-bottom: 3px solid #040404;
 }
-/* .logo, .logotypeFMarket{
-    width: 7%;
-}  */
+.uiNavbarRegister:hover{
+    height: 92px;
+}  

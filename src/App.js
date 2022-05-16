@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<PageHomeRegister/>}></Route>
+        <Route exact path='/Register' element={<PageHomeRegister/>}></Route>
         <Route exact path='/LayoutCards' element={<LayoutCards/>}></Route>
       </Routes>  
     </BrowserRouter>

@@ -5,7 +5,7 @@ import axios from 'axios';
 import  StyleLayoutRegister from '../../../Styles/StyleRegister/StyleLayoutRegister/StyleLayoutRegister.css'
 import { UIButtons } from '../../UI/UIButtons/UIButtons';
 
-export const LayoutRegister=()=> {
+export const LayoutRegister=(validationEmail ,msgEmails)=> {
   const [name, setName] = useState("");
   const [alias, setAlias] = useState("");
   const [email, setEmail] = useState("");
@@ -78,16 +78,16 @@ export const LayoutRegister=()=> {
     })
   }
 
-   const handleCharacterEmail =()=>{
-      let validationEmail =/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-      let text
-      if(email.match(validationEmail)){
-        text="Información valida"
-        setMsgEmail(text)
-      }else{
-        text="Información incorrecta, por favor verifiquela"
-        setMsgEmail(text)
-      }
+  const handleCharacterEmail =()=>{
+  let validationEmail =/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+  let text
+  if(email.match(validationEmail)){
+    text="Información valida"
+    setMsgEmail(text)
+  }else{
+    text="Información incorrecta, por favor verifiquela"
+    setMsgEmail(text)
+    }
   }
 
   const handleCharacterName=()=>{
@@ -197,7 +197,7 @@ export const LayoutRegister=()=> {
         </div>
       </div>          
       <div className='termsAccep'>
-        <label className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required='Debes aceptar nuestros terminos y condiciones para poder registrarte'></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</label> 
+        <a href='/terms' className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required='Debes aceptar nuestros terminos y condiciones para poder registrarte'></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
         <p className='alertIcorrects'>{msgCheck}</p>
       </div>
         <UIButtons
@@ -207,7 +207,7 @@ export const LayoutRegister=()=> {
          nameButtons='Registrarse'
         ></UIButtons>
        <div className="hr" />
-       <a href="foo">Ya tienes una cuenta</a>
+       <a className='redirectLogin' href='/Login'>¿Ya tienes una cuenta?</a>
     </div>
      
   </form>

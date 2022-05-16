@@ -91,7 +91,7 @@ div.hr {
 .files {
   margin-top: 9%;
 }
-a {
+.redirectLogin {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -100,9 +100,21 @@ a {
   transition: .3s;
   margin-left: -40%;
 }
+.terms{
+  display: block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: .3s;
+  color: #000000;
+}
 
-a:hover {
-  color: #f66f00;
+.terms:hover {
+ 
+  font-size: 15px;
+}
+
+.redirectLogin:hover {
+  font-size: 16px;
 }
 .termsRegister{
     margin-top: 2%;
@@ -111,8 +123,176 @@ a:hover {
 .terms{
   font-size: 14px;
 }
+.termsAccep {
+  width: 100%;
+
+  margin-top: 10px;
+}
 .alertIcorrect,.alertIcorrects {
   color: #ff7300;
   margin-top: -3px;
   font-size: 14px;
+}
+
+@media screen and (min-width: 2560px) {
+  .files input {
+    font-family: 'Poppins', sans-serif;
+    outline: 0;
+    background: #e2e1e1;
+    width: 100%;
+    border: 0;
+    margin: 0 0 25px;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  .files select {
+    font-family: 'Poppins', sans-serif;
+    outline: 0;
+    background: #e2e1e1;
+    width: 100%;
+    border: 0;
+    margin: 0 0 25px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  .terms {
+    font-size: 28px;
+  }
+
+  .btnSubmirRecord {
+    font-size: 28px;
+  }
+
+  .termsAccep {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .btnSubmirRecord {
+
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #f66f00, #f66f00, #ede610);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 1rem 7rem;
+    cursor: pointer;
+    transition: .5s;
+    height: 60px;
+    width: 40%;
+    font-size: 15px;
+    margin-left: 25%;
+    margin-top: 12px;
+  }
+
+  .btnSubmirRecord:hover {
+    background-position: right;
+  }
+
+  .prom {
+    display: none;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #f66f00;
+    font-size: 0.9rem;
+    transition: .3s;
+    margin-left: -10%;
+  }
+
+  a:hover {
+    color: #f66f00;
+  }
+
+  div.hr {
+
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 15%;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 70%;
+  }
+
+  .files {
+    margin-top: 4%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .prom {
+    display: none;
+  }
+
+  .files {
+    margin-top: 4%;
+  }
+
+  .files input {
+    font-family: 'Poppins', sans-serif;
+    outline: 0;
+    background: #e2e1e1;
+    width: 100%;
+    border: 0;
+    margin: 0 0 1px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+
+  .files select {
+    font-family: 'Poppins', sans-serif;
+    outline: 0;
+    background: #e2e1e1;
+    width: 100%;
+    border: 0;
+    margin: 0 0 1px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+
+  .terms {
+    font-size: 10px;
+  }
+
+  .btnSubmirRecord {
+    font-size: 22px;
+  }
+
+  .termsAccep {
+    width: 100%;
+  }
+
+  .btnSubmirRecord {
+
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #f66f00, #f66f00, #ede610);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 1rem 7rem;
+    cursor: pointer;
+    transition: .5s;
+    height: 20px;
+    width: 45%;
+    font-size: 15px;
+    margin-left: 20%;
+    margin-top: 10px;
+  }
 }
