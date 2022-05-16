@@ -41,4 +41,16 @@
     font-size: 1.4cm;
     top: 13%;
   }
-  
+
+@media (min-width: 400px) and (max-width: 731px) {
+  div.content-title {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 90px;
+      display: flex;
+      justify-content: center;
+      height: 75px;
+      background-color: #040404;
+  }
+}
