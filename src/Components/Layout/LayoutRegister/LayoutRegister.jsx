@@ -4,8 +4,9 @@ import swal from 'sweetalert';
 import axios from 'axios';
 import  StyleLayoutRegister from '../../../Styles/StyleRegister/StyleLayoutRegister/StyleLayoutRegister.css'
 import { UIButtons } from '../../UI/UIButtons/UIButtons';
+import { UIInputRegister } from '../../UI/UIRegister/UIInputRegister/UIInputRegister';
 
-export const LayoutRegister=(validationEmail ,msgEmails)=> {
+export const LayoutRegister=()=> {
   const [name, setName] = useState("");
   const [alias, setAlias] = useState("");
   const [email, setEmail] = useState("");
@@ -150,7 +151,6 @@ export const LayoutRegister=(validationEmail ,msgEmails)=> {
      }
    }
 
-
   useEffect(() => {
     getDptos();
   }, [])
@@ -160,15 +160,45 @@ export const LayoutRegister=(validationEmail ,msgEmails)=> {
     <div className='completeRecord'>
     <h1 className='prom'>REGISTRATE AQUÍ</h1>
       <div className='files'>
-        <div className='filesRegister'>  
+        <div className='filesRegister'> 
 
-          <input type="name" name='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='enter your name' onKeyUp={handleCharacterName} required></input>
+          <UIInputRegister 
+            typeInput="name" 
+            nameInput='name' 
+            valueInput={name}
+            onChangeInput={(e) => setName(e.target.value)} 
+            placeholderInput='enter your name' 
+            onKeyUpInput={handleCharacterName} required>
+          </UIInputRegister>
           <p className='alertIcorrect'>{msgName}</p>
-          <input type="alias" name='alias' value={alias} onChange={(e) => setAlias(e.target.value)} placeholder='enter your alias' onKeyUp={handleCharacterAlias} required></input>
+
+          <UIInputRegister 
+            typeInput="alias" 
+            nameInput='alias'
+            valueInput={alias}
+            onChangeInput={(e) => setAlias(e.target.value)}
+            placeholderInput='enter your alias'
+            onKeyUpInput={handleCharacterAlias} required>
+          </UIInputRegister>
           <p className='alertIcorrect'>{msgAlias}</p>
-          <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='enter your email'  onKeyUp={handleCharacterEmail} required></input>
+
+          <UIInputRegister 
+            typeInput="email" 
+            nameInput='email'
+            valueInput={email}
+            onChangeInput={(e) => setEmail(e.target.value)} 
+            placeholderInput='enter your email'
+            onKeyUpInput={handleCharacterEmail} required>
+          </UIInputRegister>
           <p className='alertIcorrect'>{msgEmail}</p>
-          <input type="password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='enter your password' onKeyUp={handleCharacterPassword} required></input>
+
+          <UIInputRegister
+           typeInput="password" 
+           nameInput='password' 
+           valueInput={password} onChange={(e) => setPassword(e.target.value)}
+           placeholderInput='enter your password' 
+           onKeyUpInput={handleCharacterPassword} required>
+           </UIInputRegister>
           <p className='alertIcorrect'>{msgPassword}</p>
         </div>
         <div className='fileRegister'>
@@ -188,11 +218,31 @@ export const LayoutRegister=(validationEmail ,msgEmails)=> {
               ))
             }
           </select>
-          <input type="address" name='address' value={address} onChange={(e) => setAddress(e.target.value)} placeholder='enter your address' required></input>
-          <input type="phone" name='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='entert your phone' onKeyUp={ handleCharacterPhone} required></input>
+          <UIInputRegister
+           typeInput="address" 
+           nameInput='address' 
+           valueInput={address} 
+           onChangeInput={(e) => setAddress(e.target.value)} 
+           placeholderInput='enter your address' required>
+          </UIInputRegister>
+
+          <UIInputRegister
+           typeInput="phone" 
+           nameInput='phone' 
+           valueInput={phone}
+           onChangeInput={(e) => setPhone(e.target.value)} 
+           placeholderInput='entert your phone' 
+           onKeyUpInput={ handleCharacterPhone} required>
+          </UIInputRegister>
           <p className='alertIcorrect'>{msgPhone}</p>
+
           <div className='photos'>
-            <input className='photo' type="file" name='photo' onChange={(e) => setPhoto(e.target.files[0])} placeholder='enter your profile picture' required></input>
+            <UIInputRegister className='photo' 
+            typeInput="file" 
+            nameInput='photo' 
+            onChangeInput={(e) => setPhoto(e.target.files[0])} 
+            placeholderInput='enter your profile picture' required>
+            </UIInputRegister>
           </div>
         </div>
       </div>          
