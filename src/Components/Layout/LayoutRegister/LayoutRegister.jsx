@@ -49,9 +49,7 @@ export const LayoutRegister=()=> {
          swal({
             title: "¡Bien hecho, ahora formas parte de FullMarket, bienvenido!",
             icon: "success"
-        })
-
-      }
+        })}
     })).catch((err => {
       console.log(err);
       if(err){
@@ -192,13 +190,13 @@ export const LayoutRegister=()=> {
           </UIInputRegister>
           <p className='alertIcorrect'>{msgEmail}</p>
 
-          <UIInputRegister
-           typeInput="password" 
-           nameInput='password' 
-           valueInput={password} onChange={(e) => setPassword(e.target.value)}
-           placeholderInput='enter your password' 
-           onKeyUpInput={handleCharacterPassword} required>
-           </UIInputRegister>
+          <input type="password" 
+           name='password' 
+           value={password} 
+           onChange={(e) => setPassword(e.target.value)} 
+           placeholder='enter your password' 
+           onKeyUp={handleCharacterPassword} required>
+          </input>
           <p className='alertIcorrect'>{msgPassword}</p>
         </div>
         <div className='fileRegister'>
