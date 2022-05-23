@@ -18,13 +18,15 @@ export const LayoutRegister=()=> {
   const [photo, setPhoto] = useState();
   const [dpto, setDpto] = useState([]);
   const [ciudades, setCiudades] = useState([]);
+
   const[msgEmail, setMsgEmail]=useState("")
   const[msgName, setMsgName]=useState("")
   const[msgAlias, setMsgAlias]=useState("")
   const[msgPassword, setMsgPassword]=useState("")
   const[msgPhone, setMsgPhone]=useState("")
- const [terms, setTerms] = useState(false);
+  const [terms, setTerms] = useState(false);
   const [msgCheck, setMsgCheck] = useState();
+
   var formData = new FormData();
 
   const navigate = useNavigate()
@@ -43,7 +45,7 @@ export const LayoutRegister=()=> {
     
     console.log(formData);
     axios.post('https://backend-fullmarket-py.herokuapp.com/createuser', formData).then((res => {
-     console.log(res);
+     //console.log(res);
       if(res){
         navigate("/LayoutCards")
          swal({
@@ -51,7 +53,7 @@ export const LayoutRegister=()=> {
             icon: "success"
         })}
     })).catch((err => {
-      console.log(err);
+      //console.log(err);
       if(err){
          swal({
             title: "Tienes un error al registrarte, intentalo de nuevo",
@@ -77,18 +79,6 @@ export const LayoutRegister=()=> {
     })
   }
 
-  const handleCharacterEmail =()=>{
-  let validationEmail =/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-  let text
-  if(email.match(validationEmail)){
-    text="Información valida"
-    setMsgEmail(text)
-  }else{
-    text="Información incorrecta, por favor verifiquela"
-    setMsgEmail(text)
-    }
-  }
-
   const handleCharacterName=()=>{
     let validationName= /^[a-zA-Z\t]+|(^$)/
     let text
@@ -98,6 +88,17 @@ export const LayoutRegister=()=> {
     }else{
       text="Información incorrecta, Solo puedes añadir letras, minimo 3 letras maximo 16 letras"
       setMsgName(text)
+    }
+  }
+  const handleCharacterEmail =()=>{
+  let validationEmail =/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+  let text
+  if(email.match(validationEmail)){
+    text="Información valida"
+    setMsgEmail(text)
+  }else{
+    text="Información incorrecta, por favor verifiquela"
+    setMsgEmail(text)
     }
   }
   const handleCharacterAlias=()=>{
@@ -245,7 +246,7 @@ export const LayoutRegister=()=> {
         </div>
       </div>          
       <div className='termsAccep'>
-        <a href='/terms' className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required='Debes aceptar nuestros terminos y condiciones para poder registrarte'></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
+        <a href='/terms' className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
         <p className='alertIcorrects'>{msgCheck}</p>
       </div>
         <UIButtons
