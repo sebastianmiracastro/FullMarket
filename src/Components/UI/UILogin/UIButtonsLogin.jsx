@@ -1,13 +1,15 @@
 import React from 'react'
 
-export const UIButtonsLogin =({handleuser}) => {
+export const UIButtonsLogin =({ nameButtons, classButtons , onClick}) => {
   return (
     <>
       <div className="headerInitial">
-      <button onClick={handleuser} className="btn-Apply">
-      Iniciar Sesion{" "}
-        </button>
+        <button onClick={onClick} className={classButtons}>
+          {" "}
+          {nameButtons}
+        </button> 
       </div>
+      <div className='space'></div>
     </>
   );
 };

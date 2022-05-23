@@ -9,8 +9,8 @@ body {
   text-align: center;
   flex-direction: column;
   position: absolute;
-  right: 20rem;
-  top: 20rem;
+  right: 12rem;
+  top: 12rem;
 }
 
 .form input {
