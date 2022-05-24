@@ -1,4 +1,0 @@
-Carpeta Dedicada SOLO A IMAGENES, Aqui se crea una nueva carpeta, y pone cada una de las IMAGENES:
-
-Nombre de carpeta: RegisterFolderImage.
-Nombres de imagenes: RegisterImage.

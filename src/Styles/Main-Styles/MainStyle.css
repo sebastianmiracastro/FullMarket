@@ -3,7 +3,9 @@
     padding: 0%;
     font-family: Arial, Helvetica, sans-serif ;
   }
-  
+  .btnModal {
+    background-color: #000000;
+  }
   .primaryHeader {
     width: 100%;
     height: 10rem;
@@ -94,7 +96,7 @@
 
   
   
-  /* ------------------------------------------------------------ STYLES FOR CARDS -------------------------------------------------------------------------- */
+  /* ------------------ STYLES FOR CARDS ----------------------------- */
   
 
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
@@ -215,5 +217,64 @@
   }
   /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
   
+
+   /* ---- STYLES FOR MODAL WINDOW ---- */
+
+   .modalWindowFeatures{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .titleModalWindows{
+    color: #F6560A;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    margin-left: 3.8rem;
+  }
+
+
+  .imgModalWindow {
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .pModalDescription{
+    color: #000000;
+    margin-top: 1.5rem;
+  }
+
+  .pModalAvailability{
+    color: #000000;
+  }
+
+  .btnOkModal{
+    color: #ffffff;
+    background-color: #F6560A;
+    border: none;
+    border-radius: 0.5rem;
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 29rem;
+    font-weight: bold;
+  }
+
+  .btnOkModal:hover{
+    color: #ffffff;
+    background-color: #333131;
+    transition: all 1s ease;
+    font-weight: bold;
+    cursor: pointer;
+  } 
   
   

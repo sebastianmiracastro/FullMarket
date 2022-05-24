@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export const UInputProduct = ({ classInput, typeInput, nameInput, valueInput, onChange, placeholder }) => {
+export const UIEditProduct = ({ classInput, typeInput, nameInput, valueInput, onChange, placeholder }) => {
   return (
     <input
       className={classInput}
@@ -10,5 +10,5 @@ export const UInputProduct = ({ classInput, typeInput, nameInput, valueInput, on
       onChange={onChange}
       placeholder={placeholder}
     ></input>
-  );
-};
+  )
+}
