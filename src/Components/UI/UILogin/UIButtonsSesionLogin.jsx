@@ -4,7 +4,7 @@ import axios from "axios";
 import swal from 'sweetalert';
 import '../../../Styles/StyleLogin/StyleLoginButtons/StyleLoginButtons.css'
 import { UIButtonsLogin } from "../../UI/UILogin/UIButtonsLogin";
-// import { useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 export const UIButtonsSesionLogin = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ export const UIButtonsSesionLogin = () => {
   const [msgEmail,setMsgEmail] = useState("")
   const [msgPassword, setMsgPassword] = useState("")
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const VerifyCard= () => {
     if (window.localStorage.getItem('uiduser') !== null
     && window.localStorage.getItem('uiduser')
@@ -24,8 +24,7 @@ export const UIButtonsSesionLogin = () => {
       Button: "Acceptar",
       timer: "2000"
     })
-    window.location.href='/Layout'    
-    // navegative("/LayoutCards")
+    navigate("/seee")
    
   } 
   else {  
@@ -36,7 +35,7 @@ export const UIButtonsSesionLogin = () => {
       Button: "Aceptar",
       timer: "2000"
     })
-    // window.location="/Login"
+    navigate("/")
   }
 }
 const handleCharacterEmail =()=>{

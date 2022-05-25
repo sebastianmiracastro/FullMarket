@@ -3,7 +3,7 @@ import UINavbarLogin from "../../UI/UILogin/UINavbarLogin";
 import UIHeaderLogin from "../../UI/UILogin/UIHeaderLogin";
 import { UIButtonsSesionLogin } from "../../UI/UILogin/UIButtonsSesionLogin";
 
-const SingIn = () => {
+export const SingIn = () => {
     return (
         <>
         <div>
