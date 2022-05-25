@@ -8,7 +8,7 @@
   }
   .primaryHeader {
     width: 100%;
-    height: 10rem;
+    height: 6.5rem;
     background-color: #ffffff;
     display: flex;
   }
@@ -23,21 +23,21 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding-left: 70rem;
+    padding-left: 75rem;
     padding-top: 2rem;
   }
   
   .btn-primaryHeader {
-    width: 10rem;
-    height: 2rem;
+    width: 13rem;
+    height: 2.5rem;
     background-image: linear-gradient(90deg, #F6560A 0%, #fd651e 49%, #F6560A 100%, #fd651e  100%);
-    border-radius: 6px;
+    border-radius:1rem;
     border: #F6560A;
     align-items:center;
     justify-content:center;
     font-weight:bold;
     color: #ffffff;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-left: 3rem;
     cursor: pointer;
     text-decoration: none;
@@ -58,31 +58,31 @@
     width: 100%;
     height: 0.2rem;
     background-color: #333131;
-    margin-top: -3.5rem;
+    margin-top: 9px;
   }
   
   .containerSearch {
     width: 100%;
-    height: 3rem;
-    background-color: #F6560A;
+    height: 4rem;
     display: flex;
     align-items: center;
+    background-color: #DAE4ED;
   }
   
   .primarySearch {
     background-color: #f5f3f3;
-    width: 400px;
-    height: 1.8rem;
+    width: 50rem;
+    height: 2rem;
     position: relative;
     border: #000000;
     color: #000000;
     border-radius: 0.5rem;
-    margin-left: 85rem;
+    margin-left: 73rem;
   }
   
   .iconSearch {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #F6560A;
     cursor: pointer;
     margin-top: 0.5rem;
     margin-left: 1rem;
@@ -90,7 +90,8 @@
   }
   
   .iconSearch:hover {
-    color: #000000;
+    color: #3a3a3a;
+    animation:slidebg 0.5s linear infinite;
   }
   
 
@@ -114,14 +115,17 @@
     width: 13rem;
     height: 20rem;
     background-color: #ffffff;
-    border: #333131 0.1rem solid;
-    border-radius: 1rem;
-    box-shadow:  5px 0px 5px #000000;
     margin-top: -20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1rem;
+  }
+
+  .header-Card:hover {
+    box-shadow:  5px 0px 5px #565656;
+    animation:slidebg 0.5s linear infinite;
+    transform: scale(1.1);
   }
   
   .iconInfo {
@@ -158,11 +162,7 @@
     object-fit: fill;  
     margin-top: -0.2rem;
     transition: transform .8s;
-    border-radius: 10px;
-  }
-  
-  .img-Card:hover {
-    transform: scale(1.2);
+
   }
   
   h2 {

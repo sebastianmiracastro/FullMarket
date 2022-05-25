@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { UIButtons } from "../UIButtons/UIButtons.jsx";
 import { NavLink } from "react-router-dom";
 import { BsFillInfoCircleFill } from "react-icons/bs";
@@ -97,7 +97,6 @@ export const UICards = ({
           <div className="img-Card">
             <img
               src={imgProduct}
-              onClick={handleOpen}
               className="img-Card"
               alt={nameProduct}
             ></img>
