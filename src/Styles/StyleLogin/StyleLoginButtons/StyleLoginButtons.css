@@ -3,17 +3,28 @@ body {
   overflow: hidden;
 }
 
+p.msg-Alert {
+  color: #ff5100;
+  transition: .3s;
+}
+
+p.msg-Alert:hover {
+  transition: 3s;
+}
+
 .login-content {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
   flex-direction: column;
   position: absolute;
-  right: 12rem;
+  width: 34%;
+  right: 14rem;
   top: 12rem;
 }
 
 .form input {
+  font-family: 'Poppins', sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -32,7 +43,6 @@ div.formulari {
 }
 
 div.hr {
-
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -41,6 +51,7 @@ div.hr {
   border-style: inset;
   border-width: 1px;
 }
+
 .login-content h2 {
   margin: 55px 0;
   color: #333;
@@ -72,24 +83,59 @@ a {
 
 a:hover {
   color: #f66f00;
+  font-size: 1.5rem;
 }
 
-.btn-Apply{
-  width: 70%;
+.btn-Apply {
+  --color: #f66f00;
+  font-family: inherit;
+  display: inline-block;
+  width: 50%;
   height: 50px;
   border-radius: 25px;
-  outline: none;
-  border: none;
-  background-image: linear-gradient(to right, #ff9d4d, #e34414, #ede610);
-  background-size: 230%;
-  font-size: 1.2rem;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  margin: 2rem 0;
-  cursor: pointer;
-  transition: .8s;
+  line-height: 2.2em;
+  margin: 22px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ff6a00;
+  transition: color .5s;
+  z-index: 1;
+  font-size: 22px;
+  color: #ffff;
+  background: linear-gradient(#ff5100,#ff5100);
+}
+.btn-Apply:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 480px;
+  border-radius: 50%;
 }
 
-.btn-Apply:hover {
-  background-position: right;
+ .btn-Apply:hover {
+  color: #fff;
+ }
+
+.btn-Apply:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+
+ .btn-Apply:hover:before {
+  top: -45px;
+  left: -34px;
+}
+
+.btn-Apply:active:before {
+  border-color: #ffd17b;
+  transition: background 0s;
+ }
+
+ .btn-Apply:hover{
+  background:linear-gradient(#1b1b1b, #111) ;
+  border: 1px solid black;
+  color: black
 }
