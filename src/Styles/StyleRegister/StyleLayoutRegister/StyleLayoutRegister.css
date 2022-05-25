@@ -99,6 +99,7 @@ div.hr {
   font-size: 0.9rem;
   transition: .3s;
   margin-left: -40%;
+  font-family: 'Poppins',sans-serif;
 }
 .terms{
   display: block;
@@ -116,10 +117,12 @@ div.hr {
 }
 .termsRegister{
     margin-top: 2%;
+    font-family: 'Poppins',sans-serif;
 }
 
 .terms{
   font-size: 14px;
+  font-family: 'Poppins',sans-serif;
 }
 .termsAccep {
   width: 100%;
@@ -130,6 +133,7 @@ div.hr {
   color: #ff7300;
   margin-top: -3px;
   font-size: 14px;
+  font-family: 'Poppins' ,sans-serif;
 }
 
 @media screen and (min-width: 2560px) {
