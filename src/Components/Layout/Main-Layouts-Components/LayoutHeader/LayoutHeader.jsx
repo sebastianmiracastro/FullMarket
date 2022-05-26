@@ -13,7 +13,7 @@ export const LayoutHeader = () => {
           <UILogos />
         </div>
         <div className="primaryBtnHeader">
-          <NavLink to="Register">
+          <NavLink to="/UserRegister">
             {" "}
             <UIButtons
               classButtons="btn-primaryHeader"
