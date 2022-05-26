@@ -5,13 +5,15 @@ import axios from 'axios';
 import  StyleLayoutRegister from '../../../Styles/StyleRegister/StyleLayoutRegister/StyleLayoutRegister.css'
 import { UIButtons } from '../../UI/UIButtons/UIButtons';
 import { UIInputRegister } from '../../UI/UIRegister/UIInputRegister/UIInputRegister';
-import { Modal } from '@material-ui/core/Modal';
+import { Modal  } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles  =makeStyles((theme)=>({
   modal:{
     position: 'absolute',
-    width: "400px",
+    width: "450px",
+    height: "300px",
+    backgroundColor:"white",
     boxShadow: theme.shadows[5],
   }
 }))
@@ -20,11 +22,16 @@ export const LayoutRegister=()=> {
   const styles = useStyles();
   const body=(
     <div className={styles.modal}>
-      <div>
-        
+      <div align="center">
+        <h1>Hola</h1>
+        <UIButtons nameButtons="Close" onClick={()=>openCloseModal()}></UIButtons>
       </div>
     </div>
   )
+  const openCloseModal=()=>{
+    setModal(!modal)
+  }
+  const [modal, setModal] =useState(false);
   const [name, setName] = useState("");
   const [alias, setAlias] = useState("");
   const [email, setEmail] = useState("");
@@ -264,7 +271,10 @@ export const LayoutRegister=()=> {
         </div>
       </div>          
       <div className='termsAccep'>
-        <a href='/terms' className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
+        <Modal open={modal}
+        onClose={openCloseModal}
+        >{body}</Modal>
+        <a onClick={()=>openCloseModal()} className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
         <p className='alertIcorrects'>{msgCheck}</p>
       </div>
         <UIButtons
