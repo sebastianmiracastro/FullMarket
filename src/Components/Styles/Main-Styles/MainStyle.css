@@ -3,9 +3,6 @@
   padding: 0%;
   font-family: Arial, Helvetica, sans-serif ;
 }
-.btnModal {
-  background-color: #000000;
-}
 
 .primaryHeader {
   width: 100%;
@@ -15,7 +12,7 @@
 }
 
 .imgLogotype {
-  width: 10rem;
+  width: 9rem;
   margin-left: 8rem;
   margin-top: 0%;
 } 
@@ -24,14 +21,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-left: 75rem;
-  padding-top: 3rem;
+  padding-left: 65rem;
+  padding-top: 2.5rem;
 }
 
 .btn-primaryHeader {
-  width: 13rem;
+  width: 12rem;
   height: 2.5rem;
-  background-image: linear-gradient(90deg, #F6560A 0%, #fd651e 49%, #F6560A 100%, #fd651e  100%);
+  background-color: #FF661F;
   border-radius:1rem;
   border: #F6560A;
   align-items:center;
@@ -47,20 +44,15 @@
 .btn-primaryHeader:hover {
   animation:slidebg 2s linear infinite;
   color: #ffffff;
-  background:#333131;
+  background:#F6560A;
 }
 
-@keyframes slidebg {
-  to {
-    background-position:5vw;
-  }
-}
 
 .spacePrincipal {
   width: 100%;
-  height: 0.2rem;
-  background-color: #333131;
-  margin-top: 9px;
+  height: 0.1rem;
+  background-color: #3331318c;
+  margin-top: 2px;
 }
 
 .containerSearch {
@@ -79,12 +71,12 @@
   border: #000000;
   color: #000000;
   border-radius: 0.5rem;
-  margin-left: 73rem;
+  margin-left: 65rem;
 }
 
 .iconSearch {
   font-size: 1.5rem;
-  color: #F6560A;
+  color: #FF661F;
   cursor: pointer;
   margin-top: 0.5rem;
   margin-left: 1rem;
@@ -106,16 +98,21 @@
 
 .main-products {
   width: 100%;
-  height: 50rem;
+  height: 45rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   background-color: #DAE4ED;
 }
+.main {
+  width: 100%;
+  height: auto;
+  
 
+}
 .header-Card {
-  width: 13rem;
-  height: 20rem;
+  width: 12rem;
+  height: 18rem;
   background-color: #ffffff;
   margin-top: -20rem;
   display: flex;
@@ -128,10 +125,11 @@
   box-shadow:  5px 0px 5px #565656;
   animation:slidebg 0.5s linear infinite;
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .iconInfo {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #F6560A;
   cursor: pointer;
   margin-top: 0.5rem;
@@ -146,8 +144,10 @@ h1 {
   font-size: 25px;
   text-decoration: none;
   color: #000000;
-  margin-top: 0.2rem;
+  margin-top: 0rem;
   font-family: 'Bebas Neue', cursive;
+  display: flex;
+  align-items: center;
 }
 
 .body-Card {
@@ -158,11 +158,11 @@ h1 {
 }
 
 .img-Card {
-  margin-left: -0.2rem;
-  width: 9rem;
-  height: 8rem;
+  margin-left: 1.5px;
+  width: 8rem;
+  height: 7rem;
   object-fit: fill;  
-  margin-top: -0.2rem;
+  margin-top: -5px;
 }
 
 h2 {
@@ -182,11 +182,11 @@ p {
 }
 
 .apply-Product {
-  margin-top: 1.6rem;
-  width: 13rem;
+  margin-top: 1rem;
+  width: 12rem;
   height: 1.8rem;
   background-color: #F6560A;
-  margin-left: -2.5rem;
+  margin-left: -2rem;
 }
 
 .apply-Product:hover {
@@ -197,7 +197,7 @@ p {
 
 .btn-Apply {
   margin-top: 0.1rem;
-  width: 13rem;
+  width: 12rem;
   height: 2.5rem;
   margin-right: 3px;
   background-color: #F6560A;
@@ -226,6 +226,7 @@ p {
   align-items: center;
   justify-content: center;
 }
+
 
 .titleModalWindows{
   color: #F6560A;
@@ -274,3 +275,14 @@ p {
   font-weight: bold;
   cursor: pointer;
 } 
+
+
+
+ /* ---- STYLES FOR FOOTER ---- */
+ .footer-Main-Page {
+   width: 100%;
+   height: 45rem;
+   display: flex;
+   background-color: #4b0f0f;
+   flex-direction: column;
+ }
