@@ -11,8 +11,10 @@ export const UIButtonsSesionLogin = () => {
   const [password, setPassword] = useState("");
   const [msgEmail,setMsgEmail] = useState("")
   const [msgPassword, setMsgPassword] = useState("")
-
+  
+  var dataForm = new FormData();  
   const navigate = useNavigate();
+
   const VerifyCard= () => {
     if (window.localStorage.getItem('uiduser') !== null
     && window.localStorage.getItem('uiduser')
@@ -24,8 +26,6 @@ export const UIButtonsSesionLogin = () => {
       Button: "Acceptar",
       timer: "2000"
     })
-    navigate("/")
-   
   } 
   else {  
     swal({
@@ -35,7 +35,6 @@ export const UIButtonsSesionLogin = () => {
       Button: "Aceptar",
       timer: "2000"
     })
-    navigate("/")
   }
 }
 const handleCharacterEmail =()=>{
@@ -61,20 +60,16 @@ const handleCharacterPassword=()=>{
     setMsgPassword(parrafo)
   }
 }
-var dataForm = new FormData();  
 const HandleSubmit = async (e) => {
 
   dataForm.append("email", email);
   dataForm.append("password", password);
   e.preventDefault();
-  console.log(dataForm);
 
   axios.post("https://fullmarket-provitional-backend.herokuapp.com/login",dataForm)
     .then((response) => {
       const token = response.data.token;
       const decoded = jwtDecode(token);
-      console.log(decoded);
-      console.log(token);
       window.localStorage.setItem("token", token)
       window.localStorage.setItem("uiduser", decoded.uid)
     })

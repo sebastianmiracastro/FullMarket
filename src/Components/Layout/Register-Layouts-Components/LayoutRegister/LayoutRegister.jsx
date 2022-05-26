@@ -1,12 +1,16 @@
+import axios, { Axios } from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router';
 import swal from 'sweetalert';
-import axios from 'axios';
 import '../../../Styles/Register-Styles/StyleLayoutRegister/StyleLayoutRegister.css'
 import { UIButtons } from '../../../UI/Register-UI-Components/UIButtons/UIButtons'
 import { UIInputRegister } from '../../../UI/Register-UI-Components/UIRegister/UIInputRegister/UIInputRegister'
 
 export const LayoutRegister=()=> {
+
+  var formData = new FormData();
+  const navigate = useNavigate()
+
   const [name, setName] = useState("");
   const [alias, setAlias] = useState("");
   const [email, setEmail] = useState("");
@@ -27,10 +31,6 @@ export const LayoutRegister=()=> {
   const [terms, setTerms] = useState(false);
   const [msgCheck, setMsgCheck] = useState();
 
-  var formData = new FormData();
-
-  const navigate = useNavigate()
-
   const HandleSubmit= async (e)=>{
     e.preventDefault()
     formData.append("name", name)
@@ -43,19 +43,17 @@ export const LayoutRegister=()=> {
     formData.append("phone", phone)
     formData.append("photo", photo)  
     
-    console.log(formData);
-    axios.post('https://backend-fullmarket-py.herokuapp.com/createuser', formData).then((res => {
-     //console.log(res);
+    axios.post('https://fullmarket-provitional-backend.herokuapp.com/createuser', formData).then((res => {
       if(res){
+        swal({
+          title: "¡Bien hecho, ahora formas parte de FullMarket, bienvenido!",
+          icon: "success"
+        })
         navigate("/LayoutCards")
-         swal({
-            title: "¡Bien hecho, ahora formas parte de FullMarket, bienvenido!",
-            icon: "success"
-        })}
+      }
     })).catch((err => {
-      //console.log(err);
       if(err){
-         swal({
+        swal({
             title: "Tienes un error al registrarte, intentalo de nuevo",
             icon: "error"
         })
