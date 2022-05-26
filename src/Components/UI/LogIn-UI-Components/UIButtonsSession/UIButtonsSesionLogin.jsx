@@ -5,14 +5,15 @@ import swal from 'sweetalert';
 import '../../../Styles/LogIn-Styles/StyleLoginButtons/StyleLoginButtons.css'
 import { UIButtonsLogin } from '../../../UI/LogIn-UI-Components/UIButtons/UIButtonsLogin';
 import { useNavigate } from "react-router";
+import { NavLink } from "react-router-dom";
 
 export const UIButtonsSesionLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [msgEmail,setMsgEmail] = useState("")
-  const [msgPassword, setMsgPassword] = useState("")
-
+  
+  var dataForm = new FormData();  
   const navigate = useNavigate();
+
   const VerifyCard= () => {
     if (window.localStorage.getItem('uiduser') !== null
     && window.localStorage.getItem('uiduser')
@@ -24,8 +25,6 @@ export const UIButtonsSesionLogin = () => {
       Button: "Acceptar",
       timer: "2000"
     })
-    navigate("/")
-   
   } 
   else {  
     swal({
@@ -35,46 +34,18 @@ export const UIButtonsSesionLogin = () => {
       Button: "Aceptar",
       timer: "2000"
     })
-    navigate("/")
   }
 }
-const handleCharacterEmail =()=>{
-  let validationEmail =/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-  let parrafo
-  if(email.match(validationEmail)){
-    parrafo="Información valida"
-    setMsgEmail(parrafo)
-  }else{
-    parrafo="Información incorrecta, por favor verifiquela"
-    setMsgEmail(parrafo)
-  }
-}
-const handleCharacterPassword=()=>{
-  let validationPassword= /^[a-z0-9_-]{6,18}$/
-  let parrafo
-  if(password.match(validationPassword)){
-    parrafo="Contraseña correcta"
-    setMsgPassword(parrafo)
-    
-  }else{
-    parrafo ="Contraseña Incorrecta"
-    setMsgPassword(parrafo)
-  }
-}
-var dataForm = new FormData();  
 const HandleSubmit = async (e) => {
 
   dataForm.append("email", email);
   dataForm.append("password", password);
   e.preventDefault();
-  console.log(dataForm);
 
   axios.post("https://fullmarket-provitional-backend.herokuapp.com/login",dataForm)
     .then((response) => {
       const token = response.data.token;
       const decoded = jwtDecode(token);
-      console.log(decoded);
-      console.log(token);
       window.localStorage.setItem("token", token)
       window.localStorage.setItem("uiduser", decoded.uid)
     })
@@ -89,23 +60,19 @@ const HandleSubmit = async (e) => {
         <div className="login-content">
           <div className="form">
             <input
-              onKeyUp={handleCharacterEmail}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               type="email"
               placeholder="Correo Electronico"
               required={true}
             ></input>
-            <p className="msg-Alert">{msgEmail}</p>
             <input
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               type="password" 
               name="password" 
               placeholder="password"
-              onKeyUp={handleCharacterPassword}
             ></input>
-            <p className="msg-Alert" >{msgPassword}</p>
             <UIButtonsLogin
             type="sumbit"
             nameButtons="Iniciar Sesion"
@@ -114,7 +81,9 @@ const HandleSubmit = async (e) => {
             ></UIButtonsLogin>
             <a href="foo">Forgot Password?</a>
             <div className="hr" />
-            <button className="btn-Applylog">Crear cuenta nueva</button>
+            <NavLink to="/UserRegister">
+              <button className="btn-Applylog">Crear cuenta nueva</button>
+             </NavLink>
           </div>
         </div>
       </form>   
