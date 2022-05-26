@@ -14,7 +14,6 @@ export const LayoutCards = () => {
   useEffect(() => {
     mostrar();
   }, []);
-  console.log(products);
 
   return (
     <main className="main-products">

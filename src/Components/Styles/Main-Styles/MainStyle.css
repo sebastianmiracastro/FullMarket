@@ -43,6 +43,7 @@
   cursor: pointer;
   text-decoration: none;
 }
+
 .btn-primaryHeader:hover {
   animation:slidebg 2s linear infinite;
   color: #ffffff;
@@ -162,8 +163,6 @@ h1 {
   height: 8rem;
   object-fit: fill;  
   margin-top: -0.2rem;
-  transition: transform .8s;
-
 }
 
 h2 {
@@ -218,7 +217,6 @@ p {
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-
  /* ---- STYLES FOR MODAL WINDOW ---- */
 
  .modalWindowFeatures{
@@ -236,15 +234,14 @@ p {
   margin-left: 3.8rem;
 }
 
-
 .imgModalWindow {
   width: 30rem;
   height: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 3.8rem;
-  margin-top: 1.5rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
 }
 
 .pModalDescription{
@@ -266,7 +263,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 29rem;
+  margin-left: 27rem;
   font-weight: bold;
 }
 

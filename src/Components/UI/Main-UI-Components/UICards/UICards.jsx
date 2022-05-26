@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { UIButtons } from "../UIButtons/UIButtons.jsx";
 import { NavLink } from "react-router-dom";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 
-
+// ---- MaterialUI modal window setting ---- //
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -25,14 +25,15 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     width: 400,
     width: 600,
-    height: 700,
+    height: 730,
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     border: "0.5px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
-}));
+})); 
+ // ---- //
 
 export const UICards = ({
   uidProduct,
@@ -55,18 +56,18 @@ export const UICards = ({
     setOpen(false);
   };
 
-  //TRAER INFO DE CADA PRODUCTO POR MEDIO DE ID ///
+  // ---- Get information of each product through its respective ID ---- //
   const featuresProduct = async () => {
     await fetch(
       `https:/backend-fullmarket-py.herokuapp.com/getoneproduct/${uidProduct}`
     )
       .then((res) => res.json())
-      .then((data) => console.log("data", data));
+      .then((data) => (data));
   };
   useEffect(() => {
     featuresProduct();
   }, []);
-  /////////////////////////////////////////////////////
+  // ---- //
 
   const body = (
     <div className='modalWindowFeatures'>
