@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 import '../../../Styles/LogIn-Styles/StyleLoginButtons/StyleLoginButtons.css'
 import { UIButtonsLogin } from '../../../UI/LogIn-UI-Components/UIButtons/UIButtonsLogin';
 import { useNavigate } from "react-router";
+import { NavLink } from "react-router-dom";
 
 export const UIButtonsSesionLogin = () => {
 
@@ -38,7 +39,10 @@ export const UIButtonsSesionLogin = () => {
     navigate("/LogIn")
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 210fe114db51fd54816a22ed055fe9c16e872467
 const HandleSubmit = async (e) => {
 
   dataForm.append("email", email);
@@ -85,12 +89,18 @@ const direccionRegister = () => {
             ></UIButtonsLogin>
             <a href="foo">Forgot Password?</a>
             <div className="hr" />
+<<<<<<< HEAD
             <UIButtonsLogin 
             onClick={direccionRegister} 
             type="sumbit"
             nameButtons="Crear cuenta nueva"
             classButtons="btn-Applylog" 
             ></UIButtonsLogin>
+=======
+            <NavLink to="/UserRegister">
+              <button className="btn-Applylog">Crear cuenta nueva</button>
+             </NavLink>
+>>>>>>> 210fe114db51fd54816a22ed055fe9c16e872467
           </div>
         </div>
       </form>   
