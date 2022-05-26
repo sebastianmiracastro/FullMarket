@@ -1,13 +1,15 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import { LoginPage } from './Components/Pages/Login-Page/LoginPage';
-import { seeRedirec } from './Components/Pages/seeRedirec'
+import {SingIn} from './Components/Layout/LayoutLoginFormulary/LayoutLoginFormulary';
+import { LayoutCards } from './Components/Layout/LayoutLoginFormulary/LayoutCards';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={ <LoginPage /> } />
-        <Route path='/seee' element={ <seeRedirec /> } />
+        <Route path='/' element={<SingIn/>}>
+        </Route>
+        <Route path='/Layout' element={<LayoutCards/>}>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
