@@ -28,6 +28,7 @@ export const LayoutHeader = () => {
           </NavLink>
         </div>
       </div>
+      
       <div className="spacePrincipal"></div>
       <div className="containerSearch">
         <input

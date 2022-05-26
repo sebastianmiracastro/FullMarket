@@ -97,7 +97,6 @@ export const UICards = ({
           <div className="img-Card">
             <img
               src={imgProduct}
-              onClick={handleOpen}
               className="img-Card"
               alt={nameProduct}
             ></img>
