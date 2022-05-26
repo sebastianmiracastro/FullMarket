@@ -1,0 +1,141 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+p.msg-Alert {
+  color: #ff5100;
+  transition: .3s;
+}
+
+p.msg-Alert:hover {
+  transition: 3s;
+}
+
+.login-content {
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: absolute;
+  width: 34%;
+  right: 14rem;
+  top: 12rem;
+}
+
+.form input {
+  font-family: 'Poppins', sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+div.formulari {
+  width: 30rem;
+  position: absolute;
+  margin-top: 10rem;
+  left: 65rem;
+}
+
+div.hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.login-content h2 {
+  margin: 55px 0;
+  color: #333;
+  font-size: 2.0rem;
+}
+
+.login-content .input-div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 93%;
+  margin: 25px 0;
+  padding: 5px 0;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.input-div>div {
+  position: relative;
+  height: 45px;
+}
+
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #f66f00;
+  font-size: 0.9rem;
+  transition: .3s;
+}
+
+a:hover {
+  color: #f66f00;
+  font-size: 1.5rem;
+}
+
+.btn-Applylog {
+  --color: #f66f00;
+  font-family: inherit;
+  display: inline-block;
+  width: 50%;
+  height: 50px;
+  border-radius: 25px;
+  line-height: 2.2em;
+  margin: 22px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ff6a00;
+  transition: color .5s;
+  z-index: 1;
+  font-size: 22px;
+  color: #ffff;
+  background: linear-gradient(#ff5100,#ff5100);
+}
+.btn-Applylog:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 480px;
+  border-radius: 50%;
+}
+
+ .btn-Applylog:hover {
+  color: #fff;
+ }
+
+.btn-Applylog:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+
+ .btn-Applylog:hover:before {
+  top: -45px;
+  left: -34px;
+}
+
+.btn-Applylog:active:before {
+  border-color: #ffd17b;
+  transition: background 0s;
+ }
+
+ .btn-Applylog:hover{
+  background:linear-gradient(#1b1b1b, #111) ;
+  border: 1px solid black;
+  color: black
+}
