@@ -7,6 +7,7 @@ import { UIButtons } from '../../UI/UIButtons/UIButtons';
 import { UIInputRegister } from '../../UI/UIRegister/UIInputRegister/UIInputRegister';
 import { Modal  } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
+import ServiceTermsAndCondition from '../../../Services/ServiceRegister/ServiceTermsAndCondition/ServiceTermsAndCondition';
 
 const useStyles  =makeStyles((theme)=>({
   modal:{
@@ -24,7 +25,8 @@ export const LayoutRegister=()=> {
     <div className={styles.modal}>
       <div align="center">
         <h1>Hola</h1>
-        <UIButtons nameButtons="Close" onClick={()=>openCloseModal()}></UIButtons>
+        <ServiceTermsAndCondition/>
+        <UIButtons nameButtons="X" onClick={()=>openCloseModal()}></UIButtons>
       </div>
     </div>
   )
