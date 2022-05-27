@@ -17,6 +17,7 @@ export const LayoutCards = () => {
   console.log(products);
 
   return (
+    <>
     <main className="main-products">
       {products.map((element) => (
         <UICards
@@ -32,5 +33,14 @@ export const LayoutCards = () => {
         />
       ))}
     </main>
+
+    <div className="footer">
+      <h2>HOLAAAAAA</h2>
+      <h2>HOLAAAAAA</h2>
+      <h2>HOLAAAAAA</h2>
+      <h2>HOLAAAAAA</h2>
+    </div>
+    </>
+    
   );
 };
