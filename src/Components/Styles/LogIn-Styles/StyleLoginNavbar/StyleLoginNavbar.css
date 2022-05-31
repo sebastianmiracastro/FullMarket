@@ -10,8 +10,8 @@ div.uiNavbarLogin {
 img.logo {
   position: absolute;
   width: 8%;
-  top: -3%;
-  left: 40%;
+  top: 0%;
+  left: 38%;
 }
 
 img.logoFullMakert {
@@ -19,6 +19,19 @@ img.logoFullMakert {
   width: 12%;
   top: -7.5%;
   right: 39%;
+}
+
+@media (min-width:768px) and (max-width:625px) {
+  .login-content {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 34%;
+    right: 8rem;
+    top: 11rem;
+}
 }
 
 

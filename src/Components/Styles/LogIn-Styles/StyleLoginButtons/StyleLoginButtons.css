@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
 }
 
@@ -24,7 +24,8 @@ p.msg-Alert:hover {
 }
 
 .form input {
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -77,6 +78,8 @@ a {
   text-align: center;
   text-decoration: none;
   color: #f66f00;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   font-size: 0.9rem;
   transition: .3s;
 }
@@ -97,13 +100,14 @@ a:hover {
   margin: 22px;
   position: relative;
   overflow: hidden;
-  border: 2px solid #ff6a00;
+  border: 2px solid #ff5100;
   transition: color .5s;
   z-index: 1;
   font-size: 22px;
   color: #ffff;
   background: linear-gradient(#ff5100,#ff5100);
 }
+
 .btn-Applylog:before {
   content: "";
   position: absolute;
@@ -121,7 +125,7 @@ a:hover {
 .btn-Applylog:before {
   top: 100%;
   left: 100%;
-  transition: all .7s;
+  transition: all 1.5s;
  }
 
  .btn-Applylog:hover:before {
@@ -136,6 +140,6 @@ a:hover {
 
  .btn-Applylog:hover{
   background:linear-gradient(#1b1b1b, #111) ;
-  border: 1px solid black;
-  color: black
+  border: 0px solid black;
+  color: #FFFF;
 }
