@@ -1,11 +1,13 @@
 import {useState, useEffect}from 'react';
 import { UIMyProducts } from '../../UI/MyProducts-UI-Components/UIMyProducts';
+import { useNavigate } from 'react-router-dom';
 
 export const LayoutMyProducts=()=> {
   const [products, setProducts] = useState([]);
   const uidUsers = localStorage.getItem('uiduser')
   const URL = `https://fullmarket-provitional-backend.herokuapp.com/getmyproducts/${uidUsers}`
-  
+
+  let navigate = useNavigate();
   
   const mostrar = async () => {
     await fetch(URL)
@@ -14,6 +16,12 @@ export const LayoutMyProducts=()=> {
   };
   useEffect(() => {
     mostrar();
+  }, []);
+
+  useEffect(() => {
+    if(!window.localStorage.getItem('uiduser')){
+      navigate("/") 
+    }
   }, []);
 
   return (
