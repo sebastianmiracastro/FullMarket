@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router';
 import swal from 'sweetalert';
 import '../../../Styles/Register-Styles/StyleLayoutRegister/StyleLayoutRegister.css'
-import { UIButtons } from '../../../UI/Register-UI-Components/UIButtons/UIButtons'
+import { UIButtonsRegister } from '../../../UI/Register-UI-Components/UIButtonsRegister/UIButtonsRegister'
 import { UIInputRegister } from '../../../UI/Register-UI-Components/UIRegister/UIInputRegister/UIInputRegister'
 
 export const LayoutRegister=()=> {
@@ -247,12 +247,12 @@ export const LayoutRegister=()=> {
         <a  className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
         <p className='alertIcorrects'>{msgCheck}</p>
       </div>
-        <UIButtons
+        <UIButtonsRegister
          type="submit" 
-         classButtons='btnSubmirRecord'
+         classButtonsRegister='btnSubmirRecord'
          Buttons= 'btnSubmirRecord'
-         nameButtons='Registrarse'
-        ></UIButtons>
+         nameButtonsRegister='Registrarse'
+        ></UIButtonsRegister>
        <div className="hrR" />
        <a className='redirectLogin' href='/Login'>¿Ya tienes una cuenta?</a>
     </div>

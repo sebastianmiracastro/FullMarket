@@ -1,5 +1,5 @@
 import {useState, useEffect}from 'react';
-import { UIMyProducts } from '../../UI/MyProducts-UI-Components/UIMyProducts';
+import { UIMyProducts } from '../../UI/MyProducts-UI-Components/UIMyProducts/UIMyProducts';
 import { useNavigate } from 'react-router-dom';
 
 export const LayoutMyProducts=()=> {
@@ -25,18 +25,18 @@ export const LayoutMyProducts=()=> {
   }, []);
 
   return (
-    <main className="main-products">
+    <main className="main-myProducts">
       {products.map((element) => (
         <UIMyProducts
           key={element.name + 1}
-          typeProduct={element.type}
-          imgProduct={element.imgProductURL}
-          nameProduct={element.name}
-          conditionProduct={element.condition}
-          availabilityProduct={element.availability}
-          dateProduct={element.date}
-          descriptionProduct={element.description}
-          cityProduct={element.city}
+          typeProductMyProduct={element.type}
+          imgProductMyProduct={element.imgProductURL}
+          nameProductMyProduct={element.name}
+          conditionProductMyProduct={element.condition}
+          availabilityProductMyProduct={element.availability}
+          dateProductMyProduct={element.date}
+          descriptionProductMyProduct={element.description}
+          cityProductMyProduct={element.city}
         />
       ))}
     </main>
