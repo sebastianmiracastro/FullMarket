@@ -13,14 +13,14 @@ export const LayoutHeader = () => {
           <UILogos />
         </div>
         <div className="primaryBtnHeader">
-          <NavLink to="Register">
+          <NavLink to="RegisterPage">
             {" "}
             <UIButtons
               classButtons="btn-primaryHeader"
               nameButtons="Regístrate"
             ></UIButtons>
           </NavLink>
-          <NavLink to="/LogIn">
+          <NavLink to="/LoginPage">
             <UIButtons
               classButtons="btn-primaryHeader"
               nameButtons="Inicia Sesión"
