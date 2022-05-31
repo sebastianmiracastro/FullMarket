@@ -118,7 +118,7 @@ export const LayoutRegister=()=> {
       setMsgPassword(text)
       
     }else{
-     text ="Información incorrecta, desbes añadir letras y numeros, su contraseña debe ser minimo de 7 letras y/o numeros,maximo 10 letras  y/o numeros"
+     text ="Contraseña incorrecta, desbes añadir letras y numeros, debe ser minimo de 7, maximo 10 letras y/o numeros.."
       setMsgPassword(text)
     }
   }
@@ -129,7 +129,7 @@ export const LayoutRegister=()=> {
       text="Información correcta"
       setMsgPhone(text)
     }else{
-      text="Información incorrecta, desbes añadir solo numeros, su numero de telefono debe ser minimo de 7 numeros, maximo 10 numeros."
+      text="Información incorrecta, desbes añadir solo numeros, debe ser minimo de 7 numeros, maximo 10 numeros."
       setMsgPhone(text)
     }
   }
@@ -165,7 +165,7 @@ export const LayoutRegister=()=> {
             valueInput={name}
             onChangeInput={(e) => setName(e.target.value)} 
             placeholderInput='enter your name' 
-            onKeyUpInput={handleCharacterName} required>
+            onKeyUpInput={handleCharacterName} required={handleCharacterName}>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgName}</p>
 
@@ -244,7 +244,7 @@ export const LayoutRegister=()=> {
         </div>
       </div>          
       <div className='termsAccep'>
-        <a href='/terms' className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
+        <a  className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
         <p className='alertIcorrects'>{msgCheck}</p>
       </div>
         <UIButtons
@@ -253,7 +253,7 @@ export const LayoutRegister=()=> {
          Buttons= 'btnSubmirRecord'
          nameButtons='Registrarse'
         ></UIButtons>
-       <div className="hr" />
+       <div className="hrR" />
        <a className='redirectLogin' href='/Login'>¿Ya tienes una cuenta?</a>
     </div>
      

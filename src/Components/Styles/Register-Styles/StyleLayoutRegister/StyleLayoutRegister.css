@@ -1,3 +1,11 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+
+}
+
 .files {
   margin-top: 5px;
 }
@@ -27,6 +35,9 @@
   margin-top: 14px;
 
 }
+.terms:hover{
+ color: #000000;
+}
 
 .selectDepart, .selectMuni {
   font-family: 'Poppins', sans-serif;
@@ -53,7 +64,7 @@
   border-radius: 25px;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #f66f00, #f66f00, #ede610);
+  background-image: linear-gradient(to right, #ff5100, #ff5100, #ede610);
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
@@ -64,20 +75,20 @@
   height: 40px;
   width: 20%;
   font-size: 15px;
-  margin-left: 20%;
-  margin-top: 10px;
+  margin-left: 26%;
+  margin-top: 3%;
 }
 
 .btnSubmirRecord:hover {
   background-position: right;
 }
 
-div.hr {
+div.hrR {
 
   display: block;
-  margin-top: 0.5em;
+  margin-top: 0.7em;
   margin-bottom: 0.5em;
-  margin-left: 10%;
+  margin-left: 16%;
   margin-right: auto;
   border-style: inset;
   border-width: 1px;
@@ -95,10 +106,13 @@ div.hr {
   display: block;
   text-align: center;
   text-decoration: none;
-  color: #f66f00;
+  color: #ff5100;
   font-size: 0.9rem;
   transition: .3s;
-  margin-left: -40%;
+  margin-left: -28%;
+  font-family: 'Poppins',sans-serif;
+  margin-top: 4%;
+  font-family: Arial,Helvetica,sans-serif;
 }
 .terms{
   display: block;
@@ -116,23 +130,27 @@ div.hr {
 }
 .termsRegister{
     margin-top: 2%;
+    font-family: 'Poppins',sans-serif;
 }
 
 .terms{
   font-size: 14px;
+  font-family: 'Poppins',sans-serif;
 }
 .termsAccep {
   width: 100%;
-
+  margin-left: -112px;
   margin-top: 10px;
 }
 .alertIcorrect,.alertIcorrects {
-  color: #ff7300;
-  margin-top: -3px;
+  color: #fc7e43;
+  margin-top: 2px;
+  width: 80%;
   font-size: 14px;
+  font-family: 'Poppins' ,sans-serif;
 }
 
-@media screen and (min-width: 2560px) {
+/* @media screen and (min-width: 2560px) {
   .files input {
     font-family: 'Poppins', sans-serif;
     outline: 0;
@@ -293,4 +311,4 @@ div.hr {
     margin-left: 20%;
     margin-top: 10px;
   }
-}
+} */

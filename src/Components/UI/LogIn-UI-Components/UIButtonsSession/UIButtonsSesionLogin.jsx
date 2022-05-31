@@ -22,10 +22,16 @@ export const UIButtonsSesionLogin = () => {
       Button: "Acceptar",
       timer: "2000"
     })
+<<<<<<< HEAD
     return navigate("/")
   }
 
   function ShowMeessageIncorect() {
+=======
+    navigate("/LoggedUser/MyProducts")
+  } 
+  else {  
+>>>>>>> b606f18 (Register and MyProduct done#2 [30052022])
     swal({
       title: "Datos Incorrectos !!",
       text: "Correo o contraseña incorrectos",
@@ -122,6 +128,10 @@ const DireccionRegister = () => {
       </form>   
     </>  
   )
+<<<<<<< HEAD
 }
 
 
+=======
+}
+>>>>>>> b606f18 (Register and MyProduct done#2 [30052022])
