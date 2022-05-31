@@ -14,10 +14,7 @@ export const UIButtonsSesionLogin = () => {
   var dataForm = new FormData();  
   const navigate = useNavigate();
 
-  const VerifyCard= () => {
-    if (window.localStorage.getItem('uiduser') !== null
-    && window.localStorage.getItem('uiduser')
-  ) {
+  function ShowMeessageCorrect() {
     swal({
       title: "Datos Correctos",
       text: "Bienvenido de nuevo",
@@ -25,9 +22,10 @@ export const UIButtonsSesionLogin = () => {
       Button: "Acceptar",
       timer: "2000"
     })
-    navigate("/")
-  } 
-  else {  
+    return navigate("/")
+  }
+
+  function ShowMeessageIncorect() {
     swal({
       title: "Datos Incorrectos !!",
       text: "Correo o contraseña incorrectos",
@@ -35,8 +33,38 @@ export const UIButtonsSesionLogin = () => {
       Button: "Aceptar",
       timer: "2000"
     })
-    navigate("/LogIn")
-  }
+     return navigate("/LogIn")
+  }  
+  
+  const VerifyCard= async () => {
+    
+    const uidUser = await window.localStorage.getItem('uiduser')
+    const response = await uidUser !== null ? ShowMeessageCorrect():ShowMeessageIncorect()
+    setTimeout(uidUser,4000)
+    return(response)
+  //   if(window.localStorage.getItem('uiduser') !== null
+  //   && window.localStorage.getItem('uiduser')
+  //   ){
+  //   swal({
+  //     title: "Datos Correctos",
+  //     text: "Bienvenido de nuevo",
+  //     icon: "success",
+  //     Button: "Acceptar",
+  //     timer: "2000"
+  //   })
+  //   navigate("/")
+  // } 
+  // else {  
+  //   swal({
+  //     title: "Datos Incorrectos !!",
+  //     text: "Correo o contraseña incorrectos",
+  //     icon: "error",
+  //     Button: "Aceptar",
+  //     timer: "2000"
+  //   })
+  //   navigate("/LogIn")
+
+  //  }//setTimeout(VerifyCard,4000)
 }
 const HandleSubmit = async (e) => {
 
@@ -95,4 +123,5 @@ const DireccionRegister = () => {
     </>  
   )
 }
+
 
