@@ -1,15 +1,15 @@
 import React from 'react'
 
-export const UIInputRegister=({nameInput, typeInput, valueInput, onChangeInput, placeholderInput, onKeyUpInput}) =>{
+export const UIInputRegister=({nameInputtRegister, typeInputtRegister, valueInputtRegister, onChangeInputtRegister, placeholderInputtRegister, onKeyUpInputtRegister}) =>{
   return (
     <div>
         <input
-          name={nameInput}
-          type={typeInput}
-          value={valueInput}
-          onChange={onChangeInput}
-          placeholder={placeholderInput}
-          onKeyUp={onKeyUpInput}
+          name={nameInputtRegister}
+          type={typeInputtRegister}
+          value={valueInputtRegister}
+          onChange={onChangeInputtRegister}
+          placeholder={placeholderInputtRegister}
+          onKeyUp={onKeyUpInputtRegister}
         ></input>
     </div>
   )

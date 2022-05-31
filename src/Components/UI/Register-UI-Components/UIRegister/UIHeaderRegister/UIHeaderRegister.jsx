@@ -1,6 +1,6 @@
 import React from 'react';
 import RegisterImage from '../../../../Images/Register-Image-Folder/RegisterImage.png';
-import StyleUIHeaderRegister from '../../../../Styles/Register-Styles/StyleUIHeaderRegister/StyleUIHeaderRegister/StyleUIHeaderRegister.css'
+import '../../../../Styles/Register-Styles/StylesRegister/StylesRegister.css'
 
 export const UIHeaderRegister =()=> {
   return (
