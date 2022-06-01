@@ -2,8 +2,8 @@ import axios, { Axios } from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router';
 import swal from 'sweetalert';
-import '../../../Styles/Register-Styles/StyleLayoutRegister/StyleLayoutRegister.css'
-import { UIButtons } from '../../../UI/Register-UI-Components/UIButtons/UIButtons'
+import '../../../Styles/Register-Styles/StylesRegister/StylesRegister.css'
+import { UIButtonsRegister } from '../../../UI/Register-UI-Components/UIButtonsRegister/UIButtonsRegister'
 import { UIInputRegister } from '../../../UI/Register-UI-Components/UIRegister/UIInputRegister/UIInputRegister'
 
 export const LayoutRegister=()=> {
@@ -28,6 +28,7 @@ export const LayoutRegister=()=> {
   const[msgAlias, setMsgAlias]=useState("")
   const[msgPassword, setMsgPassword]=useState("")
   const[msgPhone, setMsgPhone]=useState("")
+  const[ msgaddress, setMsgAddress]=useState("")
   const [terms, setTerms] = useState(false);
   const [msgCheck, setMsgCheck] = useState();
 
@@ -99,8 +100,9 @@ export const LayoutRegister=()=> {
     setMsgEmail(text)
     }
   }
+  
   const handleCharacterAlias=()=>{
-    let validationAlias= /^[A-Za-z0-9\t]{3,10}|(^$)/
+    let validationAlias= /^([a-zA-Z]\w*?){2,10}|(^$)/
     let text
     if(alias.match(validationAlias)){
       text="Información correcta"
@@ -110,15 +112,27 @@ export const LayoutRegister=()=> {
       setMsgAlias(text)
     }
   }
+
+const handleCharacterAddress=()=>{
+    let validationadress=/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+    let text
+    if(address.match(validationadress)){
+      text="Información correcta"
+      setMsgAddress(text)
+    }else{
+      text="Información incorrecta"
+      setMsgAddress(text)
+    }
+}
   const handleCharacterPassword=()=>{
-    let validationPassword= /^[a-z0-9_-]{6,18}$/
+    let validationPassword= /^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$/
     let text
     if(password.match(validationPassword)){
       text="Información correcta"
       setMsgPassword(text)
       
     }else{
-     text ="Información incorrecta, desbes añadir letras y numeros, su contraseña debe ser minimo de 7 letras y/o numeros,maximo 10 letras  y/o numeros"
+     text ="Contraseña incorrecta, desbes añadir letras, minúsculas, mayúsculas y numeros, debe ser minimo de 7, maximo 10 letras y/o numeros.."
       setMsgPassword(text)
     }
   }
@@ -129,7 +143,7 @@ export const LayoutRegister=()=> {
       text="Información correcta"
       setMsgPhone(text)
     }else{
-      text="Información incorrecta, desbes añadir solo numeros, su numero de telefono debe ser minimo de 7 numeros, maximo 10 numeros."
+      text="Información incorrecta, desbes añadir solo numeros, debe ser minimo de 7 numeros, maximo 10 numeros."
       setMsgPhone(text)
     }
   }
@@ -160,32 +174,32 @@ export const LayoutRegister=()=> {
         <div className='filesRegister'> 
 
           <UIInputRegister 
-            typeInput="name" 
-            nameInput='name' 
-            valueInput={name}
-            onChangeInput={(e) => setName(e.target.value)} 
-            placeholderInput='enter your name' 
-            onKeyUpInput={handleCharacterName} required>
+            typeInputtRegister="name" 
+            nameInputtRegister='name' 
+            valueInputtRegister={name}
+            onChangeInputtRegister={(e) => setName(e.target.value)} 
+            placeholderInputtRegister='enter your name' 
+            onKeyUpInputtRegister={handleCharacterName} required={handleCharacterName}>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgName}</p>
 
           <UIInputRegister 
-            typeInput="alias" 
-            nameInput='alias'
-            valueInput={alias}
-            onChangeInput={(e) => setAlias(e.target.value)}
-            placeholderInput='enter your alias'
-            onKeyUpInput={handleCharacterAlias} required>
+            typeInputtRegister="alias" 
+            nameInputtRegister='alias'
+            valueInputtRegister={alias}
+            onChangeInputtRegister={(e) => setAlias(e.target.value)}
+            placeholderInputtRegister='enter your alias'
+            onKeyUpInputtRegister={handleCharacterAlias} required>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgAlias}</p>
 
           <UIInputRegister 
-            typeInput="email" 
-            nameInput='email'
-            valueInput={email}
-            onChangeInput={(e) => setEmail(e.target.value)} 
-            placeholderInput='enter your email'
-            onKeyUpInput={handleCharacterEmail} required>
+            typeInputtRegister="email" 
+            nameInputtRegister='email'
+            valueInputtRegister={email}
+            onChangeInputtRegister={(e) => setEmail(e.target.value)} 
+            placeholderInputtRegister='enter your email'
+            onKeyUpInputtRegister={handleCharacterEmail} required>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgEmail}</p>
 
@@ -216,44 +230,46 @@ export const LayoutRegister=()=> {
             }
           </select>
           <UIInputRegister
-           typeInput="address" 
-           nameInput='address' 
-           valueInput={address} 
-           onChangeInput={(e) => setAddress(e.target.value)} 
-           placeholderInput='enter your address' required>
+           typeInputRegister="address" 
+           nameInputtRegister='address' 
+           valueInputtRegister={address} 
+           onChangeInputtRegister={(e) => setAddress(e.target.value)}
+           onKeyUpInputtRegister={handleCharacterAddress} 
+           placeholderInputtRegister='enter your address'
+            required>
           </UIInputRegister>
-
+          <p className='alertIcorrect'>{msgaddress}</p>
           <UIInputRegister
-           typeInput="phone" 
-           nameInput='phone' 
-           valueInput={phone}
-           onChangeInput={(e) => setPhone(e.target.value)} 
-           placeholderInput='entert your phone' 
-           onKeyUpInput={ handleCharacterPhone} required>
+           typeInputtRegister="phone" 
+           nameInputtRegister='phone' 
+           valueInputtRegister={phone}
+           onChangeInputtRegister={(e) => setPhone(e.target.value)} 
+           placeholderInputtRegister='entert your phone' 
+           onKeyUpInputtRegister={ handleCharacterPhone} required>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgPhone}</p>
 
           <div className='photos'>
             <UIInputRegister className='photo' 
-            typeInput="file" 
-            nameInput='photo' 
-            onChangeInput={(e) => setPhoto(e.target.files[0])} 
-            placeholderInput='enter your profile picture' required>
+            typeInputtRegister="file" 
+            nameInputtRegister='photo' 
+            onChangeInputtRegister={(e) => setPhoto(e.target.files[0])} 
+            placeholderInputtRegister='enter your profile picture' required>
             </UIInputRegister>
           </div>
         </div>
       </div>          
       <div className='termsAccep'>
-        <a href='/terms' className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
+        <a  className='terms'><input type="checkbox" name='terms' className='termsRegister' id='termsRegister' checked={terms} onClick={handleTerms} required></input>Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la politica <br></br>de datos y la politica de cookies.</a> 
         <p className='alertIcorrects'>{msgCheck}</p>
       </div>
-        <UIButtons
+        <UIButtonsRegister
          type="submit" 
-         classButtons='btnSubmirRecord'
+         classButtonsRegister='btnSubmirRecord'
          Buttons= 'btnSubmirRecord'
-         nameButtons='Registrarse'
-        ></UIButtons>
-       <div className="hr" />
+         nameButtonsRegister='Registrarse'
+        ></UIButtonsRegister>
+       <div className="hrR" />
        <a className='redirectLogin' href='/Login'>¿Ya tienes una cuenta?</a>
     </div>
      

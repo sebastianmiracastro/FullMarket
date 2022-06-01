@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { UIEditProduct } from "../../../UI/EditProduct-UI-Components/UIEditProduct/UIEditProduct";
+import { useNavigate } from 'react-router-dom';
 
 export const LayoutEditProduct = () => {
 
@@ -73,6 +74,14 @@ export const LayoutEditProduct = () => {
       });
     event.preventDefault();
   };
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if(!window.localStorage.getItem('uiduser')){
+    navigate("/") 
+  }
+  })
+  
 
   return(
   
