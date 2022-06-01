@@ -17,7 +17,7 @@ export const LayoutHeader = () => {
             {" "}
             <UIButtons
               classButtons="btn-primaryHeader"
-              nameButtons="Regístrate"
+              nameButtons="Regístrarse"
             ></UIButtons>
           </NavLink>
           <NavLink to="/LoginPage">

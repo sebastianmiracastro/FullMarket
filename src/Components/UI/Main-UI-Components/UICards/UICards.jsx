@@ -102,7 +102,7 @@ export const UICards = ({
             ></img>
           </div>
           <h2>{nameProduct}</h2>
-          <p>Estado: {conditionProduct}</p>
+          <p className="p-card">Estado: {conditionProduct}</p>
           <div className="apply-Product">
             <NavLink to="/LogIn">
               <UIButtons

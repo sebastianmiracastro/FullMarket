@@ -2,9 +2,9 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router';
 import swal from 'sweetalert';
-// import '../../../Styles/Register-Styles/StyleLayoutRegister/StyleLayoutRegister.css'
 import { UIButtonsRegister } from '../../../UI/Register-UI-Components/UIButtonsRegister/UIButtonsRegister';
 import { UIInputRegister } from '../../../UI/Register-UI-Components/UIInputRegister/UIInputRegister';
+import '../../../../Styles/Register-Styles/RegisterStyle.css'
 
 export const LayoutRegister=()=> {
   var formData = new FormData();
@@ -163,7 +163,7 @@ export const LayoutRegister=()=> {
             nameInput='name' 
             valueInput={name}
             onChangeInput={(e) => setName(e.target.value)} 
-            placeholderInput='enter your name' 
+            placeholderInput='Nombre completo' 
             onKeyUpInput={handleCharacterName} required={handleCharacterName}>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgName}</p>
@@ -173,7 +173,7 @@ export const LayoutRegister=()=> {
             nameInput='alias'
             valueInput={alias}
             onChangeInput={(e) => setAlias(e.target.value)}
-            placeholderInput='enter your alias'
+            placeholderInput='Alias'
             onKeyUpInput={handleCharacterAlias} required>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgAlias}</p>
@@ -183,7 +183,7 @@ export const LayoutRegister=()=> {
             nameInput='email'
             valueInput={email}
             onChangeInput={(e) => setEmail(e.target.value)} 
-            placeholderInput='enter your email'
+            placeholderInput='E-mail'
             onKeyUpInput={handleCharacterEmail} required>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgEmail}</p>
@@ -192,14 +192,14 @@ export const LayoutRegister=()=> {
            name='password' 
            value={password} 
            onChange={(e) => setPassword(e.target.value)} 
-           placeholder='enter your password' 
+           placeholder='Contraseña' 
            onKeyUp={handleCharacterPassword} required>
           </input>
           <p className='alertIcorrect'>{msgPassword}</p>
         </div>
         <div className='fileRegister'>
           <select className='selectDepart' onInput={getMuni} type="department" name='department' id="" value={department} onChange={(e) => setDepartment(e.target.value)} >
-            <option value="Select">Select a Department</option>
+            <option value="Select">Departamento</option>
             {
               dpto.map(dep => (
                 <option key={dep.id} value={dep.departamento}>{dep.departamento}</option>
@@ -207,7 +207,7 @@ export const LayoutRegister=()=> {
             }
           </select>
           <select className='selectMuni' id="select-municipios" type="municipality" name ='municipality' value={municipality} onChange={(e) => setMunicipality(e.target.value)}>
-            <option value="Select">Select a Municipality</option>
+            <option value="Select">Municipio</option>
             {
               ciudades.map(ci => (
                 <option key={ci} value={ci}>{ci}</option>
@@ -219,7 +219,7 @@ export const LayoutRegister=()=> {
            nameInput='address' 
            valueInput={address} 
            onChangeInput={(e) => setAddress(e.target.value)} 
-           placeholderInput='enter your address' required>
+           placeholderInput='Dirección' required>
           </UIInputRegister>
 
           <UIInputRegister
@@ -227,7 +227,7 @@ export const LayoutRegister=()=> {
            nameInput='phone' 
            valueInput={phone}
            onChangeInput={(e) => setPhone(e.target.value)} 
-           placeholderInput='entert your phone' 
+           placeholderInput='Telefono' 
            onKeyUpInput={ handleCharacterPhone} required>
           </UIInputRegister>
           <p className='alertIcorrect'>{msgPhone}</p>
