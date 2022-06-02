@@ -220,8 +220,6 @@ export const LayoutRegister = () => {
               required
             ></input>
             <p className="alertIcorrect">{msgPassword}</p>
-          
-         
             <select
               className="selectDepart"
               onInput={getMuni}
@@ -239,6 +237,7 @@ export const LayoutRegister = () => {
               ))}
             </select>
             <select
+            placeholder="Municipio"
               className="selectMuni"
               id="select-municipios"
               type="municipality"
