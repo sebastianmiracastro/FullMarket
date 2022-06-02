@@ -1,6 +1,6 @@
 import React from "react";
 
-export const UInputProduct = ({ classInput, typeInput, nameInput, valueInput, onChange, placeholder }) => {
+export const UInputProduct = ({ classInput, typeInput, nameInput, valueInput, onChange, onKeyUp, placeholder }) => {
   return (
     <input
       className={classInput}
@@ -8,6 +8,7 @@ export const UInputProduct = ({ classInput, typeInput, nameInput, valueInput, on
       name={nameInput}
       value={valueInput}
       onChange={onChange}
+      onKeyUp={onKeyUp}
       placeholder={placeholder}
     ></input>
   );
