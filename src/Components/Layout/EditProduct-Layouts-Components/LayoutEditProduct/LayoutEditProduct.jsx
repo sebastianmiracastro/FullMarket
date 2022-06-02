@@ -30,7 +30,7 @@ export const LayoutEditProduct = () => {
 
   const mostrar = async () => {
     await fetch(
-      `https://backend-fullmarket-py.herokuapp.com//getoneproduct/${text}`
+      `https://fullmarket-provitional-backend.herokuapp.com//products/getoneproduct/${text}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -64,7 +64,7 @@ export const LayoutEditProduct = () => {
 
     axios
       .put(
-        `https://backend-fullmarket-py.herokuapp.com//editproduct/${text}`,
+        `https://backend-fullmarket-py.herokuapp.com/products/editproduct/${text}`,
         formData,
         alert("ACTUALIZADOS")
       )

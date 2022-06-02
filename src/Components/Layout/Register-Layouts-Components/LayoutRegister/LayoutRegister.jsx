@@ -45,7 +45,7 @@ export const LayoutRegister = () => {
 
     axios
       .post(
-        "https://fullmarket-provitional-backend.herokuapp.com/createuser",
+        "https://fullmarket-provitional-backend.herokuapp.com/users/createuser",
         formData
       )
       .then((res) => {

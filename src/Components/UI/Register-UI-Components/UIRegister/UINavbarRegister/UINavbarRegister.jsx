@@ -6,8 +6,8 @@ import '../../../../Styles/Register-Styles/StylesRegister/StylesRegister.css'
 export const UINavbarRegister =()=> {
   return (
      <div className='uiNavbarRegister'>
-        <img className="logo" src={Logotype} ></img>
-        <img className='logotypeFMarket' src={logotypeFMarket} ></img>
+        <img className="img-Logotype-Register" src={Logotype} ></img>
+        <img className='img-Logotype-Register' src={logotypeFMarket} ></img>
     </div>
   )
 }

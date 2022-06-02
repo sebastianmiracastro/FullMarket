@@ -3,7 +3,8 @@ import { UICards } from "../../../UI/Main-UI-Components/UICards/UICards";
 import '../../../Styles/Main-Styles/MainStyle.css'
 
 export const LayoutCards = () => {
-  const URL = "https://backend-fullmarket-py.herokuapp.com/getallproducts";
+  const URL = "https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts";
+  
   const [products, setProducts] = useState([]);
   
   const mostrar = async () => {

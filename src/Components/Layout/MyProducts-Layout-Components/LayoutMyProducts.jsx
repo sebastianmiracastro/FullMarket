@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 export const LayoutMyProducts=()=> {
   const [products, setProducts] = useState([]);
   const uidUsers = localStorage.getItem('uiduser')
-  const URL = `https://fullmarket-provitional-backend.herokuapp.com/getmyproducts/${uidUsers}`
+  const URL = `https://fullmarket-provitional-backend.herokuapp.com/products/getmyproducts/${uidUsers}`
 
   let navigate = useNavigate();
   

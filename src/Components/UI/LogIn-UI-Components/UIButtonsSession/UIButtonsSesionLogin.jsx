@@ -19,7 +19,7 @@ export const UIButtonsSesionLogin = () => {
   dataForm.append("email", email);
   dataForm.append("password", password);
   e.preventDefault();
-  axios.post("https://fullmarket-provitional-backend.herokuapp.com/login",dataForm)
+  axios.post("https://fullmarket-provitional-backend.herokuapp.com/users/login",dataForm)
 
     .then((response) => {
       if(response) {
