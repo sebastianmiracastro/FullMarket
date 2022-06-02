@@ -6,10 +6,10 @@ export const UIHeaderRegister =()=> {
   return (
     <div className='UiheaderRegister'> 
       <div className='registerTexts'>
-        <p className='textRegisters' > REGISTRATE AQUÍ</p>
+        <p className='textRegisters' > REGISTRESE AQUÍ</p>
       </div>
         <div className='registerText'>
-        <p className='textRegister'>REGISTRATE AQUÍ TOTALMENTE GRATIS</p></div>
+        <p className='textRegister'>REGISTRESE AQUÍ TOTALMENTE GRATIS</p></div>
       <img className='registerImg' src={RegisterImage} ></img>
     </div>
   )

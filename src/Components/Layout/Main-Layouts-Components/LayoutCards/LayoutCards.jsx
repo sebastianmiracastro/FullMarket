@@ -32,7 +32,7 @@ export const LayoutCards = () => {
         />
       ))}
     </main>
-    <div className="footer-Main-Page">
+    {/* <div className="footer-Main-Page">
       <div className="footer-column1">
         <div className="title-footer-column1">
           <h2>About</h2>
@@ -40,7 +40,7 @@ export const LayoutCards = () => {
       </div>
       
     </div>
-  
+   */}
     </>
     
   );

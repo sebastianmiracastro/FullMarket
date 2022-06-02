@@ -9,7 +9,6 @@ export const PageHomeRegister =()=> {
       <UINavbarRegister/>
       <div className='line'></div>
       <UIMainRegister/>
-      <div className='line'></div>
     </div>
   )
 }

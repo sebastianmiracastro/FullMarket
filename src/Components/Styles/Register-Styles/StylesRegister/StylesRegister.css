@@ -1,6 +1,4 @@
 * {
-  margin: 0%;
-  padding: 0%;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 
@@ -22,18 +20,30 @@
   margin-top: 14px;
 }
 
+
 .fileRegister input {
   font-family: 'Poppins', sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 80%;
   border: 0;
-  margin: 0 0 4px;
+  margin: none;
   padding: 8px;
   box-sizing: border-box;
   font-size: 14px;
-  margin-top: 14px;
+  margin-top: 6px;
 
+}
+
+.layoutRegister {
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: absolute;
+  width: 50rem;
+  right: 5rem;
+  top: 2rem;
 }
 
 .selectDepart,
@@ -58,35 +68,31 @@
 }
 
 .btnSubmirRecord {
-
   border-radius: 25px;
-  outline: none;
+
   border: none;
-  background-image: linear-gradient(to right, #ff5100, #ff5100, #ede610);
-  background-size: 200%;
+  background-color: #ff5100;
   font-size: 1.2rem;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+ 
   margin: 1rem 7rem;
   cursor: pointer;
-  transition: .5s;
+
   height: 40px;
   width: 20%;
   font-size: 15px;
-  margin-left: 26%;
-  margin-top: 3%;
+ 
 }
 
 .btnSubmirRecord:hover {
   background-position: right;
 }
 
-div.hrR {
-
+div.register-line {
   display: block;
   margin-top: 0.7em;
   margin-bottom: 0.5em;
-  margin-left: 16%;
+  margin-left: 15rem;
   margin-right: auto;
   border-style: inset;
   border-width: 1px;
@@ -103,15 +109,13 @@ div.hrR {
   text-decoration: none;
   color: #ff5100;
   font-size: 0.9rem;
-  transition: .3s;
-  margin-left: -28%;
   font-family: 'Poppins', sans-serif;
   margin-top: 4%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .redirectLogin:hover {
-  font-size: 16px;
+  font-size: none;
 }
 
 .terms {
@@ -122,11 +126,7 @@ div.hrR {
   color: #000000;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
-}
-
-.terms:hover {
-  font-size: 15px;
-  color: #000000;
+  margin-left: 12rem;
 }
 
 
@@ -153,8 +153,10 @@ div.hrR {
 
 /*Styles PageRegister */
 .line {
-  background-color: #000000;
-  height: 2px;
+  width: 100%;
+  height: 0.1rem;
+  background-color: #3331318c;
+  margin-top: 2px;
 }
 
 /* StyleHeaderRegister*/
@@ -198,7 +200,7 @@ div.hrR {
 .registerText {
   text-align: center;
   width: 29.9%;
-  top: 95%;
+  top: 85%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -220,9 +222,9 @@ div.hrR {
   display: flex;
   justify-content: center;
   height: 90px;
-  z-index: 1;
+
   background-color: #ffffff;
-  border-bottom: 3px solid #040404;
+
 }
 
 .uiNavbarRegister:hover {

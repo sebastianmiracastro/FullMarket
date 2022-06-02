@@ -8,7 +8,6 @@ export const UINavbarRegister =()=> {
      <div className='uiNavbarRegister'>
         <img className="logo" src={Logotype} ></img>
         <img className='logotypeFMarket' src={logotypeFMarket} ></img>
-
     </div>
   )
 }

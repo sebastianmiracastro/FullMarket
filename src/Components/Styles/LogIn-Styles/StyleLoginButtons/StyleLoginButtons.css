@@ -69,7 +69,7 @@ div.hr {
   height: 45px;
 }
 
-a {
+/* a {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -83,7 +83,7 @@ a {
 a:hover {
   color: #f66f00;
   font-size: 1.6rem;
-}
+} */
 
 .btn-Applylog {
   --color: #f66f00;
