@@ -86,7 +86,7 @@ a {
 
 a:hover {
   color: #f66f00;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .btn-Applylog {
@@ -142,4 +142,61 @@ a:hover {
   background:linear-gradient(#1b1b1b, #111) ;
   border: 0px solid black;
   color: #FFFF;
+}
+
+
+@media (min-width: 400px) and (max-width: 731px) {
+  .Login {
+    display: none;
+  }
+  .login-content {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 80%;
+    right: 3rem;
+    top: 13rem;
+  }
+    .form input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  .btn-Applylog {
+    --color: #f66f00;
+    font-family: inherit;
+    display: inline-block;
+    width: 80%;
+    height: 50px;
+    border-radius: 25px;
+    line-height: 1.2em;
+    margin: 22px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ff5100;
+    transition: color .5s;
+    z-index: 1;
+    font-size: 24px;
+    color: #ffff;
+    background: linear-gradient(#ff5100,#ff5100);
+  }
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #f66f00;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: .3s;
+  }
 }
