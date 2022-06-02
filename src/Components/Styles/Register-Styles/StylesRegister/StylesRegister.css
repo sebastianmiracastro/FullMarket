@@ -47,7 +47,7 @@
   position: absolute;
   width: 50rem;
   right: 5rem;
-  top: 2.5rem;
+  top: 4.5rem;
 }
 
 .selectDepart,
@@ -162,12 +162,10 @@ div.register-line {
 
 /* StyleHeaderRegister*/
 .registerImg {
-  bottom: 0;
-  left: 0px;
-  width: 88%;
+
+  width: 100%;
   top: 25px;
-  height: 90%;
-  z-index: -1;
+
 }
 
 .img {
@@ -178,7 +176,7 @@ div.register-line {
 
 .registerTexts {
   text-align: center;
-  width: 88%;
+  width: 100%;
   top: 90px;
   display: flex;
   justify-content: center;
@@ -192,19 +190,24 @@ div.register-line {
 }
 
 .textRegister {
-  color: #f0f0f0;
+  color: #ffffff;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .registerText {
   text-align: center;
-  width: 29.9%;
+  width: 34%;
   top: 60rem;
   position: absolute;
   display: flex;
   justify-content: center;
-  height: 55px;
+  top: 66rem;
+  height: 47px;
   background-color: #040404;
 }
 

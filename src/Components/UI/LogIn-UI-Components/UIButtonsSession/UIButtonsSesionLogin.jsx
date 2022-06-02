@@ -73,7 +73,7 @@ const DireccionRegister = () => {
             nameButtons="Iniciar Sesion"
             classButtons="btn-Applylog"
             ></UIButtonsLogin>
-            <a href="foo">¿ olvidaste tu contraseña ?</a>
+            <a href="foo">He olvidado mi contraseña</a>
             <div className="hr" />
             <UIButtonsLogin 
             onClick={DireccionRegister} 
