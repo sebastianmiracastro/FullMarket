@@ -294,7 +294,7 @@ p {
 .imgModalWindow {
   width: 60%;
   min-width: 200px;
-  height: 60%;
+  height: 50%;
   min-height: 200px;
   display: flex;
   justify-content: center;
