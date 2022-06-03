@@ -26,6 +26,7 @@ p.msg-Alert:hover {
   background: #f2f2f2;
   width: 100%;
   border: 0;
+  border-radius: 7px;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
@@ -39,7 +40,7 @@ div.formulari {
   left: 65rem;
 }
 
-div.hr {
+div.Line-hr {
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -69,7 +70,7 @@ div.hr {
   height: 45px;
 }
 
-/* a {
+a {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -77,13 +78,7 @@ div.hr {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 0.9rem;
-  transition: .3s;
 }
-
-a:hover {
-  color: #f66f00;
-  font-size: 1.6rem;
-} */
 
 .btn-Applylog {
   --color: #f66f00;
@@ -139,29 +134,61 @@ a:hover {
   border: 0px solid black;
   color: #FFFF;
 }
-
-
-@media (min-width: 400px) and (max-width: 731px) {
-  .Login {
-    display: none;
-  }
+@media (max-width: 1200px) {
   .login-content {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
     flex-direction: column;
     position: absolute;
-    width: 80%;
-    right: 3rem;
-    top: 13rem;
+    width: 40%;
+    right: 10rem;
+    top: 12rem;
   }
-    .form input {
+}
+@media (max-width: 1030px) {
+  .login-content {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 46%;
+    right: 5rem;
+    top: 10rem;
+  }
+}
+@media (max-width: 1000px) {
+  .login-content {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 45%;
+    right: 6rem;
+    top: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .login-content {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 74%;
+    right: 6rem;
+    top: 13rem;
+  }  
+  .form input {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     outline: 0;
     background: #f2f2f2;
     width: 100%;
     border: 0;
+    border-radius: 7px;
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
@@ -171,7 +198,7 @@ a:hover {
     --color: #f66f00;
     font-family: inherit;
     display: inline-block;
-    width: 80%;
+    width: 60%;
     height: 50px;
     border-radius: 25px;
     line-height: 1.2em;
@@ -184,6 +211,66 @@ a:hover {
     font-size: 24px;
     color: #ffff;
     background: linear-gradient(#ff5100,#ff5100);
+
+  } 
+}
+@media (max-width: 500px) {
+  .login-content {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 70%;
+    right: 5rem;
+    top: 12rem;
+  }
+  .btn-Applylog {
+    --color: #f66f00;
+    font-family: inherit;
+    display: inline-block;
+    width: 67%;
+    height: 50px;
+    border-radius: 25px;
+    line-height: 1.2em;
+    margin: 16px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ff5100;
+    transition: color .5s;
+    z-index: 1;
+    font-size: 22px;
+  }
+}
+@media (max-width: 420px) {
+  .form input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    outline: 0;
+    background: #f2f2f2;
+    width: 110%;
+    border: 0;
+    border-radius: 10px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+  .btn-Applylog {
+    --color: #f66f00;
+    font-family: inherit;
+    display: inline-block;
+    width: 76%;
+    height: 50px;
+    border-radius: 25px;
+    line-height: 1.2em;
+    margin: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: color .5s;
+    z-index: 1;
+    font-size: 22px;
+    margin-left: 3rem;
   }
   a {
     display: block;
@@ -192,7 +279,16 @@ a:hover {
     color: #f66f00;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.1rem;
-    transition: .3s;
+    font-size: 1.12em;
+    margin-left: 22px;
+  }  
+  div.Line-hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0px;
+    margin-right: -25px;
+    border-style: inset;
+    border-width: 1px;
   }
 }

@@ -74,7 +74,7 @@ const DireccionRegister = () => {
             classButtons="btn-Applylog"
             ></UIButtonsLogin>
             <a href="foo">He olvidado mi contraseña</a>
-            <div className="hr" />
+            <div className="Line-hr" />
             <UIButtonsLogin 
             onClick={DireccionRegister} 
             type="sumbit"
