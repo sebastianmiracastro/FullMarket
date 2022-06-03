@@ -50,45 +50,18 @@
   margin-top: 6px;
 }
 
-.selectDepart {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background: #f2f2f2;
-  color: #757575;
-  appearance: none;
-  border: 0;
-  outline: 0;
-  font: inherit;
-  width: 16em;
-  position: absolute;
-  height: 2.9em;
-  top: 28em;
-  right: 33.2rem;
-  margin: 4px;
-  padding: 0px 4em 1px 1em;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
-  border-radius: 0.25em;
-  cursor: pointer;
-}
 
+.selectDepart,
 .selectMuni {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background: #f2f2f2;
-  color: #757575;
-  appearance: none;
-  border: 0;
+  font-family: 'Poppins', sans-serif;
   outline: 0;
-  font: inherit;
-  width: 17em;
-  position: relative;
-  height: 2.9em;
-  right: -8.3rem;
-  margin: 4px;
-  padding: 0px 4em 1px 1em;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
-  border-radius: 0.25em;
-  cursor: pointer;
+  background: #f2f2f2;
+  width: 80%;
+  border: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 12px;
+  margin-top: 14px;
 }
 
 .photos input {
@@ -240,6 +213,7 @@ div.register-line {
   background-color: #040404;
 }
 
+
 /*Style UIMainRegister */
 .uiMainRegister {
   width: 100%;
@@ -323,46 +297,7 @@ div.register-line {
     margin-top: 14px;
     border-radius: 7px;
   }
-  .selectDepart {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    background: #f2f2f2;
-    color: #757575;
-    appearance: none;
-    border: 0;
-    outline: 0;
-    font: inherit;
-    width: 16em;
-    position: absolute;
-    height: 2.9em;
-    top: 19.3em;
-    right: 25.2rem;
-    margin: 4px;
-    padding: 0px 4em 1px 1em;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
-    border-radius: 7px;
-    cursor: pointer;
-}
-  .selectMuni {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    background: #f2f2f2;
-    color: #757575;
-    appearance: none;
-    border: 0;
-    outline: 0;
-    font: inherit;
-    width: 18em;
-    position: relative;
-    height: 2.9em;
-    right: -8.5rem;
-    top: 0.5em;
-    margin: 4px;
-    padding: 0px 4em 1px 1em;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
-    border-radius: 7px;
-    cursor: pointer;
-  }
+
 }
 
 /* Style UINavbarRegister */
@@ -372,6 +307,8 @@ div.register-line {
   justify-content: center;
   width: 100%;
   height: 8rem;
+
   background-color: #ffffff;
+
 }
 
