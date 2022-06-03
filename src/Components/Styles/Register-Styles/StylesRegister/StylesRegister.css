@@ -4,6 +4,16 @@
 
 }
 /* Styles LayoutRegister */
+.layoutRegister {
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .files {
   margin-top: 9%;
 }
@@ -15,22 +25,20 @@
 } 
 
 .filesRegister input {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 81%;
-  height: 45px;
+  min-width: 80%;
   border: 0;
-  padding: 15px;
+  padding: 1rem 1.2rem;
   box-sizing: border-box;
-  font-size: 15px;
-  /* margin-top: 0px; */
+  font-size: 14px;
+  margin-top: 14px;
+  border-radius: 7px;
 }
 
 .fileRegister input {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 80%;
@@ -42,17 +50,6 @@
   margin-top: 6px;
 }
 
-.layoutRegister {
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  position: absolute;
-  width: 50rem;
-  right: 5rem;
-  top: 4.5rem;
-}
-
 .selectDepart {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -62,17 +59,18 @@
   border: 0;
   outline: 0;
   font: inherit;
-  width: 20em;
+  width: 16em;
   position: absolute;
-  height: 2.8em;
-  top: 19em;
-  right: 25rem;
+  height: 2.9em;
+  top: 28em;
+  right: 33.2rem;
   margin: 4px;
   padding: 0px 4em 1px 1em;
   background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
   border-radius: 0.25em;
   cursor: pointer;
 }
+
 .selectMuni {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -82,17 +80,17 @@
   border: 0;
   outline: 0;
   font: inherit;
-  width: 20em;
+  width: 17em;
   position: relative;
   height: 2.9em;
-  top: -0.7em;
-  right: -10.3rem;
+  right: -8.3rem;
   margin: 4px;
   padding: 0px 4em 1px 1em;
   background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
   border-radius: 0.25em;
   cursor: pointer;
 }
+
 .photos input {
   margin-top: 14px;
 }
@@ -107,10 +105,10 @@
   background-color: #ff5100;
   font-size: 1.2rem;
   color: #fff;
-  margin: 0.5rem 7rem;
+  margin: 0.7rem 1rem;
   cursor: pointer;
   height: 40px;
-  width: 20%;
+  width: 90% !important;
   font-size: 15px;
  
 }
@@ -123,11 +121,11 @@ div.register-line {
   display: block;
   margin-top: 0.7em;
   margin-bottom: 0.5em;
-  margin-left: 15rem;
+  /* margin-left: 15rem; */
   margin-right: auto;
   border-style: inset;
   border-width: 1px;
-  width: 40%;
+  width: 90%;
 }
 
 .prom {
@@ -150,14 +148,14 @@ div.register-line {
 }
 
 .terms {
-  display: block;
+  width: 100%;
   text-decoration: none;
   font-size: 0.9rem;
   transition: .3s;
   color: #000000;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
-  margin-left: 12rem;
+  /* margin-left: 12rem; */
 }
 
 
@@ -168,9 +166,11 @@ div.register-line {
 
 
 .termsAccep {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-left: -112px;
-  margin-top: 10px;
 }
 
 .alertIcorrect,
@@ -180,6 +180,7 @@ div.register-line {
   width: 80%;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
+  margin: 0 !important;
 }
 
 /*Styles PageRegister */
@@ -192,10 +193,8 @@ div.register-line {
 
 /* StyleHeaderRegister*/
 .registerImg {
-
   width: 100%;
-  top: 25px;
-
+  overflow: hidden;
 }
 
 .img {
@@ -241,12 +240,129 @@ div.register-line {
   background-color: #040404;
 }
 
-
 /*Style UIMainRegister */
 .uiMainRegister {
+  width: 100%;
   display: grid;
   grid-template-columns: 34% 50%;
-  column-gap: 14%;
+  column-gap: 2rem;
+  padding-bottom: 5rem;
+}
+.completeRecord{
+  width: 100%;
+}
+@media (max-width: 768px){
+  .uiMainRegister{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .registerTexts {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.5rem;
+    border-radius: 7px;
+    margin: 0;
+    width: 100%;
+  }
+  .registerTexts p {
+    font-size: 14px;
+  }
+  .layoutRegister{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .container-img-register{
+    height: 10px;
+    opacity: 0.8;
+    padding: 2rem 1rem;
+    z-index: -1;
+    display: none;
+  }
+  .completeRecord{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  .files{
+    /* background-color: #040404d5; */
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    z-index: 10;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .filesRegister{
+    width: 100%;
+  } 
+  .filesRegister input {
+    font-family: 'Poppins', sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    min-width: 90%;
+    border: 0;
+    padding: 1rem 1.2rem;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-top: 14px;
+    border-radius: 7px;
+  }
+  .selectDepart {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background: #f2f2f2;
+    color: #757575;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 16em;
+    position: absolute;
+    height: 2.9em;
+    top: 19.3em;
+    right: 25.2rem;
+    margin: 4px;
+    padding: 0px 4em 1px 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
+    border-radius: 7px;
+    cursor: pointer;
+}
+  .selectMuni {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background: #f2f2f2;
+    color: #757575;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 18em;
+    position: relative;
+    height: 2.9em;
+    right: -8.5rem;
+    top: 0.5em;
+    margin: 4px;
+    padding: 0px 4em 1px 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, #757575 3em, #f2f2f2 3em);
+    border-radius: 7px;
+    cursor: pointer;
+  }
 }
 
 /* Style UINavbarRegister */
@@ -256,8 +372,6 @@ div.register-line {
   justify-content: center;
   width: 100%;
   height: 8rem;
-
   background-color: #ffffff;
-
 }
 

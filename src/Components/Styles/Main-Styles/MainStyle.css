@@ -1,51 +1,76 @@
 * {
-  font-family: Arial, Helvetica, sans-serif ;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .primaryHeader {
   width: 100%;
-  height: 8rem;
   background-color: #ffffff;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
-
-
-.imgLogotype {
-  width: 9rem;
-  margin-left: 8rem;
-  margin-top: 0%;
-} 
 
 .primaryBtnHeader {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  padding-left: 50rem;
-  padding-top: 2.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 420px) {
+
+  .primaryHeader{
+    flex-direction: column;
+  }
+
+  .primaryHeader img{
+    width: 20%;
+  }
+
+  .primaryBtnHeader{
+    flex-direction: column;
+  }
+  .btn-primaryHeader{
+    margin-top: 1rem;
+  }
 }
 
 .btn-primaryHeader {
   width: 12rem;
   height: 2.5rem;
-  background-color: #FF661F;
-  border-radius:1rem;
-  border: #F6560A;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
+  background-color: #ff661f;
+  border-radius: 1rem;
+  border: #f6560a;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
   color: #ffffff;
   font-size: 1rem;
-  margin-left: 3rem;
+  margin-left: 1rem;
   cursor: pointer;
   text-decoration: none;
 }
 
 .btn-primaryHeader:hover {
-  animation:slidebg 2s linear infinite;
+  animation: slidebg 2s linear infinite;
   color: #ffffff;
-  background:#F6560A;
+  background: #f6560a;
 }
 
+.containerLogotype{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgLogotype {
+  width: 9rem;
+  margin-left: 0rem;
+  margin-top: 0%;
+}
 
 .spacePrincipal {
   width: 100%;
@@ -58,84 +83,88 @@
   width: 100%;
   height: 4rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: #DAE4ED;
+  background-color: #dae4ed;
 }
 
 .primarySearch {
   background-color: #f5f3f3;
-  width: 50rem;
+  width: 80%;
   height: 2rem;
   position: relative;
   border: #000000;
   color: #000000;
   border-radius: 0.5rem;
-  margin-left: 65rem;
 }
 
 .iconSearch {
   font-size: 1.5rem;
-  color: #FF661F;
+  color: #ff661f;
   cursor: pointer;
   margin-top: 0.5rem;
   margin-left: 1rem;
-  
 }
 
 .iconSearch:hover {
   color: #3a3a3a;
-  animation:slidebg 0.5s linear infinite;
+  animation: slidebg 0.5s linear infinite;
 }
-
-
-
 
 /* ------------------ STYLES FOR CARDS ----------------------------- */
 
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .main-products {
   width: 100%;
-  height: 70rem;
+  /* height: 100%; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #DAE4ED;
+  background-color: #dae4ed;
+  /* box-sizing: border-box; */
 }
+
 .main {
   width: 100%;
   height: auto;
-  
-
 }
-.header-Card {
-  width: 12rem;
-  height: 18rem;
+
+.container-card{
+  width: 20%;
+  min-width: 290px;
+  height: 100%;
+  margin: 2rem;
   background-color: #ffffff;
-  margin-top: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
+  transition: all 0.2s;
+  border-radius: 10px;
 }
 
-.header-Card:hover {
-  box-shadow:  5px 0px 5px #565656;
-  animation:slidebg 0.5s linear infinite;
+.container-card:hover {
+  box-shadow: 5px 0px 5px #565656;
+  animation: slidebg 0.5s linear infinite;
   transform: scale(1.1);
   cursor: pointer;
 }
 
+.header-Card {
+  /* margin-top: 20rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
 .iconInfo {
   font-size: 1.2rem;
-  color: #F6560A;
+  color: #f6560a;
   cursor: pointer;
   margin-top: 0.5rem;
   margin-right: 10rem;
 }
 
-.iconInfo:hover{
+.iconInfo:hover {
   color: #3a3a3a;
 }
 
@@ -144,32 +173,43 @@ h1 {
   text-decoration: none;
   color: #000000;
   margin-top: 0rem;
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   display: flex;
   align-items: center;
 }
 
-.body-Card {
+/* .body-Card {
   width: 13rem;
   height: 5rem;
   margin-left: 5rem;
   margin-top: 1rem;
+} */
+
+.body-Card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-Card h2{
+  text-align: center !important;
 }
 
 .img-Card {
   margin-left: 1.5px;
   width: 8rem;
   height: 7rem;
-  object-fit: fill;  
+  object-fit: fill;
   margin-top: -5px;
 }
 
 h2 {
-  margin-top: 0.3rem;
+  margin: 0 1rem;
   height: 2rem;
   text-align: center;
-  margin-right: 3.5rem;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
 }
 
@@ -180,108 +220,125 @@ p {
   font-size: 0.9rem;
 }
 
+.headerInitial{
+  width: 100%;
+}
+
 .apply-Product {
-  margin-top: 1rem;
-  width: 12rem;
+  /* margin-top: 1rem; */
+  width: 100%;
   height: 1.8rem;
-  background-color: #F6560A;
-  margin-left: -2rem;
+  background-color: #f6560a;
+  margin-left: 0rem;
 }
 
 .apply-Product:hover {
-  animation:slidebg 2s linear infinite;
+  animation: slidebg 2s linear infinite;
   color: #ffffff;
-  background:#333131;
+  background: #333131;
 }
 
 .btn-Apply {
   margin-top: 0.1rem;
-  width: 12rem;
+  width: 100%;
   height: 2.5rem;
   margin-right: 3px;
-  background-color: #F6560A;
-  font-family: Arial, Helvetica, sans-serif ;
-  font-weight:bold;
+  background-color: #f6560a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   border-radius: 1rem;
   font-size: 1rem;
   color: #ffffff;
-  border: #F6560A;
+  border: #f6560a;
   cursor: pointer;
 }
 
 .btn-Apply:hover {
-  animation:slidebg 2s linear infinite;
+  animation: slidebg 2s linear infinite;
   color: #ffffff;
-  background:#333131;
+  background: #333131;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
- /* ---- STYLES FOR MODAL WINDOW ---- */
+/* ---- STYLES FOR MODAL WINDOW ---- */
 
- .modalWindowFeatures{
-  width: 100%;
-  height: auto;
+.makeStyles-paper-1{
+  /* background-color: red !important; */
+  max-width: 100% !important;
+  max-height: 90% !important; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px !important;
+  box-sizing: border-box;
+}
+
+/* .modalWindowFeatures {
+  width: 90%;
+  max-height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-
-.titleModalWindows{
-  color: #F6560A;
-  font-family: 'Bebas Neue', cursive;
+.titleModalWindows {
+  color: #f6560a;
+  font-family: "Bebas Neue", cursive;
   font-size: 25px;
-  margin-left: 3.8rem;
+  letter-spacing: 1px;
+  box-sizing: border-box;
 }
 
 .imgModalWindow {
-  width: 30rem;
-  height: 30rem;
+  width: 60%;
+  min-width: 200px;
+  height: 60%;
+  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 2rem;
-  margin-top: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-sizing: border-box;
 }
 
-.pModalDescription{
+.pModalDescription {
   color: #000000;
   margin-top: 1.5rem;
 }
 
-.pModalAvailability{
+.pModalAvailability {
   color: #000000;
 }
 
-.btnOkModal{
+.btnOkModal {
   color: #ffffff;
-  background-color: #F6560A;
+  background-color: #f6560a;
   border: none;
   border-radius: 0.5rem;
-  width: 5rem;
+  width: 80%;
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 27rem;
   font-weight: bold;
 }
 
-.btnOkModal:hover{
+.btnOkModal:hover {
   color: #ffffff;
   background-color: #333131;
   transition: all 1s ease;
   font-weight: bold;
   cursor: pointer;
-} 
+}
 
-
-
- /* ---- STYLES FOR FOOTER ---- */
- .footer-Main-Page {
-   width: 100%;
-   height: 100%;
-   display: flex;
-   background-color: #4b0f0f;
-   flex-direction: column;
- }
+/* ---- STYLES FOR FOOTER ---- */
+.footer-Main-Page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #4b0f0f;
+  flex-direction: column;
+}

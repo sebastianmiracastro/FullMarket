@@ -12,7 +12,6 @@ export const UIMainRegister=()=> {
       <div className='layoutRegister' >
         <LayoutRegister/>
       </div> 
-
     </div>
   )
 }
