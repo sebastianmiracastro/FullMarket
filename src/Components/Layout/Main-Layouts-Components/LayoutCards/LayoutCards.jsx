@@ -3,7 +3,8 @@ import { UICards } from "../../../UI/Main-UI-Components/UICards/UICards";
 import '../../../Styles/Main-Styles/MainStyle.css'
 
 export const LayoutCards = () => {
-  const URL = "https://backend-fullmarket-py.herokuapp.com/getallproducts";
+  const URL = "https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts";
+  
   const [products, setProducts] = useState([]);
   
   const mostrar = async () => {
@@ -32,7 +33,7 @@ export const LayoutCards = () => {
         />
       ))}
     </main>
-    <div className="footer-Main-Page">
+    {/* <div className="footer-Main-Page">
       <div className="footer-column1">
         <div className="title-footer-column1">
           <h2>About</h2>
@@ -40,7 +41,7 @@ export const LayoutCards = () => {
       </div>
       
     </div>
-  
+   */}
     </>
     
   );

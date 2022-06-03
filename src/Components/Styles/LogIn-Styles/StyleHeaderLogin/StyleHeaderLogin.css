@@ -1,24 +1,13 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-  }
-  
+
   .Login {
     position: absolute;
     bottom: 0;
     left: 0px;
-    width: 35%;
+    width: 36%;
     top: 25px;
     height: 100%;
     z-index: -1;
-}
-  
+}  
   .img {
     display: flex;
     justify-content: flex-end;
@@ -26,21 +15,23 @@
   }
   div.content-title {
     text-align: center;
-    width: 35%;
+    width: 36%;
     position: absolute;
-    top: 90px;
+    top: 92px;
     display: flex;
     justify-content: center;
     height: 75px;
     background-color: #040404;
 }
-  h2.title {
-    position: absolute;
-    color: #f0f0f0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.4cm;
-    top: 13%;
-  }
+h2.title {
+  position: absolute;
+  color: #f0f0f0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.2cm;
+  left: 15%;
+  top: 13%;
+}
 
 @media (min-width: 400px) and (max-width: 731px) {
   div.content-title {
@@ -52,5 +43,11 @@
       justify-content: center;
       height: 75px;
       background-color: #040404;
+  }
+  h2.title {
+    position: absolute;
+    color: #f0f0f0;
+    font-size: 1.4cm;
+    right: 0%;
   }
 }

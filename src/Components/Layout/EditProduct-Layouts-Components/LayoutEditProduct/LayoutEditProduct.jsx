@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { UIEditProduct } from "../../../UI/EditProduct-UI-Components/UIEditProduct/UIEditProduct";
+import { useNavigate } from 'react-router-dom';
 
 export const LayoutEditProduct = () => {
 
@@ -29,7 +30,7 @@ export const LayoutEditProduct = () => {
 
   const mostrar = async () => {
     await fetch(
-      `https://backend-fullmarket-py.herokuapp.com//getoneproduct/${text}`
+      `https://fullmarket-provitional-backend.herokuapp.com//products/getoneproduct/${text}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -63,7 +64,7 @@ export const LayoutEditProduct = () => {
 
     axios
       .put(
-        `https://backend-fullmarket-py.herokuapp.com//editproduct/${text}`,
+        `https://backend-fullmarket-py.herokuapp.com/products/editproduct/${text}`,
         formData,
         alert("ACTUALIZADOS")
       )
@@ -73,6 +74,14 @@ export const LayoutEditProduct = () => {
       });
     event.preventDefault();
   };
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if(!window.localStorage.getItem('uiduser')){
+    navigate("/") 
+  }
+  })
+  
 
   return(
   

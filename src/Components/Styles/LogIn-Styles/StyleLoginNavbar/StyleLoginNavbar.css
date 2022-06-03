@@ -31,96 +31,33 @@ img.logoFullMakert {
     width: 34%;
     right: 8rem;
     top: 11rem;
+  }
 }
-}
-
 
 @media (min-width: 400px) and (max-width: 731px) {
   .Login {
       display: none;
   }
   .login-content {
-      text-align: center;
-      position: absolute;
-      width: 85%;
-      right: 2rem;
-      top: 18rem;
-  }
-  .form input {
-      font-family: 'Poppins', sans-serif;
-      outline: 0;
-      background: #f2f2f2;
-      width: 100%;
-      border: 0;
-      margin: 0 0 15px;
-      padding: 15px;
-      box-sizing: border-box;
-      font-size: 18px;
-  }
-
-  div.content-title {
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
-    width: 100%;
+    flex-direction: column;
     position: absolute;
-    top: 90px;
-    display: flex;
-    justify-content: center;
-    height: 75px;
-    background-color: #040404;
-  }
-  h2.title {
-      font-family: 'Poppins', sans-serif;
-      color: #040404;
-      text-align: center;
-      position: absolute;
-      width: 85%;
-      right: 2rem;
-      top: 10rem;
-  }
-  div.Name-compani {
-      margin: auto;
-      text-align: center;
-      text-align: center;
-      justify-content: center;
-      height: 100px;
-      background-color: #ffffff;
-      border-bottom: 2px solid #040404;
-  }
+    width: 34%;
+    right: 14rem;
+    top: 12rem;
+}
   img.logo {
       position: absolute;
       width: 32%;
       top: -3%;
       left: 34%;
   }
-  .btn {
-      width: 70%;
-      height: 50px;
-      border-radius: 25px;
-      outline: none;
-      border: none;
-      background-image: linear-gradient(to right, #ff9d4d, #e34414, #ede610);
-      background-size: 230%;
-      font-size: 1.3rem;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      margin: 2rem 0;
-      cursor: pointer;
-      transition: .8s;
-  }
-  .btn:hover{
-      background-position: right;
-      animation:slidebg 2s linear infinite;
-      color: #ffffff;
-      background:#333131;
-  }
-  
-}
-
-@media (min-width: 400px) and (max-width: 731px) {
-  img.logo {
-      position: absolute;
-      width: 24%;
-      top: -3%;
-      left: 39%;
-    }
+  img.logoFullMakert {
+    position: absolute;
+    width: 12%;
+    top: -7.5%;
+    right: 39%;
+  } 
 }

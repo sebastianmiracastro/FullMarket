@@ -1,7 +1,7 @@
 import React from 'react'
 import { LayoutRegister } from '../../../../Layout/Register-Layouts-Components/LayoutRegister/LayoutRegister'
 import { UIHeaderRegister } from '../../../../UI/Register-UI-Components/UIRegister/UIHeaderRegister/UIHeaderRegister'
-import '../../../../Styles/Register-Styles/StyleUIMainRegister/StyleUIMainRegister.css'
+import '../../../../Styles/Register-Styles/StylesRegister/StylesRegister.css'
 
 export const UIMainRegister=()=> {
   return (
@@ -12,7 +12,6 @@ export const UIMainRegister=()=> {
       <div className='layoutRegister' >
         <LayoutRegister/>
       </div> 
-
     </div>
   )
 }

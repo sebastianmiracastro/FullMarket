@@ -14,44 +14,37 @@ export const UIButtonsSesionLogin = () => {
   var dataForm = new FormData();  
   const navigate = useNavigate();
 
-  const VerifyCard= () => {
-    if (window.localStorage.getItem('uiduser') !== null
-    && window.localStorage.getItem('uiduser')
-  ) {
-    swal({
-      title: "Datos Correctos",
-      text: "Bienvenido de nuevo",
-      icon: "success",
-      Button: "Acceptar",
-      timer: "2000"
-    })
-    navigate("/")
-  } 
-  else {  
-    swal({
-      title: "Datos Incorrectos !!",
-      text: "Correo o contraseña incorrectos",
-      icon: "error",
-      Button: "Aceptar",
-      timer: "2000"
-    })
-    navigate("/LogIn")
-  }
-}
-const HandleSubmit = async (e) => {
+  const HandleSubmit = async (e) => {
 
   dataForm.append("email", email);
   dataForm.append("password", password);
   e.preventDefault();
-  axios.post("https://fullmarket-provitional-backend.herokuapp.com/login",dataForm)
+  axios.post("https://fullmarket-provitional-backend.herokuapp.com/users/login",dataForm)
+
     .then((response) => {
-      const token = response.data.token;
-      const decoded = jwtDecode(token);
-      window.localStorage.setItem("token", token)
-      window.localStorage.setItem("uiduser", decoded.uid)
+      if(response) {
+        const token = response.data.token;
+        const decoded = jwtDecode(token);
+        window.localStorage.setItem("token", token)
+        window.localStorage.setItem("uiduser", decoded.uid)
+        swal({
+          title: "Datos Correctos",
+          text: "Bienvenido de nuevo",
+          icon: "success",
+          Button: "Acceptar",
+          timer: "2000"
+        })
+        navigate("/")
+      }
     })
     .catch((err) => {
-      console.log(err);
+      swal({
+        title: "Datos Incorrectos !!",
+        text: "Correo o contraseña incorrectos",
+        icon: "error",
+        Button: "Aceptar",
+        timer: "2000"
+      })
     });
 };
 const DireccionRegister = () => {
@@ -73,15 +66,14 @@ const DireccionRegister = () => {
               value={password}
               type="password" 
               name="password" 
-              placeholder="password"
+              placeholder="Contraseña"
             ></input>
             <UIButtonsLogin
             type="sumbit"
             nameButtons="Iniciar Sesion"
             classButtons="btn-Applylog"
-            onClick={VerifyCard}
             ></UIButtonsLogin>
-            <a href="foo">Forgot Password?</a>
+            <a href="foo">He olvidado mi contraseña</a>
             <div className="hr" />
             <UIButtonsLogin 
             onClick={DireccionRegister} 
@@ -95,4 +87,5 @@ const DireccionRegister = () => {
     </>  
   )
 }
+
 
