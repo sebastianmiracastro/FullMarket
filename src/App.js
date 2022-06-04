@@ -7,10 +7,12 @@ import { EditProductPage } from './Components/Page/Edit-Product-Page/EditProduct
 import { MyProductsPage } from "./Components/Page/MyProducts-Page/MyProductsPage";
 import { DataUserPage } from "./Components/Page/DataUser-Page/DataUserPage";
 import { EditUserPage } from "./Components/Page/EditUser-Page/EditUserPage";
+import { NavBar } from "./Components/Layout/NavBar/NavBar";
 
 function App() {
   return (
     <BrowserRouter>
+    <NavBar/>
       <Routes>
         <Route path="/" element={ <MainPage />  } />
         <Route path="/UserRegister" element={ <PageHomeRegister /> } />

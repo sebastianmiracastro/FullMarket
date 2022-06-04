@@ -107,7 +107,7 @@ export const UICards = ({
         <h2>{nameProduct}</h2>
         <p>Estado: {conditionProduct}</p>
         <div className="apply-Product">
-          <NavLink to="/LogIn">
+          <NavLink to="/LogIn" className="">
             <UIButtons
               classButtons="btn-Apply"
               nameButtons="Aplicar"

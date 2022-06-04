@@ -35,6 +35,7 @@ export const UIButtonsSesionLogin = () => {
           timer: "2000"
         })
         navigate("/")
+        window.setTimeout(window.location.reload(true),2000)
       }
     })
     .catch((err) => {
