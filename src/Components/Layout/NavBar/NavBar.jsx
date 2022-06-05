@@ -7,7 +7,6 @@ import { Auth } from "../../Helpers/Auth"
 import { Logout } from "../../Helpers/Logout"
 
 export const NavBar = () => {
-  
   // Función para validar que el usuario este en sesión  
   const UserInSesion = Auth(); 
 
@@ -17,6 +16,14 @@ export const NavBar = () => {
         <UILogos />
       </div>
       <div className="primaryBtnHeader">
+        <NavLink to="/">
+          {" "}
+          <UIButtons
+            classButtons="btn-primaryHeader"
+            nameButtons="Inicio"
+          ></UIButtons>
+        </NavLink>
+
         { UserInSesion ? ""
         :
         <NavLink to="/UserRegister">
@@ -27,7 +34,6 @@ export const NavBar = () => {
           ></UIButtons>
         </NavLink>
         }
-
         { UserInSesion ? "" :
         <NavLink to="/LogIn">
           <UIButtons
@@ -49,7 +55,7 @@ export const NavBar = () => {
         }
 
         { UserInSesion ?
-          <a href="/" onClick={Logout} className="btn-primaryHeader">Cerrar Sesión</a>
+          <a href="/" onClick={Logout} className="btn-Logout">Cerrar Sesión</a>
           :
           ""
         }

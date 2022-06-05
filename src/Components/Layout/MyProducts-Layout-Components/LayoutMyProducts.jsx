@@ -25,7 +25,7 @@ export const LayoutMyProducts=()=> {
   }, []);
 
   return (
-    <main className="main-myProducts">
+    <main className="main-products">
       {products.map((element) => (
         <UIMyProducts
           key={element.name + 1}

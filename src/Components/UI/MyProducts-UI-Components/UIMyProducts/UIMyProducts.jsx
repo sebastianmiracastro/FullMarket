@@ -14,31 +14,31 @@ export const UIMyProducts=({
 })=> {
   return (
    <>
-      <div className="header-CardMyProducts">
-        <h1>{typeProductMyProduct}</h1>
-        <div className="body-CardMyProducts">
-          <div className="img-CardMyProducts">
+        <div className='container-My-Products-card'>
+        <div className="header-Card">
+          <h1>{typeProductMyProduct}</h1>
+        </div>
+        <div className="body-Card">
+          <div className="img-Card">
             <img
               src={imgProductMyProduct}
-              className="img-CardMyProducts"
+              className="img-Card"
               alt={nameProductMyProduct}
             ></img>
           </div>
           <h2>{nameProductMyProduct}</h2>
           <p>Estado: {conditionProductMyProduct}</p>
-          <div className="apply-Productss">
+            <div className="apply-My-Products">
               <UIButtonsMyProducts
-                classButtons="btn-Edit"
-                nameButtons="Editar"
+                classButtonsMyProducts="btn-Edit"
+                nameButtonsMyProducts="Editar"
               ></UIButtonsMyProducts>
               <UIButtonsMyProducts
-                classButtons="btn-Remove"
-                nameButtons="Eliminar"
+                classButtonsMyProducts="btn-Remove"
+                nameButtonsMyProducts="Eliminar"
               ></UIButtonsMyProducts>
-          </div>
+            </div>
         </div>
-      </div>
-      <div>
       </div>
     </>
   )

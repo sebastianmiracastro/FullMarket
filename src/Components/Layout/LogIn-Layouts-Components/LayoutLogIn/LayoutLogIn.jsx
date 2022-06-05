@@ -8,7 +8,6 @@ export const LayoutLogIn = () => {
       <>
     <div>
         <UIHeaderLogin />
-        <UINavbarLogin />
         <UIButtonsSesionLogin />
     </div>
       </>

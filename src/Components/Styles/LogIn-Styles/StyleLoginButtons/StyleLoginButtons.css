@@ -272,7 +272,7 @@ a {
     font-size: 22px;
     margin-left: 3rem;
   }
-  a {
+  .foo {
     display: block;
     text-align: center;
     text-decoration: none;
@@ -280,7 +280,6 @@ a {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.12em;
-    margin-left: 22px;
   }  
   div.Line-hr {
     display: block;
