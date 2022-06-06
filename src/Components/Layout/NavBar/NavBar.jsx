@@ -5,6 +5,7 @@ import { UIButtons } from "../../UI/Main-UI-Components/UIButtons/UIButtons";
 import { UILogos } from "../../UI/Main-UI-Components/UILogos/UILogos";
 import { Auth } from "../../Helpers/Auth"
 import { Logout } from "../../Helpers/Logout"
+import { HiHome } from "react-icons/hi";
 
 export const NavBar = () => {
   // Función para validar que el usuario este en sesión  
@@ -16,14 +17,17 @@ export const NavBar = () => {
         <UILogos />
       </div>
       <div className="primaryBtnHeader">
-        <NavLink to="/">
+        {/* <NavLink to="/">
           {" "}
           <UIButtons
             classButtons="btn-primaryHeader"
             nameButtons="Inicio"
           ></UIButtons>
-        </NavLink>
+        </NavLink> */}
 
+           <NavLink to="/">
+          <HiHome className="home-icon"/>
+        </NavLink> 
         { UserInSesion ? ""
         :
         <NavLink to="/UserRegister">
