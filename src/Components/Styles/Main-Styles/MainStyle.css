@@ -10,6 +10,9 @@
   align-items: center;
   flex-wrap: wrap;
   box-sizing: border-box;
+  -webkit-box-shadow: 0px 3px 10px 0px rgba(211,211,211,1);
+  -moz-box-shadow: 0px 3px 10px 0px rgba(211,211,211,1);
+  box-shadow: 0px 3px 10px 0px rgba(211,211,211,1);
 }
 
 .primaryBtnHeader {
@@ -31,13 +34,77 @@
 
   .primaryBtnHeader{
     flex-direction: column;
+    margin: none;
   }
   .btn-primaryHeader{
     margin-top: 1rem;
   }
+  .btn-Apply {
+    width: 100% !important;
+  }
 }
 
-.btn-primaryHeader {
+.btn-Logout{
+  width: 12rem;
+  background-color: #c0392b;
+  border-radius: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.7rem 0;
+}
+
+.btn-Logout:hover{
+  color: #ffffff;
+  background: #e74c3c;
+}
+.custom-form {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.custom-select{
+  margin-bottom: 10px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.custom-btn{
+  width: 200px;
+  border-radius: 10px;
+  padding: 5px 3px 5px 3px;
+background-color: rgb(8, 98, 172);
+color: white;
+}
+
+.input-custom {
+  margin-bottom: 10px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.btn-Add{
+  width: 12rem;
+  background-color: #af9710;
+  border-radius: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.7rem 0;
+}
+
+.btn-Add:hover{
+  color: #ffffff;
+  background: #e9b72e;
+}
+
+.btn-primaryHeader{
   width: 12rem;
   height: 2.5rem;
   background-color: #ff661f;
@@ -48,16 +115,25 @@
   font-weight: bold;
   color: #ffffff;
   font-size: 1rem;
-  margin-left: 1rem;
   cursor: pointer;
   text-decoration: none;
 }
 
-.btn-primaryHeader:hover {
+.btn-primaryHeader:hover{
   animation: slidebg 2s linear infinite;
   color: #ffffff;
   background: #f6560a;
 }
+
+.home-icon {
+  cursor: pointer;
+  
+  color: #f6560a;
+  font-size: 3rem;
+  
+  
+}
+
 
 .containerLogotype{
   width: 100%;
@@ -89,6 +165,7 @@
 }
 
 .primarySearch {
+  cursor: pointer;
   background-color: #f5f3f3;
   width: 80%;
   height: 2rem;
@@ -96,6 +173,7 @@
   border: #000000;
   color: #000000;
   border-radius: 0.5rem;
+  outline: none;
 }
 
 .iconSearch {
@@ -131,13 +209,15 @@
 }
 
 .container-card{
-  width: 5%;
-  min-width: 200px;
+  cursor: pointer;
+  width: 10%;
+  min-width: 190px;
   height: 100%;
   margin: 2rem;
   background-color: #ffffff;
   transition: all 0.2s;
   border-radius: 10px;
+  
 }
 
 .container-card:hover {
@@ -177,13 +257,6 @@ h1 {
   display: flex;
   align-items: center;
 }
-
-/* .body-Card {
-  width: 13rem;
-  height: 5rem;
-  margin-left: 5rem;
-  margin-top: 1rem;
-} */
 
 .body-Card {
   width: 100%;
@@ -242,7 +315,7 @@ p {
   margin-top: 0.1rem;
   width: 100%;
   height: 2.5rem;
-  margin-right: 3px;
+  /* margin-right: 3px; */
   background-color: #f6560a;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -264,8 +337,8 @@ p {
 
 .makeStyles-paper-1{
   /* background-color: red !important; */
-  max-width: 100% !important;
-  max-height: 90% !important; 
+  max-width: 90% !important;
+  max-height: 85% !important;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -273,6 +346,9 @@ p {
   align-items: center;
   border-radius: 15px !important;
   box-sizing: border-box;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
 }
 
 /* .modalWindowFeatures {
@@ -294,7 +370,7 @@ p {
 .imgModalWindow {
   width: 60%;
   min-width: 200px;
-  height: 50%;
+  height: 60%;
   min-height: 200px;
   display: flex;
   justify-content: center;
@@ -341,4 +417,245 @@ p {
   display: flex;
   background-color: #4b0f0f;
   flex-direction: column;
+}
+
+
+/* ---- STYLES FOR MOVIL ---- */
+@media (max-width: 990px) {
+  .makeStyles-paper-1{
+    max-height: 80% !important;
+    padding: 0.2rem 0.2rem;
+  }
+
+  .imgModalWindow {
+    width: 60%;
+    min-width: 180px;
+    height: 20%;
+  }
+}
+
+  @media (max-width: 520px) {
+    .makeStyles-paper-1{
+      max-height: 90% !important;
+      padding: 0.2rem 0.2rem;
+    }
+}
+
+
+
+/* --------  PAGE MY PRODUCTS  ---------- */
+.container-My-Products-card {
+  width: 10%;
+  min-width: 190px;
+  height: 100%;
+  margin: 2rem;
+  background-color: #ffffff;
+  transition: all 0.2s;
+  border-radius: 10px;
+  padding: 1rem 0 0 0;
+}
+
+.container-My-Products-card:hover {
+box-shadow: 5px 0px 5px #565656;
+animation: slidebg 0.5s linear infinite;
+transform: scale(1.05);
+cursor: pointer;
+}
+
+.apply-My-Products{
+  width: 100%;
+  height: 1.8rem;
+  /* background-color: #f6560a; */
+  margin-left: 0rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  padding: 0.7rem 0rem;
+}
+
+.btn-Edit{
+  min-width: 80px;
+  min-height: 30px;
+  background-color: #0097e6;
+  border-style: none;
+  color: #ffffff;
+  border-radius: 7px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-Edit:hover {
+  letter-spacing: 1px;
+  background-color: #0479b8;
+}
+
+.btn-Remove{
+  min-width: 80px;
+  min-height: 30px;
+  background-color: #e84118;
+  border-style: none;
+  color: #ffffff;
+  border-radius: 7px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-Remove:hover {
+  letter-spacing: 1px;
+  background-color: #c23616;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------  PAGE EDIT PRODUCT  ---------- */
+.containerFormData, .cont-add-product{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0;
+  background-color: #1e272e;
+}
+
+.form-edit-product, .form-add-product{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em;
+  background-color: #f6560a;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.form-edit-product h2, .form-add-product h2{
+  font-size: 35px;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.form-edit-product input, .form-add-product input{
+  border-radius: 25px;
+  border-style: none;
+  padding: 0.5em 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-edit-product input:focus, .form-add-product input:focus{
+  background-color: #f3f3f3;
+  color: #1e272e;
+}
+
+.form-edit-product select, .form-add-product select{
+  border-radius: 25px;
+  border-style: none;
+  padding: 0.5em 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button-page-edit, .button-add-product{
+  border-radius: 25px;
+  padding: 0.7rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-style: none;
+  background-color: #fff;
+  color: #f6560a;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.button-page-edit:hover, .button-add-product:hover {
+  background-color: #ad3f0c;
+  color: #fff;
+  font-weight: bold;
+  transform: scale(101%);
+  letter-spacing: 2px;
+}
+
+
+/* MODAL ELIMINAR */
+
+.makeStyles-paper-4{
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%)!important;
+  background-color: #fff !important;
+  border-radius: 1rem !important;
+  border-style: none !important;
+  display: flex !important;
+  flex-direction: column;
+  padding: 3rem 1rem !important;
+}
+
+.makeStyles-paper-4 h2{
+  font-weight: bold !important;
+  color: #252525 !important;
+  letter-spacing: 1px !important;
+}
+
+.cont-buttons-modal-eliminar{
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  padding: 1rem 0;
+}
+
+.btn-eliminar{
+  width: 30%;
+  min-width: 80px;
+  min-height: 30px;
+  background-color: #e84118;
+  border-style: none;
+  color: #ffffff;
+  border-radius: 7px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  letter-spacing: 1px;
+  background-color: #c23616;
+}
+
+.btn-cancelar{
+  width: 30%;
+  min-width: 80px;
+  min-height: 30px;
+  background-color: #0097e6;
+  border-style: none;
+  color: #ffffff;
+  border-radius: 7px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  letter-spacing: 1px;
+  background-color: #0479b8;
+}
+
+.makeStyles-paper-4 p{
+  text-align: center;
+  font-size: 1rem;
 }

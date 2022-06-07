@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { UInputProduct } from "../../UI/AddProduct-UI-Components/UInputProduct/UInputProduct";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { UInputProduct } from '../../UI/AddProduct-UI-Components/UInputProduct/UInputProduct';
 
 export const LayoutInputProduct = () => {
-  const [typeInput, setTypeInput] = useState("");
-  const [name, setName] = useState("");
+  const [typeInput, setTypeInput] = useState('');
+  const [name, setName] = useState('');
   const [imgProduct, setImage] = useState();
-  const [condition, setCondition] = useState("");
-  const [description, setDescription] = useState("");
-  const [availability, setAvailability] = useState("");
-  const [city, setCity] = useState("");
-  const [date, setDate] = useState("");
-  const [idOwner, setIdOwner] = useState("");
+  const [condition, setCondition] = useState('');
+  const [description, setDescription] = useState('');
+  const [availability, setAvailability] = useState('');
+  const [city, setCity] = useState('');
+  const [date, setDate] = useState('');
+  const idOwner = localStorage.getItem('uiduser');
 
-  const [alertNameProduct, setAlertNameProduct] = useState("");
+  const [alertNameProduct, setAlertNameProduct] = useState('');
 
   var formData = new FormData();
 
@@ -27,10 +27,9 @@ export const LayoutInputProduct = () => {
     formData.append("city", city);
     formData.append("date", date);
     formData.append("idOwner", idOwner);
-
     axios
       .post(
-        "https://backend-fullmarket-py.herokuapp.com/createnewproduct",
+        'https:/fullmarket-provitional-backend.herokuapp.com/products/createnewproduct',
         formData
       )
       .then()
@@ -44,20 +43,21 @@ export const LayoutInputProduct = () => {
     let validationNameAddProduct = /^[a-zA-Z\t]+|(^$)/;
     let nameAddProduct;
     if (name.match(validationNameAddProduct)) {
-      nameAddProduct = "Correcto";
+      nameAddProduct = 'Correcto';
       setAlertNameProduct(nameAddProduct);
     } else {
-      nameAddProduct =
-        "Incorrecto";
+      nameAddProduct = 'Incorrecto';
       setAlertNameProduct(nameAddProduct);
     }
   };
 
   return (
-    <>
-      <form onSubmit={Handle} className="form-add-product">
+   
+    <div className='cont-add-product'>
+      <form onSubmit={Handle} className="form-add-product custom-form">
+        <h2>Agregar Producto</h2>
         <select
-          className="type-product-addproduct"
+          className="type-product-addproduct custom-select"
           type="type"
           value={typeInput}
           onChange={(e) => setTypeInput(e.target.value)}
@@ -67,7 +67,7 @@ export const LayoutInputProduct = () => {
           <option value="Intercambio">Intercambio</option>
         </select>
         <UInputProduct
-          classInput="inputAddProduct"
+          classInput="inputAddProduct input-custom"
           typeInput="name"
           nameInput="name"
           valueInput={name}
@@ -78,14 +78,14 @@ export const LayoutInputProduct = () => {
         />
         <p className="alert-validation-addproduct">{alertNameProduct}</p>
         <UInputProduct
-          classInput="inputAddImgProduct"
+          classInput="inputAddImgProduct input-custom"
           typeInput="file"
           nameInput="imgProduct"
           onChange={(e) => setImage(e.target.files[0])}
           placeholder="Photo"
         />
         <select
-          className="condition-product-addproduct"
+          className="condition-product-addproduct custom-select"
           type="condition"
           value={condition}
           onChange={(e) => setCondition(e.target.value)}
@@ -97,7 +97,7 @@ export const LayoutInputProduct = () => {
         </select>
 
         <UInputProduct
-          classInput="inputAddProduct"
+          classInput="inputAddProduct input-custom"
           typeInput="description"
           nameInput="description"
           valueInput={description}
@@ -105,7 +105,7 @@ export const LayoutInputProduct = () => {
           placeholder="Descripción"
         />
         <UInputProduct
-          classInput="inputAddProduct"
+          classInput="inputAddProduct input-custom"
           typeInput="availability"
           nameInput="availability"
           valueInput={availability}
@@ -113,7 +113,7 @@ export const LayoutInputProduct = () => {
           placeholder="Disponibilidad"
         />
         <UInputProduct
-          classInput="inputAddProduct"
+          classInput="inputAddProduct input-custom"
           typeInput="city"
           nameInput="city"
           valueInput={city}
@@ -121,25 +121,26 @@ export const LayoutInputProduct = () => {
           placeholder="Ciudad"
         />
         <UInputProduct
-          classInput="inputAddProduct"
+          classInput="inputAddProduct input-custom"
           typeInput="date"
           nameInput="date"
           valueInput={date}
           onChange={(e) => setDate(e.target.value)}
           placeholder="Date"
         />
-        <UInputProduct
+        {/* <UInputProduct
           classInput="inputAddProduct"
           typeInput="idOwner"
           nameInput="idOwner"
           valueInput={idOwner}
           onChange={(e) => setIdOwner(e.target.value)}
           placeholder="IdOwner"
-        />
-        <button type="submit" className="button">
+        /> */}
+        <button type="submit" className="button-add-product">
           Publicar Producto
         </button>
       </form>
-    </>
+    </div>
+   
   );
 };

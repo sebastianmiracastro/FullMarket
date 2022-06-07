@@ -14,50 +14,100 @@ img.logo {
   left: 38%;
 }
 
-img.logoFullMakert {
-  position: absolute;
-  width: 12%;
-  top: -7.5%;
-  right: 39%;
+img.logoFullMarket {
+  margin: -3%;
+  margin-left: 3%;
 }
 
-@media (min-width:768px) and (max-width:625px) {
-  .login-content {
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    position: absolute;
-    width: 34%;
-    right: 8rem;
-    top: 11rem;
+@media (max-width: 1200px) {
+  img.logoFullMarket {
+    margin: -4%;
+    margin-left: 12%;
   }
-}
-
-@media (min-width: 400px) and (max-width: 731px) {
-  .Login {
-      display: none;
-  }
-  .login-content {
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    position: absolute;
-    width: 34%;
-    right: 14rem;
-    top: 12rem;
-}
   img.logo {
-      position: absolute;
-      width: 32%;
-      top: -3%;
-      left: 34%;
-  }
-  img.logoFullMakert {
     position: absolute;
     width: 12%;
-    top: -7.5%;
-    right: 39%;
-  } 
+    top: -4%;
+    left: 38%;
+  }
+}
+@media (max-width: 1030px) {
+  img.logo {
+    position: absolute;
+    width: 14%;
+    top: -4%;
+    left: 34%;
+  }
+  img.logoFullMarket {
+    margin: -6%;
+    margin-left: 12%;
+  }
+}
+@media (max-width: 1000px) {
+  img.logo {
+    position: absolute;
+    width: 14%;
+    top: -4%;
+    left: 34%;
+  }  
+  div.uiNavbarLogin {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 86px;
+    background-color: #ffff;
+    border-bottom: 2px solid #040404;
+  }
+}
+@media (max-width: 768px) {
+  img.logo {
+    width: 8rem;
+    height: 8rem;
+    margin-left: -2%;
+    top: -10px;
+  }
+    img.logoFullMarket {
+    margin: -4%;
+    margin-left: 18%; 
+  }
+  div.uiNavbarLogin {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 6rem;
+    background-color: #ffffff;
+  }
+}
+@media (max-width: 500px) {
+  div.uiNavbarLogin {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 6rem;
+    background-color: #ffffff;
+  }
+  img.logo {
+    width: 8rem;
+    height: 9rem;
+    margin-left: -18%;
+    top: -4%;
+  }
+  img.logoFullMarket {
+    margin: -10%;
+    margin-left: 22%;
+  }
+}
+@media (max-width: 420px) {
+  img.logo {
+    width: 7rem;
+    height: 8rem;
+    margin-left: -25%;
+    top: -2%;
+  }
+  img.logoFullMarket {
+    margin: -10%;
+    margin-left: 18%;
+  }
 }

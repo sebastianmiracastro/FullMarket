@@ -25,18 +25,19 @@ export const LayoutMyProducts=()=> {
   }, []);
 
   return (
-    <main className="main-myProducts">
+    <main className="main-products">
       {products.map((element) => (
         <UIMyProducts
           key={element.name + 1}
-          typeProductMyProduct={element.type}
-          imgProductMyProduct={element.imgProductURL}
-          nameProductMyProduct={element.name}
-          conditionProductMyProduct={element.condition}
-          availabilityProductMyProduct={element.availability}
-          dateProductMyProduct={element.date}
-          descriptionProductMyProduct={element.description}
-          cityProductMyProduct={element.city}
+          uidProduct = {element.uidProduct}
+          typeProduct={element.type}
+          imgProduct={element.imgProductURL}
+          nameProduct={element.name}
+          conditionProduct={element.condition}
+          availabilityProduct={element.availability}
+          dateProduct={element.date}
+          descriptionProduct={element.description}
+          cityProduct={element.city}
         />
       ))}
     </main>

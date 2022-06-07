@@ -56,18 +56,18 @@ export const UICards = ({
     setOpen(false);
   };
 
-  // ---- Get information of each product through its respective ID ---- //
-  const featuresProduct = async () => {
-    await fetch(
-      `https:/backend-fullmarket-py.herokuapp.com/getoneproduct/${uidProduct}`
-    )
-      .then((res) => res.json())
-      .then((data) => (data));
-  };
-  useEffect(() => {
-    featuresProduct();
-  }, []);
-  // ---- //
+  // // ---- Get information of each product through its respective ID ---- //
+  // const featuresProduct = async () => {
+  //   await fetch(
+  //     `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProduct}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => console.log("AJ",data));
+  // };
+  // useEffect(() => {
+  //   featuresProduct();
+  // }, []);
+  // // ---- //
 
   const body = (
     <div className='modalWindowFeatures'>
@@ -75,7 +75,7 @@ export const UICards = ({
         <h2 className='titleModalWindows' id="simple-modal-title">
           {typeProduct}: {nameProduct}
         </h2>
-
+        <h2>{uidProduct}</h2>
         <img className='imgModalWindow' src={imgProduct} alt="" />  {/* Show the picture */}
         <p className='pModalDescription'>Descripcion: {descriptionProduct}</p>
         <p className='pModalAvailability'>Disponible: {availabilityProduct}</p>
@@ -107,7 +107,7 @@ export const UICards = ({
         <h2>{nameProduct}</h2>
         <p>Estado: {conditionProduct}</p>
         <div className="apply-Product">
-          <NavLink to="/LogIn">
+          <NavLink to="/LogIn" className="">
             <UIButtons
               classButtons="btn-Apply"
               nameButtons="Aplicar"
