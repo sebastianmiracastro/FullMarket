@@ -57,6 +57,7 @@ export const LayoutEditMyProducts = () => {
 
    let formData = new FormData();
    const Handle = async (event) => {
+     console.log("Entre al Handle");
      formData.set("type", type);
      formData.set("name", name);
      formData.set("imgProduct", imgProduct);

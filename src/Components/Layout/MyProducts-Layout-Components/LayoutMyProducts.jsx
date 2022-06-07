@@ -29,6 +29,7 @@ export const LayoutMyProducts=()=> {
       {products.map((element) => (
         <UIMyProducts
           key={element.name + 1}
+          uidProduct = {element.uidProduct}
           typeProduct={element.type}
           imgProduct={element.imgProductURL}
           nameProduct={element.name}
