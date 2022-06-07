@@ -71,7 +71,8 @@ export const LayoutEditMyProducts = () => {
        .put(
         `https:/fullmarket-provitional-backend.herokuapp.com/products/editproduct/${text}`,
          formData,
-         alert("ACTUALIZADOS")
+         alert("ACTUALIZADOS"),
+         window.location.reload(true)
        )
        .then()
        .catch((error) => {

@@ -30,7 +30,8 @@ export const LayoutInputProduct = () => {
     axios
       .post(
         'https:/fullmarket-provitional-backend.herokuapp.com/products/createnewproduct',
-        formData
+        formData,
+        window.location.reload(true)
       )
       .then()
       .catch((error) => {
