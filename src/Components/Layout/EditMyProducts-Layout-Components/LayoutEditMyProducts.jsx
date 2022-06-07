@@ -57,7 +57,6 @@ export const LayoutEditMyProducts = () => {
 
    let formData = new FormData();
    const Handle = async (event) => {
-     console.log("Entre al Handle");
      formData.set("type", type);
      formData.set("name", name);
      formData.set("imgProduct", imgProduct);
@@ -70,7 +69,7 @@ export const LayoutEditMyProducts = () => {
  
      axios
        .put(
-        `https://fullmarket-provitional-backend.herokuapp.com//products//editproduct/${text}`,
+        `https:/fullmarket-provitional-backend.herokuapp.com/products/editproduct/${text}`,
          formData,
          alert("ACTUALIZADOS")
        )
@@ -78,6 +77,7 @@ export const LayoutEditMyProducts = () => {
        .catch((error) => {
          console.log(error);
        });
+       
      event.preventDefault();
    };
   return (

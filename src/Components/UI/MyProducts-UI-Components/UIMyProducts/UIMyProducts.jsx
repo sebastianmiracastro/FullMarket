@@ -63,7 +63,7 @@ export const UIMyProducts=({
 
   const featuresProduct = async () => {
     await fetch(
-      `https://fullmarket-provitional-backend.herokuapp.com/products//getoneproduct/${uidProduct}`
+      `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProduct}`
     )
       .then((res) => res.json())
       .then((data) => console.log(data));
@@ -74,8 +74,9 @@ export const UIMyProducts=({
   const deleteProduct = async (event) => {
     axios
       .delete(
-         `https://fullmarket-provitional-backend.herokuapp.com/products//deleteproduct/${uidProduct}`,
-        alert("ELIMINADO")
+         `https://fullmarket-provitional-backend.herokuapp.com/products/deleteproduct/${uidProduct}`,
+        alert("ELIMINADO"),
+        window.location.reload(true)
       )
       .then()
       .catch((error) => {
