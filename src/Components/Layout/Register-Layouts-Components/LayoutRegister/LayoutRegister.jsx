@@ -90,11 +90,11 @@ export const LayoutRegister = () => {
     let validationName = /^[a-zA-Z\t]+|(^$)/;
     let text;
     if (name.match(validationName)) {
-      text = "Información correcta";
+      text = "Correcto";
       setMsgName(text);
     } else {
       text =
-        "Información incorrecta, Solo puedes añadir letras, minimo 3 letras maximo 16 letras";
+        "Información incorrecta, recuerde añadir solo letras.";
       setMsgName(text);
     }
   };
@@ -119,7 +119,7 @@ export const LayoutRegister = () => {
       setMsgAlias(text);
     } else {
       text =
-        "Información incorrecta, Solo puedes añadir letras, minimo 3 letras maximo 10 letras";
+        "Información incorrecta, recuerde añadir primero letras y despues el número que desee.";
       setMsgAlias(text);
     }
   };
