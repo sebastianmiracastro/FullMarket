@@ -52,8 +52,10 @@ export const LayoutInputProduct = () => {
   };
 
   return (
-    <>
+   
+    <div className='cont-add-product'>
       <form onSubmit={Handle} className="form-add-product custom-form">
+        <h2>Agregar Producto</h2>
         <select
           className="type-product-addproduct custom-select"
           type="type"
@@ -134,10 +136,11 @@ export const LayoutInputProduct = () => {
           onChange={(e) => setIdOwner(e.target.value)}
           placeholder="IdOwner"
         /> */}
-        <button type="submit" className="button custom-btn">
+        <button type="submit" className="button-add-product">
           Publicar Producto
         </button>
       </form>
-    </>
+    </div>
+   
   );
 };

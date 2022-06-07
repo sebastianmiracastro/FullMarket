@@ -82,14 +82,15 @@ export const LayoutEditMyProducts = () => {
    };
   return (
     <>
-    <div className="addProductHeader">
+    {/* <div className="addProductHeader">
       <div className="headerLogotype">
         <UILogos />
       </div>
-    </div>
+    </div> */}
     <div className="spaceAddProduct"></div>
     <div className="containerFormData">
-      <form onSubmit={Handle} className="form12">
+      <form onSubmit={Handle} className="form-edit-product">
+        <h2>Editar Producto</h2>
         <input
           className="inputAddProduct"
           type="uid"
@@ -97,6 +98,7 @@ export const LayoutEditMyProducts = () => {
           value={text}
           onChange={(e) => setLocalStorage(e.target.value)}
           placeholder=" "
+          readOnly={true}
         ></input>
 
         <input
@@ -170,8 +172,8 @@ export const LayoutEditMyProducts = () => {
           onChange={(e) => setIdOwner(e.target.value)}
           placeholder=" "
         ></input>
-        <button type="submit" className="button">
-          Editar Product
+        <button type="submit" className="button-page-edit">
+          Guardar Cambios
         </button>
       </form>
     </div>

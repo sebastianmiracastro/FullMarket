@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from 'axios';
+import "../../../Styles/Main-Styles/MainStyle.css"
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -91,12 +92,14 @@ export const UIMyProducts=({
       <p id="simple-modal-description">
         ¿Estas seguro de eliminar {nameProduct}?.
       </p>
-      <button type="button" onClick={deleteProduct}>
-        ELIMINAR
-      </button>
-      <button type="button" onClick={handleClose}>
-        CANCELAR
-      </button>
+      <div className="cont-buttons-modal-eliminar">
+        <button type="button" className="btn-eliminar" onClick={deleteProduct}>
+          ELIMINAR
+        </button>
+        <button type="button" className="btn-cancelar" onClick={handleClose}>
+          CANCELAR
+        </button>
+      </div>
     </div>
   );
 
