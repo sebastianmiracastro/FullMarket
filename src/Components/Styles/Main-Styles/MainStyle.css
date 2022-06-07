@@ -50,12 +50,55 @@
   margin-left: 1rem;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   padding: 0.7rem 0;
 }
 
 .btn-Logout:hover{
   color: #ffffff;
   background: #e74c3c;
+}
+.custom-form {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.custom-select{
+  margin-bottom: 10px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.custom-btn{
+  width: 200px;
+  border-radius: 10px;
+  padding: 5px 3px 5px 3px;
+background-color: rgb(8, 98, 172);
+color: white;
+}
+
+.input-custom {
+  margin-bottom: 10px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.btn-Add{
+  width: 12rem;
+  background-color: #af9710;
+  border-radius: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.7rem 0;
+}
+
+.btn-Add:hover{
+  color: #ffffff;
+  background: #e9b72e;
 }
 
 .btn-primaryHeader{

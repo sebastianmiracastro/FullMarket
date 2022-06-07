@@ -27,13 +27,13 @@ export const UIButtonsSesionLogin = () => {
         const decoded = jwtDecode(token);
         window.localStorage.setItem("token", token)
         window.localStorage.setItem("uiduser", decoded.uid)
-        swal({
-          title: "Datos Correctos",
-          text: "Bienvenido de nuevo",
-          icon: "success",
-          Button: "Acceptar",
-          timer: "2000"
-        })
+        // swal({
+        //   title: "Datos Correctos",
+        //   text: "Bienvenido de nuevo",
+        //   icon: "success",
+        //   Button: "Acceptar",
+        //   timer: "2000"
+        // })
         navigate("/")
         window.setTimeout(window.location.reload(true),2000)
       }

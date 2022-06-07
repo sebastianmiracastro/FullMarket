@@ -1,3 +1,4 @@
-export const Logout = () => {
-    localStorage.clear();
-  };
+export const Logout = (navigate) => {
+  localStorage.clear();
+  navigate('/');
+};
