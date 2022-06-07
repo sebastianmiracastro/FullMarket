@@ -51,9 +51,7 @@ export const UIMyProducts=({
   const [text, setText] = useState(window.localStorage.getItem("text"));
   
   const saveID = async (uidProduct) => {
-    console.log("Entre a la funcion Save ID");
     try {
-      console.log("Entre al try");
       setText(text);
       window.localStorage.setItem("text", uidProduct);
     } catch (error) {
