@@ -117,6 +117,7 @@ color: white;
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
+  margin: 2px;
 }
 
 .btn-primaryHeader:hover{
