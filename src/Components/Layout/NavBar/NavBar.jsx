@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../Styles/Main-Styles/MainStyle.css';
 import { NavLink } from 'react-router-dom';
 import { UIButtons } from '../../UI/Main-UI-Components/UIButtons/UIButtons';
@@ -6,8 +6,30 @@ import { UILogos } from '../../UI/Main-UI-Components/UILogos/UILogos';
 import { Auth } from '../../Helpers/Auth';
 import { Logout } from '../../Helpers/Logout';
 import { HiHome } from 'react-icons/hi';
+import { AiFillBell } from "react-icons/ai";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router";
+
+import Modal from "@material-ui/core/Modal";
+import { makeStyles } from '@material-ui/core/styles';
+import { UIModalNotification } from '../../UI/Notification-UI-Component/UIModalNotification'
+
+/* ---------------------- MODAL LOGIC ------------------------ */ 
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+
+function getModalStyle(){
+  const top = 50 + rand();
+  const left = 50 + rand(); 
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
 
 export const NavBar = () => {
   // Función para validar que el usuario este en sesión
@@ -25,6 +47,11 @@ export const NavBar = () => {
         timer: '5000',
       });
   }, [token]);
+
+  /* ---------------------- See Notification Logic ------------------------------ */
+
+
+
   return (
     <div className="primaryHeader">
       <div className="headerLogotype">
@@ -86,6 +113,9 @@ export const NavBar = () => {
           <NavLink to="/LoggedUser/AddProduct">
             <p className="btn-Add">Agregar Producto</p>
           </NavLink>
+        )}
+        {UserInSesion && (
+          <AiFillBell className='notification-icon' />
         )}
       </div>
     </div>
