@@ -31,6 +31,18 @@ function getModalStyle(){
   };
 }
 
+const useStyle = makeStyles((theme) => ({
+  paper: {
+    position: "absolute",
+    width: 600,
+    height: 700,
+    backgroundColor: theme.palette.background.paper,
+    border: "0.5px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+
 export const NavBar = () => {
   // Función para validar que el usuario este en sesión
   const navigate = useNavigate();
@@ -50,7 +62,28 @@ export const NavBar = () => {
 
   /* ---------------------- See Notification Logic ------------------------------ */
 
+  const classes = useStyle();
+  const [modalStyle] = useState(getModalStyle);
+  const [open, setOpen] = useState(false)
 
+  const handleModalOpen = () => {
+    setOpen(true)
+  }
+
+  const handleModalClose = () => {
+    setOpen(false)
+  }
+
+  const body = (
+    <div className='modalWindowFeatures'>
+      <div style={modalStyle} className={classes.paper}>
+        {<UIModalNotification /> ? <UIModalNotification /> : "Loading..."}
+        <button className='btnOkModal' type="button" onClick={handleModalClose}>
+        OK
+      </button>
+      </div>
+    </div>
+  );
 
   return (
     <div className="primaryHeader">
@@ -115,9 +148,12 @@ export const NavBar = () => {
           </NavLink>
         )}
         {UserInSesion && (
-          <AiFillBell className='notification-icon' />
+          <AiFillBell className='notification-icon' onClick={handleModalOpen} />
         )}
       </div>
+      <Modal open={open} onClose={handleModalClose}>
+        {body}
+      </Modal>
     </div>
   );
 };
