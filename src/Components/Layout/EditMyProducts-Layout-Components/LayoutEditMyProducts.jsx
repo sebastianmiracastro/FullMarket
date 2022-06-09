@@ -9,7 +9,7 @@ export const LayoutEditMyProducts = () => {
   const [text, setText] = useState(window.localStorage.getItem("text"));
   const setLocalStorage = (uidProduct) => {
     try {
-      setText(text);
+      setText(setLocalStorage);
       window.localStorage.getItem("text");
     } catch (error) {
       console.log(error);
@@ -69,7 +69,7 @@ export const LayoutEditMyProducts = () => {
  
      axios
        .put(
-        `https:/fullmarket-provitional-backend.herokuapp.com/products/editproduct/${text}`,
+        `https://fullmarket-provitional-backend.herokuapp.com/products/editproduct/${text}`,
          formData,
          alert("ACTUALIZADOS"),
          window.location.reload(true)

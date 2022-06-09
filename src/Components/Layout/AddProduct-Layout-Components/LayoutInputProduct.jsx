@@ -29,9 +29,9 @@ export const LayoutInputProduct = () => {
     formData.append("idOwner", idOwner);
     axios
       .post(
-        'https:/fullmarket-provitional-backend.herokuapp.com/products/createnewproduct',
+        'https://fullmarket-provitional-backend.herokuapp.com/products/createnewproduct',
         formData,
-        window.location.reload(true)
+      
       )
       .then()
       .catch((error) => {

@@ -21,7 +21,7 @@ export const LayoutCards = () => {
     <main className="main-products">
       {products.map((element) => (
         <UICards
-          key={element.name + 1}
+          key={element.uidProduct + 1}
           typeProduct={element.type}
           imgProduct={element.imgProductURL}
           nameProduct={element.name}
