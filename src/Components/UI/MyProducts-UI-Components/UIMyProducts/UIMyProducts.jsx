@@ -73,11 +73,12 @@ export const UIMyProducts=({
   const deleteProduct = async (event) => {
     axios
       .delete(
-         `https:/fullmarket-provitional-backend.herokuapp.com/products/deleteproduct/${uidProduct}`,
+         `https://fullmarket-provitional-backend.herokuapp.com/products/deleteproduct/${uidProduct}`,
         alert("ELIMINADO"),
-        window.location.reload(true)
       )
-      .then()
+      .then(setTimeout(() => {
+        window.location.reload(true)
+      }, 1000))
       .catch((error) => {
         console.log(error);
       });

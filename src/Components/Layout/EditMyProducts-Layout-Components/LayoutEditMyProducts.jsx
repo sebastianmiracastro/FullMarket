@@ -72,9 +72,12 @@ export const LayoutEditMyProducts = () => {
         `https://fullmarket-provitional-backend.herokuapp.com/products/editproduct/${text}`,
          formData,
          alert("ACTUALIZADOS"),
-         window.location.reload(true)
+         
+        //  window.location.reload(true)
        )
-       .then()
+       .then(setTimeout(() => {
+        window.location.reload(true)
+      }, 1000))
        .catch((error) => {
          console.log(error);
        });

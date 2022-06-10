@@ -22,6 +22,7 @@ export const LayoutCards = () => {
       {products.map((element) => (
         <UICards
           key={element.uidProduct + 1}
+          uidProduct = {element.uidProduct}
           typeProduct={element.type}
           imgProduct={element.imgProductURL}
           nameProduct={element.name}
