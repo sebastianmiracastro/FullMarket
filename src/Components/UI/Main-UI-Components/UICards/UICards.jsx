@@ -7,7 +7,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Auth } from '../../../Helpers/Auth';
 import swal from 'sweetalert';
 import axios from "axios";
-import { logRoles } from "@testing-library/react";
 
 // ---- MaterialUI modal window setting ---- //
 function rand() {
@@ -54,8 +53,18 @@ export const UICards = ({
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
 
-  const [uidProductApply, setUidProductApply] = useState ('')
+  /* -------------------- InfoUser (useState) ----------------------- */
+
   const [uidUserApply, setUidUserApply] = useState('')
+
+  const [nameUserApply, setNameUserApply] = useState('')
+
+  /* ----------------------Info Product (useState) --------------------------------- */
+
+  const [uidProductApply, setUidProductApply] = useState ('')
+
+  const [nameProductApply, setNameProductApply] = useState('')
+
 
   const UserInSesion = Auth();
 
@@ -77,9 +86,36 @@ export const UICards = ({
         setUidUserApply(data.idOwner)
       })
     };
-    useEffect(() => {
+
+    /* ------------ Get Name User ------------- */
+
+    const nameUser = async () => {
+      const userSend = window.localStorage.getItem('uiduser')
+      const urlGetInfoUser =  `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${userSend}`;
+      await axios.get(urlGetInfoUser).then((response) => {
+        setNameUserApply(response.data.name)
+      }).catch((err) => {
+        ''
+      })
+    }
+
+    /* ------------- Get Name Product -------------- */
+
+    const nameProductF = async () => {
+      const urlGetInfoProduct = `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProductApply}`;
+      await axios.get(urlGetInfoProduct).then((response) => {
+        setNameProductApply(response.data.name)
+      }).catch((err) => {
+        ''
+      })
+    }
+    
+
+    useEffect( ()  => {
+      nameUser()
+      nameProductF()
       featuresProduct();
-   }, []);
+   },);
   // ---- //
   // ------ Logic To Apply To Product ------ //
 
@@ -100,12 +136,12 @@ const mostrar = async () => {
   let formData = new FormData();
 
   const TypeNotifications = 'Aplico'
-  const userSend = window.localStorage.getItem('uiduser')
+
 
   const sendNotification = async () => {
-    formData.append("usersendnoti", userSend)
+    formData.append("usersendnoti", nameUserApply)
     formData.append("userreceivernoti", uidUserApply)
-    formData.append("userreceivernotiproduct", uidProductApply)
+    formData.append("userreceivernotiproduct", nameProductApply)
     formData.append("typenoti", TypeNotifications)
     await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
     .then((res => {
