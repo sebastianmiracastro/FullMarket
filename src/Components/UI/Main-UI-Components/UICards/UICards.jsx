@@ -91,22 +91,22 @@ export const UICards = ({
 
     const nameUser = async () => {
       const userSend = window.localStorage.getItem('uiduser')
-      const urlGetInfoUser =  `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${userSend}`;
-      await axios.get(urlGetInfoUser).then((response) => {
-        setNameUserApply(response.data.name)
-      }).catch((err) => {
-        ''
+      await fetch(
+        `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${userSend}`
+      ).then((res) => res.json())
+      .then((data) => {
+        setNameUserApply(data.name)
       })
     }
 
     /* ------------- Get Name Product -------------- */
 
     const nameProductF = async () => {
-      const urlGetInfoProduct = `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProductApply}`;
-      await axios.get(urlGetInfoProduct).then((response) => {
-        setNameProductApply(response.data.name)
-      }).catch((err) => {
-        ''
+      await fetch(
+        `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProductApply}`
+      ).then((res) => res.json())
+      .then((data) => {
+        setNameProductApply(data.name)
       })
     }
     
