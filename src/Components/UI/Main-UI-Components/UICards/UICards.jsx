@@ -149,8 +149,7 @@ const mostrar = async () => {
           title: "Notificacion Enviada",
           text: "Espera Una Respuesta Del Propietario",
           icon: "success",
-          Button: "Acceptar",
-          timer: "4000"
+          timer: "2500"
         })
     }))
     .catch(( err => {
@@ -158,8 +157,7 @@ const mostrar = async () => {
         title: "No Se Pudo Completar La Accion",
         text: "Intentalo Mas Tarde",
         icon: "error",
-        Button: "Aceptar",
-        timer: "4000"
+        timer: "2500"
       })
     }))
   }
