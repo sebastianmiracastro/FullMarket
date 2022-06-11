@@ -75,9 +75,10 @@ export const UIMyProducts=({
       .delete(
          `https://fullmarket-provitional-backend.herokuapp.com/products/deleteproduct/${uidProduct}`,
         alert("ELIMINADO"),
-        window.location.reload(true)
       )
-      .then()
+      .then(setTimeout(() => {
+        window.location.reload(true)
+      }, 1000))
       .catch((error) => {
         console.log(error);
       });

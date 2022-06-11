@@ -7,6 +7,7 @@ import { UIButtonsRegister } from "../../../UI/Register-UI-Components/UIButtonsR
 import { UIInputRegister } from "../../../UI/Register-UI-Components/UIRegister/UIInputRegister/UIInputRegister";
 
 export const LayoutRegister = () => {
+
   var formData = new FormData();
   const navigate = useNavigate();
 
@@ -22,9 +23,9 @@ export const LayoutRegister = () => {
   const [dpto, setDpto] = useState([]);
   const [ciudades, setCiudades] = useState([]);
 
-  const [msgEmail, setMsgEmail] = useState("");
   const [msgName, setMsgName] = useState("");
   const [msgAlias, setMsgAlias] = useState("");
+  const [msgEmail, setMsgEmail] = useState("");
   const [msgPassword, setMsgPassword] = useState("");
   const [msgPhone, setMsgPhone] = useState("");
   const [msgaddress, setMsgAddress] = useState("");
@@ -54,7 +55,7 @@ export const LayoutRegister = () => {
             title: "¡Bien hecho, ahora formas parte de FullMarket, bienvenido!",
             icon: "success",
           });
-          navigate("/LayoutCards");
+          navigate("/");
         }
       })
       .catch((err) => {
@@ -66,6 +67,7 @@ export const LayoutRegister = () => {
         }
       });
   };
+
   let URLDepart =
     "https://raw.githubusercontent.com/marcovega/colombia-json/master/colombia.json";
 
@@ -88,14 +90,15 @@ export const LayoutRegister = () => {
     let validationName = /^[a-zA-Z\t]+|(^$)/;
     let text;
     if (name.match(validationName)) {
-      text = "Información correcta";
+      text = "Correcto";
       setMsgName(text);
     } else {
       text =
-        "Información incorrecta, Solo puedes añadir letras, minimo 3 letras maximo 16 letras";
+        "Información incorrecta, recuerde añadir solo letras.";
       setMsgName(text);
     }
   };
+
   const handleCharacterEmail = () => {
     let validationEmail = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
     let text;
@@ -116,7 +119,7 @@ export const LayoutRegister = () => {
       setMsgAlias(text);
     } else {
       text =
-        "Información incorrecta, Solo puedes añadir letras, minimo 3 letras maximo 10 letras";
+        "Información incorrecta, recuerde añadir primero letras y despues el número que desee.";
       setMsgAlias(text);
     }
   };
@@ -133,6 +136,7 @@ export const LayoutRegister = () => {
       setMsgAddress(text);
     }
   };
+
   const handleCharacterPassword = () => {
     let validationPassword = /^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$/;
     let text;
@@ -145,6 +149,7 @@ export const LayoutRegister = () => {
       setMsgPassword(text);
     }
   };
+
   const handleCharacterPhone = () => {
     let validationPhone = /^[0-9]{7,12}$/;
     let text;
@@ -237,7 +242,7 @@ export const LayoutRegister = () => {
               ))}
             </select>
             <select
-            placeholder="Municipio"
+              placeholder="Municipio"
               className="selectMuni"
               id="select-municipios"
               type="municipality"
