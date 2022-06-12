@@ -101,6 +101,7 @@ export const UICards = ({
 
     /* ------------- Get Name Product -------------- */
 
+    
     const nameProductF = async () => {
       await fetch(
         `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProductApply}`
@@ -115,7 +116,7 @@ export const UICards = ({
       nameUser()
       nameProductF()
       featuresProduct();
-   },);
+   },[]);
   // ---- //
   // ------ Logic To Apply To Product ------ //
 
@@ -168,7 +169,6 @@ const mostrar = async () => {
         <h2 className='titleModalWindows' id="simple-modal-title">
           {typeProduct}: {nameProduct}
         </h2>
-        <h2>{uidProduct}</h2>
         <img className='imgModalWindow' src={imgProduct} alt="" />  {/* Show the picture */}
         <p className='pModalDescription'>Descripcion: {descriptionProduct}</p>
         <p className='pModalAvailability'>Disponible: {availabilityProduct}</p>
