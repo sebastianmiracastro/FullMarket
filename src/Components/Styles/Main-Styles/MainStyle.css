@@ -199,7 +199,7 @@ color: white;
 
 /* ------------------ STYLES CONTENT MODAL ------------------------- */
 
-.makeStyles-paper-1{
+.makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
@@ -384,7 +384,7 @@ p {
 
 /* ---- STYLES FOR MODAL WINDOW ---- */
 
-.makeStyles-paper-1{
+.makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
   /* background-color: red !important; */
   max-width: 90% !important;
   max-height: 85% !important;
@@ -471,7 +471,7 @@ p {
 
 /* ---- STYLES FOR MOVIL ---- */
 @media (max-width: 990px) {
-  .makeStyles-paper-1{
+  .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
     max-height: 80% !important;
     padding: 0.2rem 0.2rem;
   }
@@ -484,7 +484,7 @@ p {
 }
 
   @media (max-width: 520px) {
-    .makeStyles-paper-1{
+    .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
       max-height: 90% !important;
       padding: 0.2rem 0.2rem;
     }
