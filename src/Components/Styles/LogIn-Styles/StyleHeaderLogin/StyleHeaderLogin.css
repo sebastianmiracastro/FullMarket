@@ -3,7 +3,7 @@
     bottom: 0;
     left: 0px;
     width: 36%;
-    top: 25px;
+    top: 5rem;
     height: 100%;
     z-index: -1;
 }  
@@ -16,7 +16,7 @@
     text-align: center;
     width: 36%;
     position: absolute;
-    top: 92px;
+    top: 8rem;
     display: flex;
     justify-content: center;
     height: 75px;
@@ -46,7 +46,7 @@
     text-align: center;
     width: 36%;
     position: absolute;
-    top: 92px;
+    top: 8rem;
     display: flex;
     justify-content: center;
     height: 70px;
@@ -76,7 +76,7 @@
     text-align: center;
     width: 38%;
     position: absolute;
-    top: 92px;
+    top: 8rem;
     display: flex;
     justify-content: center;
     height: 70px;
@@ -97,7 +97,7 @@
     text-align: center;
     width: 36%;
     position: absolute;
-    top: 88px;
+    top: 8rem;
     display: flex;
     justify-content: center;
     height: 65px;
@@ -121,7 +121,7 @@
     text-align: center;
     width: 100%;
     position: absolute;
-    top: 96px;
+    top: 8rem;
     display: flex;
     justify-content: center;
     height: 75px;
@@ -141,7 +141,7 @@
     text-align: center;
     width: 100%;
     position: absolute;
-    top: 96px;
+    top: 8rem;
     display: flex;
     justify-content: center;
     height: 75px;
@@ -169,7 +169,7 @@
     text-align: center;
     width: 100%;
     position: absolute;
-    top: 94px;
+    top: 8rem;
     display: flex;
     justify-content: center;
     height: 62px;

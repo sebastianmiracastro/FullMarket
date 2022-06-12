@@ -80,23 +80,23 @@ a {
   font-size: 0.9rem;
 }
 
+/* ANIMACION BOTONES LOGIN */
 .btn-Applylog {
-  --color: #f66f00;
-  font-family: inherit;
-  display: inline-block;
-  width: 50%;
-  height: 50px;
-  border-radius: 25px;
-  line-height: 2.2em;
-  margin: 22px;
+  --color: #ff661f;
+  background: linear-gradient(#f6560a,#f6560a);
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  margin: 1rem;
   position: relative;
   overflow: hidden;
-  border: 2px solid #ff5100;
+  border: 2px solid #f6560a;
   transition: color .5s;
   z-index: 1;
-  font-size: 22px;
+  font-size: 1rem;
   color: #ffff;
-  background: linear-gradient(#ff5100,#ff5100);
+  cursor: pointer;
+  
 }
 
 .btn-Applylog:before {
@@ -109,14 +109,10 @@ a {
   border-radius: 50%;
 }
 
- .btn-Applylog:hover {
-  color: #fff;
- }
-
 .btn-Applylog:before {
   top: 100%;
   left: 100%;
-  transition: all 1.5s;
+  transition: all 2s;
  }
 
  .btn-Applylog:hover:before {
@@ -124,16 +120,14 @@ a {
   left: -34px;
 }
 
-.btn-Applylog:active:before {
-  border-color: #ffd17b;
-  transition: background 0s;
- }
-
  .btn-Applylog:hover{
-  background:linear-gradient(#1b1b1b, #111) ;
-  border: 0px solid black;
+  background:linear-gradient(#000000, #000000) ;
+  animation: slidebg 2s linear infinite;
+  border: 0px solid #000000;
   color: #FFFF;
 }
+/* ///////// */
+
 @media (max-width: 1200px) {
   .login-content {
     justify-content: flex-start;

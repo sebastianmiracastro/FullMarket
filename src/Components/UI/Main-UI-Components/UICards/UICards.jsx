@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Auth } from '../../../Helpers/Auth';
 import swal from 'sweetalert';
 import axios from "axios";
+import Skeleton from '@mui/material/Skeleton';
 
 // ---- MaterialUI modal window setting ---- //
 function rand() {
@@ -52,6 +53,12 @@ export const UICards = ({
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
+
+
+
+  const [data, setData] = React.useState(null);
+  const [isloading, setIsLoading] = React.useState(false);
+
 
   /* -------------------- InfoUser (useState) ----------------------- */
 
@@ -128,11 +135,13 @@ export const UICards = ({
 const mostrar = async () => {
    await fetch(URLAllProducts)
    .then(res => res.json())
-   .then(data => setProducts(data)) 
+   .then(data => {
+    setProducts(data)
+    setIsLoading(true)}) 
   }
   useEffect(() => {
     mostrar()
-  },[])
+  },[]);
 
   let formData = new FormData();
 
@@ -168,14 +177,72 @@ const mostrar = async () => {
   const body = (
     <div className='modalWindowFeatures'>
       <div style={modalStyle} className={classes.paper}>
-        <h2 className='titleModalWindows' id="simple-modal-title">
-          {typeProduct}: {nameProduct}
-        </h2>
-        <img className='imgModalWindow' src={imgProduct} alt="" />  {/* Show the picture */}
-        <p className='pModalDescription'>Descripcion: {descriptionProduct}</p>
-        <p className='pModalAvailability'>Disponible: {availabilityProduct}</p>
-        <p>{dateProduct}</p>
-        <p>{cityProduct}</p>
+        {
+          isloading ? (
+          <h2 className='titleModalWindows' id="simple-modal-title">
+            {typeProduct}: {nameProduct}
+          </h2>
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />}
+        {
+          isloading ? (
+          <img className='imgModalWindow' src={imgProduct} alt="" /> 
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />}
+        {
+          isloading ? (
+          <p className='pModalDescription'>Descripcion: {descriptionProduct}</p>
+          ) 
+          : 
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
+        {
+          isloading ? (
+          <p className='pModalAvailability'>Disponible: {availabilityProduct}</p>
+          ) 
+          : 
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
+        {
+          isloading ? (
+          <p>{dateProduct}</p>
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
+        {
+          isloading ? (
+          <p>{cityProduct}</p>
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
         <button className='btnOkModal' type="button" onClick={handleClose}>
           OK
         </button>
@@ -188,20 +255,62 @@ const mostrar = async () => {
     <div className='container-card'>
       <div className="header-Card">
         <div className="iconInfo">
+          {isloading ? (
           <BsFillInfoCircleFill onClick={handleOpen} />
+          )  
+          : 
+          <Skeleton
+          variant="circular"
+          animation="wave"
+          width={25}
+          height={25}
+          />}
         </div>
-        <h1>{typeProduct}</h1>
+        {isloading ? (
+            <h1>{typeProduct}</h1>
+        ) 
+        : 
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />}
       </div>
       <div className="body-Card">
         <div className="img-Card">
+          {isloading ? (
           <img
             src={imgProduct}
             className="img-Card"
             alt={nameProduct}
           ></img>
+          ) 
+          : 
+          <Skeleton
+          variant="rectangle"
+          animation="wave"
+          width={130}
+          height={110}
+          />}
         </div>
-        <h2>{nameProduct}</h2>
+        {isloading ? (
+          <h2>{nameProduct}</h2>
+        ) 
+        :   
+        <Skeleton
+        animation="wave"
+        width={150}
+        height={35}
+        />}
+        {isloading ? (
         <p>Estado: {conditionProduct}</p>
+        ) 
+        :
+        <Skeleton
+        animation="wave"
+        width={150}
+        height={35}
+        />}
           {UserInSesion ? ( 
           <div className="apply-Product">
               <UIButtons
