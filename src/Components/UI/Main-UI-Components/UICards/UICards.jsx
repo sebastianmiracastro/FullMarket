@@ -115,8 +115,8 @@ export const UICards = ({
     useEffect( ()  => {
       nameUser()
       nameProductF()
-      featuresProduct();
-   },[]);
+      featuresProduct();   
+    });
   // ---- //
   // ------ Logic To Apply To Product ------ //
 
@@ -144,23 +144,25 @@ const mostrar = async () => {
     formData.append("userreceivernoti", uidUserApply)
     formData.append("userreceivernotiproduct", nameProductApply)
     formData.append("typenoti", TypeNotifications)
-    await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
-    .then((res => {
-      swal({
-          title: "Notificacion Enviada",
-          text: "Espera Una Respuesta Del Propietario",
-          icon: "success",
+    setTimeout( async() => {
+      await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
+      .then((res => {
+        swal({
+            title: "Notificacion Enviada",
+            text: "Espera Una Respuesta Del Propietario",
+            icon: "success",
+            timer: "2500"
+          })
+      }))
+      .catch(( err => {
+        swal({
+          title: "No Se Pudo Completar La Accion",
+          text: "Intentalo Mas Tarde",
+          icon: "error",
           timer: "2500"
         })
-    }))
-    .catch(( err => {
-      swal({
-        title: "No Se Pudo Completar La Accion",
-        text: "Intentalo Mas Tarde",
-        icon: "error",
-        timer: "2500"
-      })
-    }))
+      }))
+    }, 3000)
   }
 
   const body = (

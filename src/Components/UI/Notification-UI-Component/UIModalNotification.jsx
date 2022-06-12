@@ -19,8 +19,8 @@ export const UIModalNotification = () => {
 
     return (
         <>
-        {noti.map((e) => (
-            <div className="cont-noti">
+        {noti.map((e, i) => (
+            <div className="cont-noti" key={i}>
                 <h3>{e.userSendNoti}</h3>
                 <p>{e.userReceiverNotiProduct}</p>
                 <p>{e.typeNoti}</p>
