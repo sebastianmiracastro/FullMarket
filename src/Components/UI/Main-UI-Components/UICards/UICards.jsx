@@ -91,6 +91,8 @@ export const UICards = ({
       .then((data) => {
         setUidProductApply(data.uidProduct)
         setUidUserApply(data.idOwner)
+      }).catch((err) => {
+        ''
       })
     };
 
@@ -103,6 +105,8 @@ export const UICards = ({
       ).then((res) => res.json())
       .then((data) => {
         setNameUserApply(data.name)
+      }).catch((err) => {
+        ''
       })
     }
 
@@ -110,12 +114,16 @@ export const UICards = ({
 
     
     const nameProductF = async () => {
+    setTimeout( async() => { 
       await fetch(
         `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProductApply}`
       ).then((res) => res.json())
       .then((data) => {
         setNameProductApply(data.name)
+      }).catch((err) => {
+        console.clear()
       })
+    })
     }
     
 
@@ -138,6 +146,9 @@ const mostrar = async () => {
    .then(data => {
     setProducts(data)
     setIsLoading(true)}) 
+    .catch((err) => {
+      ''
+    })
   }
   useEffect(() => {
     mostrar()
@@ -146,7 +157,6 @@ const mostrar = async () => {
   let formData = new FormData();
 
   const TypeNotifications = 'Aplico'
-
 
   const sendNotification = async () => {
     formData.append("usersendnoti", nameUserApply)
