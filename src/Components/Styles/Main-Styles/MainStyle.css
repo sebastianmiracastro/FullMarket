@@ -239,11 +239,12 @@ color: white;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center;
   border-radius: 2rem;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 .cont-noti{
