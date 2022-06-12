@@ -105,7 +105,7 @@ color: white;
 }
 
 .btn-primaryHeader{
-  width: 12rem;
+  /* width: 12rem;
   height: 2.5rem;
   background-color: #ff661f;
   border-radius: 1rem;
@@ -117,13 +117,49 @@ color: white;
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
-  margin: 2px;
+  margin: 2px; */
+  --color: #ff661f;
+  background: linear-gradient(#f6560a,#f6560a);
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f6560a;
+  transition: color .5s;
+  z-index: 1;
+  font-size: 1rem;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.btn-primaryHeader:before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 480px;
+  border-radius: 50%;
+}
+
+.btn-primaryHeader:before{
+  top: 100%;
+  left: 100%;
+  transition: all 2s;
+}
+
+.btn-primaryHeader:hover:before{
+  top: -45px;
+  left: -34px;
 }
 
 .btn-primaryHeader:hover{
+  background:linear-gradient(#000000, #000000) ;
   animation: slidebg 2s linear infinite;
-  color: #ffffff;
-  background: #f6560a;
+  border: 0px solid #000000;
+  color: #FFFF;
 }
 
 .home-icon {
