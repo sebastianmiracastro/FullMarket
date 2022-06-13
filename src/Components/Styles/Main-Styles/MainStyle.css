@@ -61,23 +61,26 @@
   color: #ffffff;
   background: #e74c3c;
 }
+
 .custom-form {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
 }
+
 .custom-select{
   margin-bottom: 10px;
   width: 300px;
   border-radius: 10px;
   padding: 10px;
 }
+
 .custom-btn{
   width: 200px;
   border-radius: 10px;
   padding: 5px 3px 5px 3px;
-background-color: rgb(8, 98, 172);
-color: white;
+  background-color: #0862ac;
+  color: white;
 }
 
 .input-custom {
@@ -105,19 +108,6 @@ color: white;
 }
 
 .btn-primaryHeader{
-  /* width: 12rem;
-  height: 2.5rem;
-  background-color: #ff661f;
-  border-radius: 1rem;
-  border: #f6560a;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #ffffff;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  margin: 2px; */
   --color: #ff661f;
   background: linear-gradient(#f6560a,#f6560a);
   width: 12rem;
@@ -164,20 +154,15 @@ color: white;
 
 .home-icon {
   cursor: pointer;
-  
   color: #f6560a;
   font-size: 3rem;
-  
-  
 }
 
 .notification-icon {
   cursor: pointer;
-  
   color: #f6560a;
   font-size: 3rem;
 }
-
 
 .containerLogotype{
   width: 100%;
@@ -221,7 +206,7 @@ color: white;
 }
 
 .iconSearch {
-  font-size: 1.5rem;
+  font-size: 30px;
   color: #ff661f;
   cursor: pointer;
   margin-top: 0.5rem;
@@ -281,12 +266,10 @@ color: white;
 
 .main-products {
   width: 100%;
-  /* height: 100%; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   background-color: #dae4ed;
-  /* box-sizing: border-box; */
 }
 
 .main {
@@ -314,13 +297,11 @@ color: white;
 }
 
 .header-Card {
-  /* margin-top: 20rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
-
 
 .iconInfo {
   font-size: 1.2rem;
@@ -384,7 +365,6 @@ p {
 }
 
 .apply-Product {
-  /* margin-top: 1rem; */
   width: 100%;
   height: 1.8rem;
   background-color: #f6560a;
@@ -401,7 +381,6 @@ p {
   margin-top: 0.1rem;
   width: 100%;
   height: 2.5rem;
-  /* margin-right: 3px; */
   background-color: #f6560a;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -422,7 +401,6 @@ p {
 /* ---- STYLES FOR MODAL WINDOW ---- */
 
 .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
-  /* background-color: red !important; */
   max-width: 90% !important;
   max-height: 85% !important;
   box-sizing: border-box;
@@ -436,14 +414,6 @@ p {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
-
-/* .modalWindowFeatures {
-  width: 90%;
-  max-height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 .titleModalWindows {
   color: #f6560a;
@@ -520,13 +490,12 @@ p {
   }
 }
 
-  @media (max-width: 520px) {
-    .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
-      max-height: 90% !important;
-      padding: 0.2rem 0.2rem;
-    }
+@media (max-width: 520px) {
+  .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
+    max-height: 90% !important;
+    padding: 0.2rem 0.2rem;
+  }
 }
-
 
 
 /* --------  PAGE MY PRODUCTS  ---------- */
@@ -542,16 +511,15 @@ p {
 }
 
 .container-My-Products-card:hover {
-box-shadow: 5px 0px 5px #565656;
-animation: slidebg 0.5s linear infinite;
-transform: scale(1.05);
-cursor: pointer;
+  box-shadow: 5px 0px 5px #565656;
+  animation: slidebg 0.5s linear infinite;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .apply-My-Products{
   width: 100%;
   height: 1.8rem;
-  /* background-color: #f6560a; */
   margin-left: 0rem;
   display: flex;
   justify-content: space-evenly;
@@ -591,18 +559,6 @@ cursor: pointer;
   letter-spacing: 1px;
   background-color: #c23616;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -744,4 +700,24 @@ cursor: pointer;
 .makeStyles-paper-4 p{
   text-align: center;
   font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-Page {
+  width: 100%;
+  height: 15rem;
+  background-color:#262626!important;
+  margin-top: none;
 }

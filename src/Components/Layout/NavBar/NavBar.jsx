@@ -9,7 +9,6 @@ import { HiHome } from 'react-icons/hi';
 import { AiFillBell } from "react-icons/ai";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router";
-
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from '@material-ui/core/styles';
 import { UIModalNotification } from '../../UI/Notification-UI-Component/UIModalNotification'
