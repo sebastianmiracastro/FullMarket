@@ -7,34 +7,28 @@ export const UIModalNotification = () => {
     const uiduser = window.localStorage.getItem("uiduser");
     const urlconfig = `https://fullmarket-provitional-backend.herokuapp.com/notification/getnotificationuser/${uiduser}`;
 
-    const [dataUser, setDataUser] = useState('')
-
-    const [userName ,setUserName] = useState('')
-
     const showNotification = async (e) => {
         await fetch(urlconfig)
         .then((res) => res.json())
         .then((data) => setNoti(data))
         .catch((err) => {
-            console.clear()
+            ''
         });
     };
 
     useEffect((e) => {
-        console.clear()
         showNotification();
     })
 
-    const rejection = async () => {
+    const rejection = async (userName) => {
+        // console.log(userName);
         await fetch(
-            `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}`
+            `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}` 
         )
         .then((res) => res.json())
-        .then((data) => setDataUser(data.uid))
-        .then(() => {
-            console.log(dataUser);
-        })
+        .then((data) => console.log(data[0].uid))
     }
+    
 
     /* Endpoinst de los que hable en los audios =
 
@@ -79,7 +73,7 @@ export const UIModalNotification = () => {
                 <p>{e.userReceiverNotiProduct}</p>
                 <p>{e.typeNoti}</p>
                 <div>
-                    <button>Rechazar</button>
+                    <button onClick={() => rejection(e.userSendNoti)}>Rechazar</button>
                     <button>Revisar Perfil</button>
                     <button>Aceptar</button>
                 </div>
