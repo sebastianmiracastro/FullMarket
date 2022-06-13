@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import '../../Styles/Main-Styles/MainStyle.css'
 
@@ -20,29 +21,34 @@ export const UIModalNotification = () => {
         showNotification();
     })
 
-    const rejection = async (userName) => {
-        // console.log(userName);
+    const [uidUserSendRejection, setUidUserSendRejection] = useState('')
+    
+    let formData = new FormData()
+
+    const TypeNoti = 'Rechazado'
+
+    const rejection = async (userName, productName) => {
         await fetch(
             `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}` 
         )
         .then((res) => res.json())
-        .then((data) => console.log(data[0].uid))
+        .then((data) => setUidUserSendRejection(data[0].uid))
+        .then(() => { 
+            setTimeout(async () => {
+                console.log(uidUserSendRejection);
+                formData.append('usersendnoti', uiduser)
+                formData.append('userreceivernoti', uidUserSendRejection)
+                formData.append('userreceivernotiproduct', productName)
+                formData.append('typenoti', TypeNoti)
+                await axios.post(
+                    `https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification`, formData
+                ).then((res) => console.log(res.data)).catch((err) => console.log(err));
+            }, 10000)
+        })
     }
     
 
     /* Endpoinst de los que hable en los audios =
-
-    ERRORES = No me guarda el nombre del usuario, que ya intente en un state, pasarlo como parametro, y nada funciona
-    ayudame please
-
-    1Paso.
-
-    `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/<string:name>
-
-    Metodo = Get
-
-    <string:name> = ahi va el nombre del usuario, esa peticion trae todos los datos de un usuario, 
-    de esa consulta lo unico que hay que guardar es el uid del usuario.
 
     2Paso. 
 
@@ -52,6 +58,8 @@ export const UIModalNotification = () => {
 
     Se envia la notificacion, este paso lo haria yo, si el paso anterior queda funcionando, si puede hacer lo primero
     lo otro seria "Sencillo".
+
+    Error = Se le tiene que dar doble clic al boton rechazar para que ejecute correctamente
 
     3Paso.
 
@@ -73,7 +81,7 @@ export const UIModalNotification = () => {
                 <p>{e.userReceiverNotiProduct}</p>
                 <p>{e.typeNoti}</p>
                 <div>
-                    <button onClick={() => rejection(e.userSendNoti)}>Rechazar</button>
+                    <button onClick={() => rejection(e.userSendNoti, e.userReceiverNotiProduct)}>Rechazar</button>
                     <button>Revisar Perfil</button>
                     <button>Aceptar</button>
                 </div>
