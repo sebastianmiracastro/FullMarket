@@ -9,7 +9,6 @@ import { HiHome } from 'react-icons/hi';
 import { AiFillBell, AiOutlineSend } from "react-icons/ai";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router";
-
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from '@material-ui/core/styles';
 import { UIModalNotification } from '../../UI/Notification-UI-Component/UIModalNotification'
@@ -91,14 +90,6 @@ export const NavBar = () => {
         <UILogos />
       </div>
       <div className="primaryBtnHeader">
-        {/* <NavLink to="/">
-          {" "}
-          <UIButtons
-            classButtons="btn-primaryHeader"
-            nameButtons="Inicio"
-          ></UIButtons>
-        </NavLink> */}
-
         <NavLink to="/">
           <HiHome className="home-icon" />
         </NavLink>
