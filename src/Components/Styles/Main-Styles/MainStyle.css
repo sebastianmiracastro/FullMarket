@@ -466,16 +466,6 @@ p {
   cursor: pointer;
 }
 
-/* ---- STYLES FOR FOOTER ---- */
-.footer-Main-Page {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background-color: #4b0f0f;
-  flex-direction: column;
-}
-
-
 /* ---- STYLES FOR MOVIL ---- */
 @media (max-width: 990px) {
   .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
@@ -707,17 +697,3 @@ p {
 
 
 
-
-
-
-
-
-
-
-
-.footer-Page {
-  width: 100%;
-  height: 15rem;
-  background-color:#262626!important;
-  margin-top: none;
-}
