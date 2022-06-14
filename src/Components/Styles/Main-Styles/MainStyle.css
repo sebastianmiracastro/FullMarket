@@ -178,6 +178,13 @@ color: white;
   font-size: 3rem;
 }
 
+.chat-icon{
+  cursor: pointer;
+  
+  color: #f6560a;
+  font-size: 3rem;
+}
+
 
 .containerLogotype{
   width: 100%;
