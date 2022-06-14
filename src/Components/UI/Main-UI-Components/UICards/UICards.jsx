@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Auth } from '../../../Helpers/Auth';
 import swal from 'sweetalert';
 import axios from "axios";
+import Skeleton from '@mui/material/Skeleton';
 
 // ---- MaterialUI modal window setting ---- //
 function rand() {
@@ -53,6 +54,12 @@ export const UICards = ({
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
 
+
+
+  const [data, setData] = React.useState(null);
+  const [isloading, setIsLoading] = React.useState(false);
+
+
   /* -------------------- InfoUser (useState) ----------------------- */
 
   const [uidUserApply, setUidUserApply] = useState('')
@@ -84,6 +91,8 @@ export const UICards = ({
       .then((data) => {
         setUidProductApply(data.uidProduct)
         setUidUserApply(data.idOwner)
+      }).catch((err) => {
+        ''
       })
     };
 
@@ -91,9 +100,11 @@ export const UICards = ({
 
     const nameUser = async () => {
       const userSend = window.localStorage.getItem('uiduser')
-      const urlGetInfoUser =  `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${userSend}`;
-      await axios.get(urlGetInfoUser).then((response) => {
-        setNameUserApply(response.data.name)
+      await fetch(
+        `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${userSend}`
+      ).then((res) => res.json())
+      .then((data) => {
+        setNameUserApply(data.name)
       }).catch((err) => {
         ''
       })
@@ -101,21 +112,26 @@ export const UICards = ({
 
     /* ------------- Get Name Product -------------- */
 
+    
     const nameProductF = async () => {
-      const urlGetInfoProduct = `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProductApply}`;
-      await axios.get(urlGetInfoProduct).then((response) => {
-        setNameProductApply(response.data.name)
+    setTimeout( async() => { 
+      await fetch(
+        `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProductApply}`
+      ).then((res) => res.json())
+      .then((data) => {
+        setNameProductApply(data.name)
       }).catch((err) => {
-        ''
+        console.clear()
       })
+    })
     }
     
 
     useEffect( ()  => {
       nameUser()
       nameProductF()
-      featuresProduct();
-   },);
+      featuresProduct();   
+    });
   // ---- //
   // ------ Logic To Apply To Product ------ //
 
@@ -127,53 +143,122 @@ export const UICards = ({
 const mostrar = async () => {
    await fetch(URLAllProducts)
    .then(res => res.json())
-   .then(data => setProducts(data)) 
+   .then(data => {
+    setProducts(data)
+    setIsLoading(true)}) 
+    .catch((err) => {
+      ''
+    })
   }
   useEffect(() => {
     mostrar()
-  },[])
+  },[]);
 
   let formData = new FormData();
 
   const TypeNotifications = 'Aplico'
 
-
   const sendNotification = async () => {
+    swal({
+      title: "Enviando Notificación Al Usuario",
+      text: "Espere un momento",
+      icon: "info",
+      timer: "7000"
+    })
     formData.append("usersendnoti", nameUserApply)
     formData.append("userreceivernoti", uidUserApply)
     formData.append("userreceivernotiproduct", nameProductApply)
     formData.append("typenoti", TypeNotifications)
-    await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
-    .then((res => {
-      swal({
-          title: "Notificacion Enviada",
-          text: "Espera Una Respuesta Del Propietario",
-          icon: "success",
+    setTimeout( async() => {
+      await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
+      .then((res => {
+        swal({
+            title: "Notificacion Enviada",
+            text: "Espera Una Respuesta Del Propietario",
+            icon: "success",
+            timer: "2500"
+          })
+      }))
+      .catch(( err => {
+        swal({
+          title: "No Se Pudo Completar La Accion",
+          text: "Intentalo Mas Tarde",
+          icon: "error",
           timer: "2500"
         })
-    }))
-    .catch(( err => {
-      swal({
-        title: "No Se Pudo Completar La Accion",
-        text: "Intentalo Mas Tarde",
-        icon: "error",
-        timer: "2500"
-      })
-    }))
+      }))
+    }, 3000)
   }
 
   const body = (
     <div className='modalWindowFeatures'>
       <div style={modalStyle} className={classes.paper}>
-        <h2 className='titleModalWindows' id="simple-modal-title">
-          {typeProduct}: {nameProduct}
-        </h2>
-        <h2>{uidProduct}</h2>
-        <img className='imgModalWindow' src={imgProduct} alt="" />  {/* Show the picture */}
-        <p className='pModalDescription'>Descripcion: {descriptionProduct}</p>
-        <p className='pModalAvailability'>Disponible: {availabilityProduct}</p>
-        <p>{dateProduct}</p>
-        <p>{cityProduct}</p>
+        {
+          isloading ? (
+          <h2 className='titleModalWindows' id="simple-modal-title">
+            {typeProduct}: {nameProduct}
+          </h2>
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />}
+        {
+          isloading ? (
+          <img className='imgModalWindow' src={imgProduct} alt="" /> 
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />}
+        {
+          isloading ? (
+          <p className='pModalDescription'>Descripcion: {descriptionProduct}</p>
+          ) 
+          : 
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
+        {
+          isloading ? (
+          <p className='pModalAvailability'>Disponible: {availabilityProduct}</p>
+          ) 
+          : 
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
+        {
+          isloading ? (
+          <p>{dateProduct}</p>
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
+        {
+          isloading ? (
+          <p>{cityProduct}</p>
+          ) 
+          :
+          <Skeleton
+          animation="wave"
+          width={120}
+          height={50}
+          />
+        }
         <button className='btnOkModal' type="button" onClick={handleClose}>
           OK
         </button>
@@ -186,20 +271,62 @@ const mostrar = async () => {
     <div className='container-card'>
       <div className="header-Card">
         <div className="iconInfo">
+          {isloading ? (
           <BsFillInfoCircleFill onClick={handleOpen} />
+          )  
+          : 
+          <Skeleton
+          variant="circular"
+          animation="wave"
+          width={25}
+          height={25}
+          />}
         </div>
-        <h1>{typeProduct}</h1>
+        {isloading ? (
+            <h1>{typeProduct}</h1>
+        ) 
+        : 
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />}
       </div>
       <div className="body-Card">
         <div className="img-Card">
+          {isloading ? (
           <img
             src={imgProduct}
             className="img-Card"
             alt={nameProduct}
           ></img>
+          ) 
+          : 
+          <Skeleton
+          variant="rectangle"
+          animation="wave"
+          width={130}
+          height={110}
+          />}
         </div>
-        <h2>{nameProduct}</h2>
+        {isloading ? (
+          <h2>{nameProduct}</h2>
+        ) 
+        :   
+        <Skeleton
+        animation="wave"
+        width={150}
+        height={35}
+        />}
+        {isloading ? (
         <p>Estado: {conditionProduct}</p>
+        ) 
+        :
+        <Skeleton
+        animation="wave"
+        width={150}
+        height={35}
+        />}
           {UserInSesion ? ( 
           <div className="apply-Product">
               <UIButtons

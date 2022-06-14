@@ -8,6 +8,7 @@ import { DataUserPage } from "./Components/Page/DataUser-Page/DataUserPage";
 import { EditUserPage } from "./Components/Page/EditUser-Page/EditUserPage";
 import { NavBar } from "./Components/Layout/NavBar/NavBar";
 import { EditProductsPage } from "./Components/Page/EditMyProducts-Page/EditProductsPage";
+import {Footer} from "./Components/Layout/Footer/Footer.jsx"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/LoggedUser/DataUser" element= { <DataUserPage/> } />
         <Route path="/LoggedUser/EditUser" element= { <EditUserPage/> } />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

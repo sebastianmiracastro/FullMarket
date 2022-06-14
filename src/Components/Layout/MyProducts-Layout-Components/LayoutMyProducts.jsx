@@ -11,8 +11,8 @@ export const LayoutMyProducts=()=> {
   
   const mostrar = async () => {
     await fetch(URL)
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
+    .then((res) => res.json())
+    .then((data) => setProducts(data));
   };
   useEffect(() => {
     mostrar();

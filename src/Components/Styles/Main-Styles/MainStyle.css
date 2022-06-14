@@ -61,23 +61,26 @@
   color: #ffffff;
   background: #e74c3c;
 }
+
 .custom-form {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
 }
+
 .custom-select{
   margin-bottom: 10px;
   width: 300px;
   border-radius: 10px;
   padding: 10px;
 }
+
 .custom-btn{
   width: 200px;
   border-radius: 10px;
   padding: 5px 3px 5px 3px;
-background-color: rgb(8, 98, 172);
-color: white;
+  background-color: #0862ac;
+  color: white;
 }
 
 .input-custom {
@@ -105,37 +108,63 @@ color: white;
 }
 
 .btn-primaryHeader{
+  --color: #ff661f;
+  background: linear-gradient(#f6560a,#f6560a);
   width: 12rem;
   height: 2.5rem;
-  background-color: #ff661f;
   border-radius: 1rem;
-  border: #f6560a;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #ffffff;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f6560a;
+  transition: color .5s;
+  z-index: 1;
   font-size: 1rem;
+  color: #ffff;
   cursor: pointer;
-  text-decoration: none;
-  margin: 2px;
+}
+
+.btn-primaryHeader:before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 480px;
+  border-radius: 50%;
+}
+
+.btn-primaryHeader:before{
+  top: 100%;
+  left: 100%;
+  transition: all 2s;
+}
+
+.btn-primaryHeader:hover:before{
+  top: -45px;
+  left: -34px;
 }
 
 .btn-primaryHeader:hover{
+  background:linear-gradient(#000000, #000000) ;
   animation: slidebg 2s linear infinite;
-  color: #ffffff;
-  background: #f6560a;
+  border: 0px solid #000000;
+  color: #FFFF;
 }
 
 .home-icon {
   cursor: pointer;
-  
   color: #f6560a;
   font-size: 3rem;
-  
-  
 }
 
 .notification-icon {
+  cursor: pointer;
+  color: #f6560a;
+  font-size: 3rem;
+}
+
+.chat-icon{
   cursor: pointer;
   
   color: #f6560a;
@@ -185,7 +214,7 @@ color: white;
 }
 
 .iconSearch {
-  font-size: 1.5rem;
+  font-size: 30px;
   color: #ff661f;
   cursor: pointer;
   margin-top: 0.5rem;
@@ -199,15 +228,16 @@ color: white;
 
 /* ------------------ STYLES CONTENT MODAL ------------------------- */
 
-.makeStyles-paper-1{
+.makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center;
   border-radius: 2rem;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 .cont-noti{
@@ -244,12 +274,10 @@ color: white;
 
 .main-products {
   width: 100%;
-  /* height: 100%; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   background-color: #dae4ed;
-  /* box-sizing: border-box; */
 }
 
 .main {
@@ -277,13 +305,11 @@ color: white;
 }
 
 .header-Card {
-  /* margin-top: 20rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
-
 
 .iconInfo {
   font-size: 1.2rem;
@@ -347,7 +373,6 @@ p {
 }
 
 .apply-Product {
-  /* margin-top: 1rem; */
   width: 100%;
   height: 1.8rem;
   background-color: #f6560a;
@@ -364,7 +389,6 @@ p {
   margin-top: 0.1rem;
   width: 100%;
   height: 2.5rem;
-  /* margin-right: 3px; */
   background-color: #f6560a;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -384,8 +408,7 @@ p {
 
 /* ---- STYLES FOR MODAL WINDOW ---- */
 
-.makeStyles-paper-1{
-  /* background-color: red !important; */
+.makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
   max-width: 90% !important;
   max-height: 85% !important;
   box-sizing: border-box;
@@ -399,14 +422,6 @@ p {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
-
-/* .modalWindowFeatures {
-  width: 90%;
-  max-height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 .titleModalWindows {
   color: #f6560a;
@@ -459,19 +474,9 @@ p {
   cursor: pointer;
 }
 
-/* ---- STYLES FOR FOOTER ---- */
-.footer-Main-Page {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background-color: #4b0f0f;
-  flex-direction: column;
-}
-
-
 /* ---- STYLES FOR MOVIL ---- */
 @media (max-width: 990px) {
-  .makeStyles-paper-1{
+  .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
     max-height: 80% !important;
     padding: 0.2rem 0.2rem;
   }
@@ -483,13 +488,12 @@ p {
   }
 }
 
-  @media (max-width: 520px) {
-    .makeStyles-paper-1{
-      max-height: 90% !important;
-      padding: 0.2rem 0.2rem;
-    }
+@media (max-width: 520px) {
+  .makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
+    max-height: 90% !important;
+    padding: 0.2rem 0.2rem;
+  }
 }
-
 
 
 /* --------  PAGE MY PRODUCTS  ---------- */
@@ -505,16 +509,15 @@ p {
 }
 
 .container-My-Products-card:hover {
-box-shadow: 5px 0px 5px #565656;
-animation: slidebg 0.5s linear infinite;
-transform: scale(1.05);
-cursor: pointer;
+  box-shadow: 5px 0px 5px #565656;
+  animation: slidebg 0.5s linear infinite;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .apply-My-Products{
   width: 100%;
   height: 1.8rem;
-  /* background-color: #f6560a; */
   margin-left: 0rem;
   display: flex;
   justify-content: space-evenly;
@@ -554,18 +557,6 @@ cursor: pointer;
   letter-spacing: 1px;
   background-color: #c23616;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -708,3 +699,9 @@ cursor: pointer;
   text-align: center;
   font-size: 1rem;
 }
+
+
+
+
+
+
