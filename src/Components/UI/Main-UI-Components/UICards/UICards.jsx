@@ -159,6 +159,12 @@ const mostrar = async () => {
   const TypeNotifications = 'Aplico'
 
   const sendNotification = async () => {
+    swal({
+      title: "Enviando Notificación Al Usuario",
+      text: "Espere un momento",
+      icon: "info",
+      timer: "7000"
+    })
     formData.append("usersendnoti", nameUserApply)
     formData.append("userreceivernoti", uidUserApply)
     formData.append("userreceivernotiproduct", nameProductApply)

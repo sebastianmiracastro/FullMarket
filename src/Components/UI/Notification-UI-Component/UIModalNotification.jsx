@@ -29,9 +29,9 @@ export const UIModalNotification = () => {
     const rejection = async (userName, productName, uidProduct) => {
         swal({
             title: "Envienda Respuesta De Rechazo",
-            text: "Espere un momento, Eliminando Notificación.",
-            icon: "success",
-            timer: "3500"
+            text: "Espere un momento",
+            icon: "info",
+            timer: "5000000"
         })
         await fetch(
             `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}` 
@@ -48,13 +48,24 @@ export const UIModalNotification = () => {
                 await axios.post(
                     `https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification`, formData
                 ).then(() => axios.delete(
-                    `https://fullmarket-provitional-backend.herokuapp.com/notification/deleteNotification/${uidProduct}`
+                    `https://fullmarket-provitional-backend.herokuapp.com/notification/deleteNotification/${uidProduct}`,
+                    swal({
+                        title: "Respuesta enviada",
+                        text: "Notificación Eliminada",
+                        icon: "success",
+                        timer: "2000"
+                    })
                 ))
             })
         })
     }
 
     const acceptRejection = async (uidProduct) => {
+        swal({
+            title: "Eliminando Notificación, Espere",
+            icon: "info",
+            timer: "5000000"
+        })
         axios.delete(
             `https://fullmarket-provitional-backend.herokuapp.com/notification/deleteNotification/${uidProduct}`
         ).then(() => {
@@ -85,7 +96,7 @@ export const UIModalNotification = () => {
                         <p>{e.typeNoti}</p>
                         <div>
                             <button onClick={() => rejection(e.userSendNoti, e.userReceiverNotiProduct, e.UIDNoti)}>Rechazar</button>
-                            <button>Revisar Perfil</button>
+                            <button >Revisar Perfil</button>
                             <button>Aceptar</button>
                         </div>
                     </>

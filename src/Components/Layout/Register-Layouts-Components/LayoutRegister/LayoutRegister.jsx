@@ -34,6 +34,12 @@ export const LayoutRegister = () => {
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
+    swal({
+      title: "Envienda Respuesta De Rechazo",
+      text: "Espere un momento",
+      icon: "info",
+      timer: "5000000"
+    })
     formData.append("name", name);
     formData.append("alias", alias);
     formData.append("email", email);
@@ -54,6 +60,7 @@ export const LayoutRegister = () => {
           swal({
             title: "¡Bien hecho, ahora formas parte de FullMarket, bienvenido!",
             icon: "success",
+            timer: "2000"
           });
           navigate("/");
         }
