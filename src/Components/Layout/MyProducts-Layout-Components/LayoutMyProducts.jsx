@@ -9,14 +9,14 @@ export const LayoutMyProducts=()=> {
 
   let navigate = useNavigate();
   
-  // const mostrar = async () => {
-  //   await fetch(URL)
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data));
-  // };
-  // useEffect(() => {
-  //   mostrar();
-  // }, []);
+  const mostrar = async () => {
+    await fetch(URL)
+    .then((res) => res.json())
+    .then((data) => setProducts(data));
+  };
+  useEffect(() => {
+    mostrar();
+  }, []);
 
   useEffect(() => {
     if(!window.localStorage.getItem('uiduser')){
