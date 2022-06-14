@@ -6,7 +6,7 @@ import { UILogos } from '../../UI/Main-UI-Components/UILogos/UILogos';
 import { Auth } from '../../Helpers/Auth';
 import { Logout } from '../../Helpers/Logout';
 import { HiHome } from 'react-icons/hi';
-import { AiFillBell } from "react-icons/ai";
+import { AiFillBell, AiOutlineSend } from "react-icons/ai";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router";
 import Modal from "@material-ui/core/Modal";
@@ -90,14 +90,6 @@ export const NavBar = () => {
         <UILogos />
       </div>
       <div className="primaryBtnHeader">
-        {/* <NavLink to="/">
-          {" "}
-          <UIButtons
-            classButtons="btn-primaryHeader"
-            nameButtons="Inicio"
-          ></UIButtons>
-        </NavLink> */}
-
         <NavLink to="/">
           <HiHome className="home-icon" />
         </NavLink>
@@ -148,6 +140,9 @@ export const NavBar = () => {
         )}
         {UserInSesion && (
           <AiFillBell className='notification-icon' onClick={handleModalOpen} />
+        )}
+        {UserInSesion && (
+          <AiOutlineSend className='chat-icon' />
         )}
       </div>
       <Modal open={open} onClose={handleModalClose}>

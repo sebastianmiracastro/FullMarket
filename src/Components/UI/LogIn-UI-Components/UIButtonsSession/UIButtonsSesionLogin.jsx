@@ -15,7 +15,12 @@ export const UIButtonsSesionLogin = () => {
   const navigate = useNavigate();
 
   const HandleSubmit = async (e) => {
-
+    swal({
+      title: "Validando Información",
+      text: "Espere un momento",
+      icon: "info",
+      timer: "5000000"
+    })
   dataForm.append("email", email);
   dataForm.append("password", password);
   e.preventDefault();
