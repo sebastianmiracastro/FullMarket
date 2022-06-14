@@ -39,7 +39,7 @@ export const Footer = () => {
                 <div className="col item social">
                         <a href="https://www.facebook.com/profile.php?id=100076056153584"><i className="icon ion-social-facebook"><FaFacebookF /></i></a>
                         <a href="#"><i className="icon ion-social-twitter"><FaWhatsapp /></i></a>
-                        <a href="#"><i className="icon ion-social-snapchat"><FaLinkedin/></i></a>
+                        <a href="https://www.linkedin.com/mwlite/school/servicio-nacional-de-aprendizaje-sena-"><i className="icon ion-social-snapchat"><FaLinkedin/></i></a>
                     </div>
                 <p className="copyright">FullMarket © 2022</p>
         </footer>
