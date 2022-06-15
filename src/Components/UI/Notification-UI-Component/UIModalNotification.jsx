@@ -21,6 +21,17 @@ export const UIModalNotification = () => {
     useEffect((e) => {
         showNotification();
     })
+
+    const [nameUserInSession, setNameUserInSession] = useState('')
+
+    useEffect((e) => {
+        fetch(
+            `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${uiduser}`
+        ).then((res) => res.json())
+        .then((data) => setNameUserInSession(data.name))
+    })
+
+    /* --------------------- LOGICA PARA RECHAZAR LA NOTIFICACIÖN --------------------------- */
     
     let formData = new FormData()
 
@@ -38,7 +49,7 @@ export const UIModalNotification = () => {
         )
         .then((res) => res.json())
         .then((data) =>  { const urluser = (data[0].uid)
-            formData.append('usersendnoti', uiduser)
+            formData.append('usersendnoti', nameUserInSession)
             formData.append('userreceivernoti', urluser)
             formData.append('userreceivernotiproduct', productName)
             formData.append('typenoti', TypeNoti)}
@@ -76,6 +87,8 @@ export const UIModalNotification = () => {
             })
         })
     }
+
+    /* ------------------------------------------------------------------------------------------------------------*/
 
     return (
         <>

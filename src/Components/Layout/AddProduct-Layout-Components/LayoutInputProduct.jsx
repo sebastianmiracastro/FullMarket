@@ -9,6 +9,7 @@ export const LayoutInputProduct = () => {
   const [condition, setCondition] = useState('');
   const [description, setDescription] = useState('');
   const [availability, setAvailability] = useState('');
+  const [category, setCategory] = useState('')
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
   const idOwner = localStorage.getItem('uiduser');
@@ -24,6 +25,7 @@ export const LayoutInputProduct = () => {
     formData.append("condition", condition);
     formData.append("description", description);
     formData.append("availability", availability);
+    formData.append("category", category)
     formData.append("city", city);
     formData.append("date", date);
     formData.append("idOwner", idOwner);
@@ -105,14 +107,29 @@ export const LayoutInputProduct = () => {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Descripción"
         />
-        <UInputProduct
-          classInput="inputAddProduct input-custom"
-          typeInput="availability"
-          nameInput="availability"
-          valueInput={availability}
+        <select
+          className='condition-product-addproduct custom-select'
+          type="condition"
+          value={availability}
           onChange={(e) => setAvailability(e.target.value)}
-          placeholder="Disponibilidad"
-        />
+          >
+            <option value="Disponibilidad">Disponibilidad</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+          </select>
+        <select
+          className='condition-product-addproduct custom-select'
+          type="condition"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="Categoria">Categoria</option>
+            <option value="Electrodomestico">Electrodomestico</option>
+            <option value="Ropa">Ropa</option>
+            <option value="Accesorio">Accesorio</option>
+            <option value="Domestico">Domestico</option>
+          </select>
+
         <UInputProduct
           classInput="inputAddProduct input-custom"
           typeInput="city"
@@ -129,14 +146,6 @@ export const LayoutInputProduct = () => {
           onChange={(e) => setDate(e.target.value)}
           placeholder="Date"
         />
-        {/* <UInputProduct
-          classInput="inputAddProduct"
-          typeInput="idOwner"
-          nameInput="idOwner"
-          valueInput={idOwner}
-          onChange={(e) => setIdOwner(e.target.value)}
-          placeholder="IdOwner"
-        /> */}
         <button type="submit" className="button-add-product">
           Publicar Producto
         </button>
