@@ -9,6 +9,7 @@ export const LayoutInputProduct = () => {
   const [condition, setCondition] = useState('');
   const [description, setDescription] = useState('');
   const [availability, setAvailability] = useState('');
+  const [category, setCategory] = useState('')
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
   const idOwner = localStorage.getItem('uiduser');
@@ -24,6 +25,7 @@ export const LayoutInputProduct = () => {
     formData.append("condition", condition);
     formData.append("description", description);
     formData.append("availability", availability);
+    formData.append("category", category)
     formData.append("city", city);
     formData.append("date", date);
     formData.append("idOwner", idOwner);
@@ -67,79 +69,87 @@ export const LayoutInputProduct = () => {
           <option value="Regalo">Regalo</option>
           <option value="Intercambio">Intercambio</option>
         </select>
-        <UInputProduct
-          classInput="inputAddProduct input-custom"
-          typeInput="name"
-          nameInput="name"
-          valueInput={name}
-          onChange={(e) => setName(e.target.value)}
-          onKeyUp={validationNameProduct}
-          required
-          placeholder="Nombre"
-        />
-        <p className="alert-validation-addproduct">{alertNameProduct}</p>
-        <UInputProduct
-          classInput="inputAddImgProduct input-custom"
-          typeInput="file"
-          nameInput="imgProduct"
-          onChange={(e) => setImage(e.target.files[0])}
-          placeholder="Photo"
-        />
         <select
-          className="condition-product-addproduct custom-select"
+          className='condition-product-addproduct custom-select'
           type="condition"
-          value={condition}
-          onChange={(e) => setCondition(e.target.value)}
-        >
-          <option value="condition">Condicion</option>
-          <option value="Nuevo">Nuevo</option>
-          <option value="Casi nuevo">Casi nuevo</option>
-          <option value="Usado">Usado</option>
-        </select>
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="Categoria">Categoria</option>
+            <option value="Electrodomestico">Electrodomestico</option>
+            <option value="Ropa">Ropa</option>
+            <option value="Accesorio">Accesorio</option>
+            <option value="Domestico">Domestico</option>
+          </select>
+          <UInputProduct
+            classInput="inputAddProduct input-custom"
+            typeInput="name"
+            nameInput="name"
+            valueInput={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyUp={validationNameProduct}
+            required
+            placeholder="Nombre"
+          />
+          <p className="alert-validation-addproduct">{alertNameProduct}</p>
+          <UInputProduct
+            classInput="inputAddImgProduct input-custom"
+            typeInput="file"
+            nameInput="imgProduct"
+            onChange={(e) => setImage(e.target.files[0])}
+            placeholder="Photo"
+          />
+          <select
+            className="condition-product-addproduct custom-select"
+            type="condition"
+            value={condition}
+            onChange={(e) => setCondition(e.target.value)}
+          >
+            <option value="condition">Condicion</option>
+            <option value="Nuevo">Nuevo</option>
+            <option value="Casi nuevo">Casi nuevo</option>
+            <option value="Usado">Usado</option>
+          </select>
 
-        <UInputProduct
-          classInput="inputAddProduct input-custom"
-          typeInput="description"
-          nameInput="description"
-          valueInput={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Descripción"
-        />
-        <UInputProduct
-          classInput="inputAddProduct input-custom"
-          typeInput="availability"
-          nameInput="availability"
-          valueInput={availability}
-          onChange={(e) => setAvailability(e.target.value)}
-          placeholder="Disponibilidad"
-        />
-        <UInputProduct
-          classInput="inputAddProduct input-custom"
-          typeInput="city"
-          nameInput="city"
-          valueInput={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="Ciudad"
-        />
-        <UInputProduct
-          classInput="inputAddProduct input-custom"
-          typeInput="date"
-          nameInput="date"
-          valueInput={date}
-          onChange={(e) => setDate(e.target.value)}
-          placeholder="Date"
-        />
-        {/* <UInputProduct
-          classInput="inputAddProduct"
-          typeInput="idOwner"
-          nameInput="idOwner"
-          valueInput={idOwner}
-          onChange={(e) => setIdOwner(e.target.value)}
-          placeholder="IdOwner"
-        /> */}
-        <button type="submit" className="button-add-product">
-          Publicar Producto
-        </button>
+          <UInputProduct
+            classInput="inputAddProduct input-custom"
+            typeInput="description"
+            nameInput="description"
+            valueInput={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Descripción"
+          />
+          <select
+            className='condition-product-addproduct custom-select'
+            type="condition"
+            value={availability}
+            onChange={(e) => setAvailability(e.target.value)}
+            >
+              <option value="Disponibilidad">Disponibilidad</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+        
+
+          <UInputProduct
+            classInput="inputAddProduct input-custom"
+            typeInput="city"
+            nameInput="city"
+            valueInput={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="Ciudad"
+          />
+          <UInputProduct
+            classInput="inputAddProduct input-custom"
+            typeInput="date"
+            nameInput="date"
+            valueInput={date}
+            onChange={(e) => setDate(e.target.value)}
+            placeholder="Date"
+          />
+          <button type="submit" className="button-add-product">
+            Publicar Producto
+          </button>
       </form>
     </div>
    
