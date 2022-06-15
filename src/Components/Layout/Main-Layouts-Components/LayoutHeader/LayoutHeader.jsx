@@ -1,6 +1,5 @@
 import React from "react";
-import { BiSearchAlt } from "react-icons/bi";
-import '../../../Styles/Main-Styles/MainStyle.css'
+import '../../../Styles/Main-Styles/MainStyle.css';
 
 export const LayoutHeader = ({event}) => {
   return (
