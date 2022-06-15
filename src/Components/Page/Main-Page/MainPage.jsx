@@ -7,8 +7,7 @@ import { LayoutHeader } from '../../Layout/Main-Layouts-Components/LayoutHeader/
 export const MainPage = () => {
   return (
     <>
-     <Carousel/> 
-    <LayoutHeader />
+    <Carousel/> 
     <LayoutCards />
     </>
   )
