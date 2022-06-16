@@ -54,24 +54,17 @@ export const UICards = ({
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
 
-
-
   const [data, setData] = React.useState(null);
   const [isloading, setIsLoading] = React.useState(false);
-
+  const [categories, setCategories] = useState([]);
 
   /* -------------------- InfoUser (useState) ----------------------- */
-
   const [uidUserApply, setUidUserApply] = useState('')
-
   const [nameUserApply, setNameUserApply] = useState('')
 
   /* ----------------------Info Product (useState) --------------------------------- */
-
   const [uidProductApply, setUidProductApply] = useState ('')
-
   const [nameProductApply, setNameProductApply] = useState('')
-
 
   const UserInSesion = Auth();
 
@@ -96,8 +89,16 @@ export const UICards = ({
       })
     };
 
-    /* ------------ Get Name User ------------- */
+  // const categoriesProduct = async () => {
+  //   await fetch(
+  //     `https://fullmarket-provitional-backend.herokuapp.com/products/productsbycategory/Accesorio`
+  //     )
+  //     .then((res) => res.json())
+  //     .then((data) => setCategories(data));
+  //   };
+  //   console.log("CATEGORIES", categories);
 
+    /* ------------ Get Name User ------------- */
     const nameUser = async () => {
       const userSend = window.localStorage.getItem('uiduser')
       await fetch(
@@ -111,8 +112,6 @@ export const UICards = ({
     }
 
     /* ------------- Get Name Product -------------- */
-
-    
     const nameProductF = async () => {
     setTimeout( async() => { 
       await fetch(
@@ -124,26 +123,24 @@ export const UICards = ({
         console.clear()
       })
     })
-    }
-    
+    }  
 
     useEffect( ()  => {
       nameUser()
       nameProductF()
-      featuresProduct();   
+      featuresProduct();
+      // categoriesProduct();  
     });
   // ---- //
+
   // ------ Logic To Apply To Product ------ //
-
-  const URLAllProducts = 'https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts'
-
-  const [products, setProducts] = useState([])
-
+const URLAllProducts = 'https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts'
+const [products, setProducts] = useState([])
 
 const mostrar = async () => {
-   await fetch(URLAllProducts)
-   .then(res => res.json())
-   .then(data => {
+  await fetch(URLAllProducts)
+  .then(res => res.json())
+  .then(data => {
     setProducts(data)
     setIsLoading(true)}) 
     .catch((err) => {
@@ -155,7 +152,6 @@ const mostrar = async () => {
   },[]);
 
   let formData = new FormData();
-
   const TypeNotifications = 'Aplico'
 
   const sendNotification = async () => {

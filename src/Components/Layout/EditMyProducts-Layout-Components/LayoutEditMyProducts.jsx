@@ -1,7 +1,46 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Modal from "@material-ui/core/Modal";
+import { makeStyles } from "@material-ui/core/styles";
+import { NavLink } from "react-router-dom";
+
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand();
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 
 export const LayoutEditMyProducts = () => {
+  const classes = useStyles();
+  const [modalStyle] = React.useState(getModalStyle);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
   // ---- Saving information in local storage (uidProduct) ---- //
   const [text, setText] = useState(window.localStorage.getItem("text"));
   const setLocalStorage = (uidProduct) => {
@@ -62,7 +101,7 @@ export const LayoutEditMyProducts = () => {
       .put(
         `https://fullmarket-provitional-backend.herokuapp.com/products/editproduct/${text}`,
         formData,
-        alert("ACTUALIZADOS")
+  
         //  window.location.reload(true)
       )
       .then(
@@ -75,6 +114,20 @@ export const LayoutEditMyProducts = () => {
       });
     event.preventDefault();
   };
+
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title">Actualizado</h2>
+      <p id="simple-modal-description">
+        Actualizado exitosamente.
+      </p>
+      <div className="cont-buttons-modal-eliminar">
+        <button type="button" className="btn-cancelar" onClick={handleClose}>
+          OK
+        </button>
+      </div>
+    </div>
+  );
   return (
     <>
       <div className="spaceAddProduct"></div>
@@ -148,10 +201,18 @@ export const LayoutEditMyProducts = () => {
             onChange={(e) => setDate(e.target.value)}
             placeholder=" "
           ></input>
-          <button type="submit" className="button-page-edit">
+          <NavLink to='/LoggedUser/MyProducts'>
+
+          </NavLink>
+          <button type="submit" onClick={handleOpen} className="button-page-edit">
             Guardar Cambios
           </button>
         </form>
+      </div>
+      <div>
+        <Modal open={open} onClose={handleClose}>
+          {body}
+        </Modal>
       </div>
     </>
   );

@@ -23,13 +23,12 @@ export const LayoutCards = () => {
       }) 
   };
 
-
   useEffect(() => {
     mostrar();
   }, []);
 
   return (
-    <>
+    <>  
     <main className="main-products">
       <LayoutHeader event={filtrarBusqueda} />
       {products.map((element) => (

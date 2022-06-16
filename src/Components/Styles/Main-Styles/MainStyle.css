@@ -45,6 +45,20 @@
 }
 
 .btn-Logout{
+  font-size: 3rem;
+  color: #f6560a;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn-Logout{
+  font-size: 3rem;
+  color: #ff661f;
+  cursor: pointer;
+  margin-left: 10px;
+}
+/* 
+.btn-Logout{
   width: 12rem;
   background-color: #c0392b;
   border-radius: 1rem;
@@ -60,7 +74,7 @@
 .btn-Logout:hover{
   color: #ffffff;
   background: #e74c3c;
-}
+} */
 
 .custom-form {
   margin-left: 40px;
@@ -89,23 +103,69 @@
   border-radius: 10px;
   padding: 10px;
 }
-
+/* 
 .btn-Add{
+  --color: #ff661f;
+  background: linear-gradient(#f6560a,#f6560a);
   width: 12rem;
-  background-color: #af9710;
+  height: 2.5rem;
   border-radius: 1rem;
-  color: #ffffff;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f6560a;
+  transition: color .5s;
+  z-index: 1;
   font-size: 1rem;
-  margin-left: 1rem;
+  color: #ffff;
   cursor: pointer;
-  text-decoration: none;
-  padding: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.btn-Add:before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 480px;
+  border-radius: 50%;
+}
+
+.btn-Add:before{
+  top: 100%;
+  left: 100%;
+  transition: all 2s;
+}
+
+.btn-Add:hover:before{
+  top: -45px;
+  left: -34px;
 }
 
 .btn-Add:hover{
-  color: #ffffff;
-  background: #e9b72e;
+  background:linear-gradient(#000000, #000000) ;
+  animation: slidebg 2s linear infinite;
+  border: 0px solid #000000;
+  color: #FFFF;
+} */
+
+.btn-Add{
+  font-size: 3rem;
+  color: #f6560a;
+  cursor: pointer;
+  margin: 10px;
 }
+.btn-Add:hover{
+  font-size: 3rem;
+  color: #ff661f;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
 
 .btn-primaryHeader{
   --color: #ff661f;
@@ -157,16 +217,24 @@
   color: #f6560a;
   font-size: 3rem;
 }
+.home-icon:hover {
+  color: #ff661f;
+  font-size: 3rem;
+}
 
 .notification-icon {
   cursor: pointer;
   color: #f6560a;
   font-size: 3rem;
+  margin: 10px;
+}
+.notification-icon:hover {
+  color: #ff661f;
+  font-size: 3rem;
 }
 
 .chat-icon{
   cursor: pointer;
-  
   color: #f6560a;
   font-size: 3rem;
 }
@@ -202,7 +270,6 @@
 }
 
 .primarySearch {
-  cursor: pointer;
   background-color: #f5f3f3;
   width: 80%;
   height: 2rem;
@@ -211,19 +278,7 @@
   color: #000000;
   border-radius: 0.5rem;
   outline: none;
-}
-
-.iconSearch {
-  font-size: 30px;
-  color: #ff661f;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  margin-left: 1rem;
-}
-
-.iconSearch:hover {
-  color: #3a3a3a;
-  animation: slidebg 0.5s linear infinite;
+  padding: 20px;
 }
 
 /* ------------------ STYLES CONTENT MODAL ------------------------- */
@@ -312,15 +367,17 @@
 }
 
 .iconInfo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #f6560a;
   cursor: pointer;
   margin-top: 0.5rem;
   margin-right: 10rem;
+  padding-left: 2px;
 }
 
 .iconInfo:hover {
-  color: #3a3a3a;
+  color: #ff661f;
+  font-size: 1.5rem;
 }
 
 h1 {
@@ -382,7 +439,7 @@ p {
 .apply-Product:hover {
   animation: slidebg 2s linear infinite;
   color: #ffffff;
-  background: #333131;
+  background: #ff661f;
 }
 
 .btn-Apply {
@@ -402,7 +459,7 @@ p {
 .btn-Apply:hover {
   animation: slidebg 2s linear infinite;
   color: #ffffff;
-  background: #333131;
+  background: #ff661f;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
