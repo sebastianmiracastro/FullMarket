@@ -202,7 +202,6 @@
 }
 
 .primarySearch {
-  cursor: pointer;
   background-color: #f5f3f3;
   width: 80%;
   height: 2rem;
@@ -211,6 +210,7 @@
   color: #000000;
   border-radius: 0.5rem;
   outline: none;
+  padding: 20px;
 }
 
 .iconSearch {

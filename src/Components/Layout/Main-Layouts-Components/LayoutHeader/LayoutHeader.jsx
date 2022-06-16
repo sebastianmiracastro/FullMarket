@@ -11,7 +11,7 @@ export const LayoutHeader = ({event}) => {
           className="primarySearch"
           type="search"
           id="search"
-          placeholder="   Buscar productos, categorías y más..."
+          placeholder="Buscar productos, categorías y más..."
         ></input>
       </div>
     </>
