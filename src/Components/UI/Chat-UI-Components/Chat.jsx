@@ -26,20 +26,20 @@ export class PrivateChatRoom extends Component {
     }
 
     componentDidMount() {
-        firebase.database().ref('messages/').on('value', snapashot => {
+        firebase.database().ref('x/').on('value', snapashot => {
             const currentMessages = snapashot.val();
             if (currentMessages != null) {
-                this.setState = {
+                this.state({
                     messages: currentMessages
-                }
+                })
             }
         })
     }
 
     updateMessage(e) {
-        this.setState = {
+        this.setState({
             message: e.target.value
-        }
+        })
     }
 
     handleSumbit(e) {
@@ -49,11 +49,11 @@ export class PrivateChatRoom extends Component {
             text: this.state.message
         }
 
-        firebase.database().ref(`messages/${newMessage.id}`)
+        firebase.database().ref(`x/${newMessage.id}`)
             .set(newMessage);
-            this.setState = {
-                message: ''
-            }
+        this.setState({
+            message: ''
+        })
     }
 
     render() {
