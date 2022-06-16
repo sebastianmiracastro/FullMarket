@@ -86,6 +86,7 @@ export const UIModalNotification = () => {
                 icon: "success",
                 timer: "2000"
             })
+            window.location.reload(true)
         })
     }
 
