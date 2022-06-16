@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import '../../Styles/Main-Styles/MainStyle.css'
 
@@ -85,10 +86,53 @@ export const UIModalNotification = () => {
                 icon: "success",
                 timer: "2000"
             })
+            window.location.reload(true)
         })
     }
 
-    /* ------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------- LOGICA PARA REDIRECCIONAR A CHAT PRIVADO -------------------------------------- */
+
+    const navi = useNavigate()
+
+    const collectDataToRedirectChat = async (userName) => {
+        swal({
+            title: "Redireccionando Al Chat",
+            icon: "info",
+            timer: "5000000"
+        })
+        await fetch(
+            `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}` 
+        ).then((res) => res.json())
+        .then((data) => {
+            window.localStorage.setItem('uidUserToContact', data[0].uid)
+        }).then(() => {
+            navi('/LoggedUser/PrivateChat')
+            swal({
+                title: "Redireccionado",
+                text: "Suerte con tu intercambio",
+                icon: "success",
+                timer: "2000"
+            })
+        })
+    }
+
+    /* ----------------------------------------- Ver Perfil Usuario ------------------------------- */ 
+
+    const nav = useNavigate()
+    
+    const recolectDataToSeeProfile = async (userName) => {
+        await fetch(
+            `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}` 
+        )
+        .then((res) => res.json())
+        .then((data) => {
+        window.localStorage.setItem('tempary?', data[0].uid)
+        window.localStorage.setItem('nameUser', userName)
+        nav('/LoggedUser/NotificationReview/ProfileUser')
+    })}
+
+
+    /* ------------------------------------------------------------------------------------------- */
 
     return (
         <>
@@ -109,8 +153,8 @@ export const UIModalNotification = () => {
                         <p>{e.typeNoti}</p>
                         <div>
                             <button onClick={() => rejection(e.userSendNoti, e.userReceiverNotiProduct, e.UIDNoti)}>Rechazar</button>
-                            <button >Revisar Perfil</button>
-                            <button>Aceptar</button>
+                            <button onClick={() => recolectDataToSeeProfile(e.userSendNoti)}>Revisar Perfil</button>
+                            <button onClick={() => collectDataToRedirectChat(e.userSendNoti)}>Aceptar</button>
                         </div>
                     </>
                 } 

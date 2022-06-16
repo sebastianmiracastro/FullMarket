@@ -159,7 +159,7 @@ const mostrar = async () => {
       title: "Enviando Notificación Al Usuario",
       text: "Espere un momento",
       icon: "info",
-      timer: "7000"
+      timer: "7000000000"
     })
     formData.append("usersendnoti", nameUserApply)
     formData.append("userreceivernoti", uidUserApply)

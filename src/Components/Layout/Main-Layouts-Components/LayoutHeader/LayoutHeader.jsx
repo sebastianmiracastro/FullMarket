@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../Styles/Main-Styles/MainStyle.css';
+import '../../../Styles/Main-Styles/MainStyle.css'
 
 export const LayoutHeader = ({event}) => {
   return (
