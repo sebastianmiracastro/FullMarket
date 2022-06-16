@@ -74,7 +74,6 @@ export const UIMyProducts=({
     axios
       .delete(
          `https://fullmarket-provitional-backend.herokuapp.com/products/deleteproduct/${uidProduct}`,
-        alert("ELIMINADO"),
       )
       .then(setTimeout(() => {
         window.location.reload(true)
