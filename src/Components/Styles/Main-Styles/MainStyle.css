@@ -217,6 +217,10 @@
   color: #f6560a;
   font-size: 3rem;
 }
+.home-icon:hover {
+  color: #ff661f;
+  font-size: 3rem;
+}
 
 .notification-icon {
   cursor: pointer;
@@ -225,15 +229,12 @@
   margin: 10px;
 }
 .notification-icon:hover {
-  cursor: pointer;
   color: #ff661f;
   font-size: 3rem;
-  margin: 10px;
 }
 
 .chat-icon{
   cursor: pointer;
-  
   color: #f6560a;
   font-size: 3rem;
 }
@@ -278,19 +279,6 @@
   border-radius: 0.5rem;
   outline: none;
   padding: 20px;
-}
-
-.iconSearch {
-  font-size: 30px;
-  color: #ff661f;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  margin-left: 1rem;
-}
-
-.iconSearch:hover {
-  color: #3a3a3a;
-  animation: slidebg 0.5s linear infinite;
 }
 
 /* ------------------ STYLES CONTENT MODAL ------------------------- */
@@ -379,15 +367,17 @@
 }
 
 .iconInfo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #f6560a;
   cursor: pointer;
   margin-top: 0.5rem;
   margin-right: 10rem;
+  padding-left: 2px;
 }
 
 .iconInfo:hover {
-  color: #3a3a3a;
+  color: #ff661f;
+  font-size: 1.5rem;
 }
 
 h1 {
@@ -449,7 +439,7 @@ p {
 .apply-Product:hover {
   animation: slidebg 2s linear infinite;
   color: #ffffff;
-  background: #333131;
+  background: #ff661f;
 }
 
 .btn-Apply {
@@ -469,7 +459,7 @@ p {
 .btn-Apply:hover {
   animation: slidebg 2s linear infinite;
   color: #ffffff;
-  background: #333131;
+  background: #ff661f;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
