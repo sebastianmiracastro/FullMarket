@@ -119,10 +119,16 @@ export const UIModalNotification = () => {
 
     const nav = useNavigate()
     
-    const recolectDataToSeeProfile = (userName) => {
+    const recolectDataToSeeProfile = async (userName) => {
+        await fetch(
+            `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}` 
+        )
+        .then((res) => res.json())
+        .then((data) => {
+        window.localStorage.setItem('tempary?', data[0].uid)
         window.localStorage.setItem('nameUser', userName)
         nav('/LoggedUser/NotificationReview/ProfileUser')
-    }
+    })}
 
 
     /* ------------------------------------------------------------------------------------------- */

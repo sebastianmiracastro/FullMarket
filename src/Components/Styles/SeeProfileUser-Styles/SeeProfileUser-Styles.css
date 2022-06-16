@@ -1,3 +1,117 @@
 .Container-DataUser{
-    
+    background-color: #f6560a;
+    border-radius: 12px;
+    width: 30%;
+    height: auto;
+    text-align: center;
+    margin: 30px;
+    padding: 0px;
+    margin-left: 35%;
+    box-shadow: 1px 4px 8px 0 black;
 }
+.imgCardProfileUserSee{
+    width: 34%;
+    margin: 2%;
+    border-radius:10px;
+    box-shadow:  2px 2px 4px 0 #ffffff;
+}
+.textProfileUserSee{
+    font-size: 26px;
+    margin: 10px;
+    color: #ffffff;
+}
+.textProfileUserSees{
+    font-size: 26px;
+    margin: 15px;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .Container-DataUser{
+        background-color: #f6560a;
+        border-radius: 12px;
+        width: 35%;
+        height: auto;
+        text-align: center;
+        margin: 30px;
+        padding: 0px;
+        margin-left: 35%;
+        box-shadow: 1px 4px 8px 0 black;
+    }
+    .imgCardProfileUserSee{
+        width: 34%;
+        margin: 2%;
+        border-radius:10px;
+        box-shadow:  1px 1px 2px 0 #ffffff;
+    }
+    .textProfileUserSee{
+        font-size: 14px;
+        margin: 10px;
+        color: #ffffff;
+    }
+    .textProfileUserSees{
+        font-size: 16px;
+        margin: 15px;
+        color: #ffffff;
+    }
+  }
+
+@media (max-width: 520px) {
+    .Container-DataUser{
+        background-color: #f6560a;
+        border-radius: 12px;
+        width: 35%;
+        height: auto;
+        text-align: center;
+        margin: 30px;
+        padding: 0px;
+        margin-left: 35%;
+        box-shadow: 1px 4px 8px 0 black;
+    }
+    .imgCardProfileUserSee{
+        width: 34%;
+        margin: 2%;
+        border-radius:10px;
+        box-shadow:  1px 1px 2px 0 #ffffff;
+    }
+    .textProfileUserSee{
+        font-size: 10px;
+        margin: 10px;
+        color: #ffffff;
+    }
+    .textProfileUserSees{
+        font-size: 14px;
+        margin: 15px;
+        color: #ffffff;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .Container-DataUser{
+        background-color: #f6560a;
+        border-radius: 12px;
+        width: 37%;
+        height: auto;
+        text-align: center;
+        margin: 30px;
+        padding: 0px;
+        margin-left: 35%;
+        box-shadow: 1px 4px 8px 0 black;
+    }
+    .imgCardProfileUserSee{
+        width: 34%;
+        margin: 2%;
+        border-radius:10px;
+        box-shadow:  1px 1px 1px 0 #ffffff;
+    }
+    .textProfileUserSee{
+        font-size: 7px;
+        margin: 10px;
+        color: #ffffff;
+    }
+    .textProfileUserSees{
+        font-size: 9px;
+        margin: 15px;
+        color: #ffffff;
+    }
+  }
