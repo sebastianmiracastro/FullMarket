@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
+import firebase from 'firebase';
 
+const firebaseConfig = {
+    apiKey: "AIzaSyCoBoVAvHzfGIrGXIPCdZB9uHnZBp51zGs",
+    authDomain: "fullmarket-e6156.firebaseapp.com",
+    databaseURL: "https://fullmarket-e6156-default-rtdb.firebaseio.com",
+    projectId: "fullmarket-e6156",
+    storageBucket: "fullmarket-e6156.appspot.com",
+    messagingSenderId: "759346213407",
+    appId: "1:759346213407:web:9812ea45b85e6d1ca15b2a"
+};
 
+firebase.initializeApp(firebaseConfig);
 
-class PrivateChatRoom extends Component {
+export class PrivateChatRoom extends Component {
 
     constructor() {
         super();
@@ -18,22 +29,21 @@ class PrivateChatRoom extends Component {
         firebase.database().ref('messages/').on('value', snapashot => {
             const currentMessages = snapashot.val();
             if (currentMessages != null) {
-                this.state({
+                this.setState = {
                     messages: currentMessages
-                })
+                }
             }
         })
     }
 
     updateMessage(e) {
-        this.setState({
+        this.setState = {
             message: e.target.value
-        })
+        }
     }
 
     handleSumbit(e) {
         e.preventDefault(); 
-        let list = this.state.messages;
         const newMessage = {
             id: this.state.messages.length,
             text: this.state.message
@@ -41,9 +51,9 @@ class PrivateChatRoom extends Component {
 
         firebase.database().ref(`messages/${newMessage.id}`)
             .set(newMessage);
-            this.setState({
+            this.setState = {
                 message: ''
-            })
+            }
     }
 
     render() {
@@ -53,7 +63,7 @@ class PrivateChatRoom extends Component {
         });
 
         return(
-            <form onSubmit={this.handleSubmit.bind(this)}>
+            <form onSubmit={this.handleSumbit.bind(this)}>
                 <ol>
                     {messagesList}
                 </ol>
@@ -63,7 +73,7 @@ class PrivateChatRoom extends Component {
                 placeholder="Message"
                 type="text" />
                 <button
-                onClick={this.handleSubmit.bind(this)}
+                onClick={this.handleSumbit.bind(this)}
                 raised color="primary">
                     Send
                 </button>
