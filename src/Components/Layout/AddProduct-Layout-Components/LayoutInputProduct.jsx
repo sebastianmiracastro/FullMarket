@@ -51,6 +51,7 @@ export const LayoutInputProduct = () => {
   const idOwner = localStorage.getItem('uiduser');
 
   const [alertNameProduct, setAlertNameProduct] = useState('');
+  const [alertDescriptionProduct, setAlertDescriptionProduct] = useState('');
 
   var formData = new FormData();
 
@@ -101,8 +102,20 @@ export const LayoutInputProduct = () => {
       nameAddProduct = 'Correcto';
       setAlertNameProduct(nameAddProduct);
     } else {
-      nameAddProduct = 'Incorrecto';
+      nameAddProduct = 'Incorrecto. Recuerde agregar letras.';
       setAlertNameProduct(nameAddProduct);
+    }
+  };
+
+  const validationDescriptionProduct = () => {
+    let validationDescriptionAddProduct = /^[a-zA-Z\t]+|(^$)/;
+    let descriptionAddProduct;
+    if (description.match(validationDescriptionAddProduct)) {
+      descriptionAddProduct = 'Correcto';
+      setAlertDescriptionProduct(descriptionAddProduct);
+    } else {
+      descriptionAddProduct = 'Incorrecto. Recuerde agregar letras.';
+      setAlertDescriptionProduct(descriptionAddProduct);
     }
   };
 
@@ -169,8 +182,11 @@ export const LayoutInputProduct = () => {
             nameInput="description"
             valueInput={description}
             onChange={(e) => setDescription(e.target.value)}
+            onKeyUp={validationDescriptionProduct}
+            required
             placeholder="Descripción"
           />
+          <p className="alert-validation-addproduct">{alertDescriptionProduct}</p>
           <select
             className='condition-product-addproduct custom-select'
             type="condition"
@@ -181,14 +197,13 @@ export const LayoutInputProduct = () => {
               <option value="Si">Si</option>
               <option value="No">No</option>
             </select>
-        
-
           <UInputProduct
             classInput="inputAddProduct input-custom"
             typeInput="city"
             nameInput="city"
             valueInput={city}
             onChange={(e) => setCity(e.target.value)}
+            required
             placeholder="Ciudad"
           />
           <UInputProduct
@@ -204,12 +219,11 @@ export const LayoutInputProduct = () => {
           </button>
       </form>
     </div>
-     <div>
-     <Modal open={open} onClose={handleClose}>
-       {body}
-     </Modal>
-   </div>
-   </>
-   
+  <div>
+    <Modal open={open} onClose={handleClose}>
+      {body}
+    </Modal>
+  </div>
+  </>
   );
 };
