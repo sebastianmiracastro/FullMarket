@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../Styles/Main-Styles/MainStyle.css';
+import '../../../Styles/Main-Styles/MainStyle.css'
 
 export const LayoutHeader = ({event}) => {
   return (
@@ -11,7 +11,7 @@ export const LayoutHeader = ({event}) => {
           className="primarySearch"
           type="search"
           id="search"
-          placeholder="   Buscar productos, categorías y más..."
+          placeholder="Buscar productos, categorías y más..."
         ></input>
       </div>
     </>
