@@ -9,8 +9,9 @@ import { EditUserPage } from "./Components/Page/EditUser-Page/EditUserPage";
 import { NavBar } from "./Components/Layout/NavBar/NavBar";
 import { EditProductsPage } from "./Components/Page/EditMyProducts-Page/EditProductsPage";
 import {Footer} from "./Components/Layout/Footer/Footer.jsx"
-import { PrivateChat } from "./Components/UI/Chat-UI-Components/PrivateChat";
-import PrivateChatRoom from "./Components/UI/Chat-UI-Components/Chat";
+import { PrivateChatRoom } from "./Components/UI/Chat-UI-Components/Chat";
+import { ProfileUser } from "./Components/UI/ProfileUser-UI-Component/UIProfileHeader/ProfileUser";
+
 
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
         <Route path="/LoggedUser/MyProducts" element= { <MyProductsPage/> } />
         <Route path="/LoggedUser/DataUser" element= { <DataUserPage/> } />
         <Route path="/LoggedUser/EditUser" element= { <EditUserPage/> } />
-        <Route path="/LoggedUser/PrivateChat" element= { <PrivateChat /> } />
-        <Route path="/LoggedUser/PrivateChat2" element= { <PrivateChatRoom /> } />
+        <Route path="/LoggedUser/PrivateChat" element= { <PrivateChatRoom /> } />
+        <Route path="/LoggedUser/NotificationReview/ProfileUser" element= { <ProfileUser /> } />
       </Routes>
       <Footer />
     </BrowserRouter>

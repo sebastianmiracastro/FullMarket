@@ -89,11 +89,11 @@ export const UIModalNotification = () => {
         })
     }
 
-    /* ------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------- LOGICA PARA REDIRECCIONAR A CHAT PRIVADO -------------------------------------- */
 
     const navi = useNavigate()
 
-    const collectDataToRedirect = async (userName) => {
+    const collectDataToRedirectChat = async (userName) => {
         swal({
             title: "Redireccionando Al Chat",
             icon: "info",
@@ -115,6 +115,18 @@ export const UIModalNotification = () => {
         })
     }
 
+    /* ----------------------------------------- Ver Perfil Usuario ------------------------------- */ 
+
+    const nav = useNavigate()
+    
+    const recolectDataToSeeProfile = (userName) => {
+        window.localStorage.setItem('nameUser', userName)
+        nav('/LoggedUser/NotificationReview/ProfileUser')
+    }
+
+
+    /* ------------------------------------------------------------------------------------------- */
+
     return (
         <>
         {noti.map((e, i) => (
@@ -134,8 +146,8 @@ export const UIModalNotification = () => {
                         <p>{e.typeNoti}</p>
                         <div>
                             <button onClick={() => rejection(e.userSendNoti, e.userReceiverNotiProduct, e.UIDNoti)}>Rechazar</button>
-                            <button >Revisar Perfil</button>
-                            <button onClick={() => collectDataToRedirect(e.userSendNoti)}>Aceptar</button>
+                            <button onClick={() => recolectDataToSeeProfile(e.userSendNoti)}>Revisar Perfil</button>
+                            <button onClick={() => collectDataToRedirectChat(e.userSendNoti)}>Aceptar</button>
                         </div>
                     </>
                 } 
