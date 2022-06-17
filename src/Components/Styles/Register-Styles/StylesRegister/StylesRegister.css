@@ -12,10 +12,11 @@
   width: 100%;
   padding: 0;
   margin: 0;
+  margin-left: 70px;
 }
 
 .files {
-  margin-top: 9%;
+  margin-top: 4%;
 }
 
 .img-Logotype-Register {
@@ -33,7 +34,7 @@
   padding: 1rem 1.2rem;
   box-sizing: border-box;
   font-size: 14px;
-  margin-top: 14px;
+  margin-top: 5px;
   border-radius: 7px;
 }
 
@@ -61,12 +62,12 @@
   padding: 8px;
   box-sizing: border-box;
   font-size: 12px;
-  margin-top: 14px;
+  margin-top: 5px;
   height: 3rem;
 }
 
 .photos input {
-  margin-top: 14px;
+  margin-top: 5px;
 }
 
 .selectMuni {
@@ -74,7 +75,7 @@
 }
 
 .btnSubmirRecord {
-  border-radius: 25px;
+  border-radius: 1rem;
   border: none;
   background-color: #ff5100;
   font-size: 1.2rem;
@@ -82,7 +83,7 @@
   margin: 0.7rem 1rem;
   cursor: pointer;
   height: 40px;
-  width: 90% !important;
+  width: 80% !important;
   font-size: 15px;
  
 }
@@ -95,11 +96,10 @@ div.register-line {
   display: block;
   margin-top: 0.7em;
   margin-bottom: 0.5em;
-  /* margin-left: 15rem; */
   margin-right: auto;
   border-style: inset;
   border-width: 1px;
-  width: 90%;
+  width: 100%;
 }
 
 .prom {
@@ -113,7 +113,7 @@ div.register-line {
   color: #ff5100;
   font-size: 0.9rem;
   font-family: 'Poppins', sans-serif;
-  margin-top: 4%;
+  margin-top: 2%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -255,6 +255,7 @@ div.register-line {
     padding-bottom: 3rem;
     box-sizing: border-box;
     height: 100%;
+    margin-left:0;
   }
   .container-img-register{
     height: 10px;
