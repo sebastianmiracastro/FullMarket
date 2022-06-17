@@ -10,8 +10,8 @@ function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 50;
+  const left = 50;
 
   return {
     top: `${top}%`,
@@ -85,7 +85,7 @@ export const UIMyProducts=({
   };
 
   const body = (
-    <div style={modalStyle} className={classes.paper}>
+    <div className="cont-modal-myproducts">
       <h2 id="simple-modal-title">ELIMINAR PRODUCTO</h2>
       <p id="simple-modal-description">
         ¿Estas seguro de eliminar {nameProduct}?.

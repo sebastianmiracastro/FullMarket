@@ -5,11 +5,9 @@ import { UIButtonsSesionLogin } from '../../../UI/LogIn-UI-Components/UIButtonsS
 
 export const LayoutLogIn = () => {
   return (
-      <>
-    <div>
+    <div className='cont-login'>
         <UIHeaderLogin />
         <UIButtonsSesionLogin />
     </div>
-      </>
   )
 }

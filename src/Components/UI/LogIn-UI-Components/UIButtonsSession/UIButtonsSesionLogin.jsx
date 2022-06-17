@@ -58,7 +58,7 @@ const DireccionRegister = () => {
 }
   return (
     <>
-      <form onSubmit={HandleSubmit} className="">
+      <form onSubmit={HandleSubmit} className="cont-form-login">
         <div className="login-content">
           <div className="form">
             <input

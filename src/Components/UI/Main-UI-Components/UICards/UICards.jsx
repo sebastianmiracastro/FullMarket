@@ -15,8 +15,8 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 50;
+  const left = 50;
   return {
     top: `${top}%`,
     left: `${left}%`,
@@ -188,7 +188,7 @@ const mostrar = async () => {
 
   const body = (
     <div className='modalWindowFeatures'>
-      <div style={modalStyle} className={classes.paper}>
+      <div style={modalStyle} className="makeStyles-paper-1">
         {
           isloading ? (
           <h2 className='titleModalWindows' id="simple-modal-title">
