@@ -12,7 +12,7 @@ export const InnerItem = ({ data }) => {
           <div className="carousel-item active" key={key}>
             <img src={item.imgProductURL} alt={item.name} />
             <div className="container">
-              <div className="carousel-caption text-start">
+              <div className="carousel-caption cont-title-text">
                 {item.name ? <h1>{item.name}</h1> : ""}
                 {item.description ? <p> {item.description} </p> : ""}
               </div>
@@ -22,7 +22,7 @@ export const InnerItem = ({ data }) => {
           <div className="carousel-item" key={key}>
             <img src={item.imgProductURL} alt={item.name} />
             <div className="container">
-              <div className="carousel-caption text-start">
+              <div className="carousel-caption cont-title-text">
                 {item.name ? <h1>{item.name}</h1> : ""}
                 {item.description ? <p> {item.description} </p> : ""}
               </div>
