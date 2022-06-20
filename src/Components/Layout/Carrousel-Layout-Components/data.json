@@ -1,17 +1,17 @@
 {
   "sliders": [
     {
-      "imgProductURL": "https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "imgProductURL": "https://images.pexels.com/photos/612892/pexels-photo-612892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "name": "BANNER 1",
       "description": "Estes es el texto del BANNER 1"
     },
     {
-      "imgProductURL": "https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "imgProductURL": "https://images.pexels.com/photos/1263985/pexels-photo-1263985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "name": "BANNER 2",
       "description": "Estes es el texto del BANNER 2"
     },
     {
-      "imgProductURL": "https://images.pexels.com/photos/16170/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "imgProductURL": "https://images.pexels.com/photos/935835/pexels-photo-935835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "name": "BANNER 3",
       "description": "Estes es el texto del BANNER 3"
     },
@@ -21,14 +21,16 @@
       "description": "Estes es el texto del BANNER 4"
     },
     {
-      "imgProductURL": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "imgProductURL": "https://images.pexels.com/photos/7569011/pexels-photo-7569011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "name": "BANNER 5",
       "description": "Estes es el texto del BANNER 5"
     },
     {
-      "imgProductURL": "https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "imgProductURL": "https://images.pexels.com/photos/3851940/pexels-photo-3851940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "name": "BANNER 6",
       "description": "Estes es el texto del BANNER 6"
     }
   ]
 }
+
+
