@@ -1,8 +1,44 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { UInputProduct } from '../../UI/AddProduct-UI-Components/UInputProduct/UInputProduct';
+import Modal from "@material-ui/core/Modal";
+import { makeStyles } from "@material-ui/core/styles";
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand();
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 
 export const LayoutInputProduct = () => {
+  const classes = useStyles();
+  const [modalStyle] = React.useState(getModalStyle);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const [typeInput, setTypeInput] = useState('');
   const [name, setName] = useState('');
   const [imgProduct, setImage] = useState();
@@ -15,6 +51,7 @@ export const LayoutInputProduct = () => {
   const idOwner = localStorage.getItem('uiduser');
 
   const [alertNameProduct, setAlertNameProduct] = useState('');
+  const [alertDescriptionProduct, setAlertDescriptionProduct] = useState('');
 
   var formData = new FormData();
 
@@ -33,14 +70,30 @@ export const LayoutInputProduct = () => {
       .post(
         'https://fullmarket-provitional-backend.herokuapp.com/products/createnewproduct',
         formData,
-      
       )
-      .then()
-      .catch((error) => {
-        console.log(error);
-      });
-    event.preventDefault();
-  };
+        .then(setTimeout(() => {
+          window.location.reload(true)
+        }, 1000))
+        .catch((error) => {
+          console.log(error);
+        });
+      event.preventDefault();
+    };
+
+    
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title">Agregado exitosamente</h2>
+      <p id="simple-modal-description">
+        Se agregó exitosamente el producto
+      </p>
+      <div className="cont-buttons-modal-eliminar">
+        <button type="button" className="btn-cancelar" onClick={handleClose}>
+          OK
+        </button>
+      </div>
+    </div>
+  );
 
   const validationNameProduct = () => {
     let validationNameAddProduct = /^[a-zA-Z\t]+|(^$)/;
@@ -49,13 +102,25 @@ export const LayoutInputProduct = () => {
       nameAddProduct = 'Correcto';
       setAlertNameProduct(nameAddProduct);
     } else {
-      nameAddProduct = 'Incorrecto';
+      nameAddProduct = 'Incorrecto. Recuerde agregar letras.';
       setAlertNameProduct(nameAddProduct);
     }
   };
 
+  const validationDescriptionProduct = () => {
+    let validationDescriptionAddProduct = /^[a-zA-Z\t]+|(^$)/;
+    let descriptionAddProduct;
+    if (description.match(validationDescriptionAddProduct)) {
+      descriptionAddProduct = 'Correcto';
+      setAlertDescriptionProduct(descriptionAddProduct);
+    } else {
+      descriptionAddProduct = 'Incorrecto. Recuerde agregar letras.';
+      setAlertDescriptionProduct(descriptionAddProduct);
+    }
+  };
+
   return (
-   
+   <>
     <div className='cont-add-product'>
       <form onSubmit={Handle} className="form-add-product custom-form">
         <h2>Agregar Producto</h2>
@@ -117,8 +182,11 @@ export const LayoutInputProduct = () => {
             nameInput="description"
             valueInput={description}
             onChange={(e) => setDescription(e.target.value)}
+            onKeyUp={validationDescriptionProduct}
+            required
             placeholder="Descripción"
           />
+          <p className="alert-validation-addproduct">{alertDescriptionProduct}</p>
           <select
             className='condition-product-addproduct custom-select'
             type="condition"
@@ -129,14 +197,13 @@ export const LayoutInputProduct = () => {
               <option value="Si">Si</option>
               <option value="No">No</option>
             </select>
-        
-
           <UInputProduct
             classInput="inputAddProduct input-custom"
             typeInput="city"
             nameInput="city"
             valueInput={city}
             onChange={(e) => setCity(e.target.value)}
+            required
             placeholder="Ciudad"
           />
           <UInputProduct
@@ -147,11 +214,16 @@ export const LayoutInputProduct = () => {
             onChange={(e) => setDate(e.target.value)}
             placeholder="Date"
           />
-          <button type="submit" className="button-add-product">
+          <button type="submit" onClick={handleOpen} className="button-add-product">
             Publicar Producto
           </button>
       </form>
     </div>
-   
+  <div>
+    <Modal open={open} onClose={handleClose}>
+      {body}
+    </Modal>
+  </div>
+  </>
   );
 };

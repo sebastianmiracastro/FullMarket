@@ -15,8 +15,8 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 50;
+  const left = 50;
   return {
     top: `${top}%`,
     left: `${left}%`,
@@ -54,24 +54,17 @@ export const UICards = ({
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
 
-
-
   const [data, setData] = React.useState(null);
   const [isloading, setIsLoading] = React.useState(false);
-
+  const [categories, setCategories] = useState([]);
 
   /* -------------------- InfoUser (useState) ----------------------- */
-
   const [uidUserApply, setUidUserApply] = useState('')
-
   const [nameUserApply, setNameUserApply] = useState('')
 
   /* ----------------------Info Product (useState) --------------------------------- */
-
   const [uidProductApply, setUidProductApply] = useState ('')
-
   const [nameProductApply, setNameProductApply] = useState('')
-
 
   const UserInSesion = Auth();
 
@@ -95,9 +88,8 @@ export const UICards = ({
         ''
       })
     };
-
+    
     /* ------------ Get Name User ------------- */
-
     const nameUser = async () => {
       const userSend = window.localStorage.getItem('uiduser')
       await fetch(
@@ -111,8 +103,6 @@ export const UICards = ({
     }
 
     /* ------------- Get Name Product -------------- */
-
-    
     const nameProductF = async () => {
     setTimeout( async() => { 
       await fetch(
@@ -124,26 +114,24 @@ export const UICards = ({
         console.clear()
       })
     })
-    }
-    
+    }  
 
     useEffect( ()  => {
       nameUser()
       nameProductF()
-      featuresProduct();   
+      featuresProduct();
+      // categoriesProduct();  
     });
   // ---- //
+
   // ------ Logic To Apply To Product ------ //
-
-  const URLAllProducts = 'https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts'
-
-  const [products, setProducts] = useState([])
-
+const URLAllProducts = 'https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts'
+const [products, setProducts] = useState([])
 
 const mostrar = async () => {
-   await fetch(URLAllProducts)
-   .then(res => res.json())
-   .then(data => {
+  await fetch(URLAllProducts)
+  .then(res => res.json())
+  .then(data => {
     setProducts(data)
     setIsLoading(true)}) 
     .catch((err) => {
@@ -155,7 +143,6 @@ const mostrar = async () => {
   },[]);
 
   let formData = new FormData();
-
   const TypeNotifications = 'Aplico'
 
   const sendNotification = async () => {
@@ -163,7 +150,7 @@ const mostrar = async () => {
       title: "Enviando Notificación Al Usuario",
       text: "Espere un momento",
       icon: "info",
-      timer: "7000"
+      timer: "7000000000"
     })
     formData.append("usersendnoti", nameUserApply)
     formData.append("userreceivernoti", uidUserApply)
@@ -192,7 +179,7 @@ const mostrar = async () => {
 
   const body = (
     <div className='modalWindowFeatures'>
-      <div style={modalStyle} className={classes.paper}>
+      <div style={modalStyle} className="makeStyles-paper-1">
         {
           isloading ? (
           <h2 className='titleModalWindows' id="simple-modal-title">

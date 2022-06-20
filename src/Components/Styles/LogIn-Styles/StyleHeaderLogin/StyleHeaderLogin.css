@@ -1,178 +1,58 @@
-  .Login {
-    position: absolute;
-    bottom: 0;
-    left: 0px;
-    width: 36%;
-    top: 5rem;
-    height: 100%;
-    z-index: -1;
-}  
-  .img {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  div.content-title {
-    text-align: center;
-    width: 36%;
-    position: absolute;
-    top: 8rem;
-    display: flex;
-    justify-content: center;
-    height: 75px;
-    background-color: #040404;
-}
-  h2.title {
-    position: absolute;
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2cm;
-    left: 15%;
-    top: 13%;
+.Login {
+  width: 36%;
+  height: 100%;
+  z-index: 1;
+} 
+.img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-@media (max-width: 1200px) {
-  .Login {
-    position: absolute;
-    bottom: 0;
-    left: 0px;
-    width: 36%;
-    top: 75px;
-    height: 100%;
-    z-index: -1;
-  }
-  div.content-title {
-    text-align: center;
-    width: 36%;
-    position: absolute;
-    top: 8rem;
-    display: flex;
-    justify-content: center;
-    height: 70px;
-    background-color: #040404;
+.content-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 36%;
+  position: absolute;
+  top: 9rem;
+  display: flex;
+  justify-content: center;
+  height: 75px;
+  background-color: #040404;
 }
+
+.title {
+  position: absolute;
+  color: #f0f0f0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
-@media (max-width: 1030px) {
-  .Login {
-    position: absolute;
-    bottom: 0;
-    left: 0px;
-    width: 38%;
-    top: 60px;
-    height: 100%;
-    z-index: -1;
-}
-  h2.title {
-    position: absolute;
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2cm;
-    left: 8%;
-    top: 12%;
-  }
-  div.content-title {
-    text-align: center;
-    width: 38%;
-    position: absolute;
-    top: 8rem;
-    display: flex;
-    justify-content: center;
-    height: 70px;
-    background-color: #040404;
-  }
-}
-@media (max-width: 1000px) {
-  .Login {
-    position: absolute;
-    bottom: 0;
-    left: 0px;
-    width: 36%;
-    top: 45px;
-    height: 100%;
-    z-index: -1;
-  }
-  div.content-title {
-    text-align: center;
-    width: 36%;
-    position: absolute;
-    top: 8rem;
-    display: flex;
-    justify-content: center;
-    height: 65px;
-    background-color: #040404;
-  }
-  h2.title {
-    position: absolute;
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2cm;
-    left: 4%;
-    top: 10%;
-  }
-}
+
 @media (max-width: 768px) {
-  .Login {
-    display: none;
-  }
-  div.content-title {
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    top: 8rem;
-    display: flex;
-    justify-content: center;
-    height: 75px;
-    background-color: #040404;
-  }  
-  h2.title {
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2cm;
-    left: 30%;
-    top: 12%;
-  }
+.content-title {
+  display: none;
+  height: 100%;
+  width: 100%;
+} 
+.Login {
+  display: none;
+} 
+
+.cont-form-login{
+  position: relative;
+  order: -1;
+  padding: 2rem 0rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
-@media (max-width: 500px) {
-  div.content-title {
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    top: 8rem;
-    display: flex;
-    justify-content: center;
-    height: 75px;
-    background-color: #040404;
-  }
-  h2.title {
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2cm;
-    left: 18%;
-    top: 12%;
-  }
+
+.cont-login{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
-@media (max-width: 420px) {
-  h2.title {
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2cm;
-    left: 12%;
-    top: 8%;
-  }  
-  div.content-title {
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    top: 8rem;
-    display: flex;
-    justify-content: center;
-    height: 62px;
-    background-color: #040404;
-  }
 }

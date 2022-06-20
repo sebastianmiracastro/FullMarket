@@ -10,7 +10,7 @@ export const IdicatorsButton = ({ data }) => {
               type="button"
               data-bs-target="#myCarousel"
               data-bs-slide-to={key}
-              className="active"
+              className="active btn-carousel"
               aria-current="true"
               aria-label={"Silide " + key}
           />
@@ -19,6 +19,7 @@ export const IdicatorsButton = ({ data }) => {
               type="button"
               data-bs-target="#myCarousel"
               data-bs-slide-to={key}
+              className="btn-carousel"
               aria-label={"Silide " + key}
             />
           ) : ""

@@ -9,18 +9,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const Carousel = () => {
 
 
-  const URL = "https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts";
+  // const URL = "https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts";
   
-  const [dataAPI, setDataAPI] = useState([]);
+  // const [dataAPI, setDataAPI] = useState([]);
   
-  const cargarProductos = async () => {
-    await fetch(URL)
-    .then((res) => res.json())
-    .then((data) => setDataAPI(data));
-  };
-  useEffect(() => {
-    cargarProductos();
-  }, []);
+  // const cargarProductos = async () => {
+  //   await fetch(URL)
+  //   .then((res) => res.json())
+  //   .then((data) => setDataAPI(data));
+  // };
+  // useEffect(() => {
+  //   cargarProductos();
+  // }, []);
 
   return (
     <div
@@ -28,9 +28,10 @@ export const Carousel = () => {
       className="carousel slide my-0"
       data-bs-ride="carousel"
     >
-      <IdicatorsButton data={dataAPI} />
 
-      <InnerItem data={dataAPI} />
+      <InnerItem data={data.sliders} />
+
+      <IdicatorsButton data={data.sliders} />
 
       <button
         className="carousel-control-prev"

@@ -232,7 +232,10 @@ export const LayoutRegister = () => {
               required
             ></input>
             <p className="alertIcorrect">{msgPassword}</p>
-            <select
+
+
+            <div className="select-dept-muni">
+                <select
               className="selectDepart"
               onInput={getMuni}
               type="department"
@@ -264,6 +267,11 @@ export const LayoutRegister = () => {
                 </option>
               ))}
             </select>
+            </div>
+
+          
+
+
             <UIInputRegister
               typeInputRegister="address"
               nameInputtRegister="address"

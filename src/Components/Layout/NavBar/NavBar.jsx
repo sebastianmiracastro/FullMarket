@@ -12,7 +12,8 @@ import { useNavigate } from "react-router";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from '@material-ui/core/styles';
 import { UIModalNotification } from '../../UI/Notification-UI-Component/UIModalNotification'
-
+import { HiOutlineLogout } from "react-icons/hi";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 /* ---------------------- MODAL LOGIC ------------------------ */ 
 
 function rand() {
@@ -48,16 +49,17 @@ export const NavBar = () => {
   const UserInSesion = Auth();
   const token = localStorage.getItem('uiduser');
 
-  useEffect(() => {
-    token &&
-      swal({
-        title: 'Datos Correctos',
-        text: 'Bienvenido de nuevo',
-        icon: 'success',
-        Button: 'Acceptar',
-        timer: '5000',
-      });
-  }, [token]);
+  //AQUI ES DONDE SE ENVIA LA NOTIFICACION PARA QUE APAREZCA SIEMPRE QUE SE RECARGUE LA PAGINA
+  // useEffect(() => {
+  //   token &&
+  //     swal({
+  //       title: 'Datos Correctos',
+  //       text: 'Bienvenido de nuevo',
+  //       icon: 'success',
+  //       Button: 'Acceptar',
+  //       timer: '5000',
+  //     });
+  // }, [token]);
 
   /* ---------------------- See Notification Logic ------------------------------ */
 
@@ -126,23 +128,22 @@ export const NavBar = () => {
           ''
         )}
 
-        {UserInSesion ? (
-        
-            <p  onClick={()=>Logout(navigate)} className="btn-Logout">Cerrar Sesión</p>
-          
-        ) : (
-          ''
-        )}
         {UserInSesion && (
           <NavLink to="/LoggedUser/AddProduct">
-            <p className="btn-Add">Agregar Producto</p>
+            <MdOutlineAddShoppingCart className="btn-Add"/>
           </NavLink>
         )}
         {UserInSesion && (
           <AiFillBell className='notification-icon' onClick={handleModalOpen} />
         )}
-        {UserInSesion && (
+        {/* {UserInSesion && (
           <AiOutlineSend className='chat-icon' />
+        )} */}
+        {UserInSesion ? (
+        <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />
+            // <p  onClick={()=>Logout(navigate)} className="btn-Logout">Cerrar Sesión</p>
+        ) : (
+          ''
         )}
       </div>
       <Modal open={open} onClose={handleModalClose}>
