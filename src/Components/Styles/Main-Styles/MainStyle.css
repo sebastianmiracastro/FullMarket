@@ -4,7 +4,7 @@
 
 .primaryHeader {
   width: 100%;
-  background-color: #ffffff;
+  background-image: url("../../../../public/Img/bg1-navbar.svg");
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -266,7 +266,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dae4ed;
+  background-image: url("../../../../public/Img/bg1-navbar.svg");
 }
 
 .primarySearch {
@@ -332,7 +332,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #dae4ed;
+  background-image: url("../../../../public/Img/bg2.svg");
 }
 
 .main {
@@ -346,7 +346,7 @@
   min-width: 190px;
   height: 100%;
   margin: 2rem;
-  background-color: #ffffff;
+  background-image: url("../../../../public/Img/bgcards2.svg");
   transition: all 0.2s;
   border-radius: 10px;
   
@@ -673,7 +673,7 @@ p {
   align-items: center;
   flex-direction: column;
   padding: 3rem 0;
-  background-color: #1e272e;
+  background-image: url("../../../../public/Img/bgEdit-NewProduct.svg");
 }
 
 .form-edit-product, .form-add-product{
