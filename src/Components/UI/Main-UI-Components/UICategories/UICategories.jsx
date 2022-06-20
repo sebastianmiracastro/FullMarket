@@ -68,15 +68,6 @@ export const UICategories = ({
   
     const UserInSesion = Auth();
 
-
-
-
-
-
-//     const [open, setOpen] = React.useState(false);
-//     const [isloading, setIsLoading] = React.useState(false);
-// const UserInSesion = Auth();
-
 const handleOpen = () => {
     setOpen(true);
 };
@@ -84,134 +75,121 @@ const handleClose = () => {
     setOpen(false);
 };
 
-
-const [categories, setCategories] = useState([]);
-
-const categoriesProduct = async () => {
-    await fetch(
-        `https://fullmarket-provitional-backend.herokuapp.com/products/productsbycategory/Accesorio`
-        )
-        .then((res) => res.json())
-        .then((data) => setCategories(data));
-    };
-    
-    useEffect(() => {
-        categoriesProduct()
-    }, []);
-
     
   let formData = new FormData();
   const TypeNotifications = 'Aplico'
 
-
-
-    const sendNotification = async () => {
-        swal({
-            title: "Enviando Notificación Al Usuario",
-            text: "Espere un momento",
-            icon: "info",
-            timer: "7000000000"
-        })
-        formData.append("usersendnoti", nameUserApply)
-        formData.append("userreceivernoti", uidUserApply)
-        formData.append("userreceivernotiproduct", nameProductApply)
-        formData.append("typenoti", TypeNotifications)
-        setTimeout( async() => {
-            await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
-            .then((res => {
-            swal({
-                title: "Notificacion Enviada",
-                text: "Espera Una Respuesta Del Propietario",
-                icon: "success",
-                timer: "2500"
-            })
+  const sendNotification = async () => {
+    swal({
+      title: "Enviando Notificación Al Usuario",
+      text: "Espere un momento",
+      icon: "info",
+      timer: "7000000000"
+      })
+      formData.append("usersendnoti", nameUserApply)
+      formData.append("userreceivernoti", uidUserApply)
+      formData.append("userreceivernotiproduct", nameProductApply)
+      formData.append("typenoti", TypeNotifications)
+      setTimeout( async() => {
+        await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
+        .then((res => {
+          swal({
+            title: "Notificacion Enviada",
+            text: "Espera Una Respuesta Del Propietario",
+            icon: "success",
+            timer: "2500"
+          })
         }))
         .catch(( err => {
-            swal({
-                title: "No Se Pudo Completar La Accion",
-                text: "Intentalo Mas Tarde",
-                icon: "error",
-                timer: "2500"
-            })
-            }))
-        }, 3000)
-        }
+          swal({
+            title: "No Se Pudo Completar La Accion",
+            text: "Intentalo Mas Tarde",
+            icon: "error",
+            timer: "2500"
+          })
+        }))
+      }, 3000)
+    }
         
-        const body = (
-        <div className='modalWindowFeatures'>
-            <div style={modalStyle} className="makeStyles-paper-1">
-            {
-                isloading ? (
-                <h2 className='titleModalWindows' id="simple-modal-title">
-                {typeProductCategory}: {nameProductCategory}
-                </h2>
-                ) 
-                :
-                <Skeleton
-                animation="wave"
-                width={120}
-                height={50}
-                />}
-            {
-                isloading ? (
-                <img className='imgModalWindow' src={imgProductCategory} alt="" /> 
-                ) 
-                :
-                <Skeleton
-                animation="wave"
-                width={120}
-                height={50}
-                />}
-            {
-                isloading ? (
-                <p className='pModalDescription'>Descripcion: {descriptionProductCategory}</p>
-                ) 
-                : 
-                <Skeleton
-                animation="wave"
-                width={120}
-                height={50}
-                />
-            }
-            {
-                isloading ? (
-                <p className='pModalAvailability'>Disponible: {availabilityProductCategory}</p>
-                ) 
-                : 
-                <Skeleton
-                animation="wave"
-                width={120}
-                height={50}
-                />
-            }
-            {
-                isloading ? (
-                <p>{dateProductCategory}</p>
-                ) 
-                :
-                <Skeleton
-                animation="wave"
-                width={120}
-                height={50}
-                />
-            }
-            {
-                isloading ? (
-                <p>{cityProductCategory}</p>
-                ) 
-                :
-                <Skeleton
-                animation="wave"
-                width={120}
-                height={50}
-                />
-            }
-            <button className='btnOkModal' type="button" onClick={handleClose}>
-                OK
-            </button>
-            </div>
-        </div>
-        );
+  const body = (
+  <div className='modalWindowFeatures'>
+    <div style={modalStyle} className="makeStyles-paper-1">
+      {
+        isloading ? (
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />
+        ) 
+        :
+        <h2 className='titleModalWindows' id="simple-modal-title">
+          {typeProductCategory}: {nameProductCategory}
+        </h2>
+      }
+      {
+        isloading ? (
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />
+        ) 
+        :
+        <img className='imgModalWindow' src={imgProductCategory} alt="" /> 
+      }
+      {
+        isloading ? (
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />
+        ) 
+        : 
+        <p className='pModalDescription'>Descripcion: {descriptionProductCategory}</p>
+      }
+      {
+        isloading ? (
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />
+        ) 
+        : 
+        <p className='pModalAvailability'>Disponible: {availabilityProductCategory}</p>
+      }
+      {
+        isloading ? (
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />
+        ) 
+        :
+        <p>{dateProductCategory}</p>
+      }
+      {
+        isloading ? (
+        <Skeleton
+        animation="wave"
+        width={120}
+        height={50}
+        />
+        ) 
+        :
+        <p>{cityProductCategory}</p>
+      }
+      <button className='btnOkModal' type="button" onClick={handleClose}>
+          OK
+      </button>
+    </div>
+  </div>
+  );
+
+
 return (
     <>
     <div className='container-card'>
@@ -227,7 +205,7 @@ return (
                 )  
                 : 
                 <BsFillInfoCircleFill onClick={handleOpen} />
-            }
+                }
             </div>
             {isloading ? (
             <Skeleton
@@ -304,5 +282,4 @@ return (
         </div>
     </div>
     </>
-)
-}
+)}

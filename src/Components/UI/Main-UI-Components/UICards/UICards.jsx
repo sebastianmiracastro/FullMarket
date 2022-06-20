@@ -88,16 +88,7 @@ export const UICards = ({
         ''
       })
     };
-
-  // const categoriesProduct = async () => {
-  //   await fetch(
-  //     `https://fullmarket-provitional-backend.herokuapp.com/products/productsbycategory/Accesorio`
-  //     )
-  //     .then((res) => res.json())
-  //     .then((data) => setCategories(data));
-  //   };
-  //   console.log("CATEGORIES", categories);
-
+    
     /* ------------ Get Name User ------------- */
     const nameUser = async () => {
       const userSend = window.localStorage.getItem('uiduser')
