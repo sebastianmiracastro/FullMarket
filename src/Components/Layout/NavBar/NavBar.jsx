@@ -49,16 +49,17 @@ export const NavBar = () => {
   const UserInSesion = Auth();
   const token = localStorage.getItem('uiduser');
 
-  useEffect(() => {
-    token &&
-      swal({
-        title: 'Datos Correctos',
-        text: 'Bienvenido de nuevo',
-        icon: 'success',
-        Button: 'Acceptar',
-        timer: '5000',
-      });
-  }, [token]);
+  //AQUI ES DONDE SE ENVIA LA NOTIFICACION PARA QUE APAREZCA SIEMPRE QUE SE RECARGUE LA PAGINA
+  // useEffect(() => {
+  //   token &&
+  //     swal({
+  //       title: 'Datos Correctos',
+  //       text: 'Bienvenido de nuevo',
+  //       icon: 'success',
+  //       Button: 'Acceptar',
+  //       timer: '5000',
+  //     });
+  // }, [token]);
 
   /* ---------------------- See Notification Logic ------------------------------ */
 
@@ -127,11 +128,9 @@ export const NavBar = () => {
           ''
         )}
 
-   
         {UserInSesion && (
           <NavLink to="/LoggedUser/AddProduct">
             <MdOutlineAddShoppingCart className="btn-Add"/>
-            {/* <p className="btn-Add">Agregar Producto</p> */}
           </NavLink>
         )}
         {UserInSesion && (
