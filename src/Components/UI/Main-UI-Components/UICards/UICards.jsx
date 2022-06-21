@@ -179,7 +179,7 @@ const mostrar = async () => {
 
   const body = (
     <div className='modalWindowFeatures'>
-      <div style={modalStyle} className="makeStyles-paper-1">
+      <div style={modalStyle} className="modal-cards">
         {
           isloading ? (
           <h2 className='titleModalWindows' id="simple-modal-title">

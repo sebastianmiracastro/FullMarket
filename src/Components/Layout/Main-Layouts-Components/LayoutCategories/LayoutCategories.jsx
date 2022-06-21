@@ -21,7 +21,7 @@ export const LayoutCategories = () => {
   return (
     <>  
     <main className="main-products">
-      <h1>Accesorios</h1>
+      <h1 className="title-categories">Accesorios</h1>
       {categories.map((element) => (
         <UICategories
           key={element.uid + 1}
