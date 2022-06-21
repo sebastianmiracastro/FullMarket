@@ -70,3 +70,51 @@
     line-height: 1.4;
   }
 }
+
+
+
+
+
+
+
+
+/* RESPONSIVE CAROUSEL */
+@media (max-width: 1080px) {
+  .carousel-item {
+    height: 35rem;
+  }
+
+  .carousel-item > img {
+    height: 40rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 25rem;
+  }
+
+  .carousel-item > img {
+    height: 30rem;
+  }
+}
+
+@media (max-width: 411px) {
+  .carousel-item {
+    height: 20rem;
+  }
+
+  .carousel-item > img {
+    height: 25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .carousel-item {
+    height: 20rem;
+  }
+
+  .carousel-item > img {
+    height: 20rem;
+  }
+}
