@@ -32,6 +32,7 @@
   .primaryBtnHeader{
     width: 100%;
   }
+
   .primaryHeader{
     flex-direction: column;
     width: 100%;
@@ -57,6 +58,7 @@
     width: 90% !important;
     margin: 1rem 0 !important;
   }
+
   .btn-Apply {
     width: 100% !important;
   }
@@ -68,6 +70,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
 
 .btn-Logout{
   font-size: 3rem;
@@ -82,30 +85,6 @@
   cursor: pointer;
   margin-left: 10px;
 }
-/* 
-.btn-Logout{
-  width: 12rem;
-  background-color: #c0392b;
-  border-radius: 1rem;
-  color: #ffffff;
-  font-size: 1rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  padding: 0.7rem 0;
-}
-
-.btn-Logout:hover{
-  color: #ffffff;
-  background: #e74c3c;
-} */
-
-/* .custom-form {
-  margin-left: 40px;
-  display: flex;
-  flex-direction: column;
-} */
 
 .custom-select{
   margin-bottom: 10px;
@@ -184,13 +163,13 @@
   cursor: pointer;
   margin: 10px;
 }
+
 .btn-Add:hover{
   font-size: 3rem;
   color: #ff661f;
   cursor: pointer;
   margin-left: 10px;
 }
-
 
 .btn-primaryHeader{
   --color: #ff661f;
@@ -238,13 +217,21 @@
 }
 
 .home-icon {
+  --color: #ff661f;
   cursor: pointer;
   color: #f6560a;
   font-size: 3rem;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: color .5s;
+  z-index: 1;
 }
+
 .home-icon:hover {
   color: #ff661f;
-  font-size: 3rem;
+  animation: slidebg 2s linear infinite;
+  border: 0px solid #000000;
 }
 
 .notification-icon {
@@ -253,6 +240,7 @@
   font-size: 3rem;
   margin: 10px;
 }
+
 .notification-icon:hover {
   color: #ff661f;
   font-size: 3rem;
@@ -263,7 +251,6 @@
   color: #f6560a;
   font-size: 3rem;
 }
-
 
 .containerLogotype{
   width: 100%;
@@ -306,8 +293,8 @@
   padding: 20px;
 }
 
-/* ------------------ STYLES CONTENT MODAL ------------------------- */
 
+/* ------------------ STYLES CONTENT MODAL ------------------------- */
 .makeStyles-paper-1{
   top: 50% !important;
   left: 50% !important;
@@ -386,13 +373,16 @@
   padding: 1rem 2rem;
 }
 
+
 @media (max-width: 510px) {
   .cont-modal-notification{
     width: 90%;
   }
+
   .cont-noti{
     width: 95%;
   }
+
   .buttons-modal-notification{
     flex-wrap: wrap;
   }
@@ -401,6 +391,7 @@
     font-size: 11px !important;
     font-weight: bold !important;
   }
+
   .aceptar{
     margin-top: 5px;
     width: 90%;
@@ -408,8 +399,8 @@
   }
 }
 
-/* ------------------ STYLES FOR CARDS ----------------------------- */
 
+/* ------------------ STYLES FOR CARDS ----------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .main-products {
@@ -443,7 +434,6 @@
   background-image: url("../../../../public/Img/bgcards2.svg");
   transition: all 0.2s;
   border-radius: 10px;
-  
 }
 
 .container-card:hover {
@@ -557,8 +547,8 @@ p {
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-/* ---- STYLES FOR MODAL WINDOW ---- */
 
+/* ---- STYLES FOR MODAL WINDOW ---- */
 .makeStyles-paper-1, .modal-cards{
   max-width: 90% !important;
   max-height: 85% !important;
@@ -652,6 +642,7 @@ p {
   cursor: pointer;
 }
 
+
 /* ---- STYLES FOR MOVIL ---- */
 @media (max-width: 990px) {
   .makeStyles-paper-1, .modal-cards{
@@ -680,12 +671,14 @@ p {
     margin: 0.2rem 0 !important;
     text-align: center
   }
+
   .imgModalWindow {
     width: 60%;
     min-width: 180px;
     height: 20%;
   }
 }
+
 
 @media (max-width: 520px) {
   .makeStyles-paper-1, .modal-cards{
@@ -768,11 +761,6 @@ p {
 }
 
 
-
-
-
-
-
 /* --------  PAGE EDIT PRODUCT  ---------- */
 .containerFormData, .cont-add-product{
   width: 100%;
@@ -848,7 +836,6 @@ p {
 
 
 /* MODAL ELIMINAR */
-
 .makeStyles-paper-4{
   top: 50% !important;
   left: 50% !important;
