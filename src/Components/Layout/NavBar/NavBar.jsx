@@ -77,7 +77,7 @@ export const NavBar = () => {
 
   const body = (
     <div className='modalWindowFeatures'>
-      <div style={modalStyle} className={classes.paper}>
+      <div style={modalStyle} className="cont-modal-notification">
         {<UIModalNotification /> ? <UIModalNotification /> : "Loading..."}
         <button className='btnOkModal' type="button" onClick={handleModalClose}>
         OK

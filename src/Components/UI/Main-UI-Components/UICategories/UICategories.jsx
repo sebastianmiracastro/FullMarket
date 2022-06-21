@@ -113,7 +113,7 @@ const handleClose = () => {
         
   const body = (
   <div className='modalWindowFeatures'>
-    <div style={modalStyle} className="makeStyles-paper-1">
+    <div style={modalStyle} className="modal-cards">
       {
         isloading ? (
         <Skeleton

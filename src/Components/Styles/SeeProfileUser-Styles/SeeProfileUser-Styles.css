@@ -1,12 +1,19 @@
+.cont-userProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-image: url("../../../../public/Img/bg1-navbar.svg");
+    border-top: #f6560a 2px solid;
+}
+
 .Container-DataUser{
     background-color: #f6560a;
     border-radius: 12px;
     width: 30%;
     height: auto;
     text-align: center;
-    margin: 30px;
     padding: 0px;
-    margin-left: 35%;
     box-shadow: 1px 4px 8px 0 black;
 }
 .imgCardProfileUserSee{
@@ -30,12 +37,10 @@
     .Container-DataUser{
         background-color: #f6560a;
         border-radius: 12px;
-        width: 35%;
+        width: 80%;
         height: auto;
         text-align: center;
-        margin: 30px;
         padding: 0px;
-        margin-left: 35%;
         box-shadow: 1px 4px 8px 0 black;
     }
     .imgCardProfileUserSee{
@@ -54,18 +59,16 @@
         margin: 15px;
         color: #ffffff;
     }
-  }
+}
 
 @media (max-width: 520px) {
     .Container-DataUser{
         background-color: #f6560a;
         border-radius: 12px;
-        width: 35%;
+        width: 90%;
         height: auto;
         text-align: center;
-        margin: 30px;
         padding: 0px;
-        margin-left: 35%;
         box-shadow: 1px 4px 8px 0 black;
     }
     .imgCardProfileUserSee{
@@ -84,34 +87,4 @@
         margin: 15px;
         color: #ffffff;
     }
-  }
-
-  @media (max-width: 320px) {
-    .Container-DataUser{
-        background-color: #f6560a;
-        border-radius: 12px;
-        width: 37%;
-        height: auto;
-        text-align: center;
-        margin: 30px;
-        padding: 0px;
-        margin-left: 35%;
-        box-shadow: 1px 4px 8px 0 black;
-    }
-    .imgCardProfileUserSee{
-        width: 34%;
-        margin: 2%;
-        border-radius:10px;
-        box-shadow:  1px 1px 1px 0 #ffffff;
-    }
-    .textProfileUserSee{
-        font-size: 7px;
-        margin: 10px;
-        color: #ffffff;
-    }
-    .textProfileUserSees{
-        font-size: 9px;
-        margin: 15px;
-        color: #ffffff;
-    }
-  }
+}

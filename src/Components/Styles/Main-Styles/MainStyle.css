@@ -1,3 +1,4 @@
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -76,11 +77,11 @@
   background: #e74c3c;
 } */
 
-.custom-form {
+/* .custom-form {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .custom-select{
   margin-bottom: 10px;
@@ -283,7 +284,7 @@
 
 /* ------------------ STYLES CONTENT MODAL ------------------------- */
 
-.makeStyles-paper-1, .makeStyles-paper-2, .makeStyles-paper-3, .makeStyles-paper-4{
+.makeStyles-paper-1{
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
@@ -293,6 +294,30 @@
   border-radius: 2rem;
   overflow-y: scroll;
   box-sizing: border-box;
+  position: absolute;
+  background-color: #fff;
+  padding: 1rem 0;
+  background-image: url("../../../../public/Img/bg1-navbar.svg");
+}
+
+.cont-modal-notification{
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center;
+  border-radius: 2rem;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  position: absolute;
+  padding: 1rem 0;
+  width: 100%;
+  min-width: 300px;
+  max-width: 650px;
+  height: 600px;
+  max-height: 90%;
+  background-image: url("../../../../public/Img/bg1-navbar.svg");
 }
 
 .cont-noti{
@@ -300,12 +325,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: bisque;
   width: 90%;
   padding: 15px;
   margin: 1rem;
   box-sizing: border-box;
   border-radius: 2rem;
+  background: #fc4a1a;
+  background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .cont-noti h3{
@@ -318,9 +345,43 @@
   margin: 0;
 }
 
+.buttons-modal-notification{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.text-button-modal{
+  font-size: 12px;
+}
+
 .btnOkModal{
   width: 70%;
   padding: 1rem 2rem;
+}
+
+@media (max-width: 510px) {
+  .cont-modal-notification{
+    width: 90%;
+  }
+  .cont-noti{
+    width: 95%;
+  }
+  .buttons-modal-notification{
+    flex-wrap: wrap;
+  }
+
+  .text-button-modal{
+    font-size: 11px !important;
+    font-weight: bold !important;
+  }
+  .aceptar{
+    margin-top: 5px;
+    width: 90%;
+    letter-spacing: 2px;
+  }
 }
 
 /* ------------------ STYLES FOR CARDS ----------------------------- */
@@ -333,6 +394,15 @@
   justify-content: center;
   flex-wrap: wrap;
   background-image: url("../../../../public/Img/bg2.svg");
+}
+
+.main-products .title-categories{
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 35px;
+  margin-top: 2rem;
+  letter-spacing: 2px;
 }
 
 .main {
@@ -410,7 +480,6 @@ h1 {
   margin-top: -5px;
 }
 
-
 h2 {
   margin: 0 1rem;
   height: 2rem;
@@ -466,7 +535,7 @@ p {
 
 /* ---- STYLES FOR MODAL WINDOW ---- */
 
-.makeStyles-paper-1{
+.makeStyles-paper-1, .modal-cards{
   max-width: 90% !important;
   max-height: 85% !important;
   box-sizing: border-box;
@@ -479,6 +548,9 @@ p {
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
+  position: absolute;
+  background-image: url("../../../../public/Img/bgcards2.svg");
+  padding: 1rem 0;
 }
 
 .cont-modal-myproducts{
@@ -512,21 +584,26 @@ p {
   min-width: 200px;
   height: 60%;
   min-height: 200px;
+  max-height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin-top: 2rem;
+  margin-top: 0rem;
   box-sizing: border-box;
 }
 
 .pModalDescription {
   color: #000000;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0rem 0.7rem;
+  box-sizing: border-box;
 }
 
 .pModalAvailability {
   color: #000000;
+  margin: 0;
 }
 
 .btnOkModal {
@@ -540,20 +617,21 @@ p {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  padding: 1.5rem 0;
 }
 
 .btnOkModal:hover {
   color: #ffffff;
   background-color: #333131;
-  transition: all 1s ease;
+  transition: all 0.3s;
   font-weight: bold;
   cursor: pointer;
 }
 
 /* ---- STYLES FOR MOVIL ---- */
 @media (max-width: 990px) {
-  .makeStyles-paper-1{
-    max-height: 80% !important;
+  .makeStyles-paper-1, .modal-cards{
+    max-height: 90% !important;
     max-width: 90% !important;
     padding: 0.2rem 0.2rem;
     border-radius: 15px;
@@ -564,14 +642,16 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 60% !important;
-    max-width: 90% !important;
+    height: 300px;
+    width: 85%;
+    max-height: 400px !important;
+    max-width: 600px !important;
     padding: 0.2rem 0.2rem;
     border-radius: 15px;
     border-style: none !important;
   }
 
-  .makeStyles-paper-1 p, .cont-modal-myproducts p{
+  .makeStyles-paper-1 p, .modal-cards p .cont-modal-myproducts p{
     line-height: 20px;
     margin: 0.2rem 0 !important;
     text-align: center
@@ -584,9 +664,11 @@ p {
 }
 
 @media (max-width: 520px) {
-  .makeStyles-paper-1{
-    max-height: 80% !important;
-    padding: 0.2rem 0.2rem;
+  .makeStyles-paper-1, .modal-cards{
+    min-width: 90% !important;
+    max-height: 90% !important;
+    padding: 1rem 0.2rem;
+    box-sizing: border-box;
   }
 
   .imgModalWindow {
@@ -607,7 +689,8 @@ p {
   background-color: #ffffff;
   transition: all 0.2s;
   border-radius: 10px;
-  padding: 1rem 0 0 0;
+  padding: 1rem 0;
+  background-image: url("../../../../public/Img/bgcards2.svg");
 }
 
 .container-My-Products-card:hover {
@@ -685,12 +768,16 @@ p {
   background-color: #f6560a;
   padding: 2rem;
   border-radius: 1rem;
+  box-sizing: border-box;
+  max-width: 90%;
 }
 
 .form-edit-product h2, .form-add-product h2{
-  font-size: 35px;
+  font-size: 32px;
   color: #fff;
+  font-weight: bold;
   padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .form-edit-product input, .form-add-product input{
@@ -807,6 +894,3 @@ p {
 .footer-dark{
   position: relative;
 }
-
-
-

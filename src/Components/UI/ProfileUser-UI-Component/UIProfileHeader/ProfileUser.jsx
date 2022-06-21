@@ -17,7 +17,7 @@ export const ProfileUser = () => {
   })
 
   return (
-    <div>
+    <div className='cont-userProfile'>
       {
         dataUser.map((e, i) => (
           <div className='Container-DataUser' key={i}>
