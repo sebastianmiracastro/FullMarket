@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import "../../Styles/Main-Styles/MainStyle.css";
-import * as bootstrap from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const UIModalNotification = () => {
@@ -22,16 +21,6 @@ export const UIModalNotification = () => {
 
   useEffect((e) => {
     showNotification();
-  });
-
-  const [nameUserInSession, setNameUserInSession] = useState("");
-
-  useEffect((e) => {
-    fetch(
-      `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${uiduser}`
-    )
-      .then((res) => res.json())
-      .then((data) => setNameUserInSession(data.name));
   });
 
   /* --------------------- LOGICA PARA RECHAZAR LA NOTIFICACIÖN --------------------------- */
@@ -53,6 +42,7 @@ export const UIModalNotification = () => {
       .then((res) => res.json())
       .then((data) => {
         const urluser = data[0].uid;
+        const nameUserInSession = window.localStorage.getItem('nameUserInSession')
         formData.append("usersendnoti", nameUserInSession);
         formData.append("userreceivernoti", urluser);
         formData.append("userreceivernotiproduct", productName);
