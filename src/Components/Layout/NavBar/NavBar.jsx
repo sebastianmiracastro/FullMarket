@@ -85,7 +85,7 @@ export const NavBar = () => {
       </div>
     </div>
   );
-
+ 
   return (
     <div className="primaryHeader">
       <div className="headerLogotype">
@@ -95,56 +95,62 @@ export const NavBar = () => {
         <NavLink to="/">
           <HiHome className="home-icon" />
         </NavLink>
-        {UserInSesion ? (
-          ''
-        ) : (
-          <NavLink to="/UserRegister">
-            {' '}
-            <UIButtons
-              classButtons="btn-primaryHeader"
-              nameButtons="Regístrate"
-            ></UIButtons>
-          </NavLink>
-        )}
-        {UserInSesion ? (
-          ''
-        ) : (
-          <NavLink to="/LogIn">
-            <UIButtons
-              classButtons="btn-primaryHeader"
-              nameButtons="Inicia Sesión"
-            ></UIButtons>
-          </NavLink>
-        )}
+        <div className="buttons-navbar">
+          {UserInSesion ? (
+            ''
+          ) : (
+            <NavLink to="/UserRegister">
+              {' '}
+              <UIButtons
+                classButtons="btn-primaryHeader"
+                nameButtons="Regístrate"
+              ></UIButtons>
+            </NavLink>
+          )}
+          {UserInSesion ? (
+            ''
+          ) : (
+            <NavLink to="/LogIn">
+              <UIButtons
+                classButtons="btn-primaryHeader"
+                nameButtons="Inicia Sesión"
+              ></UIButtons>
+            </NavLink>
+          )}
 
-        {UserInSesion ? (
-          <NavLink to="/LoggedUser/MyProducts">
-            <UIButtons
-              classButtons="btn-primaryHeader"
-              nameButtons="Mis Productos"
-            ></UIButtons>
-          </NavLink>
-        ) : (
-          ''
-        )}
+          {UserInSesion ? (
+            <NavLink to="/LoggedUser/MyProducts">
+              <UIButtons
+                classButtons="btn-primaryHeader"
+                nameButtons="Mis Productos"
+              ></UIButtons>
+            </NavLink>
+          ) : (
+            ''
+          )}
 
-        {UserInSesion && (
-          <NavLink to="/LoggedUser/AddProduct">
-            <MdOutlineAddShoppingCart className="btn-Add"/>
-          </NavLink>
-        )}
-        {UserInSesion && (
-          <AiFillBell className='notification-icon' onClick={handleModalOpen} />
-        )}
-        {/* {UserInSesion && (
-          <AiOutlineSend className='chat-icon' />
-        )} */}
-        {UserInSesion ? (
-        <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />
-            // <p  onClick={()=>Logout(navigate)} className="btn-Logout">Cerrar Sesión</p>
-        ) : (
-          ''
-        )}
+          {UserInSesion && (
+            <NavLink to="/LoggedUser/AddProduct" className="nav-link">
+              <MdOutlineAddShoppingCart className="btn-Add"/>
+            </NavLink>
+          )}
+          {UserInSesion && (
+            <a>
+              <AiFillBell className='notification-icon' onClick={handleModalOpen} />
+            </a>
+          )}
+          {/* {UserInSesion && (
+            <AiOutlineSend className='chat-icon' />
+          )} */}
+          {UserInSesion ? (
+            <a>
+              <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />
+            </a>
+              // <p  onClick={()=>Logout(navigate)} className="btn-Logout">Cerrar Sesión</p>
+          ) : (
+            ''
+          )}
+        </div>
       </div>
       <Modal open={open} onClose={handleModalClose}>
         {body}
