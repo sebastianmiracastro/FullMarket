@@ -94,7 +94,7 @@ export const UIModalNotification = () => {
 
   const navi = useNavigate();
 
-  const collectDataToRedirectChat = async (userName) => {
+  const collectDataToRedirectChat = async (userName, productName) => {
     swal({
       title: "Redireccionando Al Chat",
       icon: "info",
@@ -106,6 +106,7 @@ export const UIModalNotification = () => {
       .then((res) => res.json())
       .then((data) => {
         window.localStorage.setItem("uidUserToContact", data[0].uid);
+        window.localStorage.setItem("nameProductApply", productName)
       })
       .then(() => {
         navi("/LoggedUser/PrivateChat");
@@ -175,7 +176,7 @@ export const UIModalNotification = () => {
                   Revisar Perfil
                 </button>
                 <button
-                  onClick={() => collectDataToRedirectChat(e.userSendNoti)}
+                  onClick={() => collectDataToRedirectChat(e.userSendNoti, e.userReceiverNotiProduct)}
                   className="btn btn-success text-button-modal aceptar"
                 >
                   Aceptar

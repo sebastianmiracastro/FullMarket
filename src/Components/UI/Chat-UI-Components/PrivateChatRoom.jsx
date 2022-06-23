@@ -18,8 +18,14 @@ export const PrivateChatRoom = () => {
   const [mesage, setMessage] = useState('')
   const [messages, setMessages] = useState([])
 
+  const getNameProduct = window.localStorage.getItem('nameProductApply')
+
+  const getUserUid = window.localStorage.getItem('uidUserToContact')
+
+  const getUserInSessionUID = window.localStorage.getItem('uiduser')
+
   const currentMessage = () => {
-    firebase.database().ref('messages/').on('value', snapashot => {
+    firebase.database().ref(`${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/`).on('value', snapashot => {
       const current = snapashot.val();
       if (current != null) {
         setMessages(current)
@@ -29,7 +35,7 @@ export const PrivateChatRoom = () => {
 
   useEffect(() => {
     currentMessage()
-  }, []) 
+  }) 
 
   const updateMessage = (e) => {
     setMessage(e.target.value)
@@ -39,10 +45,11 @@ export const PrivateChatRoom = () => {
     e.preventDefault();
     const newMsg = {
       id: messages.length,
+      uidUserSend: getUserInSessionUID,
       text: mesage
     };
 
-    firebase.database().ref(`messages/${newMsg.id}`)
+    firebase.database().ref(`${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/${newMsg.id}`)
       .set(newMsg);
       setMessage('')
   }
