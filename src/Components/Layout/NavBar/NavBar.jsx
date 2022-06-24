@@ -139,9 +139,11 @@ export const NavBar = () => {
               <AiFillBell className='notification-icon' onClick={handleModalOpen} />
             </a>
           )}
-          {/* {UserInSesion && (
-            <AiOutlineSend className='chat-icon' />
-          )} */}
+          {UserInSesion && (
+            <a>
+              <AiOutlineSend className='notification-icon' />
+            </a>
+          )} 
           {UserInSesion ? (
             <a>
               <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />

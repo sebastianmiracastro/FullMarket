@@ -25,7 +25,7 @@ export const PrivateChatRoom = () => {
   const getUserInSessionUID = window.localStorage.getItem('uiduser')
 
   const currentMessage = () => {
-    firebase.database().ref(`${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/`).on('value', snapashot => {
+    firebase.database().ref(`Chat - ${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/`).on('value', snapashot => {
       const current = snapashot.val();
       if (current != null) {
         setMessages(current)
@@ -49,7 +49,7 @@ export const PrivateChatRoom = () => {
       text: mesage
     };
 
-    firebase.database().ref(`${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/${newMsg.id}`)
+    firebase.database().ref(`Chat - ${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/${newMsg.id}`)
       .set(newMsg);
       setMessage('')
   }
