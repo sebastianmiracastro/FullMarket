@@ -170,13 +170,13 @@ export const UIModalNotification = () => {
                 </button>
                 <button
                   onClick={() => recolectDataToSeeProfile(e.userSendNoti)}
-                  className="btn btn-info text-dark fw-bold text-button-modal"
+                  className="btn fw-bold text-button-modal info"
                 >
                   Revisar Perfil
                 </button>
                 <button
                   onClick={() => collectDataToRedirectChat(e.userSendNoti, e.userReceiverNotiProduct)}
-                  className="btn btn-success text-button-modal aceptar"
+                  className="btn text-button-modal aceptar"
                 >
                   Aceptar
                 </button>

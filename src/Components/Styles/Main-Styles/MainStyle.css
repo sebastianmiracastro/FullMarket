@@ -390,9 +390,29 @@
     margin-top: 5px;
     width: 90%;
     letter-spacing: 2px;
+    background-color: #07d307;
+    color: #ffffff;
   }
 }
 
+.aceptar{
+  background-color: #07d307;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.aceptar:hover{
+  background-color: #09b909;
+  color: #ffffff;
+}
+.info{
+  color: #ffffff;
+  background-color: #ff661f;
+}
+.info:hover{
+  color: #ffffff;
+  background-color: #e15514;
+}
 
 /* ------------------ STYLES FOR CARDS ----------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
