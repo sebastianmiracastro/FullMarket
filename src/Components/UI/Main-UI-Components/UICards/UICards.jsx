@@ -124,6 +124,17 @@ export const UICards = ({
     });
   // ---- //
 
+  // -------------------------- getNameUser ------------------------------ //
+
+  useEffect((e) => {
+    const userSend = window.localStorage.getItem('uiduser')
+    fetch(
+      `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${userSend}`
+    )
+      .then((res) => res.json())
+      .then((data) => window.localStorage.setItem('nameUserInSession',data.name));
+  });
+
   // ------ Logic To Apply To Product ------ //
 const URLAllProducts = 'https://fullmarket-provitional-backend.herokuapp.com/products/getallproducts'
 const [products, setProducts] = useState([])

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import "../../Styles/Main-Styles/MainStyle.css";
-import * as bootstrap from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const UIModalNotification = () => {
@@ -22,16 +21,6 @@ export const UIModalNotification = () => {
 
   useEffect((e) => {
     showNotification();
-  });
-
-  const [nameUserInSession, setNameUserInSession] = useState("");
-
-  useEffect((e) => {
-    fetch(
-      `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${uiduser}`
-    )
-      .then((res) => res.json())
-      .then((data) => setNameUserInSession(data.name));
   });
 
   /* --------------------- LOGICA PARA RECHAZAR LA NOTIFICACIÖN --------------------------- */
@@ -53,6 +42,7 @@ export const UIModalNotification = () => {
       .then((res) => res.json())
       .then((data) => {
         const urluser = data[0].uid;
+        const nameUserInSession = window.localStorage.getItem('nameUserInSession')
         formData.append("usersendnoti", nameUserInSession);
         formData.append("userreceivernoti", urluser);
         formData.append("userreceivernotiproduct", productName);
@@ -104,7 +94,7 @@ export const UIModalNotification = () => {
 
   const navi = useNavigate();
 
-  const collectDataToRedirectChat = async (userName) => {
+  const collectDataToRedirectChat = async (userName, productName) => {
     swal({
       title: "Redireccionando Al Chat",
       icon: "info",
@@ -116,6 +106,7 @@ export const UIModalNotification = () => {
       .then((res) => res.json())
       .then((data) => {
         window.localStorage.setItem("uidUserToContact", data[0].uid);
+        window.localStorage.setItem("nameProductApply", productName)
       })
       .then(() => {
         navi("/LoggedUser/PrivateChat");
@@ -125,6 +116,7 @@ export const UIModalNotification = () => {
           icon: "success",
           timer: "2000",
         });
+        window.location.reload(true)
       });
   };
 
@@ -152,9 +144,8 @@ export const UIModalNotification = () => {
         <div className="cont-noti" key={i}>
           {e.typeNoti === TypeNoti ? (
             <>
-              <h3>{e.userSendNoti}</h3>
+              <h3><b>{e.userSendNoti}</b> ha <b>rechazado</b> tu solicitud al producto: </h3>
               <p>{e.userReceiverNotiProduct}</p>
-              <p>{e.typeNoti}</p>
               <button onClick={() => acceptRejection(e.UIDNoti)}
                 className="btn btn-success text-button-modal aceptar">
                 Aceptar
@@ -162,9 +153,8 @@ export const UIModalNotification = () => {
             </>
           ) : (
             <>
-              <h3>{e.userSendNoti}</h3>
+              <h3><b>{e.userSendNoti}</b> ha <b>aplicado</b> a tu producto: </h3>
               <p>{e.userReceiverNotiProduct}</p>
-              <p>{e.typeNoti}</p>
               <div className="buttons-modal-notification">
                 <button
                   onClick={() =>
@@ -185,7 +175,7 @@ export const UIModalNotification = () => {
                   Revisar Perfil
                 </button>
                 <button
-                  onClick={() => collectDataToRedirectChat(e.userSendNoti)}
+                  onClick={() => collectDataToRedirectChat(e.userSendNoti, e.userReceiverNotiProduct)}
                   className="btn btn-success text-button-modal aceptar"
                 >
                   Aceptar

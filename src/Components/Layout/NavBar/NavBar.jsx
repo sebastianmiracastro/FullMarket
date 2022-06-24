@@ -147,7 +147,7 @@ export const NavBar = () => {
             <a>
               <AiOutlineSend className='notification-icon' />
             </a>
-          )}
+          )} 
           {UserInSesion ? (
             <a>
               <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />
