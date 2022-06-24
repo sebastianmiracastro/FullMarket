@@ -79,13 +79,6 @@
   margin-left: 10px;
 }
 
-.btn-Logout{
-  font-size: 3rem;
-  color: #ff661f;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
 .custom-select{
   margin-bottom: 10px;
   width: 300px;
@@ -731,33 +724,34 @@ p {
 .btn-Edit{
   min-width: 80px;
   min-height: 30px;
-  background-color: #0097e6;
+  background-color: #ff661f;
   border-style: none;
   color: #ffffff;
   border-radius: 7px;
   transition: all 0.3s;
+  transition-duration: 0.4s;
   cursor: pointer;
 }
 
 .btn-Edit:hover {
-  letter-spacing: 1px;
-  background-color: #0479b8;
+  animation: slidebg 2s linear infinite;
+  background-color: #f6560a;
 }
 
 .btn-Remove{
   min-width: 80px;
   min-height: 30px;
-  background-color: #e84118;
+  background-color: #5f6164;
   border-style: none;
   color: #ffffff;
   border-radius: 7px;
   transition: all 0.3s;
+  transition-duration: 0.4s;
   cursor: pointer;
 }
 
 .btn-Remove:hover {
-  letter-spacing: 1px;
-  background-color: #c23616;
+  background-color: #282d32;
 }
 
 

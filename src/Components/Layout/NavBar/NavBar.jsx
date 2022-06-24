@@ -85,16 +85,13 @@ export const NavBar = () => {
       </div>
     </div>
   );
- 
+
   return (
     <div className="primaryHeader">
       <div className="headerLogotype">
         <UILogos />
       </div>
       <div className="primaryBtnHeader">
-        <NavLink to="/">
-          <HiHome className="home-icon" />
-        </NavLink>
         <div className="buttons-navbar">
           {UserInSesion ? (
             ''
@@ -128,6 +125,13 @@ export const NavBar = () => {
           ) : (
             ''
           )}
+          
+          {UserInSesion ? 
+          <NavLink to="/">
+            <HiHome className="home-icon" />
+          </NavLink>
+          : ''
+          }
 
           {UserInSesion && (
             <NavLink to="/LoggedUser/AddProduct" className="nav-link">
@@ -139,9 +143,11 @@ export const NavBar = () => {
               <AiFillBell className='notification-icon' onClick={handleModalOpen} />
             </a>
           )}
-          {/* {UserInSesion && (
-            <AiOutlineSend className='chat-icon' />
-          )} */}
+          {UserInSesion && (
+            <a>
+              <AiOutlineSend className='notification-icon' />
+            </a>
+          )}
           {UserInSesion ? (
             <a>
               <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />
