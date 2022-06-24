@@ -9,8 +9,8 @@ export const MainPage = () => {
   return (
     <>
     <Carousel/> 
-    <LayoutCategories />
-    <LayoutCards />
+   
+    <LayoutCards /> <LayoutCategories />
     </>
   )
 };

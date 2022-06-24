@@ -102,41 +102,41 @@ export const UIMyProducts=({
   );
 
   return (
-   <>
-   <div className='container-My-Products-card'>
-     <div className="header-Card">
-       <h1>{typeProduct}</h1>
-     </div>
-     <div className="body-Card">
-       <div className="img-Card">
-         <img
-         src={imgProduct}
-         className="img-Card"
-         alt={nameProduct}
-         onClick={featuresProduct}
-         ></img>
-       </div>
-       <h2>{nameProduct}</h2>
-       <p>Estado: {conditionProduct}</p>
-       <div className="apply-My-Products">
-         <NavLink to='/LoggedUser/MyProducts/EditProduct'>
-           <UIButtonsMyProducts
-           classButtonsMyProducts="btn-Edit"
-           nameButtonsMyProducts="Editar"
-           onClickMyProducts={() => saveID(uidProduct)}
-          />
-         </NavLink>
-    
-         <NavLink to=''>
-           <UIButtonsMyProducts
-           classButtonsMyProducts="btn-Remove"
-           nameButtonsMyProducts="Eliminar"
-           onClickMyProducts={handleOpen}
-           />
-         </NavLink>
-       </div>
+  <>
+  <div className='container-My-Products-card'>
+    <div className="header-Card">
+      <h1>{typeProduct}</h1>
     </div>
-   </div>
+    <div className="body-Card">
+      <div className="img-Card">
+        <img
+        src={imgProduct}
+        className="img-Card"
+        alt={nameProduct}
+        onClick={featuresProduct}
+        ></img>
+      </div>
+      <h2>{nameProduct}</h2>
+      <p>Estado: {conditionProduct}</p>
+      <div className="apply-My-Products">
+        <NavLink to='/LoggedUser/MyProducts/EditProduct'>
+          <UIButtonsMyProducts
+          classButtonsMyProducts="btn-Edit"
+          nameButtonsMyProducts="Editar"
+          onClickMyProducts={() => saveID(uidProduct)}
+          />
+        </NavLink>
+    
+        <NavLink to=''>
+          <UIButtonsMyProducts
+          classButtonsMyProducts="btn-Remove"
+          nameButtonsMyProducts="Eliminar"
+          onClickMyProducts={handleOpen}
+          />
+        </NavLink>
+      </div>
+    </div>
+  </div>
   <div>
     <Modal open={open} onClose={handleClose}>
       {body}

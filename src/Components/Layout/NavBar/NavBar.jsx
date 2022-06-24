@@ -85,16 +85,13 @@ export const NavBar = () => {
       </div>
     </div>
   );
- 
+
   return (
     <div className="primaryHeader">
       <div className="headerLogotype">
         <UILogos />
       </div>
       <div className="primaryBtnHeader">
-        <NavLink to="/">
-          <HiHome className="home-icon" />
-        </NavLink>
         <div className="buttons-navbar">
           {UserInSesion ? (
             ''
@@ -128,6 +125,13 @@ export const NavBar = () => {
           ) : (
             ''
           )}
+          
+          {UserInSesion ? 
+          <NavLink to="/">
+            <HiHome className="home-icon" />
+          </NavLink>
+          : ''
+          }
 
           {UserInSesion && (
             <NavLink to="/LoggedUser/AddProduct" className="nav-link">
