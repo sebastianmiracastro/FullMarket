@@ -144,9 +144,8 @@ export const UIModalNotification = () => {
         <div className="cont-noti" key={i}>
           {e.typeNoti === TypeNoti ? (
             <>
-              <h3>{e.userSendNoti}</h3>
+              <h3><b>{e.userSendNoti}</b> ha <b>rechazado</b> tu solicitud al producto: </h3>
               <p>{e.userReceiverNotiProduct}</p>
-              <p>{e.typeNoti}</p>
               <button onClick={() => acceptRejection(e.UIDNoti)}
                 className="btn btn-success text-button-modal aceptar">
                 Aceptar
@@ -154,9 +153,8 @@ export const UIModalNotification = () => {
             </>
           ) : (
             <>
-              <h3>{e.userSendNoti}</h3>
+              <h3><b>{e.userSendNoti}</b> ha <b>aplicado</b> a tu producto: </h3>
               <p>{e.userReceiverNotiProduct}</p>
-              <p>{e.typeNoti}</p>
               <div className="buttons-modal-notification">
                 <button
                   onClick={() =>
