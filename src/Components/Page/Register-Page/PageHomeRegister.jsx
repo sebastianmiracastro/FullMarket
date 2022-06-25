@@ -6,8 +6,6 @@ import '../../Styles/Register-Styles/StylesRegister/StylesRegister.css'
 export const PageHomeRegister =()=> {
   return (
     <div>
-      {/* <UINavbarRegister/> */}
-      <div className='line'></div>
       <UIMainRegister/>
     </div>
   )
