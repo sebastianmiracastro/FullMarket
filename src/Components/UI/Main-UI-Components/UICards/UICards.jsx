@@ -158,8 +158,8 @@ const mostrar = async () => {
 
   const sendNotification = async () => {
     swal({
-      title: "Enviando Notificación Al Usuario",
-      text: "Espere un momento",
+      title: "Enviando notificación",
+      text: "Espere un momento...",
       icon: "info",
       timer: "7000000000"
     })
@@ -171,16 +171,16 @@ const mostrar = async () => {
       await axios.post('https://fullmarket-provitional-backend.herokuapp.com/notification/sendnotification', formData)
       .then((res => {
         swal({
-            title: "Notificacion Enviada",
-            text: "Espera Una Respuesta Del Propietario",
+            title: "Notificacion enviada",
+            text: "Espere una respuesta del propietario",
             icon: "success",
             timer: "2500"
           })
       }))
       .catch(( err => {
         swal({
-          title: "No Se Pudo Completar La Accion",
-          text: "Intentalo Mas Tarde",
+          title: "No se pudo completar la accion",
+          text: "Inténtelo de nuevo más tarde",
           icon: "error",
           timer: "2500"
         })

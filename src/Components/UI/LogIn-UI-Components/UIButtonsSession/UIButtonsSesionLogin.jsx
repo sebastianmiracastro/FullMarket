@@ -17,7 +17,7 @@ export const UIButtonsSesionLogin = () => {
   const HandleSubmit = async (e) => {
     swal({
       title: "Validando Información",
-      text: "Espere un momento",
+      text: "Espere un momento...",
       icon: "info",
       timer: "8000"
     })
@@ -33,8 +33,8 @@ export const UIButtonsSesionLogin = () => {
         window.localStorage.setItem("token", token)
         window.localStorage.setItem("uiduser", decoded.uid)
         swal({
-          title: "Datos Correctos",
-          text: "Bienvenido A FullMarket",
+          title: "Información correcta",
+          text: "¡Bienvenido A FullMarket!",
           icon: "success",
           Button: "Aceptar",
           timer: "5000"
@@ -45,8 +45,8 @@ export const UIButtonsSesionLogin = () => {
     })
     .catch((err) => {
       swal({
-        title: "Datos Incorrectos !!",
-        text: "Correo o contraseña incorrectos",
+        title: "Información incorrecta",
+        text: "Correo o contraseña incorrectos. Intentelo de nuevo...",
         icon: "error",
         Button: "Aceptar",
         timer: "2000"
