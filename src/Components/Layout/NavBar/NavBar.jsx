@@ -15,6 +15,7 @@ import { UIModalNotification } from '../../UI/Notification-UI-Component/UIModalN
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai";
+
 /* ---------------------- MODAL LOGIC ------------------------ */ 
 
 function rand() {
