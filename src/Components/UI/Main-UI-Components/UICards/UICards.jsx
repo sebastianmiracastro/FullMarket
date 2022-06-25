@@ -76,6 +76,7 @@ export const UICards = ({
   };
 
   // ---- Get information of each product through its respective ID ---- //
+  
   const featuresProduct = async () => {
     await fetch(
       `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProduct}`
@@ -113,7 +114,7 @@ export const UICards = ({
       }).catch((err) => {
         console.clear()
       })
-    })
+    }, 1500)
     }  
 
     useEffect( ()  => {
@@ -126,13 +127,17 @@ export const UICards = ({
 
   // -------------------------- getNameUser ------------------------------ //
 
-  useEffect((e) => {
+  const getUser = () => {
     const userSend = window.localStorage.getItem('uiduser')
     fetch(
       `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuser/${userSend}`
     )
       .then((res) => res.json())
       .then((data) => window.localStorage.setItem('nameUserInSession',data.name));
+  }
+
+  useEffect((e) => {
+    getUser()
   });
 
   // ------ Logic To Apply To Product ------ //

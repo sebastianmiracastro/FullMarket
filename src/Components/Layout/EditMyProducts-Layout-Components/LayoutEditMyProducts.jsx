@@ -48,7 +48,7 @@ export const LayoutEditMyProducts = () => {
       setText(setLocalStorage);
       window.localStorage.getItem("text");
     } catch (error) {
-      console.log(error);
+      console.clear()
     }
   };
   /// ---- //
@@ -110,7 +110,7 @@ export const LayoutEditMyProducts = () => {
         }, 1000)
       )
       .catch((error) => {
-        console.log(error);
+        ''
       });
     event.preventDefault();
   };
