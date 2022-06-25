@@ -35,8 +35,8 @@ export const LayoutRegister = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     swal({
-      title: "Envienda Respuesta De Rechazo",
-      text: "Espere un momento",
+      title: "Enviando información",
+      text: "Espere un momento...",
       icon: "info",
       timer: "5000000"
     })
@@ -132,8 +132,7 @@ export const LayoutRegister = () => {
   };
 
   const handleCharacterAddress = () => {
-    let validationadress =
-    /^([a-zA-Z]\w*?){2,10}|(^$)/;
+    let validationadress = /^([a-zA-Z]\w*?){2,10}|(^$)/;
     let text;
     if (address.match(validationadress)) {
       text = "Información correcta";
