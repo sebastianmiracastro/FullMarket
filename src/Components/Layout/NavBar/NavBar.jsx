@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { UIModalNotification } from '../../UI/Notification-UI-Component/UIModalNotification'
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { AiOutlineMenu } from "react-icons/ai";
 /* ---------------------- MODAL LOGIC ------------------------ */ 
 
 function rand() {
@@ -116,7 +117,7 @@ export const NavBar = () => {
           )}
           {UserInSesion ? (
           <>
-          <button className="btn btn-primary main-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Menú</button>
+          <AiOutlineMenu className="btn btn-primary btn-primaryHeader" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" ></AiOutlineMenu>
           <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">FullMarket</h5>
