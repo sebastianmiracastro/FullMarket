@@ -98,14 +98,10 @@ export const UIModalNotification = () => {
     swal({
       title: "Redireccionando Al Chat",
       icon: "info",
-      timer: "5000000",
-    });
-    await fetch(
-      `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        window.localStorage.setItem("uidUserToContact", data[0].uid);
+      timer: "2000",
+    })
+    .then(() => {
+        window.localStorage.setItem("nameUserToContact", userName);
         window.localStorage.setItem("nameProductApply", productName)
       })
       .then(() => {

@@ -145,7 +145,9 @@ export const NavBar = () => {
           )}
           {UserInSesion && (
             <a>
-              <AiOutlineSend className='notification-icon' />
+              <NavLink to="/LoggedUser/PrivateInformation/ChatHistory" className="nav-link">
+                <AiOutlineSend className='notification-icon' />
+              </NavLink>
             </a>
           )} 
           {UserInSesion ? (
