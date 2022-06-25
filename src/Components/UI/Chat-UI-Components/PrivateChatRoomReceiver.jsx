@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase";
+import '../../Styles/PrivateChatRoom-Styles/PrivateChatRoom-Styles.css'
+import { AiOutlineSend } from "react-icons/ai";
+import * as bootstrap from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const PrivateChatRoomReceiver = () => {
   const [mesage, setMessage] = useState("");
@@ -51,15 +55,25 @@ export const PrivateChatRoomReceiver = () => {
   };
 
   return (
-    <form onSubmit={sendNewMessage}>
+    <div className='principalContainer'>
+      <div className='contChat'>
+      <form className='formChat' onSubmit={sendNewMessage}>
       <div>
-        {messages.map((message) => (
-          <ol>
-            <li key={message.id}>{message.text}</li>
-          </ol>
-        ))}
+        {
+          messages.map(message => (
+            <ul className="d-flex flex-column " key={message.id}>
+              <li>{message.text}</li>
+              <li className="userSend">{message.uidUserSend}</li>
+            </ul>
+          ))
+        }
       </div>
-      <input onChange={updateMessage} type="text" />
+      <div className="d-flex justify-content-center w-100">
+        <input className="inputMessage" onChange={updateMessage} type="text" />
+        <AiOutlineSend className="SendMessageIcon" onClick={sendNewMessage} />
+      </div>
     </form>
+    </div>
+    </div>
   );
 };

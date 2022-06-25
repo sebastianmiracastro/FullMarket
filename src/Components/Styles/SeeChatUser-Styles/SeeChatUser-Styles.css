@@ -1,0 +1,29 @@
+.ContainerChats{
+    margin: 10px;
+    background-image: url("../../../../public/Img/bg1-navbar.svg");
+    width: 50%;
+}
+
+.ContainerChats p {
+    color: white;
+}
+
+.ContainerNotificationsChat{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../../../public/Img/bg1.svg");
+}
+
+@media (max-width: 768px) {
+    .ContainerChats{
+        width: 90%;
+    }
+}
+
+@media (max-width: 520px) {
+    .ContainerChats{
+        width: 95%;
+    }
+}

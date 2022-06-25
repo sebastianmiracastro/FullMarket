@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import firebase from 'firebase'
+import '../../Styles/PrivateChatRoom-Styles/PrivateChatRoom-Styles.css'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -55,7 +56,9 @@ export const PrivateChatRoom = () => {
   }
 
   return (
-    <form onSubmit={sendNewMessage}>
+    <div className='principalContainer'>
+      <div className='contChat'>
+      <form className='formChat' onSubmit={sendNewMessage}>
       <div>
         {
           messages.map(message => (
@@ -67,5 +70,10 @@ export const PrivateChatRoom = () => {
       </div>
       <input onChange={updateMessage} type="text" />
     </form>
+    </div>
+    </div>
   )
 }
+
+// Background Naranja Grandiant bg1.svg
+// ContenedorChat, Fondo navbar, Centrar 

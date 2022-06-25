@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import firebase from 'firebase';
 import { useNavigate } from 'react-router-dom';
+import '../../Styles/SeeChatUser-Styles/SeeChatUser-Styles.css'
+import * as bootstrap from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const SeeChatUser = () => {
 
@@ -30,24 +33,38 @@ export const SeeChatUser = () => {
   }) 
 
   const nav = useNavigate()
+
+  const nameUser = window.localStorage.getItem('nameUserInSession')
     
   return (
-    <div>
-      {
-        op.map((e) => (
-          <>
-          <p>{e.split('-')[0]}</p>
-          <p>{e.split('-')[1]}</p>
-          <p>{e.split('-')[2]}</p>
-          <button onClick={() => {
-            window.localStorage.setItem('userSendDefined', e.split('-')[0])
-            window.localStorage.setItem('nameUserToContact', e.split('-')[1])
-            window.localStorage.setItem('nameProductApply', e.split('-')[2])
-            nav('/LoggedUser/PrivateChat/Receiver')
-          }}>ir al chat</button>
-          </>
-        ))
-      }
+    <div className='ContainerNotificationsChat'>
+      { nameUser === op.map((e) => e.split('-')[1]) ? (
+        ''
+      ) : (
+        <>
+        {
+          op.map((e) => (
+            <div className='ContainerChats py-2 rounded'>
+              {e.split('-')[0] === nameUser ? (
+                <p>tienes un mensaje pendiente de <strong>{e.split('-')[1]}</strong></p>
+              ) : (
+                <p>El propietario <strong>{e.split('-')[0]}</strong> te ha enviado un mensaje</p>
+              )}
+            <p >Producto: {e.split('-')[2]}</p>
+            <div className='d-flex justify-content-center'>
+            <button className='btn btn-primary w-50 fw-bold' 
+            onClick={() => {
+              window.localStorage.setItem('userSendDefined', e.split('-')[0])
+              window.localStorage.setItem('nameUserToContact', e.split('-')[1])
+              window.localStorage.setItem('nameProductApply', e.split('-')[2])
+              nav('/LoggedUser/PrivateChat/Receiver')
+            }}>Abrir Chat</button>
+            </div>
+            </div>
+          ))
+        }
+        </>
+      )}
     </div>
   )
 }
