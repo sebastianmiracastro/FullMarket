@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import firebase from 'firebase'
+import '../../Styles/PrivateChatRoom-Styles/PrivateChatRoom-Styles.css'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCoBoVAvHzfGIrGXIPCdZB9uHnZBp51zGs",
-  authDomain: "fullmarket-e6156.firebaseapp.com",
-  databaseURL: "https://fullmarket-e6156-default-rtdb.firebaseio.com",
-  projectId: "fullmarket-e6156",
-  storageBucket: "fullmarket-e6156.appspot.com",
-  messagingSenderId: "759346213407",
-  appId: "1:759346213407:web:9812ea45b85e6d1ca15b2a"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_DOMAIN,
+  databaseURL: process.env.REACT_APP_DBURL,
+  projectId: process.env.REACT_APP_PID,
+  storageBucket: process.env.REACT_APP_SB,
+  messagingSenderId: process.env.REACT_APP_MSID,
+  appId: process.env.REACT_APP_APPID
 };
 
 firebase.initializeApp(firebaseConfig)
@@ -20,12 +21,12 @@ export const PrivateChatRoom = () => {
 
   const getNameProduct = window.localStorage.getItem('nameProductApply')
 
-  const getUserUid = window.localStorage.getItem('uidUserToContact')
+  const nameUserToContact = window.localStorage.getItem('nameUserToContact')
 
-  const getUserInSessionUID = window.localStorage.getItem('uiduser')
+  const nameUserInSession = window.localStorage.getItem('nameUserInSession')
 
   const currentMessage = () => {
-    firebase.database().ref(`Chat - ${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/`).on('value', snapashot => {
+    firebase.database().ref(`Chat/${nameUserInSession}-${nameUserToContact}-${getNameProduct}`).on('value', snapashot => {
       const current = snapashot.val();
       if (current != null) {
         setMessages(current)
@@ -45,17 +46,19 @@ export const PrivateChatRoom = () => {
     e.preventDefault();
     const newMsg = {
       id: messages.length,
-      uidUserSend: getUserInSessionUID,
+      uidUserSend: nameUserInSession,
       text: mesage
     };
 
-    firebase.database().ref(`Chat - ${getUserInSessionUID} - ${getUserUid} - ${getNameProduct}/${newMsg.id}`)
+    firebase.database().ref(`Chat/${nameUserInSession}-${nameUserToContact}-${getNameProduct}/${newMsg.id}`)
       .set(newMsg);
       setMessage('')
   }
 
   return (
-    <form onSubmit={sendNewMessage}>
+    <div className='principalContainer'>
+      <div className='contChat'>
+      <form className='formChat' onSubmit={sendNewMessage}>
       <div>
         {
           messages.map(message => (
@@ -67,5 +70,10 @@ export const PrivateChatRoom = () => {
       </div>
       <input onChange={updateMessage} type="text" />
     </form>
+    </div>
+    </div>
   )
 }
+
+// Background Naranja Grandiant bg1.svg
+// ContenedorChat, Fondo navbar, Centrar 

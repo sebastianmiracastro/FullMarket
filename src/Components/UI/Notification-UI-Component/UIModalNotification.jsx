@@ -98,14 +98,10 @@ export const UIModalNotification = () => {
     swal({
       title: "Redireccionando Al Chat",
       icon: "info",
-      timer: "5000000",
-    });
-    await fetch(
-      `https://fullmarket-provitional-backend.herokuapp.com/users/getoneuserbyname/${userName}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        window.localStorage.setItem("uidUserToContact", data[0].uid);
+      timer: "2000",
+    })
+    .then(() => {
+        window.localStorage.setItem("nameUserToContact", userName);
         window.localStorage.setItem("nameProductApply", productName)
       })
       .then(() => {
@@ -170,13 +166,13 @@ export const UIModalNotification = () => {
                 </button>
                 <button
                   onClick={() => recolectDataToSeeProfile(e.userSendNoti)}
-                  className="btn btn-info text-dark fw-bold text-button-modal"
+                  className="btn fw-bold text-button-modal info"
                 >
                   Revisar Perfil
                 </button>
                 <button
                   onClick={() => collectDataToRedirectChat(e.userSendNoti, e.userReceiverNotiProduct)}
-                  className="btn btn-success text-button-modal aceptar"
+                  className="btn text-button-modal aceptar"
                 >
                   Aceptar
                 </button>

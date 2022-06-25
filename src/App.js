@@ -11,7 +11,8 @@ import { EditProductsPage } from "./Components/Page/EditMyProducts-Page/EditProd
 import {Footer} from "./Components/Layout/Footer/Footer.jsx"
 import { SeeProfileUserPage } from "./Components/Page/SeeProfileUser-Page/SeeProfileUser";
 import { PrivateChatRoom } from "./Components/UI/Chat-UI-Components/PrivateChatRoom"
-
+import { SeeChatUser } from "./Components/UI/SeeChatUser-UI-Component/SeeChatUser";
+import { PrivateChatRoomReceiver } from "./Components/UI/Chat-UI-Components/PrivateChatRoomReceiver";
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         <Route path="/LoggedUser/DataUser" element= { <DataUserPage/> } />
         <Route path="/LoggedUser/EditUser" element= { <EditUserPage/> } />
         <Route path="/LoggedUser/PrivateChat" element= { <PrivateChatRoom /> } />
+        <Route path="/LoggedUser/PrivateChat/Receiver" element= { <PrivateChatRoomReceiver /> } />
+        <Route path="/LoggedUser/PrivateInformation/ChatHistory" element= { <SeeChatUser /> } /> 
         <Route path="/LoggedUser/NotificationReview/ProfileUser" element= { <SeeProfileUserPage /> } />
       </Routes>
       <Footer />
