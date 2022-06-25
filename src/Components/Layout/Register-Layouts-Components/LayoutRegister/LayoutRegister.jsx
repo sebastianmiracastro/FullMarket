@@ -58,7 +58,7 @@ export const LayoutRegister = () => {
       .then((res) => {
         if (res) {
           swal({
-            title: "¡Bien hecho, ahora formas parte de FullMarket, bienvenido!",
+            title: "Bien hecho, ahora forma parte de FullMarket. ¡Bienvenido!",
             icon: "success",
             timer: "2000"
           });
@@ -68,7 +68,7 @@ export const LayoutRegister = () => {
       .catch((err) => {
         if (err) {
           swal({
-            title: "Tienes un error al registrarte, intentalo de nuevo",
+            title: "Error al registrarse. Intentelo nuevamente...",
             icon: "error",
           });
         }
@@ -97,7 +97,7 @@ export const LayoutRegister = () => {
     let validationName = /^[a-zA-Z\t]+|(^$)/;
     let text;
     if (name.match(validationName)) {
-      text = "Correcto";
+      text = "Información correcta";
       setMsgName(text);
     } else {
       text =
@@ -110,10 +110,10 @@ export const LayoutRegister = () => {
     let validationEmail = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
     let text;
     if (email.match(validationEmail)) {
-      text = "Información valida";
+      text = "Información correcta";
       setMsgEmail(text);
     } else {
-      text = "Información incorrecta, por favor verifiquela";
+      text = "Información incorrecta, utilice un formato que coincida con el solicitado";
       setMsgEmail(text);
     }
   };
@@ -126,20 +126,21 @@ export const LayoutRegister = () => {
       setMsgAlias(text);
     } else {
       text =
-        "Información incorrecta, recuerde añadir primero letras y despues el número que desee.";
+        "Información incorrecta, recuerde añadir primero letras y despues el/los números que desee.";
       setMsgAlias(text);
     }
   };
 
   const handleCharacterAddress = () => {
     let validationadress =
-      /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    /^([a-zA-Z]\w*?){2,10}|(^$)/;
     let text;
     if (address.match(validationadress)) {
       text = "Información correcta";
       setMsgAddress(text);
     } else {
-      text = "Información incorrecta";
+      text =
+      "Información incorrecta, recuerde añadir primero letras y despues el/los números que desee.";
       setMsgAddress(text);
     }
   };
@@ -152,7 +153,7 @@ export const LayoutRegister = () => {
       setMsgPassword(text);
     } else {
       text =
-        "Contraseña incorrecta, desbes añadir letras, minúsculas, mayúsculas y numeros, debe ser minimo de 7, maximo 10 letras y/o numeros..";
+        "Contraseña incorrecta, recuerde añadir letras, minúsculas, mayúsculas y numeros, debe ser minimo de 7, maximo 10 letras y/o numeros..";
       setMsgPassword(text);
     }
   };
@@ -165,7 +166,7 @@ export const LayoutRegister = () => {
       setMsgPhone(text);
     } else {
       text =
-        "Información incorrecta, desbes añadir solo numeros, debe ser minimo de 7 numeros, maximo 10 numeros.";
+        "Incorrecto, recuerde añadir solo numeros, deben ser minimo de 7 numeros, maximo 10 numeros.";
       setMsgPhone(text);
     }
   };
@@ -174,10 +175,10 @@ export const LayoutRegister = () => {
     setTerms(e.target.checked);
     let text;
     if (terms === false) {
-      text = "Registro completo";
+      text = "Registro exítoso";
       setMsgCheck(text);
     } else {
-      text = "Debes aceptar los termino y condiciones para  lpoder registrate";
+      text = "Recuerde aceptar los términos y condiciones para poder registrarse";
       setMsgCheck(text);
     }
   };
@@ -189,7 +190,7 @@ export const LayoutRegister = () => {
   return (
     <form onSubmit={HandleSubmit} className="layoutRegister">
       <div className="completeRecord">
-        <h1 className="prom">REGISTRATE AQUÍ</h1>
+        <h1 className="prom">REGISTRESE AQUÍ</h1>
         <div className="files">
           <div className="filesRegister">
             <UIInputRegister
@@ -314,7 +315,7 @@ export const LayoutRegister = () => {
                 onClick={handleTerms}
                 required
               ></input>
-              Al hacer click en "REGISTRARSE", Acepta Nuestras Condiciones, la
+              Al hacer click en "REGISTRARSE". Acepta nuestras condiciones, la
               politica <br></br>de datos y la politica de cookies.
             </a>
             <p className="alertIcorrects">{msgCheck}</p>
@@ -328,7 +329,7 @@ export const LayoutRegister = () => {
         ></UIButtonsRegister>
         <div className="register-line" />
         <a className="redirectLogin" href="/Login">
-          ¿Ya tiene una cuenta?
+          Ya tengo una cuenta
         </a>
       </div>
     </form>

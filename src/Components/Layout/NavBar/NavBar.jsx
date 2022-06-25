@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { UIModalNotification } from '../../UI/Notification-UI-Component/UIModalNotification'
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { AiOutlineMenu } from "react-icons/ai";
 /* ---------------------- MODAL LOGIC ------------------------ */ 
 
 function rand() {
@@ -100,7 +101,7 @@ export const NavBar = () => {
               {' '}
               <UIButtons
                 classButtons="btn-primaryHeader"
-                nameButtons="Regístrate"
+                nameButtons="Regístrarse"
               ></UIButtons>
             </NavLink>
           )}
@@ -110,54 +111,69 @@ export const NavBar = () => {
             <NavLink to="/LogIn">
               <UIButtons
                 classButtons="btn-primaryHeader"
-                nameButtons="Inicia Sesión"
+                nameButtons="Iniciar Sesión"
               ></UIButtons>
             </NavLink>
           )}
-
           {UserInSesion ? (
-            <NavLink to="/LoggedUser/MyProducts">
-              <UIButtons
-                classButtons="btn-primaryHeader"
-                nameButtons="Mis Productos"
-              ></UIButtons>
-            </NavLink>
-          ) : (
-            ''
-          )}
-          
-          {UserInSesion ? 
-          <NavLink to="/">
-            <HiHome className="home-icon" />
-          </NavLink>
-          : ''
-          }
-
-          {UserInSesion && (
-            <NavLink to="/LoggedUser/AddProduct" className="nav-link">
-              <MdOutlineAddShoppingCart className="btn-Add"/>
-            </NavLink>
-          )}
-          {UserInSesion && (
-            <a>
-              <AiFillBell className='notification-icon' onClick={handleModalOpen} />
-            </a>
-          )}
-          {UserInSesion && (
-            <a>
-              <NavLink to="/LoggedUser/PrivateInformation/ChatHistory" className="nav-link">
-                <AiOutlineSend className='notification-icon' />
+          <>
+          <AiOutlineMenu className="btn btn-primary btn-primaryHeader" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" ></AiOutlineMenu>
+          <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">FullMarket</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div className="offcanvas-body">
+              {UserInSesion ? (
+              <NavLink to="/LoggedUser/MyProducts">
+                <UIButtons
+                  classButtons="btn-primaryHeader"
+                  nameButtons="Mis Productos"
+                ></UIButtons>
               </NavLink>
-            </a>
-          )} 
-          {UserInSesion ? (
-            <a>
-              <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />
-            </a>
-              // <p  onClick={()=>Logout(navigate)} className="btn-Logout">Cerrar Sesión</p>
-          ) : (
-            ''
-          )}
+              ) : (
+                ''
+              )}
+          
+              {UserInSesion ? 
+              <NavLink to="/">
+                <HiHome className="home-icon" />
+              </NavLink>
+              : ''
+              }
+
+              {UserInSesion && (
+                <NavLink to="/LoggedUser/AddProduct" className="nav-link">
+                  <MdOutlineAddShoppingCart className="btn-Add"/>
+                </NavLink>
+              )}
+              {UserInSesion && (
+                <a>
+                  <AiFillBell className='notification-icon' onClick={handleModalOpen} />
+                </a>
+              )}
+              {UserInSesion && (
+                <a>
+                  <NavLink to="/LoggedUser/PrivateInformation/ChatHistory" className="nav-link">
+                    <AiOutlineSend className='notification-icon' />
+                  </NavLink>
+                </a>
+              )} 
+              {UserInSesion ? (
+                <a>
+                  <HiOutlineLogout  onClick={()=>Logout(navigate)} className="btn-Logout"  />
+                </a>
+                  // <p  onClick={()=>Logout(navigate)} className="btn-Logout">Cerrar Sesión</p>
+              ) : (
+                ''
+              )}
+            </div>
+          </div> 
+          </>
+          )
+          :
+          ""
+          }
         </div>
       </div>
       <Modal open={open} onClose={handleModalClose}>

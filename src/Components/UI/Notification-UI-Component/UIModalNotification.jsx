@@ -31,8 +31,8 @@ export const UIModalNotification = () => {
 
   const rejection = async (userName, productName, uidProduct) => {
     swal({
-      title: "Envienda Respuesta De Rechazo",
-      text: "Espere un momento",
+      title: "Enviando respuesta de rechazo",
+      text: "Espere un momento...",
       icon: "info",
       timer: "5000000",
     });
@@ -72,7 +72,7 @@ export const UIModalNotification = () => {
 
   const acceptRejection = async (uidProduct) => {
     swal({
-      title: "Eliminando Notificación, Espere",
+      title: "Eliminando Notificación. Espere...",
       icon: "info",
       timer: "5000000",
     });
@@ -96,7 +96,7 @@ export const UIModalNotification = () => {
 
   const collectDataToRedirectChat = async (userName, productName) => {
     swal({
-      title: "Redireccionando Al Chat",
+      title: "Redireccionando al Chat",
       icon: "info",
       timer: "2000",
     })
@@ -108,7 +108,7 @@ export const UIModalNotification = () => {
         navi("/LoggedUser/PrivateChat");
         swal({
           title: "Redireccionado",
-          text: "Suerte con tu intercambio",
+          text: "¡Mucha suerte, gracias por preferirnos!",
           icon: "success",
           timer: "2000",
         });
@@ -174,7 +174,7 @@ export const UIModalNotification = () => {
                   onClick={() => collectDataToRedirectChat(e.userSendNoti, e.userReceiverNotiProduct)}
                   className="btn text-button-modal aceptar"
                 >
-                  Aceptar
+                  Enviar Mensaje
                 </button>
               </div>
             </>
