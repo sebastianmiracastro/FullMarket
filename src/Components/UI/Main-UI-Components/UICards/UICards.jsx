@@ -76,6 +76,7 @@ export const UICards = ({
   };
 
   // ---- Get information of each product through its respective ID ---- //
+  
   const featuresProduct = async () => {
     await fetch(
       `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProduct}`
