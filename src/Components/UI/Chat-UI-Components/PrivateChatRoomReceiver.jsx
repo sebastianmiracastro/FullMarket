@@ -27,9 +27,11 @@ export const PrivateChatRoomReceiver = () => {
           setMessages(current);
         }
       });
+      console.clear()
   };
 
   useEffect(() => {
+    console.clear()
     currentMessage();
   });
 
@@ -51,7 +53,8 @@ export const PrivateChatRoomReceiver = () => {
         `Chat/${userSendDefined}-${nameUserToContact}-${getNameProduct}/${newMsg.id}`
       )
       .set(newMsg);
-    setMessage("");
+    setMessage('');
+    console.clear()
   };
 
   return (
@@ -69,7 +72,7 @@ export const PrivateChatRoomReceiver = () => {
         }
       </div>
       <div className="d-flex justify-content-center w-100">
-        <input className="inputMessage" onChange={updateMessage} type="text" />
+        <input className="inputMessage" onChange={updateMessage} value={mesage} type="text" />
         <AiOutlineSend className="SendMessageIcon" onClick={sendNewMessage} />
       </div>
     </form>
