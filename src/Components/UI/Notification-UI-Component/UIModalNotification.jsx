@@ -66,7 +66,7 @@ export const UIModalNotification = () => {
                 })
               )
             );
-        });
+        }, 3000);
       });
   };
 

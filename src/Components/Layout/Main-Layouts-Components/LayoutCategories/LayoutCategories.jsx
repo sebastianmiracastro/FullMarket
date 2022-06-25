@@ -12,8 +12,6 @@ export const LayoutCategories = () => {
     .then((data) => setCategories(data));
   };
   
-  console.log("CATEGORIES", categories);
-
   useEffect(() => {
     categoriesProduct()
   }, []);
