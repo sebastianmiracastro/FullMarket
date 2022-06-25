@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import firebase from 'firebase'
 import '../../Styles/PrivateChatRoom-Styles/PrivateChatRoom-Styles.css'
+import { AiOutlineSend } from "react-icons/ai";
+import * as bootstrap from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -32,9 +35,11 @@ export const PrivateChatRoom = () => {
         setMessages(current)
       }
     })
+    console.clear()
   }
 
   useEffect(() => {
+    console.clear()
     currentMessage()
   }) 
 
@@ -53,22 +58,27 @@ export const PrivateChatRoom = () => {
     firebase.database().ref(`Chat/${nameUserInSession}-${nameUserToContact}-${getNameProduct}/${newMsg.id}`)
       .set(newMsg);
       setMessage('')
+      console.clear()
   }
 
   return (
-    <div className='principalContainer'>
+<div className='principalContainer'>
       <div className='contChat'>
       <form className='formChat' onSubmit={sendNewMessage}>
       <div>
         {
           messages.map(message => (
-            <ol>
-              <li key={message.id}>{message.text}</li>
-            </ol>
+            <ul className="d-flex flex-column " key={message.id}>
+              <li>{message.text}</li>
+              <li className="userSend">{message.uidUserSend}</li>
+            </ul>
           ))
         }
       </div>
-      <input onChange={updateMessage} type="text" />
+      <div className="d-flex justify-content-center w-100">
+        <input className="inputMessage" onChange={updateMessage} value={mesage} type="text" />
+        <AiOutlineSend className="SendMessageIcon" onClick={sendNewMessage} />
+      </div>
     </form>
     </div>
     </div>
