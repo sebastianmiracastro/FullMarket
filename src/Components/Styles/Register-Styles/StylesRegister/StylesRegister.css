@@ -5,18 +5,19 @@
 }
 /* Styles LayoutRegister */
 .layoutRegister {
-  justify-content: flex-start;
+
   align-items: center;
   text-align: center;
-  flex-direction: column;
+  
   width: 100%;
   padding: 0;
   margin: 0;
-  margin-left: 70px;
+  margin-left: 25px;
+  display: grid;
 }
 
 .files {
-  margin-top: 4%;
+  margin-top: 2%;
 }
 
 .img-Logotype-Register {
@@ -37,6 +38,7 @@
   font-size: 14px;
   margin-top: 5px;
   border-radius: 7px;
+  
 }
 
 .fileRegister input {
@@ -70,7 +72,16 @@
 }
 
 .photos input {
-  margin-top: 5px;
+  text-align: center;
+  background: #282828;
+  border-top: 5px solid #f6560a;
+  padding: 4px 60px;
+  border-radius: 6px;
+  width: 80%;
+  margin: 5px auto;
+}
+.inputfile-1{
+  
 }
 
 .selectMuni {
@@ -127,17 +138,15 @@ div.register-line {
 .terms {
   width: 100%;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: .3s;
+  transition: 7s;
   color: #000000;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Poppins', sans-serif;
-  /* margin-left: 12rem; */
 }
 
 
 .termsRegister {
-  margin-top: 2%;
+  margin-top: 1px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -153,9 +162,9 @@ div.register-line {
 .alertIcorrect,
 .alertIcorrects {
   color: #fc7e43;
-  margin-top: 2px;
-  width: 80%;
-  font-size: 14px;
+  margin-top: 1px;
+  width: 100%;
+  font-size: 12px;
   font-family: 'Poppins', sans-serif;
   margin: 0 !important;
 }
@@ -224,7 +233,7 @@ div.register-line {
   display: grid;
   grid-template-columns: 34% 50%;
   column-gap: 2rem;
-  padding-bottom: 5rem;
+  margin-bottom: 20px;
 }
 .completeRecord{
   width: 100%;
