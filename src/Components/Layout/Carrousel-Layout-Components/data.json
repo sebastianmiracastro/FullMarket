@@ -2,33 +2,33 @@
   "sliders": [
     {
       "imgProductURL": "https://images.pexels.com/photos/612892/pexels-photo-612892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "name": "BANNER 1",
-      "description": "Estes es el texto del BANNER 1"
+      "name": "FullMarket de la mano con el medio ambiente",
+      "description": "Un tercio de todos los residuos urbanos generados en América Latina aún terminan en basurales a cielo abierto o en el medio ambiente..."
     },
     {
       "imgProductURL": "https://images.pexels.com/photos/1263985/pexels-photo-1263985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "name": "BANNER 2",
-      "description": "Estes es el texto del BANNER 2"
+      "name": "FullMarket de la mano con el medio ambiente",
+      "description": "...una práctica que afecta la salud de los habitantes y está contaminando los suelos, el agua y el aire."
     },
     {
       "imgProductURL": "https://images.pexels.com/photos/935835/pexels-photo-935835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "name": "BANNER 3",
-      "description": "Estes es el texto del BANNER 3"
+      "name": "Objetivo de FullMarket",
+      "description": "FullMarket se creó con el fin de reutilizar elementos, productos o artículos para disminuir poco a poco el deterioro ambiental que estos crean."
     },
     {
       "imgProductURL": "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "name": "BANNER 4",
-      "description": "Estes es el texto del BANNER 4"
+      "name": "FullMarket; un promotor de la empatía",
+      "description": "Y al mismo tiempo cubrir las necesidades de aquellos habitantes de bajos recursos."
     },
     {
       "imgProductURL": "https://images.pexels.com/photos/7569011/pexels-photo-7569011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "name": "BANNER 5",
-      "description": "Estes es el texto del BANNER 5"
+      "name": "INTERCAMBIO Y REGALO DE PRODUCTOS",
+      "description": "En FullMarket podrás adquirir y ofrecer tus productos mediante estas dos metodologías."
     },
     {
       "imgProductURL": "https://images.pexels.com/photos/3851940/pexels-photo-3851940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "name": "BANNER 6",
-      "description": "Estes es el texto del BANNER 6"
+      "name": "LA REGLA DE LAS 3R",
+      "description": "La regla de las 3R tiene como objetivo principal ayudarle a tirar menos basura, a ahorrar y a ser un consumidor más responsable. Y lo mejor de todo es que es muy fácil de seguir: ¡Reducir, Reutilizar y Reciclar!"
     }
   ]
 }
