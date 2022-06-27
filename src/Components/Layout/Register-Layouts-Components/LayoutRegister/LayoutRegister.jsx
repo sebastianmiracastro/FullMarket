@@ -152,7 +152,7 @@ export const LayoutRegister = () => {
       setMsgPassword(text);
     } else {
       text =
-        "Contraseña incorrecta, recuerde añadir letras, minúsculas, mayúsculas y numeros, debe ser minimo de 7, maximo 10 letras y/o numeros..";
+        "Debe ser minimo de 7, maximo 10 letras y/o numeros..";
       setMsgPassword(text);
     }
   };
@@ -193,115 +193,134 @@ export const LayoutRegister = () => {
         <div className="files">
           <div className="filesRegister">
           <div className="select-dept-muni">
-            <UIInputRegister
-              typeInputtRegister="name"
-              nameInputtRegister="name"
-              valueInputtRegister={name}
-              onChangeInputtRegister={(e) => setName(e.target.value)}
-              placeholderInputtRegister="Nombre completo"
-              onKeyUpInputtRegister={handleCharacterName}
-              required={handleCharacterName}
-            ></UIInputRegister>
-            <p className="alertIcorrect">{msgName}</p>
-            <UIInputRegister
-              typeInputtRegister="alias"
-              nameInputtRegister="alias"
-              valueInputtRegister={alias}
-              onChangeInputtRegister={(e) => setAlias(e.target.value)}
-              placeholderInputtRegister="Alias"
-              onKeyUpInputtRegister={handleCharacterAlias}
-              required
-            ></UIInputRegister>
-            <p className="alertIcorrect">{msgAlias}</p>
+            <div className="row">
+              <div className="col col-md-6">
+                <UIInputRegister
+                  typeInputtRegister="name"
+                  nameInputtRegister="name"
+                  valueInputtRegister={name}
+                  onChangeInputtRegister={(e) => setName(e.target.value)}
+                  placeholderInputtRegister="Nombre completo"
+                  onKeyUpInputtRegister={handleCharacterName}
+                  required={handleCharacterName}
+                ></UIInputRegister>
+                <p className="alertIcorrect">{msgName}</p>
+              </div>
+              <div className="col col-md-6">
+                <UIInputRegister
+                  typeInputtRegister="alias"
+                  nameInputtRegister="alias"
+                  valueInputtRegister={alias}
+                  onChangeInputtRegister={(e) => setAlias(e.target.value)}
+                  placeholderInputtRegister="Alias"
+                  onKeyUpInputtRegister={handleCharacterAlias}
+                  required
+                ></UIInputRegister>
+                <p className="alertIcorrect">{msgAlias}</p>
+              </div>
             </div>
-            <UIInputRegister
-              typeInputtRegister="email"
-              nameInputtRegister="email"
-              valueInputtRegister={email}
-              onChangeInputtRegister={(e) => setEmail(e.target.value)}
-              placeholderInputtRegister="E-mail"
-              onKeyUpInputtRegister={handleCharacterEmail}
-              required
-            ></UIInputRegister>
-            <p className="alertIcorrect">{msgEmail}</p>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Contraseña"
-              onKeyUp={handleCharacterPassword}
-              required
-            ></input>
-            <p className="alertIcorrect">{msgPassword}</p>
 
 
-            <div className="select-dept-muni">
-                <select
-              className="selectDepart"
-              onInput={getMuni}
-              type="department"
-              name="department"
-              id=""
-              value={department}
-              onChange={(e) => setDepartment(e.target.value)}
-            >
-              <option value="Select">Departamento</option>
-              {dpto.map((dep) => (
-                <option key={dep.id} value={dep.departamento}>
-                  {dep.departamento}
-                </option>
-              ))}
-            </select>
-            <select
-              placeholder="Municipio"
-              className="selectMuni"
-              id="select-municipios"
-              type="municipality"
-              name="municipality"
-              value={municipality}
-              onChange={(e) => setMunicipality(e.target.value)}
-            >
+            <div className="row">
+              <div className="col col-md-6">
+                <UIInputRegister
+                typeInputtRegister="email"
+                nameInputtRegister="email"
+                valueInputtRegister={email}
+                onChangeInputtRegister={(e) => setEmail(e.target.value)}
+                placeholderInputtRegister="E-mail"
+                onKeyUpInputtRegister={handleCharacterEmail}
+                required
+                ></UIInputRegister>
+                <p className="alertIcorrect">{msgEmail}</p>
+              </div>
+              <div className="col col-md-6">
+                <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Contraseña"
+                onKeyUp={handleCharacterPassword}
+                required />
+                <p className="alertIcorrect">{msgPassword}</p>
+              </div>
+            </div>
+        </div>
+
+        <div className="select-dept-muni row col col-md-12">
+          <select
+                className="selectDepart"
+                onInput={getMuni}
+                type="department"
+                name="department"
+                id=""
+                value={department}
+                onChange={(e) => setDepartment(e.target.value)}
+                >
+                <option value="Select">Departamento</option>
+                {dpto.map((dep) => (
+                  <option key={dep.id} value={dep.departamento}>
+                    {dep.departamento}
+                  </option>
+                ))}
+          </select>
+          <select
+                placeholder="Municipio"
+                className="selectMuni"
+                id="select-municipios"
+                type="municipality"
+                name="municipality"
+                value={municipality}
+                onChange={(e) => setMunicipality(e.target.value)}
+              >
               <option value="Select">Municipio</option>
               {ciudades.map((ci) => (
                 <option key={ci} value={ci}>
                   {ci}
                 </option>
               ))}
-            </select>
-            </div>
+        </select>
+        </div>
 
+        <div className="row">
+          <div className="col col-md-6">
             <UIInputRegister
-              typeInputRegister="address"
-              nameInputtRegister="address"
-              valueInputtRegister={address}
-              onChangeInputtRegister={(e) => setAddress(e.target.value)}
-              onKeyUpInputtRegister={handleCharacterAddress}
-              placeholderInputtRegister="Direccion"
-              required
+                typeInputRegister="address"
+                nameInputtRegister="address"
+                valueInputtRegister={address}
+                onChangeInputtRegister={(e) => setAddress(e.target.value)}
+                onKeyUpInputtRegister={handleCharacterAddress}
+                placeholderInputtRegister="Direccion"
+                required
             ></UIInputRegister>
             <p className="alertIcorrect">{msgaddress}</p>
+          </div>
+          <div className="col col-md-6">
             <UIInputRegister
-              typeInputtRegister="phone"
-              nameInputtRegister="phone"
-              valueInputtRegister={phone}
-              onChangeInputtRegister={(e) => setPhone(e.target.value)}
-              placeholderInputtRegister="Telefono"
-              onKeyUpInputtRegister={handleCharacterPhone}
-              required
+                typeInputtRegister="phone"
+                nameInputtRegister="phone"
+                valueInputtRegister={phone}
+                onChangeInputtRegister={(e) => setPhone(e.target.value)}
+                placeholderInputtRegister="Telefono"
+                onKeyUpInputtRegister={handleCharacterPhone}
+                required
             ></UIInputRegister>
             <p className="alertIcorrect">{msgPhone}</p>
-            <div className="photos">
-              <UIInputRegister
+          </div>
+        </div>
+
+        <div className="photos row col col-md-12 mt-2">
+          <UIInputRegister
                 className="inputfile inputfile-1 "
                 typeInputtRegister="file"
                 nameInputtRegister="photo"
                 onChangeInputtRegister={(e) => setPhoto(e.target.files[0])}
                 placeholderInputtRegister="enter your profile picture"
                 required
-              ></UIInputRegister>
-            </div>
-          </div>
+          ></UIInputRegister>
+        </div>
+        </div>
           <div className="termsAccep">
             <a className="terms">
               <input
