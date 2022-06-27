@@ -269,9 +269,6 @@ export const LayoutRegister = () => {
             </select>
             </div>
 
-          
-
-
             <UIInputRegister
               typeInputRegister="address"
               nameInputtRegister="address"
@@ -294,7 +291,7 @@ export const LayoutRegister = () => {
             <p className="alertIcorrect">{msgPhone}</p>
             <div className="photos">
               <UIInputRegister
-                className="photo"
+                className="inputfile inputfile-1 "
                 typeInputtRegister="file"
                 nameInputtRegister="photo"
                 onChangeInputtRegister={(e) => setPhoto(e.target.files[0])}
