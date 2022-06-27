@@ -5,14 +5,15 @@
 }
 /* Styles LayoutRegister */
 .layoutRegister {
-  justify-content: flex-start;
+
   align-items: center;
   text-align: center;
-  flex-direction: column;
+  
   width: 100%;
   padding: 0;
   margin: 0;
   margin-left: 70px;
+  display: grid;
 }
 
 .files {
@@ -37,6 +38,7 @@
   font-size: 14px;
   margin-top: 5px;
   border-radius: 7px;
+  
 }
 
 .fileRegister input {

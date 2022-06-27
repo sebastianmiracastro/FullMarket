@@ -192,6 +192,7 @@ export const LayoutRegister = () => {
         <h1 className="prom">REGISTRESE AQUÍ</h1>
         <div className="files">
           <div className="filesRegister">
+          <div className="select-dept-muni">
             <UIInputRegister
               typeInputtRegister="name"
               nameInputtRegister="name"
@@ -212,6 +213,7 @@ export const LayoutRegister = () => {
               required
             ></UIInputRegister>
             <p className="alertIcorrect">{msgAlias}</p>
+            </div>
             <UIInputRegister
               typeInputtRegister="email"
               nameInputtRegister="email"
