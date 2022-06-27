@@ -18,7 +18,6 @@ export const LayoutCards = () => {
     await fetch(URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         event.target.value != "" ? setProducts(data.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))) : setProducts(data);        
       }) 
   };

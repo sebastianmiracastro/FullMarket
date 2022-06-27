@@ -75,7 +75,7 @@ export const LayoutInputProduct = () => {
           window.location.reload(true)
         }, 1000))
         .catch((error) => {
-          console.log(error);
+          ''
         });
       event.preventDefault();
     };

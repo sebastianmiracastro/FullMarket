@@ -55,7 +55,7 @@ export const UIMyProducts=({
       setText(text);
       window.localStorage.setItem("text", uidProduct);
     } catch (error) {
-      console.log(error);
+      console.clear()
     }
   };
 
@@ -65,7 +65,7 @@ export const UIMyProducts=({
       `https://fullmarket-provitional-backend.herokuapp.com/products/getoneproduct/${uidProduct}`
     )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then(() => '');
   };
 
 
@@ -79,7 +79,7 @@ export const UIMyProducts=({
         window.location.reload(true)
       }, 1000))
       .catch((error) => {
-        console.log(error);
+        ''
       });
     event.preventDefault();
   };

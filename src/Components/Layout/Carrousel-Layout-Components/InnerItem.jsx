@@ -3,7 +3,6 @@ import "./Style.css";
 import * as bootstrap from 'bootstrap';
 
 export const InnerItem = ({ data }) => {
-  console.log("DATA: ", data);
   return (
     <>
     <div className="carousel-inner">
