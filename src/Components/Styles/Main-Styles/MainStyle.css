@@ -881,7 +881,7 @@ p {
   width: 49%;
   min-width: 80px;
   min-height: 30px;
-  background-color: #e84118;
+  background-color: #ff661f;
   border-style: none;
   color: #ffffff;
   border-radius: 7px;
@@ -890,15 +890,14 @@ p {
 }
 
 .btn-eliminar:hover {
-  letter-spacing: 1px;
-  background-color: #c23616;
+  background-color:  #f6560a;
 }
 
 .btn-cancelar{
   width: 49%;
   min-width: 80px;
   min-height: 30px;
-  background-color: #0097e6;
+  background-color: #5f6164;
   border-style: none;
   color: #ffffff;
   border-radius: 7px;
@@ -907,8 +906,7 @@ p {
 }
 
 .btn-cancelar:hover {
-  letter-spacing: 1px;
-  background-color: #0479b8;
+  background-color: #282d32;
 }
 
 .makeStyles-paper-4 p{
