@@ -100,55 +100,6 @@
   border-radius: 10px;
   padding: 10px;
 }
-/* 
-.btn-Add{
-  --color: #ff661f;
-  background: linear-gradient(#f6560a,#f6560a);
-  width: 12rem;
-  height: 2.5rem;
-  border-radius: 1rem;
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #f6560a;
-  transition: color .5s;
-  z-index: 1;
-  font-size: 1rem;
-  color: #ffff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.btn-Add:before{
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 200px;
-  width: 480px;
-  border-radius: 50%;
-}
-
-.btn-Add:before{
-  top: 100%;
-  left: 100%;
-  transition: all 2s;
-}
-
-.btn-Add:hover:before{
-  top: -45px;
-  left: -34px;
-}
-
-.btn-Add:hover{
-  background:linear-gradient(#000000, #000000) ;
-  animation: slidebg 2s linear infinite;
-  border: 0px solid #000000;
-  color: #FFFF;
-} */
 
 .btn-Add{
   font-size: 3rem;
