@@ -64,7 +64,6 @@
   }
 }
 
-
 @media (max-width: 340px) {
   .buttons-navbar{
     grid-template-columns: repeat(1, 1fr);
