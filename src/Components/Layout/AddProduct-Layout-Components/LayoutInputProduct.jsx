@@ -73,7 +73,7 @@ export const LayoutInputProduct = () => {
       )
         .then(setTimeout(() => {
           window.location.reload(true)
-        }, 1000))
+        }, 2000))
         .catch((error) => {
           ''
         });
@@ -120,7 +120,7 @@ export const LayoutInputProduct = () => {
   };
 
   return (
-   <>
+  <>
     <div className='cont-add-product'>
       <form onSubmit={Handle} className="form-add-product custom-form">
         <h2>Agregar Producto</h2>
