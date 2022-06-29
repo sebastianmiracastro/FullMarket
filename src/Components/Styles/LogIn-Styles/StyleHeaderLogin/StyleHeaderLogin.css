@@ -16,10 +16,9 @@
   text-align: center;
   width: 36%;
   position: absolute;
-  top: 9rem;
   display: flex;
   justify-content: center;
-  height: 75px;
+  height: 47px;
   background-color: #040404;
 }
 
@@ -28,7 +27,7 @@
   color: #f0f0f0;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 25px;
 }
 
 @media (max-width: 768px) {
