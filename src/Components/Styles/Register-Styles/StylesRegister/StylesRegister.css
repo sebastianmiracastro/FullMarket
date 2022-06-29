@@ -87,7 +87,7 @@
 .btnSubmirRecord {
   border-radius: 1rem;
   border: none;
-  background-color: #ff5100;
+  background-color: #f6560a;
   font-size: 1.2rem;
   color: #fff;
   margin: 0.7rem 1rem;
@@ -99,7 +99,7 @@
 }
 
 .btnSubmirRecord:hover {
-  background-position: right;
+  background-color: #ff661f;
 }
 
 div.register-line {
@@ -120,7 +120,7 @@ div.register-line {
   display: block;
   text-align: center;
   text-decoration: none;
-  color: #ff5100;
+  color: #f6560a;
   font-size: 0.9rem;
   font-family: 'Poppins', sans-serif;
   margin-top: 2%;
@@ -128,7 +128,7 @@ div.register-line {
 }
 
 .redirectLogin:hover {
-  font-size: none;
+  color: #ff661f;
 }
 
 .terms {
