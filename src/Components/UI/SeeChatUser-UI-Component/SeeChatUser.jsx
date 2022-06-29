@@ -34,14 +34,15 @@ export const SeeChatUser = () => {
   }) 
 
   const nav = useNavigate()
-
   const nameUser = window.localStorage.getItem('nameUserInSession')
     
   return (
     <div className='ContainerNotificationsChat'>
       { nameUser === op.map((e) => e.split('-')[1]) ? (
         ''
-      ) : (
+      ) 
+      : 
+      (
         <>
         {
           op.map((e) => (
