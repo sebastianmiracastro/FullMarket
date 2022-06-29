@@ -84,23 +84,52 @@
   margin-top: 11px;
 }
 
+/* ANIMACION BOTONES REGISTER*/
 .btnSubmirRecord {
+  --color: #ff661f;
+  background: linear-gradient(#f6560a,#f6560a);
+  width: 12rem;
+  height: 2.5rem;
   border-radius: 1rem;
-  border: none;
-  background-color: #f6560a;
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0.7rem 1rem;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f6560a;
+  transition: color .5s;
+  z-index: 1;
+  font-size: 1rem;
+  color: #ffff;
   cursor: pointer;
-  height: 40px;
-  width: 60% !important;
-  font-size: 15px;
- 
 }
 
-.btnSubmirRecord:hover {
-  background-color: #ff661f;
+.btnSubmirRecord:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 480px;
+  border-radius: 50%;
 }
+
+.btnSubmirRecord:before {
+  top: 100%;
+  left: 100%;
+  transition: all 2s;
+}
+
+.btnSubmirRecord:hover:before {
+  top: -45px;
+  left: -34px;
+}
+
+.btnSubmirRecord:hover{
+  background:linear-gradient(#000000, #000000) ;
+  animation: slidebg 2s linear infinite;
+  border: 0px solid #000000;
+  color: #FFFF;
+}
+/* ///////// */
 
 div.register-line {
   display: block;
