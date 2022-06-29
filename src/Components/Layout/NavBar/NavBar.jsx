@@ -82,10 +82,8 @@ export const NavBar = () => {
   }
 
   const handleClickMenu = () =>{
-    console.log("Click")
     const buttonTogle = document.querySelector(".navbar-toggler")
     BsWindowSidebar.click(buttonTogle)
-    
   }
 
   const body = (
