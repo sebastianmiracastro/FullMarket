@@ -41,7 +41,9 @@ export const SeeChatUser = () => {
     <div className='ContainerNotificationsChat'>
       { nameUser === op.map((e) => e.split('-')[1]) ? (
         ''
-      ) : (
+      ) 
+      : 
+      (
         <>
         {
           op.map((e) => (
