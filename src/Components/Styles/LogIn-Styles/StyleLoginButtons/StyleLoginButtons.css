@@ -16,7 +16,7 @@ p.msg-Alert:hover {
   position: absolute;
   width: 34%;
   right: 14rem;
-  top: 12rem;
+  top: 18rem;
 }
 
 .form input {
@@ -138,7 +138,7 @@ a {
     position: absolute;
     width: 40%;
     right: 8rem;
-    top: 12rem;
+    top: 18rem;
   }
 }
 @media (max-width: 768px) {
