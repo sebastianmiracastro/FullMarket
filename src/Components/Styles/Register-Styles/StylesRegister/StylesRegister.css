@@ -5,19 +5,17 @@
 }
 /* Styles LayoutRegister */
 .layoutRegister {
-
   align-items: center;
   text-align: center;
-  
   width: 100%;
   padding: 0;
-  margin: 0;
-  margin-left: 25px;
+  margin: 20px;
+  margin-left: 35px;
   display: grid;
 }
 
 .files {
-  margin-top: 2%;
+  margin-top: -5%;
 }
 
 .img-Logotype-Register {
@@ -30,7 +28,7 @@
   font-family: 'Poppins', sans-serif;
   outline: 0;
   background: #f2f2f2;
-  min-width: 80%;
+  min-width: 90%;
   height: 2.5rem;
   border: 0;
   padding: 1rem 1.2rem;
@@ -60,10 +58,10 @@
   font-family: 'Poppins', sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 40%;
+  width: 90%;
   border: 0;
   margin: 2px 2px;
-  padding: 8px 16px;
+  padding: 8px 0;
   box-sizing: border-box;
   font-size: 12px;
   height: 2.5rem;
@@ -76,12 +74,10 @@
   background: #282828;
   border-top: 5px solid #f6560a;
   padding: 4px 60px;
+  box-sizing: border-box;
   border-radius: 6px;
   width: 80%;
-  margin: 5px auto;
-}
-.inputfile-1{
-  
+  /* margin: 5px 75px; */
 }
 
 .selectMuni {
@@ -108,7 +104,7 @@
 
 div.register-line {
   display: block;
-  margin-top: 0.7em;
+  margin-top: 1px;
   margin-bottom: 0.5em;
   margin-right: auto;
   border-style: inset;

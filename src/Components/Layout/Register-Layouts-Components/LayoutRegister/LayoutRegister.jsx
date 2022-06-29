@@ -101,7 +101,7 @@ export const LayoutRegister = () => {
       setMsgName(text);
     } else {
       text =
-        "Información incorrecta, recuerde añadir solo letras.";
+        "Información incorrecta, añadir solo letras.";
       setMsgName(text);
     }
   };
@@ -139,7 +139,7 @@ export const LayoutRegister = () => {
       setMsgAddress(text);
     } else {
       text =
-      "Información incorrecta, recuerde añadir primero letras y despues el/los números que desee.";
+      "Información incorrecta, añadir primero letras y despues el/los números que desee.";
       setMsgAddress(text);
     }
   };
@@ -152,7 +152,7 @@ export const LayoutRegister = () => {
       setMsgPassword(text);
     } else {
       text =
-        "Debe ser minimo de 7, maximo 10 letras y/o numeros..";
+        "Información incorrecta, añadir minímo 7 y máximo 10 caracteres.";
       setMsgPassword(text);
     }
   };
@@ -165,7 +165,7 @@ export const LayoutRegister = () => {
       setMsgPhone(text);
     } else {
       text =
-        "Incorrecto, recuerde añadir solo numeros, deben ser minimo de 7 numeros, maximo 10 numeros.";
+        "Incorrecto, añadir solo numeros. Deben ser minimo 7 números, máximo 10 números.";
       setMsgPhone(text);
     }
   };
@@ -174,7 +174,7 @@ export const LayoutRegister = () => {
     setTerms(e.target.checked);
     let text;
     if (terms === false) {
-      text = "Registro exítoso";
+      text = "Los campos se han diligenciado correctamente.";
       setMsgCheck(text);
     } else {
       text = "Recuerde aceptar los términos y condiciones para poder registrarse";
@@ -248,8 +248,11 @@ export const LayoutRegister = () => {
             </div>
         </div>
 
-        <div className="select-dept-muni row col col-md-12">
-          <select
+
+
+        <div className="select-dept-muni row">
+          <div className="col col-md-6">
+            <select
                 className="selectDepart"
                 onInput={getMuni}
                 type="department"
@@ -264,8 +267,10 @@ export const LayoutRegister = () => {
                     {dep.departamento}
                   </option>
                 ))}
-          </select>
-          <select
+            </select>
+          </div>
+          <div className="col col-md-6">
+            <select
                 placeholder="Municipio"
                 className="selectMuni"
                 id="select-municipios"
@@ -280,7 +285,9 @@ export const LayoutRegister = () => {
                   {ci}
                 </option>
               ))}
-        </select>
+            </select>
+          </div>
+          
         </div>
 
         <div className="row">
