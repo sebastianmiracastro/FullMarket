@@ -34,7 +34,6 @@ export const SeeChatUser = () => {
   }) 
 
   const nav = useNavigate()
-
   const nameUser = window.localStorage.getItem('nameUserInSession')
     
   return (
