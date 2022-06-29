@@ -131,22 +131,22 @@ export const PrivateChatRoomReceiver = () => {
           setMessages(current);
         }
       });
-      // console.clear()
+      console.clear()
   };
 
   useEffect(() => {
-    // console.clear()
+    console.clear()
     currentMessage();
   });
 
   const updateMessage = (e) => {
-    // console.clear()
+    console.clear()
     setMessage(e.target.value);
   };
 
   const sendNewMessage = (e) => {
     e.preventDefault();
-    // console.clear()
+    console.clear()
     const newMsg = {
       id: messages.length,
       uidUserSend: nameUserInSession,
@@ -160,7 +160,7 @@ export const PrivateChatRoomReceiver = () => {
       )
       .set(newMsg);
     setMessage('');
-    // console.clear()
+    console.clear()
   };
 
   return (
