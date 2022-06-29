@@ -229,7 +229,6 @@ div.register-line {
   display: grid;
   grid-template-columns: 34% 50%;
   column-gap: 2rem;
-  margin-bottom: 20px;
 }
 .completeRecord{
   width: 100%;
