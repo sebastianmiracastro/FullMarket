@@ -6,7 +6,7 @@ export const UIHeaderLogin =() => {
   return (
     <>
     <div className="content-title">
-      <h2 className="title">Iniciar Sesión</h2>
+      <h2 className="title">INICIE SESIÓN AQUÍ</h2>
     </div>
     <img className="Login" src={LoginImage} alt="Login" />
     </>

@@ -16,7 +16,7 @@ p.msg-Alert:hover {
   position: absolute;
   width: 34%;
   right: 14rem;
-  top: 12rem;
+  top: 18rem;
 }
 
 .form input {
@@ -74,12 +74,17 @@ a {
   display: block;
   text-align: center;
   text-decoration: none;
-  color: #f66f00;
+  color: #f6560a;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 0.9rem;
   align-self: center;
 }
+
+a:hover {
+  color: #ff661f;
+}
+
 
 /* ANIMACION BOTONES LOGIN */
 .btn-Applylog {
@@ -138,7 +143,7 @@ a {
     position: absolute;
     width: 40%;
     right: 8rem;
-    top: 12rem;
+    top: 18rem;
   }
 }
 @media (max-width: 768px) {

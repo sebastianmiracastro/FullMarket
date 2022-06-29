@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import '../../Styles/SeeChatUser-Styles/SeeChatUser-Styles.css'
 import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../Styles/SeeChatUser-Styles/SeeChatUser-Styles.css'
 
 export const SeeChatUser = () => {
 
@@ -52,13 +53,13 @@ export const SeeChatUser = () => {
               )}
             <p >Producto: {e.split('-')[2]}</p>
             <div className='d-flex justify-content-center'>
-            <button className='btn btn-primary w-50 fw-bold' 
+            <button className='btn-GoChat btn-primary  fw-bold' 
             onClick={() => {
               window.localStorage.setItem('userSendDefined', e.split('-')[0])
               window.localStorage.setItem('nameUserToContact', e.split('-')[1])
               window.localStorage.setItem('nameProductApply', e.split('-')[2])
               nav('/LoggedUser/PrivateChat/Receiver')
-            }}>Abrir Chat</button>
+            }}>Ir al chat</button>
             </div>
             </div>
           ))

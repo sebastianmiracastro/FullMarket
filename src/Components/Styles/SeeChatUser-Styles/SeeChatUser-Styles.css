@@ -3,7 +3,18 @@
     background-image: url("../../../../public/Img/bg1-navbar.svg");
     width: 50%;
 }
+.btn-GoChat{
+    background-color: #f6560a;
+    border-radius: 1rem;
+    border: #f6560a;
+    width: 20%;
+    height: 2.5rem;
+}
 
+.btn-GoChat:hover{
+    background-color: #ff661f;
+    
+}
 .ContainerChats p {
     color: white;
 }

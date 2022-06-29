@@ -61,7 +61,7 @@
   width: 90%;
   border: 0;
   margin: 2px 2px;
-  padding: 8px 0;
+  padding: 8px 15px;
   box-sizing: border-box;
   font-size: 12px;
   height: 2.5rem;
@@ -76,7 +76,7 @@
   padding: 4px 60px;
   box-sizing: border-box;
   border-radius: 6px;
-  width: 80%;
+  width: 10%;
   /* margin: 5px 75px; */
 }
 
@@ -84,23 +84,52 @@
   margin-top: 11px;
 }
 
+/* ANIMACION BOTONES REGISTER*/
 .btnSubmirRecord {
+  --color: #ff661f;
+  background: linear-gradient(#f6560a,#f6560a);
+  width: 12rem;
+  height: 2.5rem;
   border-radius: 1rem;
-  border: none;
-  background-color: #ff5100;
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0.7rem 1rem;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f6560a;
+  transition: color .5s;
+  z-index: 1;
+  font-size: 1rem;
+  color: #ffff;
   cursor: pointer;
-  height: 40px;
-  width: 80% !important;
-  font-size: 15px;
- 
 }
 
-.btnSubmirRecord:hover {
-  background-position: right;
+.btnSubmirRecord:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 480px;
+  border-radius: 50%;
 }
+
+.btnSubmirRecord:before {
+  top: 100%;
+  left: 100%;
+  transition: all 2s;
+}
+
+.btnSubmirRecord:hover:before {
+  top: -45px;
+  left: -34px;
+}
+
+.btnSubmirRecord:hover{
+  background:linear-gradient(#000000, #000000) ;
+  animation: slidebg 2s linear infinite;
+  border: 0px solid #000000;
+  color: #FFFF;
+}
+/* ///////// */
 
 div.register-line {
   display: block;
@@ -120,7 +149,7 @@ div.register-line {
   display: block;
   text-align: center;
   text-decoration: none;
-  color: #ff5100;
+  color: #f6560a;
   font-size: 0.9rem;
   font-family: 'Poppins', sans-serif;
   margin-top: 2%;
@@ -128,7 +157,7 @@ div.register-line {
 }
 
 .redirectLogin:hover {
-  font-size: none;
+  color: #ff661f;
 }
 
 .terms {
@@ -138,6 +167,7 @@ div.register-line {
   color: #000000;
   font-size: 12px;
   font-family: 'Poppins', sans-serif;
+  margin-top: 15px;
 }
 
 
@@ -229,7 +259,6 @@ div.register-line {
   display: grid;
   grid-template-columns: 34% 50%;
   column-gap: 2rem;
-  margin-bottom: 20px;
 }
 .completeRecord{
   width: 100%;

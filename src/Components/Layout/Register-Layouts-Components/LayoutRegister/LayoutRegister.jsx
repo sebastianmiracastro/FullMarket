@@ -126,7 +126,7 @@ export const LayoutRegister = () => {
       setMsgAlias(text);
     } else {
       text =
-        "Información incorrecta, recuerde añadir primero letras y despues el/los números que desee.";
+        "Información incorrecta, añadir primero letras y despues números";
       setMsgAlias(text);
     }
   };
@@ -339,8 +339,8 @@ export const LayoutRegister = () => {
                 onClick={handleTerms}
                 required
               ></input>
-              Al hacer click en "REGISTRARSE". Acepta nuestras condiciones, la
-              politica <br></br>de datos y la politica de cookies.
+              Al unirse a FullMarket. Acepta nuestras <b>condiciones de servicio</b>
+              <br></br>y <b>nuestra política de privacidad</b>.
             </a>
             <p className="alertIcorrects">{msgCheck}</p>
           </div>
