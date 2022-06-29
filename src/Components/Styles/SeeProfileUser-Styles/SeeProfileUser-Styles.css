@@ -8,83 +8,67 @@
 }
 
 .Container-DataUser{
-    background-color: #f6560a;
-    border-radius: 12px;
-    width: 30%;
+    background-image: url("../../../../public/Img/bgcards2.svg");
+    border-radius: 10px;
+    width: 50%;
     height: auto;
     text-align: center;
     padding: 0px;
-    box-shadow: 1px 4px 8px 0 black;
+    box-shadow: 1px 4px 8px 0 #000000;
 }
+
 .imgCardProfileUserSee{
-    width: 34%;
-    margin: 2%;
-    border-radius:10px;
+    width: 40%;
     box-shadow:  2px 2px 4px 0 #ffffff;
 }
+
 .textProfileUserSee{
-    font-size: 26px;
+    font-size: 15px;
     margin: 10px;
-    color: #ffffff;
+    color: #000000;
 }
+
 .textProfileUserSees{
-    font-size: 26px;
-    margin: 15px;
-    color: #ffffff;
+    font-size: 30px;
+    color: #000000;
+    font-family: "Bebas Neue", cursive;
+    margin-top: 5%;
 }
 
 @media (max-width: 768px) {
     .Container-DataUser{
-        background-color: #f6560a;
-        border-radius: 12px;
-        width: 80%;
-        height: auto;
-        text-align: center;
-        padding: 0px;
-        box-shadow: 1px 4px 8px 0 black;
+        width: 50%;
     }
+
     .imgCardProfileUserSee{
-        width: 34%;
-        margin: 2%;
-        border-radius:10px;
-        box-shadow:  1px 1px 2px 0 #ffffff;
+        width: 50%;
     }
+
     .textProfileUserSee{
-        font-size: 14px;
-        margin: 10px;
-        color: #ffffff;
+        font-size: 0.9rem;
     }
+    
     .textProfileUserSees{
-        font-size: 16px;
+        font-size: 25px;
         margin: 15px;
-        color: #ffffff;
     }
 }
 
 @media (max-width: 520px) {
     .Container-DataUser{
-        background-color: #f6560a;
-        border-radius: 12px;
-        width: 90%;
-        height: auto;
-        text-align: center;
-        padding: 0px;
-        box-shadow: 1px 4px 8px 0 black;
+        width: 80%;
     }
+
     .imgCardProfileUserSee{
-        width: 34%;
-        margin: 2%;
-        border-radius:10px;
-        box-shadow:  1px 1px 2px 0 #ffffff;
+        width: 50%;
     }
+
     .textProfileUserSee{
-        font-size: 10px;
-        margin: 10px;
-        color: #ffffff;
+        font-size: 0.9rem;
     }
+
     .textProfileUserSees{
-        font-size: 14px;
+        font-size: 25px;
         margin: 15px;
-        color: #ffffff;
     }
 }
