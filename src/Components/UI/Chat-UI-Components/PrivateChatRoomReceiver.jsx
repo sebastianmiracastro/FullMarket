@@ -165,20 +165,27 @@ export const PrivateChatRoomReceiver = () => {
 
   return (
     <div className='principalContainer'>
+      <div className='contChat'>
       { userSendDefined === nameUserInSession ? (
         <button className="m-2 acordButton" onClick={handleModalOpen}>¿Acuerdo?</button>
       ) : (
         ''
       )
       }
-      <div className='contChat'>
       <form className='formChat' onSubmit={sendNewMessage}>
       <div>
         {
           messages.map(message => (
             <ul className="d-flex flex-column " key={message.id}>
-              <li>{message.text}</li>
-              <li className="userSend">{message.uidUserSend}</li>
+              { message.uidUserSend === nameUserInSession ? (
+                <div className="contentMessage">
+                  <li className='userSend'>{message.text}</li>
+                </div>
+              ) : (
+                <div className="contentMessageReceiver">
+                  <li className="receiverMessage">{message.text}</li>
+                </div>
+              )}
             </ul>
           ))
         }
