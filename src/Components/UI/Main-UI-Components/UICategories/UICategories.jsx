@@ -193,8 +193,8 @@ const handleClose = () => {
 return (
     <>
     <div className='container-card'>
-        <div className="header-Card">
-            <div className="iconInfo">
+        <div className="header-Card" onClick={handleOpen}>
+            {/* <div className="iconInfo">
                 {isloading ? (
                 <Skeleton
                 variant="circular"
@@ -206,7 +206,7 @@ return (
                 : 
                 <BsFillInfoCircleFill onClick={handleOpen} />
                 }
-            </div>
+            </div> */}
             {isloading ? (
             <Skeleton
             animation="wave"
@@ -218,7 +218,7 @@ return (
             <h1>{typeProductCategory}</h1>
             }
         </div>
-        <div className="body-Card">
+        <div className="body-Card" onClick={handleOpen}>
             <div className="img-Card">
                 {isloading ? (
                 <Skeleton
