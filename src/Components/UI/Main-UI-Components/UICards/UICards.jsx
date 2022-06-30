@@ -330,7 +330,14 @@ const mostrar = async () => {
         width={150}
         height={35}
         />}
-          {UserInSesion ? ( 
+          
+      </div>
+      <div className="modal-window-products">
+        <Modal open={open} onClose={handleClose}>
+          {body}
+        </Modal>
+      </div>
+      {UserInSesion ? ( 
           <div className="apply-Product">
               <UIButtons
                 classButtons="btn-Apply"
@@ -348,12 +355,6 @@ const mostrar = async () => {
           </NavLink>
           </div>
           )}
-      </div>
-      <div className="modal-window-products">
-        <Modal open={open} onClose={handleClose}>
-          {body}
-        </Modal>
-      </div>
     </div>
     </>
   );

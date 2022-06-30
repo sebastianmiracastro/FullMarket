@@ -255,8 +255,14 @@ return (
             ) 
             :
             <p>Estado: {conditionProductCategory}</p>
-            }
-            {UserInSesion ? ( 
+            } 
+            </div>
+        <div className="modal-window-products">
+            <Modal open={open} onClose={handleClose}>
+                {body}
+            </Modal>
+        </div> 
+        {UserInSesion ? ( 
             <div className="apply-Product">
                 <UIButtons
                     classButtons="btn-Apply"
@@ -274,12 +280,7 @@ return (
                 </NavLink>
             </div>
             )}
-        </div>
-        <div className="modal-window-products">
-            <Modal open={open} onClose={handleClose}>
-                {body}
-            </Modal>
-        </div>
     </div>
+    
     </>
 )}
