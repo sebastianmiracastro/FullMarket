@@ -54,6 +54,7 @@ export const LayoutEditMyProducts = () => {
   /// ---- //
 
   const [type, setType] = useState();
+  const [category, setCategory] = useState();
   const [name, setName] = useState();
   const [imgProduct, setImage] = useState();
   const [condition, setCondition] = useState();
@@ -70,6 +71,7 @@ export const LayoutEditMyProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         setType(data.type);
+        setCategory(data.category)
         setName(data.name);
         setImage(data.imgProductURL);
         setCondition(data.condition);
@@ -88,6 +90,7 @@ export const LayoutEditMyProducts = () => {
   let formData = new FormData();
   const Handle = async (event) => {
     formData.set("type", type);
+    formData.set("category", category);
     formData.set("name", name);
     formData.set("imgProduct", imgProduct);
     formData.set("condition", condition);
@@ -134,16 +137,29 @@ export const LayoutEditMyProducts = () => {
       <div className="containerFormData">
         <form onSubmit={Handle} className="form-edit-product">
           <h2>Editar Producto</h2>
-          <input
-            className="inputAddProduct"
-            type="type"
-            name="type"
-            value={type}
-            onChange={(e) => {
-              setType(e.target.value);
-            }}
-            placeholder=" "
-          ></input>
+
+          <select
+          className="inputAddProduct"
+          type="type"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        >
+          <option value="type">Tipo</option>
+          <option value="Regalo">Regalo</option>
+          <option value="Intercambio">Intercambio</option>
+        </select>
+        <select
+          className='inputAddProduct'
+          type="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="Categoria">Categoria</option>
+            <option value="Electrodomestico">Electrodomestico</option>
+            <option value="Ropa">Ropa</option>
+            <option value="Accesorio">Accesorio</option>
+            <option value="Domestico">Domestico</option>
+          </select>
           <input
             className="inputAddProduct"
             type="name"
