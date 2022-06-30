@@ -272,9 +272,9 @@ const mostrar = async () => {
   return (
     <>
     <div className='container-card'>
-      <div className="header-Card">
+      <div className="header-Card" onClick={handleOpen}>
         <div className="iconInfo">
-          {isloading ? (
+          {/* {isloading ? (
           <BsFillInfoCircleFill onClick={handleOpen} />
           )  
           : 
@@ -283,7 +283,7 @@ const mostrar = async () => {
           animation="wave"
           width={25}
           height={25}
-          />}
+          />} */}
         </div>
         {isloading ? (
             <h1>{typeProduct}</h1>
@@ -295,8 +295,8 @@ const mostrar = async () => {
         height={50}
         />}
       </div>
-      <div className="body-Card">
-        <div className="img-Card">
+      <div className="body-Card" onClick={handleOpen}>
+        <div className="img-Card" onClick={handleOpen}>
           {isloading ? (
           <img
             src={imgProduct}
