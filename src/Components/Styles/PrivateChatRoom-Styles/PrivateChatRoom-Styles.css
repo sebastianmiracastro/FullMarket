@@ -174,3 +174,20 @@
         font-size: 80%;
     }
 }
+
+.DeleteChat:hover{
+    transition: 400ms;
+    transform: scale(1.1);
+}
+
+.successAvaibility{
+    background-color: #ff661f;
+    color: white;
+    margin: 10px;
+}
+
+.successAvaibility:hover{
+    color: white;
+    transition: 400ms;
+    transform: scale(1.1);
+}
