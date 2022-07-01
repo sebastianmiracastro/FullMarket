@@ -90,18 +90,31 @@ export const PrivateChatRoomReceiver = () => {
   })
   }
 
+  const updateAvaibility = () => {
+    const productName = window.localStorage.getItem('nameProductApply')
+    axios.put(
+      `https://fullmarket-provitional-backend.herokuapp.com/products/putproducttonotavaible/${productName}`
+    ).then((res) =>  
+    swal({
+      title: "Felicidades por el intercambio/Regalo",
+      text: "El producto ya no esta disponible",
+      icon: "success",
+      timer: "1500"
+    }))
+  }
+
   const body = (
     <div className="modalWindowFeatures">
       <div style={modalStyle} className="cont-modal-notification">
         <div className="d-flex flex-column align-items-around">
           <div className="d-flex flex-row justify-content-around">
             <p className="text-white css-textReject">No llegamos a un acuerdo, quiero borrar el chat.</p>
-            <button onClick={deleteChat}>Borrar</button>
+            <button className="btn btn-danger DeleteChat" onClick={deleteChat}>Borrar</button>
           </div>
           <p className="text-center text-white">O</p>
           <div className="d-flex flex-row justify-content-around">
               <p className="text-white css-textReject">Hay acuerdo?, tu producto ya no estara disponible</p>
-              <button>No disponible</button>
+              <button className="btn successAvaibility" onClick={updateAvaibility}>No disponible</button>
           </div>
         </div>
         <button className="btnOkModal" type="button" onClick={handleModalClose}>Aun no estoy seguro</button>
@@ -165,20 +178,27 @@ export const PrivateChatRoomReceiver = () => {
 
   return (
     <div className='principalContainer'>
+      <div className='contChat'>
       { userSendDefined === nameUserInSession ? (
         <button className="m-2 acordButton" onClick={handleModalOpen}>¿Acuerdo?</button>
       ) : (
         ''
       )
       }
-      <div className='contChat'>
       <form className='formChat' onSubmit={sendNewMessage}>
       <div>
         {
           messages.map(message => (
             <ul className="d-flex flex-column " key={message.id}>
-              <li>{message.text}</li>
-              <li className="userSend">{message.uidUserSend}</li>
+              { message.uidUserSend === nameUserInSession ? (
+                <div className="contentMessage">
+                  <li className='userSend'>{message.text}</li>
+                </div>
+              ) : (
+                <div className="contentMessageReceiver">
+                  <li className="receiverMessage">{message.text}</li>
+                </div>
+              )}
             </ul>
           ))
         }
