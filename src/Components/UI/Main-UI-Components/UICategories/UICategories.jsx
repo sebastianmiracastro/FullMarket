@@ -189,7 +189,6 @@ const handleClose = () => {
   </div>
   );
 
-
 return (
     <>
     <div className='container-card'>
@@ -218,7 +217,7 @@ return (
             <h1>{typeProductCategory}</h1>
             }
         </div>
-        <div className="body-Card" onClick={handleOpen}>
+        <div className="body-Card"  onClick={handleOpen}>
             <div className="img-Card">
                 {isloading ? (
                 <Skeleton
